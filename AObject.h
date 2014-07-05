@@ -1,29 +1,60 @@
 #pragma once
 
+#include "DxLib.h"
+#include "Field.h"
+
+
 /*
 「物体」の抽象クラス
 */
+/*
+変更部分メモ
+座標やスピード,サイズのx,yを構造体でまとめた
+*/
+
+//２次元をあらわす構造体。x軸とy軸をまとめている。
+typedef struct{
+	double x;
+	double y;
+}TwoDimension;
 
 class AObject{
 public:
-	AObject(double ax,double ay);  
+	AObject(double ax,double ay,Field field);
 	void Move();                  //自身のスピード分移動する
 	void Draw(int offset);   //offsetを使って自身の描画位置を算出して描画する
-	 void Think();  //自身のスピードを操作して行動を決める
-	void TouchedWall();   //壁と当たったときに呼ばれる
-	void Fall(double g);  // 引数の重力分落ちる
+	void Think();  //自身のスピードを操作して行動を決める
+	void TouchedWall(double wall_x);   //壁と当たったときに呼ばれる
+	void TouchedFloor(double floor_y);  //床と当たったときに呼ばれる
+	void Fall(double gravity);  // 引数の重力分落ちる
+	void Die(); //生存フラグをfalseにする
+
+	//ゲッター
+	TwoDimension GetPos() {return pos;}
+	TwoDimension GetSpeed() {return speed; }
+	bool isAerial() {return aerial;}
+	bool isRight() {return right;}
+	bool isAlive() {return alive;}
+
+	//未完成。設定するにはFieldから現在の時間もらってこないとなんで、コンストラクタの引数でFieldがいる
+	int  get_made_time() {return made_time;}
 
 protected:
+
 	int made_time;   //生成された時間（Fieldからみた）
 	static int graphic_handle;  //どのメモリに画像が読み込まれているか
-	double x;   //x座標
-	double y;  //y座標
+	TwoDimension pos; //x,y座標
+	TwoDimension speed; //x,y軸のスピード
+	TwoDimension size; //オブジェクトのｘ方向の幅と、y方向の高さ
 	bool alive; //生存していればtrue
-	double speed_x; //x軸のスピード
-	double speed_y; //y軸のスピード
-	int width; //オブジェクトの幅 (当たり判定用)
-	int height; //オブジェクトの高さ
 	bool right; //向きを表す。右向きならtrue。左向きならfalse
 	bool aerial; //空中にいるならtrue。地面に接しているならfalse
+	char* file_name; //画像ファイル名
+
+	 //ファイル名、サイズ、rightを初期化するメソッド。
+	//下位クラスではこれをオーバーライドすればいいかと思い作成してみた。
+	//コンストラクタで呼ばれる
+	void init(); 
+
 
 };
