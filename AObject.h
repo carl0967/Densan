@@ -1,7 +1,6 @@
 #pragma once
 
 #include "DxLib.h"
-#include "Field.h"
 
 
 /*
@@ -20,32 +19,33 @@ typedef struct{
 
 class AObject{
 public:
-	AObject(double ax,double ay,Field field);
+	AObject(double ax,double ay);
 	void Move();                  //自身のスピード分移動する
 	void Draw(int offset);   //offsetを使って自身の描画位置を算出して描画する
 	void Think();  //自身のスピードを操作して行動を決める
-	void TouchedWall(double wall_x);   //壁と当たったときに呼ばれる
-	void TouchedFloor(double floor_y);  //床と当たったときに呼ばれる
 	void Fall(double gravity);  // 引数の重力分落ちる
 	void Die(); //生存フラグをfalseにする
 
+	void TouchedBlockX(double set_x);
+	void TouchedBlockY(double set_y);
+
 	//ゲッター
-	TwoDimension GetPos() {return pos;}
-	TwoDimension GetSpeed() {return speed; }
+	TwoDimension pos() {return pos_;}
+	TwoDimension speed() {return speed_; }
 	bool isAerial() {return aerial;}
 	bool isRight() {return right;}
 	bool isAlive() {return alive;}
 
 	//未完成。設定するにはFieldから現在の時間もらってこないとなんで、コンストラクタの引数でFieldがいる
-	int  get_made_time() {return made_time;}
+	int  made_time() {return made_time_;}
 
 protected:
 
-	int made_time;   //生成された時間（Fieldからみた）
+	int made_time_;   //生成された時間（Fieldからみた）
 	static int graphic_handle;  //どのメモリに画像が読み込まれているか
-	TwoDimension pos; //x,y座標
-	TwoDimension speed; //x,y軸のスピード
-	TwoDimension size; //オブジェクトのｘ方向の幅と、y方向の高さ
+	TwoDimension pos_; //x,y座標
+	TwoDimension speed_; //x,y軸のスピード
+	TwoDimension size_; //オブジェクトのｘ方向の幅と、y方向の高さ
 	bool alive; //生存していればtrue
 	bool right; //向きを表す。右向きならtrue。左向きならfalse
 	bool aerial; //空中にいるならtrue。地面に接しているならfalse

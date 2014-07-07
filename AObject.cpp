@@ -3,50 +3,65 @@
 
 int AObject::graphic_handle;
 
-AObject::AObject(double x,double y,Field field){
+AObject::AObject(double x,double y){
 	init();
 	if(!(graphic_handle>0))  graphic_handle=LoadGraph(file_name);
-	pos.x=x;
-	pos.y=y;
+	pos_.x=x;
+	pos_.y=y;
 	aerial=false;
 	alive=true;
-	speed.x=0;
-	speed.y=0;
-	made_time=0;
+	speed_.x=0;
+	speed_.y=0;
+	made_time_=10;
 }
 void AObject::init(){ 
 	file_name="rock2.png";
-	size.x=32;
-	size.y=32;
+	size_.x=32;
+	size_.y=32;
 	right=false;
 }
 
 
 void AObject::Move(){
-	pos.x+=speed.x;
-	pos.y+=speed.y;
+	pos_.x+=speed_.x;
+	pos_.y+=speed_.y;
 }
 void AObject::Draw(int offset){
-	DrawGraph( (int)pos.x-offset , (int)pos.y , graphic_handle ,TRUE ) ;
+	DrawGraph( (int)pos_.x-offset , (int)pos_.y , graphic_handle ,TRUE ) ;
 	/*
 	 int Color = GetColor( 255 , 255 , 255 ) ;
     DrawFormatString( 0, 0, Color, "ïœêî  %d Ç≈Ç∑\n", graphic_handle ) ;
 	*/
 }
 
-void AObject::TouchedWall(double wall_x){
-	speed.x=0;
-	pos.x=wall_x;
+void AObject::TouchedBlockX(double block_x){
+	//xé≤Ç≈ÇÃìñÇΩÇËîªíËÇÃèÍçá
+		//âEÇ∆ÇÃìñÇΩÇËîªíËÇÃèÍçá
+		if(speed_.x>0){
+			pos_.x=block_x-size_.x;
+		}
+		else{
+			pos_.x=block_x+32;
+		}
+		speed_.x=0;
+
 }
-void AObject::TouchedFloor(double floor_y){
-	speed.y=0;
-	pos.y=floor_y;
+void AObject::TouchedBlockY(double block_y){
+	//è„å¸Ç´
+	if(speed_.y<0){
+		pos_.y=block_y+32;
+	}
+	else{
+		pos_.y=block_y-size_.y;
+	}
+
 }
+
 void AObject::Fall(double gravity){
-	speed.y+=gravity;
+	speed_.y+=gravity;
 }
 void AObject::Think(){
-	speed.x=5;
+	speed_.x=5;
 }
 
 
