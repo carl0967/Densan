@@ -15,7 +15,7 @@ AObject::AObject(double x,double y){
 	made_time_=10;
 }
 void AObject::init(){ 
-	file_name="rock2.png";
+	file_name="ñÇèó2.png";
 	size_.x=32;
 	size_.y=32;
 	right=false;
@@ -61,7 +61,7 @@ void AObject::Fall(double gravity){
 	speed_.y+=gravity;
 }
 void AObject::Think(){
-	speed_.x=5;
+	speed_.x=2;
 }
 
 

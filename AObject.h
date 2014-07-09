@@ -22,7 +22,7 @@ public:
 	AObject(double ax,double ay);
 	void Move();                  //自身のスピード分移動する
 	void Draw(int offset);   //offsetを使って自身の描画位置を算出して描画する
-	void Think();  //自身のスピードを操作して行動を決める
+	virtual void Think()=0;  //自身のスピードを操作して行動を決める
 	void Fall(double gravity);  // 引数の重力分落ちる
 	void Die(); //生存フラグをfalseにする
 
