@@ -1,9 +1,11 @@
 #include "Character.h"
+#include "CharacterController.h"
 
 
 Character::Character(double x,double y):AObject(x,y){
 	hp_=10;
 	status_=0;
+
 }
 
 void Character::Damaged(int damage){
@@ -20,5 +22,8 @@ void Character::Run(bool right){
 }
 void Character::Jump(){
 	speed_.y=-20;
+}
+void Character::Think(){
+	controller_->Think();
 }
 
