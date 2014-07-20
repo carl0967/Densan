@@ -10,24 +10,22 @@ class CharacterController;
 
 class Character: public AObject{
 public:
-	Character(double x,double y);
-	void Jump();
-	void Walk(bool right);
-	void Run(bool right);
+	Character(double x,double y); //コンストラクタ
+	void Jump();   //ジャンプする
+	void Walk(bool right); //right=true　なら右に、falseなら左に移動する
+	void Run(bool right); //。Walkより速く移動する
 
-	void DoAttack();
-	//ダメージを受けるときに呼ばれる。HPが０になるとaliveがfalseに
-	void Damaged(int damage); 
-	void Think();
+	//void Set_Speed(double speed_x,double speed_y); //speedのセッター
+	void NoMove(); //とまる
+	void DoAttack(); //攻撃をする。未実装
+	void Damaged(int damage);  //ダメージを受けるときに呼ばれる。HPが０になるとaliveがfalseに
+	void Think(); //次にどのような行動をするかを決める。CharacterControllerに委譲。
 
 protected:
 	int hp_;  //体力
 	int status_; //キャラクターの状態を表す
 	CharacterController *controller_;
 
-	//自身が持つコントローラーを生成する
-	//下位クラスでオーバーライドをする
-	virtual CharacterController* CreateController(){return NULL;}
 
 private:
 

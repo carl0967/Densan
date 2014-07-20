@@ -40,6 +40,7 @@ void AObject::TouchedBlockX(double block_x){
 		if(speed_.x>0){
 			pos_.x=block_x-size_.x;
 		}
+		//¶‚Æ‚Ì“–‚½‚è”»’è
 		else{
 			pos_.x=block_x+32;
 		}
@@ -47,12 +48,17 @@ void AObject::TouchedBlockX(double block_x){
 
 }
 void AObject::TouchedBlockY(double block_y){
-	//ãŒü‚«
+	//y²‚Æ‚Ì“–‚½‚è”»’è
+	//ã‚ÅÚG
+
 	if(speed_.y<0){
-		pos_.y=block_y+32;
+		//pos_.y=block_y+32;
 	}
+	//‰º‚ÅÚG
 	else{
 		pos_.y=block_y-size_.y;
+		aerial=false;
+		speed_.y=0;
 	}
 
 }

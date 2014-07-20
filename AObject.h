@@ -5,11 +5,9 @@
 
 /*
 「物体」の抽象クラス
+敵キャラクターや自機、アイテムなどの共通部分をまとめている。
 */
-/*
-変更部分メモ
-座標やスピード,サイズのx,yを構造体でまとめた
-*/
+
 
 //２次元をあらわす構造体。x軸とy軸をまとめている。
 typedef struct{
@@ -26,8 +24,8 @@ public:
 	void Fall(double gravity);  // 引数の重力分落ちる
 	void Die(); //生存フラグをfalseにする
 
-	void TouchedBlockX(double set_x);
-	void TouchedBlockY(double set_y);
+	void TouchedBlockX(double set_x); //x軸でブロックと接触した場合に呼び出す
+	void TouchedBlockY(double set_y); //y軸でブロックと接触した場合に呼び出す
 
 	//ゲッター
 	TwoDimension pos() {return pos_;}
