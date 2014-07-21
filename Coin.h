@@ -21,6 +21,7 @@ public:
 	/*
 	オーバーライドした関数
 	引数のcharacterのフィールド変数を変更して、アイテムの効果を与える関数
+	未設定
 	
 	*/
 	public void Affect(Character character){
@@ -29,7 +30,7 @@ public:
 	/*
 	オーバーライドした関数
 	そのアイテムがどのような思考をするか（動き方とか）を決定する
-	
+	未設定
 	*/
 	public void Think(){
 
