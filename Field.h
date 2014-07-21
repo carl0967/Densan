@@ -1,4 +1,4 @@
-/*
+
 # ifndef FIELD_H
 # define FIELD_H
 #pragma once
@@ -46,4 +46,3 @@ private:
 };
 #endif
 
-*/

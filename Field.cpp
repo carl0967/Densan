@@ -1,4 +1,4 @@
-/*
+
 #include "Field.h"
 
 
@@ -130,8 +130,8 @@ void Field::DeleteObjects(){
 //完成（仮）
 void Field::CheckOutOfArea(){
 	for(int i=0; i<objects_.size(); i++){
-		if(objects_.at(i)->pos().x < offset || 
-			objects_.at(i)->pos().x > offset+480 ){
+		if(objects_.at(i)->pos().x < -offset || 
+			objects_.at(i)->pos().x > -offset+480 ){
 			//オブジェクト削除
 			delete objects_.at(i);
 			//オブジェクトの参照削除
@@ -176,4 +176,3 @@ bool JudgeCircle(int x1, int y1, int r1, int x2, int y2, int r2){
 }
 
 
-*/
