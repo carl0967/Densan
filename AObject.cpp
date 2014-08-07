@@ -1,11 +1,14 @@
-
+#include <string.h>
 #include "AObject.h"
 
-int AObject::graphic_handle;
+//int AObject::graphic_handle;
+LoadGraphic AObject::loadg=LoadGraphic();
 
-AObject::AObject(double x,double y){
-	init();
-	if(!(graphic_handle>0))  graphic_handle=LoadGraph(file_name);
+AObject::AObject(double x,double y,char* f_name,int sizex,int sizey,bool r){
+	//if(!(graphic_handle>0)){
+		//graphic_handle=LoadGraph(f_name);
+		graphic_handle=loadg.Load(f_name);
+	//}
 	pos_.x=x;
 	pos_.y=y;
 	aerial=false;
@@ -13,13 +16,11 @@ AObject::AObject(double x,double y){
 	speed_.x=0;
 	speed_.y=0;
 	made_time_=10;
+	size_.x=sizex;
+	size_.y=sizey;
+	right=r;
 }
-void AObject::init(){ 
-	file_name="–‚—2.png";
-	size_.x=32;
-	size_.y=32;
-	right=false;
-}
+
 
 
 void AObject::Move(){
@@ -27,7 +28,11 @@ void AObject::Move(){
 	pos_.y+=speed_.y;
 }
 void AObject::Draw(int offset){
-	DrawGraph( (int)pos_.x-offset , (int)pos_.y , graphic_handle ,TRUE ) ;
+	if(speed_.x>0) right=true;
+	else if(speed_.x<0) right=false; 
+
+	if(right) DrawGraph( (int)pos_.x-offset , (int)pos_.y , graphic_handle ,TRUE ) ;
+	else DrawTurnGraph( (int)pos_.x-offset , (int)pos_.y , graphic_handle ,TRUE ) ;
 	/*
 	 int Color = GetColor( 255 , 255 , 255 ) ;
     DrawFormatString( 0, 0, Color, "•Ï”  %d ‚Å‚·\n", graphic_handle ) ;

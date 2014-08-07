@@ -1,19 +1,14 @@
 # include "Player.h"
 #include "PlayerController.h"
+#include "WalkStraight.h"
 
-Player::Player(double x,double y):Character(x,y){
+Player::Player(double x,double y):Character(x,y,"画像/魔女2.png",32,32,true){
 	score_=0;
 	life_=1;
 	controller_=new PlayerController(this);
+	//controller_=new WalkStraight(this);
 	
 }
 void Player::addScore(int point){
 	score_+=point;
-}
-//オーバーライド
-void Player::init(){
-	file_name="魔女2.png";
-	size_.x=32;
-	size_.y=32;
-	right=false;
 }

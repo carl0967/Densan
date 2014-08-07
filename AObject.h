@@ -1,6 +1,7 @@
 #pragma once
 
 #include "DxLib.h"
+#include "LoadGraphic.h"
 
 
 /*
@@ -17,7 +18,9 @@ typedef struct{
 
 class AObject{
 public:
-	AObject(double ax,double ay);
+	//コンストラクタ
+	//x座標、ｙ座標、ファイル名（画像/画像ファイル名,オブジェクトの幅,オブジェクトの高さ,向き（右向きならtrue）
+	AObject(double ax,double ay,char* fname,int size_x,int size_y,bool right);
 	void Move();                  //自身のスピード分移動する
 	void Draw(int offset);   //offsetを使って自身の描画位置を算出して描画する
 	virtual void Think()=0;  //自身のスピードを操作して行動を決める
@@ -40,7 +43,7 @@ public:
 protected:
 
 	int made_time_;   //生成された時間（Fieldからみた）
-	static int graphic_handle;  //どのメモリに画像が読み込まれているか
+	int graphic_handle;  //どのメモリに画像が読み込まれているか
 	TwoDimension pos_; //x,y座標
 	TwoDimension speed_; //x,y軸のスピード
 	TwoDimension size_; //オブジェクトのｘ方向の幅と、y方向の高さ
@@ -48,11 +51,9 @@ protected:
 	bool right; //向きを表す。右向きならtrue。左向きならfalse
 	bool aerial; //空中にいるならtrue。地面に接しているならfalse
 	char* file_name; //画像ファイル名
+private:
+	static LoadGraphic loadg;
 
-	 //ファイル名、サイズ、rightを初期化するメソッド。
-	//下位クラスではこれをオーバーライドすればいいかと思い作成してみた。
-	//コンストラクタで呼ばれる
-	void init(); 
 
 
 };

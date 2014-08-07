@@ -2,7 +2,7 @@
 #include "CharacterController.h"
 
 
-Character::Character(double x,double y):AObject(x,y){
+Character::Character(double x,double y,char* f_name,int sizex,int sizey,bool r):AObject(x,y,f_name,sizex,sizey,r){
 	hp_=10;
 	status_=0;
 
@@ -17,11 +17,11 @@ void Character::Walk(bool right){
 	else speed_.x=-1;
 }
 void Character::Run(bool right){
-	if(right) speed_.x=5;
-	else speed_.x=-5;
+	if(right) speed_.x=2.5;
+	else speed_.x=-2.5;
 }
 void Character::Jump(){
-	speed_.y=-10;
+	speed_.y=-5;
 	aerial=true;
 }
 void Character::Think(){
