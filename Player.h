@@ -16,6 +16,9 @@ public:
 	//ゲッター
 	int score() {return score_;}  
 	int life(){return life_;}
+
+	//オーバーライド
+	void Jump();
 private:
 	int life_;  //プレイヤーの残機
 	int score_; //得点

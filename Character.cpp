@@ -27,11 +27,8 @@ void Character::Jump(){
 void Character::Think(){
 	controller_->Think();
 }
-/*
-void Character::Set_Speed(double speed_x,double speed_y){
-	speed_.x=speed_x;
-	speed_.y=speed_y;
-}*/
+
+
 
 void Character::NoMove(){
 	speed_.x=0;

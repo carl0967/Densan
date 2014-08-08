@@ -11,12 +11,14 @@ class CharacterController;
 class Character: public AObject{
 public:
 	Character(double x,double y,char* f_name,int size_x,int size_y,bool right); //コンストラクタ
-	void Jump();   //ジャンプする
-	void Walk(bool right); //right=true　なら右に、falseなら左に移動する
-	void Run(bool right); //Walkより速く移動する
-	void NoMove(); //とまる
 
-	//void Set_Speed(double speed_x,double speed_y); //speedのセッター
+	//下位クラスで挙動を変えたい場合は、これらをオーバーライドする
+	virtual void Jump();   //ジャンプする
+	virtual void Walk(bool right); //right=true　なら右に、falseなら左に移動する
+	virtual void Run(bool right); //Walkより速く移動する
+
+	void NoMove(); //とまる（左右の移動を０にする）
+
 	void DoAttack(); //攻撃をする。未実装
 	void Damaged(int damage);  //ダメージを受けるときに呼ばれる。HPが０になるとaliveがfalseに
 	void Think(); //次にどのような行動をするかを決める。CharacterControllerに委譲。
