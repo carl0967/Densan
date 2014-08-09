@@ -38,7 +38,6 @@ private:
 	void CheckOutOfArea();               //画面外にオブジェクトがあれば削除 
 	void AddObject(AObject *object_num); //引数のオブジェクトを生成
 	int count(){return count_;}          //countのゲッター
-	void Scroll();                   //offsetを計算
 	int PixelToTiles(double pixels);     //ピクセル単位をタイル単位に変換
 	int TilesToPixels(int tiles);        //タイル単位をピクセル単位に変換
 	bool JudgeCircle(int x1, int y1, int r1, int x2, int y2, int r2); //円同士のの当たり判定

@@ -18,9 +18,14 @@ bool Field::MainLoop(){
 	DeleteObjects();
 	DrawObjects();
 
+	return true;
 }
 
 void Field::Scroll(){
+	int width = 480;  //‰æ–Ê‚Ì‰¡•
+	offset_ = width/2-(int)objects_.at(0)->pos().x;
+	offset_ = min(offset_,0);
+	offset_ = max(offset_,width-100);
 }
 
 //Š®¬
@@ -150,13 +155,6 @@ void Field::AddObject(AObject *object_num){
 	start = test.begin()+2;
 	test.erase(start);
 	*/
-}
-
-void Field::CalcOffset(){
-	int width = 480;  //‰æ–Ê‚Ì‰¡•
-	offset_ = width/2-(int)objects_.at(0)->pos().x;
-	offset_ = min(offset_,0);
-	offset_ = max(offset_,width-100);
 }
 
 int pixelsToTiles(double pixels){
