@@ -5,6 +5,7 @@
 #include "Map.h"
 #include"AObject.h"
 #include "Character.h"
+#include "Player.h"
 #include <math.h>
 #include <vector>
 using namespace std;
@@ -13,16 +14,17 @@ class Field
 {
 //フィールド
 private:
-	Map map_;                    //マップ
+	Map* map_;                    //マップ
 	int count_;                  //時間計測用
-	vector<AObject*> objects_;    //全てのオブジェクト管理用
-	vector<Character*> charas_;
+	vector<AObject*> objects_;   //全てのオブジェクト管理用
+	vector<Character*> charas_;  
 	double gravity_;             //重力の値
 	int offset_;                  //オフセット
 	
-//メソッド
+
 public:
-	Field(Map map);   //コンストラクタ
+	Field(); //仮コンストラクタ
+	Field(Map* map);   //コンストラクタ
 	bool MainLoop();  //メインループ
 	
 
@@ -41,7 +43,7 @@ private:
 	int PixelToTiles(double pixels);     //ピクセル単位をタイル単位に変換
 	int TilesToPixels(int tiles);        //タイル単位をピクセル単位に変換
 	bool JudgeCircle(int x1, int y1, int r1, int x2, int y2, int r2); //円同士のの当たり判定
-	
+	int GetMapData(double x, double y); //描画エリア内の座標を引数にとって、そこのマップデータを返す	
 };
 #endif
 

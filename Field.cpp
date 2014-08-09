@@ -1,23 +1,33 @@
-
 #include "Field.h"
+#include "DxLib.h"
 
 
-Field::Field(Map map){
+Field::Field(Map* map){
 	map_ = map;
 	gravity_ = 1;
+	vector<AObject*>::iterator start = objects_.begin();
+	//プレイヤー生成
+	Player*  p = new Player(50,50);
+	//Player* pp = &p;
+	objects_.insert(start, p);
+	//テスト用に敵生成
 }
+
 //メインループ
 bool Field::MainLoop(){
-	FallObjects();
+	//FallObjects();
+	
 	MoveObjects();
 	ThinkObjects();
 	Scroll();
-	CheckOutOfArea();
+	
+	//CheckOutOfArea();
 	TouchPlayer2Objects();
-	TouchObjects2Wall();
+	//TouchObjects2Wall();
 	DeleteObjects();
 	DrawObjects();
-
+	
+	
 	return true;
 }
 
@@ -49,8 +59,9 @@ void Field::DrawObjects(){
 
 //完成
 void Field::ThinkObjects(){
-	for(int i=0; i<objects_.size(); i++)
-		objects_.at(i)->Think();
+	for(int i=0; i<objects_.size(); i++){
+		objects_.at(0)->Think();
+	}
 }
 
 //未完成（当たり判定は円で行う,キャラの大きさは32で統一して行っている）
@@ -104,7 +115,7 @@ void Field::TouchObjects2Wall(){
 			//衝突しているか調べる
 			for(int x = fromTileX; x<= toTileX; x++){
 				for(int y = fromTileY; y <= toTileY; y++){
-					if(map_.GetMapData(x,y) == 1){
+					if(map_->GetMapData(x,y) == 1){
 						if(k==0){  //x方向であたっていた場合
 							objects_.at(i)->TouchedBlockX(TilesToPixels(x));	
 						} 
@@ -149,23 +160,23 @@ void Field::CheckOutOfArea(){
 
 //未完成(マップからの情報)
 void Field::AddObject(AObject *object_num){
-	/*
-	objects_.push_back(object_num);
-	vector<int>::iterator start;
-	start = test.begin()+2;
-	test.erase(start);
-	*/
+	/*for(int i=0; i<map_->map_width; i++){
+		for(int k=0; k<map_->map_height; k++){
+				Player p(PixelToTiles(i), PixelToTiles(k));
+				objects_.insert(p);
+		}
+	}*/
 }
 
-int pixelsToTiles(double pixels){
+int Field::PixelToTiles(double pixels){
 	return floor(pixels/32);
 }
 
-int tilesToPixels(int tiles){
+int Field::TilesToPixels(int tiles){
 	return tiles*32;
 }
 
-bool JudgeCircle(int x1, int y1, int r1, int x2, int y2, int r2){
+bool Field::JudgeCircle(int x1, int y1, int r1, int x2, int y2, int r2){
 		int x = (x1-x2)*(x1-x2);
 		int y = (y1-y2)*(y1-y2);
 		int l = x+y;
@@ -173,6 +184,10 @@ bool JudgeCircle(int x1, int y1, int r1, int x2, int y2, int r2){
 		if(l<r)
 			return true;
 		return false;
+}
+
+int Field::GetMapData(double x, double y){
+	return map_->GetMapData(x,y);
 }
 
 

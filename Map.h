@@ -20,6 +20,8 @@ public:
 	int map_width() {return map_width_;}
 	int map_height() {return map_height_;}
 
+	Map();
+
 	Map(int cell_width,int cell_hegiht,int** map_datas);		// コンストラクタ
 	int GetMapData(double x,double y);	// 描画領域のx,y座標を引数にとって、
 										// マップデータの配列の該当する場所に何があるかを返す
