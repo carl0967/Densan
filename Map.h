@@ -4,6 +4,8 @@ class Map{
 private:
 	int cell_width;		// マップの1セルの幅
 	int cell_hegiht;	// マップの1セルの高さ
+	int map_width;		// マップの全体の幅
+	int map_hegiht;		// マップの全体の高さ
 	int** map_datas;	// マップチップデータ
 	int offset;			// 表示画面領域が全体マップから見てどこかをあらわすための変数
 						// セル単位ではなくピクセル単位(右に30スクロールするなら、offset=30に
@@ -14,4 +16,6 @@ public:
 										// マップデータの配列の該当する場所に何があるかを返す
 	void Scroll(int);	// offsetを動かす
 	~Map();				// デストラクタ
+
+	void SetMapHeightAndWidth(int height,int width);		// マップ全体の高さと幅を設定する
 };
