@@ -8,5 +8,5 @@
 
 class Kame:public Enemy{
 public:
-	Kame(double x,double y);
+	Kame(double x,double y,Field* field);
 };

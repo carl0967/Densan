@@ -1,7 +1,7 @@
 #include "PlayerController.h"
 #include "Player.h"
 
-PlayerController::PlayerController(Character* character) :CharacterController(character){
+PlayerController::PlayerController(Character* character,Field* field) :CharacterController(character,field){
 }
 //ƒL[“ü—Í‚É‚æ‚Á‚ÄˆÚ“®‚³‚¹‚é
 void PlayerController::Think(){

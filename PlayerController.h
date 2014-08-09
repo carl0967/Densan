@@ -9,6 +9,6 @@ Player用のコントローラ
 class PlayerController :public CharacterController{
 public:
 	PlayerController(); //こっちは使わない
-	PlayerController(Character* character); //コンストラクタ
+	PlayerController(Character* character,Field* field); //コンストラクタ
 	void Think(); //抽象クラスのThink関数をオーバーライド
 };

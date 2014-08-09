@@ -10,7 +10,7 @@
 
 class Player: public Character{
 public:
-	Player(double x,double y);//コンストラクタ
+	Player(double x,double y,Field* field);//コンストラクタ
 	void addScore(int point); //得点加算
 
 	//ゲッター

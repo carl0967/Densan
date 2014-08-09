@@ -2,11 +2,11 @@
 #include "PlayerController.h"
 #include "WalkStraight.h"
 
-Player::Player(double x,double y):Character(x,y,"‰æ‘œ/–‚—2.png",32,32,true){
+Player::Player(double x,double y,Field* field):Character(x,y,"‰æ‘œ/–‚—2.png",32,32,true){
 	//‰Šú‰»
 	score_=0;
 	life_=1;
-	controller_=new PlayerController(this);
+	controller_=new PlayerController(this,field);
 	//controller_=new WalkStraight(this);
 	move_ghandle_=loadg.Load("‰æ‘œ/–‚—3.png");
 	
