@@ -11,11 +11,11 @@ bool Field::MainLoop(){
 	FallObjects();
 	MoveObjects();
 	ThinkObjects();
+	Scroll();
 	CheckOutOfArea();
 	TouchPlayer2Objects();
 	TouchObjects2Wall();
 	DeleteObjects();
-	CalcOffset();
 	DrawObjects();
 
 }
@@ -39,7 +39,7 @@ void Field::MoveObjects(){
 void Field::DrawObjects(){
 	//描画
 	for(int i=0; i<objects_.size(); i++)
-		objects_.at(i)->Draw(offset);
+		objects_.at(i)->Draw(offset_);
 }
 
 //完成
@@ -91,10 +91,10 @@ void Field::TouchObjects2Wall(){
 			double toX = max(objectX,newX);
 			double toY = max(objectY,newY);
 
-			int fromTileX = pixelsToTiles(fromX);
-			int fromTileY = pixelsToTiles(fromY);
-			int toTileX = pixelsToTiles(toX+31);
-			int toTileY = pixelsToTiles(toY+31);
+			int fromTileX = PixelToTiles(fromX);
+			int fromTileY = PixelToTiles(fromY);
+			int toTileX = PixelToTiles(toX+31);
+			int toTileY = PixelToTiles(toY+31);
 
 			//衝突しているか調べる
 			for(int x = fromTileX; x<= toTileX; x++){
@@ -116,13 +116,13 @@ void Field::TouchObjects2Wall(){
 //完成（仮）
 void Field::DeleteObjects(){
 	for(int i=0; i<objects_.size(); i++){
-		if(!objects_.at(i)->alive()){
+		if(!objects_.at(i)->isAlive()){
 			//オブジェクト削除
 			delete objects_.at(i);
 			//オブジェクトの参照削除
-			vector<Chara*>::iterator start;
-			start = v.begin()+i;
-			v.erase(start);
+			vector<AObject*>::iterator start;
+			start = objects_.begin()+i;
+			objects_.erase(start);
 		}
 	}
 }
@@ -130,31 +130,33 @@ void Field::DeleteObjects(){
 //完成（仮）
 void Field::CheckOutOfArea(){
 	for(int i=0; i<objects_.size(); i++){
-		if(objects_.at(i)->pos().x < -offset || 
-			objects_.at(i)->pos().x > -offset+480 ){
+		if(objects_.at(i)->pos().x < -offset_ || 
+			objects_.at(i)->pos().x > -offset_+480 ){
 			//オブジェクト削除
 			delete objects_.at(i);
 			//オブジェクトの参照削除
-			vector<Chara*>::iterator start;
-			start = v.begin()+i;
-			v.erase(start);
+			vector<AObject*>::iterator start;
+			start = objects_.begin()+i;
+			objects_.erase(start);
 		}
 	}
 }
 
 //未完成(マップからの情報)
 void Field::AddObject(AObject *object_num){
+	/*
 	objects_.push_back(object_num);
 	vector<int>::iterator start;
 	start = test.begin()+2;
 	test.erase(start);
+	*/
 }
 
 void Field::CalcOffset(){
 	int width = 480;  //画面の横幅
-	offset = width/2-(int)objects_.at(0)->pos().x;
-	offset = min(offsetX,0);
-	offset = max(offsetX,width-100);
+	offset_ = width/2-(int)objects_.at(0)->pos().x;
+	offset_ = min(offset_,0);
+	offset_ = max(offset_,width-100);
 }
 
 int pixelsToTiles(double pixels){
