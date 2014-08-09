@@ -5,8 +5,8 @@
 
 using namespace std;
 
-#define CELL_WIDTH	50		// セルの幅
-#define CELL_HEIGHT 50		// セルの高さ
+#define CELL_WIDTH	32		// セルの幅
+#define CELL_HEIGHT 32		// セルの高さ
 
 
 vector<string> split(const string &str, char delim){
@@ -72,7 +72,7 @@ Map* MapFactory::CreateMap(std::string fileName){
 #include <crtdbg.h>
 #define new new(_NORMAL_BLOCK, __FILE__, __LINE__)
 #endif
-
+/*
 int WINAPI WinMain(HINSTANCE hInstance,HINSTANCE prev,LPSTR cmd,int nShowCmd){
 	// メモリリーク確認用
 	::_CrtSetDbgFlag(_CRTDBG_LEAK_CHECK_DF | _CRTDBG_ALLOC_MEM_DF);	
@@ -110,4 +110,5 @@ int WINAPI WinMain(HINSTANCE hInstance,HINSTANCE prev,LPSTR cmd,int nShowCmd){
 	delete temp;
 	DxLib_End();
 }
+*/
 #endif

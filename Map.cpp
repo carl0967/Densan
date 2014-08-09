@@ -9,11 +9,14 @@ Map::Map(int cell_width,int cell_hegiht,int** map_datas){
 }
 
 int Map::GetMapData(double x, double y){
-	return map_datas[(int)(x+offset)/cell_hegiht][(int)(y+offset)/cell_width];
+	int index_x=(int)(x+offset)/cell_width;
+	int index_y=(int)(y)/cell_hegiht;
+
+	return map_datas[index_y][index_x];
 }
 
 Map::~Map(){
-	for (int i=0;i<map_hegiht-1;i++) {
+	for (int i=0;i<map_height_-1;i++) {
 		free(map_datas[i]);
 	}
 	free(map_datas);
@@ -23,6 +26,6 @@ void Map::Scroll(int move){
 }
 
 void Map::SetMapHeightAndWidth(int height, int width){
-	map_hegiht = height;
-	map_width = width;
+	map_height_ = height;
+	map_width_ = width;
 }
