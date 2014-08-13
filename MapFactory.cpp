@@ -27,9 +27,6 @@ Map* MapFactory::CreateMap(std::string fileName){
 	int charSize;			// 現在行のサイズ
 	int fileHandle = FileRead_open(fileC);
 	int x=0,y=0;
-
-	//FileRead_gets(source,120,fileHandle);
-	//y++;
 	while(true){
 		if(FileRead_gets(source,120,fileHandle)==-1)
 			break;
@@ -40,15 +37,14 @@ Map* MapFactory::CreateMap(std::string fileName){
 		for(int i=0;i<item.size();i++){
 			orignal.push_back(atoi(item[i].c_str()));
 		}
-		//if(source[source.size()-1] == '\0')
-			//break;
 	}
 	// 二次元配列生成
 	int **mapdata;
-	mapdata = (int**)malloc(sizeof(int*) * y);
-	for (int i=0;i<y;i++) {
-		mapdata[i] = (int*)malloc(sizeof(int) * x);
+	mapdata = new int*[y];
+	for(int i=0;i<y;i++){
+		mapdata[i] = new int[x];
 	}
+
 	// データ格納
 	for(int i=0;i<y;i++){
 		for(int j=0;j<x;j++){
@@ -72,7 +68,7 @@ Map* MapFactory::CreateMap(std::string fileName){
 #include <crtdbg.h>
 #define new new(_NORMAL_BLOCK, __FILE__, __LINE__)
 #endif
-/*
+
 int WINAPI WinMain(HINSTANCE hInstance,HINSTANCE prev,LPSTR cmd,int nShowCmd){
 	// メモリリーク確認用
 	::_CrtSetDbgFlag(_CRTDBG_LEAK_CHECK_DF | _CRTDBG_ALLOC_MEM_DF);	
@@ -105,10 +101,26 @@ int WINAPI WinMain(HINSTANCE hInstance,HINSTANCE prev,LPSTR cmd,int nShowCmd){
 	DrawFormatString(100,100,GetColor(255,255,255),"a:%d b:%d",a,b);
 	ScreenFlip();
 	WaitKey();
-	
+	int offset = 0;
+	while(ProcessMessage()==0 && !CheckHitKey(KEY_INPUT_ESCAPE)){
+
+		// Drawのテスト
+		ClearDrawScreen();
+		//temp->Draw();
+		temp->Draw(offset);
+		if(CheckHitKey(KEY_INPUT_RIGHT)){
+			offset++;
+			//temp->Scroll(1);
+		}
+		else if(CheckHitKey(KEY_INPUT_LEFT)){
+			offset--;
+			//temp->Scroll(-1);
+		}
+		ScreenFlip();
+	}
 	// デストラクタのテスト
 	delete temp;
 	DxLib_End();
 }
-*/
+
 #endif
