@@ -8,7 +8,7 @@ using namespace std;
 
 class GameMain{
 private:
-	Field field;//フィールド
+	Field* field;//フィールド
 	bool Update();
 	void Draw();
 	void Wait();
