@@ -36,12 +36,12 @@ void AObject::Draw(int offset){
 
 	//描画（アニメーション画像がある場合はアニメーション）
 	if(right){
-		if(speed_.x>0 && move_ghandle_!=0 &&live_count_%2==0)   DrawGraph( (int)pos_.x-offset , (int)pos_.y , move_ghandle_ ,TRUE );
-		else DrawGraph( (int)pos_.x-offset , (int)pos_.y , graphic_handle_ ,TRUE ) ;
+		if(speed_.x>0 && move_ghandle_!=0 &&live_count_%2==0)   DrawGraph( (int)pos_.x+offset , (int)pos_.y , move_ghandle_ ,TRUE );
+		else DrawGraph( (int)pos_.x+offset , (int)pos_.y , graphic_handle_ ,TRUE ) ;
 	}
 	else{
-		if(speed_.x<0 && move_ghandle_!=0  &&live_count_%2==0)   DrawTurnGraph( (int)pos_.x-offset , (int)pos_.y , move_ghandle_ ,TRUE );
-		else DrawTurnGraph( (int)pos_.x-offset , (int)pos_.y , graphic_handle_ ,TRUE ) ;
+		if(speed_.x<0 && move_ghandle_!=0  &&live_count_%2==0)   DrawTurnGraph( (int)pos_.x+offset , (int)pos_.y , move_ghandle_ ,TRUE );
+		else DrawTurnGraph( (int)pos_.x+offset , (int)pos_.y , graphic_handle_ ,TRUE ) ;
 	}
 
 }
@@ -64,7 +64,7 @@ void AObject::TouchedBlockY(double block_y){
 	//上で接触
 
 	if(speed_.y<0){
-		//pos_.y=block_y+32;
+		pos_.y=block_y+32;
 	}
 	//下で接触
 	else{
