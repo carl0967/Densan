@@ -4,10 +4,10 @@
 
 Field::Field(Map* map){
 	map_ = map;
-	gravity_ = 1;
+	gravity_ = 0.1;
 	vector<AObject*>::iterator start = objects_.begin();
 	//プレイヤー生成
-	Player*  p = new Player(50,50);
+	Player*  p = new Player(100,200,this);
 	//Player* pp = &p;
 	objects_.insert(start, p);
 	//テスト用に敵生成
@@ -15,15 +15,19 @@ Field::Field(Map* map){
 
 //メインループ
 bool Field::MainLoop(){
-	//FallObjects();
+	FallObjects();
 	
-	MoveObjects();
 	ThinkObjects();
 	Scroll();
 	
 	//CheckOutOfArea();
 	TouchPlayer2Objects();
-	//TouchObjects2Wall();
+	TouchObjects2Wall();
+
+	MoveObjects();
+
+
+
 	DeleteObjects();
 	DrawObjects();
 	
@@ -32,10 +36,10 @@ bool Field::MainLoop(){
 }
 
 void Field::Scroll(){
-	int width = 480;  //画面の横幅
+	int width = 640;  //画面の横幅
 	offset_ = width/2-(int)objects_.at(0)->pos().x;
 	offset_ = min(offset_,0);
-	offset_ = max(offset_,width-100);
+	offset_ = max(offset_,width-map_->map_width()*32);
 }
 
 //完成
@@ -55,6 +59,9 @@ void Field::DrawObjects(){
 	//描画
 	for(int i=0; i<objects_.size(); i++)
 		objects_.at(i)->Draw(offset_);
+	//テスト用マップ描画
+	map_->Draw(offset_);
+
 }
 
 //完成
@@ -83,11 +90,12 @@ void Field::TouchPlayer2Objects(){
 
 //完成（仮）
 void Field::TouchObjects2Wall(){
+	
 	for(int i=0; i<objects_.size(); i++){
 		double objectX = objects_.at(i)->pos().x;
 		double objectY = objects_.at(i)->pos().y;
-		double newX;
-		double newY;
+		double newX = 0;
+		double newY = 0;
 		//x方向とy方向に分けて判定を行うので
 		//k=0の時x方向,k=1の時y方向
 		for(int k=0; k<2; k++){
@@ -111,13 +119,14 @@ void Field::TouchObjects2Wall(){
 			int fromTileY = PixelToTiles(fromY);
 			int toTileX = PixelToTiles(toX+31);
 			int toTileY = PixelToTiles(toY+31);
-
+			
 			//衝突しているか調べる
 			for(int x = fromTileX; x<= toTileX; x++){
 				for(int y = fromTileY; y <= toTileY; y++){
-					if(map_->GetMapData(x,y) == 1){
+					if(map_->GetMapDataFromCell(x,y) == 1){
 						if(k==0){  //x方向であたっていた場合
 							objects_.at(i)->TouchedBlockX(TilesToPixels(x));	
+							DrawString(100,100,"あたっている",GetColor(255,255,255));
 						} 
 						if(k==1){ //y方向であたっていた場合
 							objects_.at(i)->TouchedBlockY(TilesToPixels(y));

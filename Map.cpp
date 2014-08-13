@@ -37,14 +37,10 @@ void Map::Scroll(int move){
 		offset_ += move;
 }
 
-void Map::Draw(){
-	Draw(this->offset_);
-}
-
 void Map::Draw(int offset){
-	if( offset<0)
+	if( offset>0)
 		offset=0; 
-	else if(offset+MAP_WIDTH>map_width_*cell_width)
+	if(offset+MAP_WIDTH>map_width_*cell_width)
 		offset=map_width_*cell_width - MAP_WIDTH;
 
 	DrawGraph(0,0,background_,FALSE);

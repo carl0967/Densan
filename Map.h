@@ -28,7 +28,7 @@ public:
 	int GetMapData(double x,double y);	// 描画領域のx,y座標を引数にとって、
 										// マップデータの配列の該当する場所に何があるかを返す
 	int GetMapDataFromCell(int x,int y); //セルの値からマップデータの配列の該当する場所に何があるかを返す。引数がおかしい場合は-1を返す
-	void Draw();				// 描画
+	//void Draw();
 	void Draw(int offset);		// 描画
 	void Scroll(int);	// offsetを動かす
 	~Map();				// デストラクタ
