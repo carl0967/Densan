@@ -19,6 +19,11 @@ int Map::GetMapData(double x, double y){
 
 	return map_datas[index_y][index_x];
 }
+int Map::GetMapDataFromCell(int x,int y){
+	if(x>=0 && x<map_width_ && y>=0 && y<map_height_) return map_datas[y][x];
+	else return -1;
+	
+}
 
 Map::~Map(){
 	for (int i=0;i<map_height_-1;i++) {
@@ -39,12 +44,12 @@ void Map::Draw(){
 void Map::Draw(int offset){
 	DrawGraph(0,0,background_,FALSE);
 	for(int i=0;i<map_height_;i++){
-		for(int j=0;j<MAP_WIDTH/cell_width+1;j++){
-			switch(GetMapData((j+(int)(offset/cell_width))*cell_width,i*cell_hegiht)){
+		for(int j=0;j<map_width_;j++){
+			switch(GetMapData(j*cell_width,i*cell_hegiht)){
 			case EMPTY:
 				break;
 			case WALL:
-					DrawGraph(j*cell_width-(offset%cell_width),i*cell_hegiht,wallGraph_,FALSE);
+					DrawGraph(j*cell_width+offset,i*cell_hegiht,wallGraph_,FALSE);
 				break;
 			}
 		}
