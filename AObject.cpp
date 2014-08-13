@@ -53,7 +53,7 @@ void AObject::TouchedBlockX(double block_x){
 			pos_.x=block_x-size_.x;
 		}
 		//¶‚Æ‚Ì“–‚½‚è”»’è
-		else{
+		else if(speed_.x<0){
 			pos_.x=block_x+32;
 		}
 		speed_.x=0;
