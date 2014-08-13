@@ -11,7 +11,7 @@ void GameMain::GameStart(){
 	int map_num = menu.Select();
 	switch(map_num){
 	case 0:
-		filename = "map.txt";
+		filename = "stage.txt";
 		break;
 	case 1:
 		filename = "stage.txt";
@@ -21,10 +21,10 @@ void GameMain::GameStart(){
 		break;
 	}
 	MapFactory mf;
-	Map* map=mf.CreateMap(filename);
+	mf.CreateMap(filename);
 
 	//Fieldクラスのインスタンスを生成
-	field=new Field(map);
+	Field field;
 }
 
 /*
@@ -36,7 +36,6 @@ void GameMain::MainLoop () {
 		Update();
 		Draw();//フレーム数を表示
 		//field.MainLoop();		
-		field->MainLoop();
 		Wait();//
 		ScreenFlip();	
 	}
@@ -76,7 +75,7 @@ void GameMain::Wait(){
 	}
 }
 
-/*
+
 int WINAPI WinMain(HINSTANCE,HINSTANCE,LPSTR,int){
 	ChangeWindowMode(TRUE),DxLib_Init(),SetDrawScreen( DX_SCREEN_BACK );
 
@@ -87,4 +86,4 @@ int WINAPI WinMain(HINSTANCE,HINSTANCE,LPSTR,int){
 	DxLib_End();
 	return 0;
 }
-*/
+
