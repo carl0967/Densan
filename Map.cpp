@@ -42,11 +42,6 @@ void Map::Draw(){
 }
 
 void Map::Draw(int offset){
-	if( offset<0)
-		offset=0; 
-	else if(offset+MAP_WIDTH>map_width_*cell_width)
-		offset=map_width_*cell_width - MAP_WIDTH;
-
 	DrawGraph(0,0,background_,FALSE);
 	for(int i=0;i<map_height_;i++){
 		for(int j=0;j<map_width_;j++){
