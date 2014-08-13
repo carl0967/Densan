@@ -35,6 +35,7 @@ public:
 	//ÉQÉbÉ^Å[
 	TwoDimension pos() {return pos_;}
 	TwoDimension speed() {return speed_; }
+	TwoDimension size() {return size_;}
 	bool isAerial() {return aerial;}
 	bool isRight() {return right;}
 	bool isAlive() {return alive;}
