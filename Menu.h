@@ -1,4 +1,4 @@
-#define MAX_SELECTION=1//選択肢の個数
+#define MAX_SELECTION 3//選択肢の個数
 #pragma once
 #include <dxlib.h>
 #include <string>
@@ -13,8 +13,9 @@ private:
         int x, y;       // 座標格納用変数
         char name[128]; // 項目名格納用変数
 	} MenuElement_t ;
-	int Key[256]; // キーが押されているフレーム数を格納する
+	int key[256]; // キーが押されているフレーム数を格納する
 
 public:
-	int select();//ユーザーの選択
+	int Select();//ユーザーの選択
+	int gpUpdateKey();//キーの入力情報
 };
