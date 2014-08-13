@@ -1,12 +1,10 @@
-#include "AObject.h"
+#include "Bullet.h"
 
-/*
-物体である「弾」を表す抽象クラス
-担当:中井
-*/
-/*
-更新:2014/07/21
-更新内容:未作成状態から形を与えただけ
-*/
-
+//コンストラクタ
+Bullet::Bullet(double ax,double ay,char* fname,int size_x,int size_y,bool right,int damageValue){
+	super(double ax,double ay,char* fname,int size_x,int size_y,bool right);
+	damage = damageValue;
+}
+//関数
+Bullet::Think();
 

@@ -1,40 +1,26 @@
 #pragma once
 
 #include "DxLib.h"
-
+#include "Player.h"
 /*
-アイテムである「コイン」を表す具象クラスのヘッダーファイル
-担当:中井
-*/
-/*
-更新:2014/07/07
-更新内容:未作成状態から形を与えただけ
+アイテムである「コイン」を表す具象クラス
+アイテムの実装例?
 */
 
 class Coin extends Item{
 public:
-	//フィールド
-
-	//ゲッター
-	
+	//コンストラクタ
+	//x座標、ｙ座標、ファイル名（画像/画像ファイル名,オブジェクトの幅,オブジェクトの高さ,向き（右向きならtrue）
+	Coin(double ax,double ay,char* fname,int size_x,int size_y,bool right);
 	//関数
 	/*
-	オーバーライドした関数
-	引数のcharacterのフィールド変数を変更して、アイテムの効果を与える関数
-	未設定
-	
+	引数のplayerのフィールド変数を変更して、アイテムの効果を与える関数
 	*/
-	public void Affect(Character character){
-
-	}
+	public void Affect(Player player);
 	/*
-	オーバーライドした関数
 	そのアイテムがどのような思考をするか（動き方とか）を決定する
-	未設定
 	*/
-	public void Think(){
-
-	}
+	public void Think();
 	
 protected:
 
