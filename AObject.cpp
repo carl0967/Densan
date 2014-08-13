@@ -61,18 +61,17 @@ void AObject::TouchedBlockX(double block_x){
 }
 void AObject::TouchedBlockY(double block_y){
 	//y²‚Æ‚Ì“–‚½‚è”»’è
-	//ã‚ÅÚG
 
+	//ã‚ÅÚG
 	if(speed_.y<0){
 		pos_.y=block_y+32;
 	}
 	//‰º‚ÅÚG
-	else{
+	else if(speed_.y>0){
 		pos_.y=block_y-size_.y;
 		aerial=false;
-		speed_.y=0;
 	}
-
+	speed_.y=0;
 }
 
 void AObject::Fall(double gravity){
