@@ -120,8 +120,8 @@ void Field::TouchObjects2Wall(){
 
 			int fromTileX = PixelToTiles(fromX);
 			int fromTileY = PixelToTiles(fromY);
-			int toTileX = PixelToTiles(toX+31);
-			int toTileY = PixelToTiles(toY+31);
+			int toTileX = PixelToTiles(toX+objects_.at(0)->size().x-1);
+			int toTileY = PixelToTiles(toY+objects_.at(0)->size().y-1);
 			
 			//衝突しているか調べる
 			for(int x = fromTileX; x<= toTileX; x++){
@@ -200,4 +200,8 @@ int Field::GetMapData(double x, double y){
 	return map_->GetMapData(x,y);
 }
 
+//プレイヤーの座標を返す関数
+TwoDimension Field::GetPlayerPos(){
+	return objects_.at(0)->pos();
+}
 
