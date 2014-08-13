@@ -1,16 +1,19 @@
 #include "Field.h"
 #include "DxLib.h"
+#include "Kame.h"
 
 
 Field::Field(Map* map){
 	map_ = map;
-	gravity_ = 0.1;
-	vector<AObject*>::iterator start = objects_.begin();
-	//プレイヤー生成
-	Player*  p = new Player(100,200,this);
-	//Player* pp = &p;
-	objects_.insert(start, p);
+	gravity_ = 1.1;
+			//プレイヤー生成
+	Player*  player = new Player(100,200,this);
+	AddObject(player);
+
 	//テスト用に敵生成
+	Kame* kame=new Kame(500,300,this);
+	AddObject(kame);
+
 }
 
 //メインループ
@@ -67,7 +70,7 @@ void Field::DrawObjects(){
 //完成
 void Field::ThinkObjects(){
 	for(int i=0; i<objects_.size(); i++){
-		objects_.at(0)->Think();
+		objects_.at(i)->Think();
 	}
 }
 
@@ -168,13 +171,11 @@ void Field::CheckOutOfArea(){
 }
 
 //未完成(マップからの情報)
-void Field::AddObject(AObject *object_num){
-	/*for(int i=0; i<map_->map_width; i++){
-		for(int k=0; k<map_->map_height; k++){
-				Player p(PixelToTiles(i), PixelToTiles(k));
-				objects_.insert(p);
-		}
-	}*/
+void Field::AddObject(AObject *object){
+
+	vector<AObject*>::iterator end = objects_.end();
+	objects_.insert(end,object);
+
 }
 
 int Field::PixelToTiles(double pixels){
