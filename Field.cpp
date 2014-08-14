@@ -126,7 +126,7 @@ void Field::TouchObjects2Wall(){
 			//Õ“Ë‚µ‚Ä‚¢‚é‚©’²‚×‚é
 			for(int x = fromTileX; x<= toTileX; x++){
 				for(int y = fromTileY; y <= toTileY; y++){
-					if(map_->GetMapDataFromCell(x,y) == 1){
+					if(map_->GetMapDataFromCell(x,y) == WALL){
 						if(k==0){  //x•ûŒü‚Å‚ ‚½‚Á‚Ä‚¢‚½ê‡
 							objects_.at(i)->TouchedBlockX(TilesToPixels(x));	
 							DrawString(100,100,"‚ ‚½‚Á‚Ä‚¢‚é",GetColor(255,255,255));

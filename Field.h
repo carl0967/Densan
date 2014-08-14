@@ -43,8 +43,9 @@ private:
 	int PixelToTiles(double pixels);     //ピクセル単位をタイル単位に変換
 	int TilesToPixels(int tiles);        //タイル単位をピクセル単位に変換
 	bool JudgeCircle(int x1, int y1, int r1, int x2, int y2, int r2); //円同士のの当たり判定
+//	bool JudgeHitObjects(AObject p, AObjects e); //四角同士の当たり判定
 	int GetMapData(double x, double y); //描画エリア内の座標を引数にとって、そこのマップデータを返す	
-	TwoDimension GetPlayerPos(){};//プレイヤーの座標を返す関数
+	TwoDimension GetPlayerPos();//プレイヤーの座標を返す関数
 };
 #endif
 
