@@ -1,0 +1,23 @@
+HPバー、接触判定、マップからの読み込み、プレイヤーが死んだ際の再出現を実装する際に追加した部分
+
+Field
+player_追加      プレイヤーオブジェクト
+Reset()追加      プレイヤーのHPが0になったときのための関数（全オブジェクトを初期化）
+Initialize()追加 初期化処理（マップからの読込み）
+enemys_追加      敵管理用vector
+AddEnemy()追加    enemys_に敵挿入
+
+AObject
+Initialize()追加 そのオブジェクトを初期化（プレイヤーが死んだ際に呼ばれる）
+first_pos_追加   そのオブジェクト初期値
+first_right追加 そのオブジェクトの初期の向いてる方向
+
+Character
+max_hp_とhp_,max_hp_のゲッターの追加 max_hp_はそのキャラの最大HP
+Resetをオーバーライド 
+
+Player
+super_とそのゲッターsuperの追加,またDamaged(damage: int)のオーバーライド  superは敵と接触した際の無敵時間判定用bool型、Damagedはsuperをtrueにするためオーバーライド
+super_count_とそのゲッターの追加 無敵時間カウント用
+superTime()の追加             無敵時間関数
+Resetをオーバーライド　　　　　　　　
