@@ -7,6 +7,7 @@
 #include "Character.h"
 #include "Enemy.h"
 #include "Player.h"
+#include "ObjectManager.h"
 #include <math.h>
 #include <vector>
 using namespace std;
@@ -16,6 +17,7 @@ class Field
 //フィールド
 private:
 	Map* map_;                    //マップ
+	ObjectManager* obj_manager_; 
 	int count_;                  //時間計測用
 	vector<AObject*> objects_;   //全てのオブジェクト管理用
 	Player* player_;              //プレイヤー管理用
@@ -28,7 +30,8 @@ public:
 	Field(); //仮コンストラクタ
 	Field(Map* map);   //コンストラクタ
 	bool MainLoop();  //メインループ
-	
+	int GetMapData(double x, double y); //描画エリア内の座標を引数にとって、そこのマップデータを返す	
+	TwoDimension GetPlayerPos();//プレイヤーの座標を返す関数
 
 private:
 	void Initialize();                   //初期化処理
@@ -49,8 +52,6 @@ private:
 	int TilesToPixels(int tiles);        //タイル単位をピクセル単位に変換
 	bool JudgeCircle(int x1, int y1, int r1, int x2, int y2, int r2); //円同士のの当たり判定
 	bool JudgeHitCharacters(AObject* p, AObject* e); //キャラクター同士の当たり判定
-	int GetMapData(double x, double y); //描画エリア内の座標を引数にとって、そこのマップデータを返す	
-	TwoDimension GetPlayerPos();//プレイヤーの座標を返す関数
 };
 #endif
 

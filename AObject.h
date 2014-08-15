@@ -27,6 +27,7 @@ public:
 	virtual void Think()=0;  //自身のスピードを操作して行動を決める
 	void Fall(double gravity);  // 引数の重力分落ちる
 	void Die(); //生存フラグをfalseにする
+	void Revival() {alive=true;} //生存フラグをtrueにする
 
 	void Set_Speed(double speed_x,double speed_y); //スピードを設定する
 

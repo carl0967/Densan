@@ -13,7 +13,8 @@ AObject::AObject(double x,double y,char* f_name,int sizex,int sizey,bool r){
 	first_pos_.x=pos_.x;
 	first_pos_.y=pos_.y;
 	aerial=false;
-	alive=true;
+	//alive=true;
+	alive=false;
 	speed_.x=0;
 	speed_.y=0;
 	made_time_=0; //ñ¢äÆê¨

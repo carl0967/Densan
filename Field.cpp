@@ -6,6 +6,7 @@
 
 Field::Field(Map* map){
 	map_ = map;
+	obj_manager_=new ObjectManager(map->map_width(),map->map_height());
 	gravity_ = 1.1;
 
 	/*
@@ -34,7 +35,8 @@ bool Field::MainLoop(){
 	TouchPlayer2Objects();
 	Reset();
 
-	DeleteObjects();
+	//最初生存フラグをfalseにするので、これがあると消えてしまう
+	//DeleteObjects();
 	DrawObjects();
 	
 	
@@ -43,9 +45,24 @@ bool Field::MainLoop(){
 
 void Field::Scroll(){
 	int width = 640;  //画面の横幅
+	int old_offset=offset_;
 	offset_ = width/2-(int)objects_.at(0)->pos().x;
 	offset_ = min(offset_,0);
 	offset_ = max(offset_,width-map_->map_width()*32);
+
+	//新しく現れたマップを読み込む
+	if(PixelToTiles(old_offset)!=PixelToTiles(offset_)){
+		//右端を読み込む場合
+		if(player_->isRight()){
+			for(int i=0;i<15;i++){
+			int x=PixelToTiles(-offset_+width); //offset+widthで読み込むx座標になる
+			int id=obj_manager_->GetId(x,i);
+			if(id!=-1){
+				if(objects_.at(id)->isAlive()==false) objects_.at(id)->Reset();
+			}
+			}
+		}
+	}
 }
 
 void Field::Initialize(){
@@ -55,15 +72,27 @@ void Field::Initialize(){
 			switch(map_->GetMapDataFromCell(i,k)){
 			case PLAYER:
 				player_  = new Player(i*32,k*32,this);
+				player_->Revival(); //Objectは最初は死んでるので起こす
 				AddObject(player_,true);
 				break;
 			case KAME:
 				AddEnemy(new Kame(i*32,k*32,this));
 				AddObject(enemys_.at(enemys_.size()-1),false);
+				obj_manager_->FindObject(i,k); //オブジェクトマネージャーに登録
 				break;
 			}
 		}
 	}
+	
+	//最初の描画領域の敵のみ動かす(Reset関数を呼び出して生存フラグをtrueにしてる)
+	for(int i=0;i<15;i++){
+		for(int j=0;j<20;j++){
+			int id=obj_manager_->GetId(j,i);
+			if(id!=-1) objects_.at(id)->Reset();
+		}
+	}
+	
+
 }
 
 //完成
