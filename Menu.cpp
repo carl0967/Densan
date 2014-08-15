@@ -1,25 +1,50 @@
 #include "Menu.h"
 #include <string>
 
+/*タイトル画面の表示を行う。Enterキーが入力されたら選択画面に移る。*/
+void Menu::Start(){
+	// while(裏画面を表画面に反映, メッセージ処理, 画面クリア, キー更新)
+	while( ScreenFlip()==0 && ProcessMessage()==0 && ClearDrawScreen()==0 && gpUpdateKey()==0 ){
+
+		//計算フェーズ
+
+		if( key[ KEY_INPUT_RETURN ] == 1){
+			break;
+		}
+
+		// 描画フェーズ
+
+		// メニュー項目を描画
+		LoadGraphScreen(0,20,"pic/title.png",TRUE);
+
+		DrawFormatString( 320, 300, GetColor(255,255,255), "Press the Enter Key!");
+
+	}
+}
+
 /*選択肢の文字列を画面に表示して、ユーザーの選択待ち(ここでループをまわす)。
 選択した場合はその選択肢の番号を返す。*/
- int Menu::Select(){
+
+int Menu::Select(){
 	// メニュー項目要素を作る
+
+	//画像を描画する
     MenuElement_t MenuElement[MAX_SELECTION]={
-            {  80,  100, "ステージ１" }, // タグの中身の順番で格納される。xに80が、yに100が、nameに"ゲームスタート"
-			{  100, 150, "ステージ２" },
-			{  100, 200, "ステージ３" }
+            {  80,100, "pic/stage1.png" }, // タグの中身の順番で格納される。xに80が、yに100が、nameに選択肢のファイル名
+			{  50,150, "pic/stage2.png" },
+			{  50,200, "pic/stage3.png" }
     };
+
     int SelectNum = 0; // 現在の選択番号
 
 	// while(裏画面を表画面に反映, メッセージ処理, 画面クリア, キー更新)
 	while( ScreenFlip()==0 && ProcessMessage()==0 && ClearDrawScreen()==0 && gpUpdateKey()==0 ){
 
-			// 計算フェーズ 
+		// 計算フェーズ 
 			
 		if( key[ KEY_INPUT_DOWN ] == 1 ){ // 下キーが押された瞬間だけ処理
 						
-				SelectNum = ( SelectNum + 1 ) % MAX_SELECTION; // 現在の選択項目を一つ下にずらす(ループする)
+			SelectNum = ( SelectNum + 1 ) % MAX_SELECTION; // 現在の選択項目を一つ下にずらす(ループする)
 		}
 
 		if(key[ KEY_INPUT_UP ] == 1 ){ // 上キーが押された瞬間だけ処理
@@ -32,7 +57,7 @@
 				if( i == SelectNum ){          // 今処理しているのが、選択番号と同じ要素なら
 					MenuElement[i].x = 80; // 座標を80にする
 				} else {                       // 今処理しているのが、選択番号以外なら
-					MenuElement[i].x = 100;// 座標を100にする
+					MenuElement[i].x = 50;// 座標を50にする
 				}
 			}
 		}
@@ -42,12 +67,16 @@
 		}
 
 		// 描画フェーズ
+		LoadGraphScreen(20,10,"pic/select_title.png",TRUE);
 
 		for( int i=0; i<MAX_SELECTION; i++ ){ // メニュー項目を描画
-			DrawFormatString( MenuElement[i].x, MenuElement[i].y, GetColor(255,255,255), MenuElement[i].name );
+			LoadGraphScreen(MenuElement[i].x,MenuElement[i].y,MenuElement[i].name,TRUE);
+			if(i==SelectNum){
+				LoadGraphScreen(MenuElement[i].x-30,MenuElement[i].y+10,"pic/selection_key.png",TRUE);
+			}
 		}
+
 	}
-	return -1;
 }
 
 // キーの入力状態を更新する
