@@ -10,6 +10,8 @@ AObject::AObject(double x,double y,char* f_name,int sizex,int sizey,bool r){
 	move_ghandle_=0;
 	pos_.x=x;
 	pos_.y=y;
+	first_pos_.x=pos_.x;
+	first_pos_.y=pos_.y;
 	aerial=false;
 	alive=true;
 	speed_.x=0;
@@ -19,9 +21,20 @@ AObject::AObject(double x,double y,char* f_name,int sizex,int sizey,bool r){
 	size_.x=sizex;
 	size_.y=sizey;
 	right=r;
+	first_right=right;
 }
 
 
+void AObject::Reset(){
+	pos_.x = first_pos_.x;
+	pos_.y = first_pos_.y;
+	alive = true;
+	aerial = false;
+	speed_.x=0;
+	speed_.y=0;
+	live_count_=0;
+	right = first_right;
+}
 
 void AObject::Move(){
 	pos_.x+=speed_.x;

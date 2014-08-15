@@ -6,6 +6,7 @@
 
 #include "DxLib.h"
 #include "AObject.h"
+class Field;
 class CharacterController;
 
 class Character: public AObject{
@@ -22,9 +23,15 @@ public:
 	void DoAttack(); //攻撃をする。未実装
 	void Damaged(int damage);  //ダメージを受けるときに呼ばれる。HPが０になるとaliveがfalseに
 	void Think(); //次にどのような行動をするかを決める。CharacterControllerに委譲。
+	int hp(){return hp_;} //hpのゲッター
+	int maxHp(){return max_hp_;}//maxHpのゲッター
+
+	//オーバーライド
+	void Reset();
 
 protected:
 	int hp_;  //体力
+	int max_hp_; //体力の最大値
 	int status_; //キャラクターの状態を表す
 	CharacterController *controller_; //キャラクターを動かすためのコントローラ
 

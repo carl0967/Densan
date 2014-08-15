@@ -5,6 +5,7 @@
 #include "Map.h"
 #include"AObject.h"
 #include "Character.h"
+#include "Enemy.h"
 #include "Player.h"
 #include <math.h>
 #include <vector>
@@ -17,7 +18,8 @@ private:
 	Map* map_;                    //マップ
 	int count_;                  //時間計測用
 	vector<AObject*> objects_;   //全てのオブジェクト管理用
-	vector<Character*> charas_;  
+	Player* player_;              //プレイヤー管理用
+	vector<Enemy*> enemys_;
 	double gravity_;             //重力の値
 	int offset_;                  //オフセット
 	
@@ -29,6 +31,7 @@ public:
 	
 
 private:
+	void Initialize();                   //初期化処理
 	void Scroll();                       //スクロール処理
 	void FallObjects();                  //各オブジェクトに対して、空中にいる場合Fallを呼び出す
 	void MoveObjects();                  //各オブジェクトに対してMoveを呼び出す
@@ -36,14 +39,16 @@ private:
 	void ThinkObjects();                 //各オブジェクトに対して
 	void TouchPlayer2Objects();          //プレイヤー、弾と敵、アイテムとの当たり判定
 	void TouchObjects2Wall();            //オブジェクトと壁の当たり判定
+	void Reset();                        //プレイヤー死亡時のリセット関数
 	void DeleteObjects();                //生存falgがfalseのオブジェクトを削除
 	void CheckOutOfArea();               //画面外にオブジェクトがあれば削除 
-	void AddObject(AObject *object_num); //引数のオブジェクトを生成
+	void AddObject(AObject *object_num, bool isBegin); //引数のオブジェクトを生成
+	void AddEnemy(Enemy* enemy_num);//引数の敵をenemysの格納
 	int count(){return count_;}          //countのゲッター
 	int PixelToTiles(double pixels);     //ピクセル単位をタイル単位に変換
 	int TilesToPixels(int tiles);        //タイル単位をピクセル単位に変換
 	bool JudgeCircle(int x1, int y1, int r1, int x2, int y2, int r2); //円同士のの当たり判定
-//	bool JudgeHitObjects(AObject p, AObjects e); //四角同士の当たり判定
+	bool JudgeHitCharacters(AObject* p, AObject* e); //キャラクター同士の当たり判定
 	int GetMapData(double x, double y); //描画エリア内の座標を引数にとって、そこのマップデータを返す	
 	TwoDimension GetPlayerPos();//プレイヤーの座標を返す関数
 };

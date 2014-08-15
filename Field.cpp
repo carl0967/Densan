@@ -1,19 +1,24 @@
 #include "Field.h"
 #include "DxLib.h"
 #include "Kame.h"
+#include "AObject.h"
 
 
 Field::Field(Map* map){
 	map_ = map;
 	gravity_ = 1.1;
-			//プレイヤー生成
+
+	/*
+	//プレイヤー生成
 	Player*  player = new Player(100,200,this);
-	AddObject(player);
+	AddObject(player,true);
+	player_ = player;
 
 	//テスト用に敵生成
 	Kame* kame=new Kame(500,300,this);
-	AddObject(kame);
-
+	AddObject(kame,false);
+	*/
+	Initialize();
 }
 
 //メインループ
@@ -24,12 +29,10 @@ bool Field::MainLoop(){
 	Scroll();
 	
 	//CheckOutOfArea();
-	TouchPlayer2Objects();
 	TouchObjects2Wall();
-
 	MoveObjects();
-
-
+	TouchPlayer2Objects();
+	Reset();
 
 	DeleteObjects();
 	DrawObjects();
@@ -45,6 +48,24 @@ void Field::Scroll(){
 	offset_ = max(offset_,width-map_->map_width()*32);
 }
 
+void Field::Initialize(){
+	//オブジェクト生成
+	for(int i=0; i<map_->map_width(); i++){
+		for(int k=0; k<map_->map_height(); k++){
+			switch(map_->GetMapDataFromCell(i,k)){
+			case PLAYER:
+				player_  = new Player(i*32,k*32,this);
+				AddObject(player_,true);
+				break;
+			case KAME:
+				AddEnemy(new Kame(i*32,k*32,this));
+				AddObject(enemys_.at(enemys_.size()-1),false);
+				break;
+			}
+		}
+	}
+}
+
 //完成
 void Field::FallObjects(){
 	for(int i=0; i<objects_.size(); i++)
@@ -57,13 +78,28 @@ void Field::MoveObjects(){
 		objects_.at(i)->Move();
 }
 
-//未完成(マップ全体の長さがわからない)
+//完成
 void Field::DrawObjects(){
-	//描画
-	for(int i=0; i<objects_.size(); i++)
-		objects_.at(i)->Draw(offset_);
+	//プレイヤー描画
+	if(player_->isAlive()){
+		if(player_->superCount()%2==0)
+			player_->Draw(offset_);
+	}
+	//敵描画
+	for(int i=1; i<objects_.size(); i++){
+		if(objects_.at(i)->isAlive())
+			objects_.at(i)->Draw(offset_);
+	}
 	//テスト用マップ描画
 	map_->Draw(offset_);
+	//HPバー描画
+	int percentHp = (player_->hp()*100)/player_->maxHp();
+	DrawString(30,10,"HP",GetColor(255,255,255),true);
+	DrawBox(20,30,120,50,GetColor(0,0,0),true);
+	DrawBox(20,30,20+percentHp,50,GetColor(255,0,0),true);
+	DrawBox(20,30,120,50,GetColor(255,255,255),false);
+	//残機描画
+	DrawFormatString(600,0,GetColor(255,255,255),"%s %d","X",player_->life());
 
 }
 
@@ -74,21 +110,24 @@ void Field::ThinkObjects(){
 	}
 }
 
-//未完成（当たり判定は円で行う,キャラの大きさは32で統一して行っている）
+//未完成(プレイヤーの無敵時間管理も行う)
 void Field::TouchPlayer2Objects(){
 		int px = (int)objects_.at(0)->pos().x;
 		int py = (int)objects_.at(0)->pos().y;
 	//objects_の要素０はプレイヤーなのでi=1からはじめる
 	for(int i=1; i<objects_.size(); i++){
 		//プレイヤーと敵との接触判定
-		if(JudgeCircle(px, py, 16, (int)objects_.at(i)->pos().x, (int)objects_.at(i)->pos().y, 16)){
-
+		if(objects_.at(i)->isAlive()){
+			if(JudgeHitCharacters(player_,objects_.at(i)) && !player_->super()){
+				player_->Damaged(1);
+			}
 		}
 		//プレイヤーの弾と敵とのあたり判定
 
 		//敵の弾とプレイヤーとのあたり判定
 
 	}
+	player_->superTime();
 }
 
 //完成（仮）
@@ -129,7 +168,6 @@ void Field::TouchObjects2Wall(){
 					if(map_->GetMapDataFromCell(x,y) == WALL){
 						if(k==0){  //x方向であたっていた場合
 							objects_.at(i)->TouchedBlockX(TilesToPixels(x));	
-							DrawString(100,100,"あたっている",GetColor(255,255,255));
 						} 
 						if(k==1){ //y方向であたっていた場合
 							objects_.at(i)->TouchedBlockY(TilesToPixels(y));
@@ -137,6 +175,15 @@ void Field::TouchObjects2Wall(){
 					}
 				}
 			}
+		}
+	}
+}
+
+void Field::Reset(){
+	if(!player_->isAlive()){
+		player_->Reset();
+		for(int i=0; i<enemys_.size(); i++){
+			enemys_.at(i)->Reset();
 		}
 	}
 }
@@ -171,11 +218,20 @@ void Field::CheckOutOfArea(){
 }
 
 //未完成(マップからの情報)
-void Field::AddObject(AObject *object){
+void Field::AddObject(AObject *object, bool isBegin){
+		vector<AObject*>::iterator place;
+	if(isBegin)
+		place= objects_.begin();
+	else
+		place = objects_.end();
+	objects_.insert(place,object);
 
-	vector<AObject*>::iterator end = objects_.end();
-	objects_.insert(end,object);
+}
 
+void Field::AddEnemy(Enemy* enemy){
+	vector<Enemy*>::iterator end;
+	end = enemys_.end();
+	enemys_.insert(end,enemy);
 }
 
 int Field::PixelToTiles(double pixels){
@@ -194,6 +250,20 @@ bool Field::JudgeCircle(int x1, int y1, int r1, int x2, int y2, int r2){
 		if(l<r)
 			return true;
 		return false;
+}
+
+//キャラクター同士の当たり判定
+bool Field::JudgeHitCharacters(AObject* p, AObject* e){
+	//x軸方向だけで接触しているか判定
+	if(p->pos().x+p->size().x >= e->pos().x && p->pos().x <= e->pos().x+e->size().x){
+		//y軸方向だけで接触しているか判定
+		if(p->pos().y+p->size().y >= e->pos().y && p->pos().y <= e->pos().y+e->size().y){
+			//両方が成り立つ時、接触しているのでtrueを返す
+			return true;
+		}
+	}
+	return false;
+
 }
 
 int Field::GetMapData(double x, double y){

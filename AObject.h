@@ -21,6 +21,7 @@ public:
 	//コンストラクタ
 	//x座標、ｙ座標、ファイル名（画像/画像ファイル名,オブジェクトの幅,オブジェクトの高さ,向き（右向きならtrue）
 	AObject(double ax,double ay,char* fname,int size_x,int size_y,bool right);
+	void Reset(); //リセット処理
 	void Move();                  //自身のスピード分移動する
 	void Draw(int offset);   //offsetを使って自身の描画位置を算出して描画する
 	virtual void Think()=0;  //自身のスピードを操作して行動を決める
@@ -51,10 +52,12 @@ protected:
 	int graphic_handle_;  //どのメモリに画像が読み込まれているかを表すハンドル
 	int move_ghandle_; //移動アニメーション用画像
 	TwoDimension pos_; //x,y座標
+	TwoDimension first_pos_; //初期のx,y座標
 	TwoDimension speed_; //x,y軸のスピード
 	TwoDimension size_; //オブジェクトのｘ方向の幅と、y方向の高さ
 	bool alive; //生存していればtrue
 	bool right; //向きを表す。右向きならtrue。左向きならfalse
+	bool first_right;//初期の向き
 	bool aerial; //空中にいるならtrue。地面に接しているならfalse
 
 	static LoadGraphic loadg;  //画像のメモリ管理をするためのクラス
