@@ -303,6 +303,12 @@ bool Field::JudgeHitCharacters(AObject* p, AObject* e){
 int Field::GetMapData(double x, double y){
 	return map_->GetMapData(x,y);
 }
+int Field::GetNextMapData(TwoDimension pos,TwoDimension speed,bool right){
+	if(right){
+		return map_->GetMapData(pos.x+speed.x+32,pos.y);
+	}
+	else return map_->GetMapData(pos.x+speed.x,pos.y);
+}
 
 //プレイヤーの座標を返す関数
 TwoDimension Field::GetPlayerPos(){

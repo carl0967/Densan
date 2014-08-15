@@ -31,6 +31,7 @@ public:
 	Field(Map* map);   //コンストラクタ
 	bool MainLoop();  //メインループ
 	int GetMapData(double x, double y); //描画エリア内の座標を引数にとって、そこのマップデータを返す	
+	int GetNextMapData(TwoDimension chara_pos,TwoDimension chara_speed,bool right); //キャラクターが次にいる場所のマップデータを返す
 	TwoDimension GetPlayerPos();//プレイヤーの座標を返す関数
 
 private:
