@@ -69,16 +69,21 @@ void Field::Initialize(){
 	//オブジェクト生成
 	for(int i=0; i<map_->map_width(); i++){
 		for(int k=0; k<map_->map_height(); k++){
-			switch(map_->GetMapDataFromCell(i,k)){
+			int map_chip=map_->GetMapDataFromCell(i,k);
+			switch(map_chip){
+			case EMPTY:
+				break;
+
 			case PLAYER:
 				player_  = new Player(i*32,k*32,this);
 				player_->Revival(); //Objectは最初は死んでるので起こす
 				AddObject(player_,true);
+				obj_manager_->FindObject(i,k,PLAYER); //オブジェクトマネージャーに登録
 				break;
 			case KAME:
 				AddEnemy(new Kame(i*32,k*32,this));
 				AddObject(enemys_.at(enemys_.size()-1),false);
-				obj_manager_->FindObject(i,k); //オブジェクトマネージャーに登録
+				obj_manager_->FindObject(i,k,KAME); //オブジェクトマネージャーに登録
 				break;
 			}
 		}
