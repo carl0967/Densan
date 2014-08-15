@@ -1,5 +1,6 @@
 ﻿#include "GameMain.h"
 
+
 /*ゲームを始める。
 Menuクラスでプレイヤーにステージ選択を行ってもらい、
 MapFactoryで選択したステージのマップを生成する。
@@ -7,7 +8,6 @@ MapFactoryで選択したステージのマップを生成する。
 void GameMain::GameStart(){
 	Menu menu;
 	string filename;
-	menu.Start();
 	int map_num = menu.Select();
 	switch(map_num){
 	case 0:
@@ -34,9 +34,10 @@ void GameMain::GameStart(){
 void GameMain::MainLoop () {
 	while( ProcessMessage()==0  && ClearDrawScreen()==0 && CheckHitKey(KEY_INPUT_ESCAPE)==0 ){
 		Update();
-		Draw();	
+		Draw();//フレーム数を表示
+		//field.MainLoop();		
 		field->MainLoop();
-		Wait();
+		Wait();//
 		ScreenFlip();	
 	}
 }

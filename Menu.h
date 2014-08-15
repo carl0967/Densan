@@ -16,7 +16,6 @@ private:
 	int key[256]; // キーが押されているフレーム数を格納する
 
 public:
-	void Start();//タイトル画面の表示
 	int Select();//ユーザーの選択
 	int gpUpdateKey();//キーの入力情報
 };

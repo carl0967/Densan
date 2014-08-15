@@ -9,9 +9,9 @@ using namespace std;
 class GameMain{
 private:
 	Field* field;//フィールド
-	bool Update();//フレームの更新
-	void Draw();//fpsの表示
-	void Wait();//待機時間
+	bool Update();
+	void Draw();
+	void Wait();
 public:
 	void GameStart();//ゲーム開始時
 	void MainLoop();//ループの処理
