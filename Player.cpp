@@ -2,7 +2,7 @@
 #include "PlayerController.h"
 #include "WalkStraight.h"
 
-Player::Player(double x,double y,Field* field):Character(x,y,"‰æ‘œ/–‚—2.png",32,32,true){
+Player::Player(double x,double y,Field* field):Character(x,y,"‰æ‘œ/–‚—2.png",1,1,true){
 	//‰Šú‰»
 	score_=0;
 	life_=1;

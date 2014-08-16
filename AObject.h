@@ -19,8 +19,8 @@ typedef struct{
 class AObject{
 public:
 	//コンストラクタ
-	//x座標、ｙ座標、ファイル名（画像/画像ファイル名,オブジェクトの幅,オブジェクトの高さ,向き（右向きならtrue）
-	AObject(double ax,double ay,char* fname,int size_x,int size_y,bool right);
+	//x座標、ｙ座標、ファイル名（画像/画像ファイル名,オブジェクトの当たり幅,オブジェクトの高さ,向き（右向きならtrue）
+	AObject(double ax,double ay,char* fname,int hit_size_x,int hit_size_y,bool right);
 	virtual void Reset(); //リセット処理
 	void Move();                  //自身のスピード分移動する
 	void Draw(int offset);   //offsetを使って自身の描画位置を算出して描画する
@@ -34,10 +34,13 @@ public:
 	void TouchedBlockX(double set_x); //x軸でブロックと接触した場合に呼び出す
 	void TouchedBlockY(double set_y); //y軸でブロックと接触した場合に呼び出す
 
+	void GetObjectSize();
+
 	//ゲッター
 	TwoDimension pos() {return pos_;}
 	TwoDimension speed() {return speed_; }
 	TwoDimension size() {return size_;}
+	TwoDimension hit_size() {return hit_size_;}
 	bool isAerial() {return aerial;}
 	bool isRight() {return right;}
 	bool isAlive() {return alive;}
@@ -52,6 +55,7 @@ protected:
 	TwoDimension first_pos_; //初期のx,y座標
 	TwoDimension speed_; //x,y軸のスピード
 	TwoDimension size_; //オブジェクトのｘ方向の幅と、y方向の高さ
+	TwoDimension hit_size_;//当たり判定の倍率サイズ
 	bool alive; //生存していればtrue
 	bool right; //向きを表す。右向きならtrue。左向きならfalse
 	bool first_right;//初期の向き

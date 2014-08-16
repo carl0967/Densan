@@ -4,9 +4,10 @@
 //int AObject::graphic_handle;
 LoadGraphic AObject::loadg=LoadGraphic();
 
-AObject::AObject(double x,double y,char* f_name,int sizex,int sizey,bool r){
+AObject::AObject(double x,double y,char* f_name,int hit_size_x,int hit_size_y,bool r){
 	//èâä˙âªèàóù
 	graphic_handle_=loadg.Load(f_name);
+	GetObjectSize();
 	move_ghandle_=0;
 	pos_.x=x;
 	pos_.y=y;
@@ -17,8 +18,8 @@ AObject::AObject(double x,double y,char* f_name,int sizex,int sizey,bool r){
 	speed_.x=0;
 	speed_.y=0;
 	live_count_=0;
-	size_.x=sizex;
-	size_.y=sizey;
+	hit_size_.x=hit_size_x;
+	hit_size_.y=hit_size_y;
 	right=r;
 	first_right=right;
 }
@@ -104,6 +105,14 @@ void AObject::Set_Speed(double speed_x,double speed_y){
 	speed_.y=speed_y;
 }
 
+void AObject::GetObjectSize(){
+	int sizeX=0,sizeY=0;
+	int* p_sizeX = &sizeX;
+	int* p_sizeY = &sizeY;
+	GetGraphSize(graphic_handle_,p_sizeX,p_sizeY);
+	size_.x = *p_sizeX;
+	size_.y = *p_sizeY;
+}
 
 
 

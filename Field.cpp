@@ -314,16 +314,29 @@ bool Field::JudgeCircle(int x1, int y1, int r1, int x2, int y2, int r2){
 
 //ƒLƒƒƒ‰ƒNƒ^[“¯Žm‚Ì“–‚½‚è”»’è
 bool Field::JudgeHitCharacters(AObject* p, AObject* e){
+	double pxSize = p->size().x*p->hit_size().x;
+	double pySize = p->size().y*p->hit_size().y;
+	double pxCenter = p->pos().x+p->size().x/2;
+	double pyCenter = p->pos().y+p->size().y/2;
+	double px = pxCenter-pxSize/2;
+	double py = pyCenter-pySize/2;
+	
+	double exSize = e->size().x*e->hit_size().x;
+	double eySize = e->size().y*e->hit_size().y;
+	double exCenter = e->pos().x+e->size().x/2;
+	double eyCenter = e->pos().y+e->size().y/2;
+	double ex = exCenter-exSize/2;
+	double ey = eyCenter-eySize/2;
+
 	//xŽ²•ûŒü‚¾‚¯‚ÅÚG‚µ‚Ä‚¢‚é‚©”»’è
-	if(p->pos().x+p->size().x >= e->pos().x && p->pos().x <= e->pos().x+e->size().x){
+	if(px+pxSize >= ex && px <= ex+exSize){
 		//yŽ²•ûŒü‚¾‚¯‚ÅÚG‚µ‚Ä‚¢‚é‚©”»’è
-		if(p->pos().y+p->size().y >= e->pos().y && p->pos().y <= e->pos().y+e->size().y){
+		if(py+pySize >= ey && py <= ey+eySize){
 			//—¼•û‚ª¬‚è—§‚ÂŽžAÚG‚µ‚Ä‚¢‚é‚Ì‚Åtrue‚ð•Ô‚·
 			return true;
 		}
 	}
 	return false;
-
 }
 
 int Field::GetMapData(double x, double y){
