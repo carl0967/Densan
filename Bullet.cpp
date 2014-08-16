@@ -5,5 +5,5 @@ Bullet::Bullet(double ax,double ay,char* fname,int size_x,int size_y,bool right,
 	damage = damageValue;
 }
 //ä÷êî
-Bullet::Think();
+void Bullet::Think();
 

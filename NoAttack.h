@@ -7,7 +7,7 @@
 Attackの実装例
 */
 
-class NoAttack extends Attack{
+class NoAttack : public Attack{
 public:
 	//コンストラクタ
 	NoAttack();

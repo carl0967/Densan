@@ -7,7 +7,7 @@
 Attackの実装例
 */
 
-class FireBallAttack extends Attack{
+class FireBallAttack : public Attack{
 public:
 	//コンストラクタ
 	FireBallAttack();

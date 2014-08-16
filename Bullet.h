@@ -11,7 +11,7 @@
 コンストラクタの引数にてダメージ設定を行うようにしています
 */
 
-abstract class Bullet extends AObject{
+abstract class Bullet :public AObject{
 public:
 	//コンストラクタ
 	//x座標、ｙ座標、ファイル名（画像/画像ファイル名,オブジェクトの幅,オブジェクトの高さ,向き（右向きならtrue）,ダメージ量

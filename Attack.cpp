@@ -11,14 +11,14 @@ Attack::DoAttack(){
 	DrawBullets();
 	MoveBullets();
 }
-Attack::DrawBullets(int offset){
+void Attack::DrawBullets(int offset){
 	for(Bullet allBullets : bullets){
 		allBullets.Draw(offset);
 	}
 }
-Attack::MoveBullets(){
+void Attack::MoveBullets(){
 	for(Bullet allBullets : bullets){
 		allBullets.Move();
 	}
 }
-Attack::CreateBullet();
+void Attack::CreateBullet();

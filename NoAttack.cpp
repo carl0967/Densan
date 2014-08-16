@@ -6,7 +6,7 @@ NoAttack::NoAttack():Attack(){
 	
 }
 //ä÷êî
-NoAttack::CreateBullet(){
+void NoAttack::CreateBullet(){
 	Bullet bullet = new EmptyBullet(ax,ay,fname,size_x,size_y,right,damageValue);
 	bullets.add(bullet);
 }

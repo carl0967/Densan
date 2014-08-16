@@ -7,7 +7,7 @@
 Bulletの実装例
 */
 
-abstract class EmptyBullet extends Bullet{
+class EmptyBullet : public Bullet{
 public:
 	//コンストラクタ
 	EmptyBullet(double ax,double ay,char* fname,int size_x,int size_y,bool right,int damageValue);

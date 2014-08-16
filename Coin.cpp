@@ -5,10 +5,10 @@ Coin::Coin(double ax,double ay,char* fname,int size_x,int size_y,bool right):Ite
 	move_ghandle_=loadg.Load("‰æ‘œ/ƒRƒCƒ“2.png");
 }
 //ŠÖ”
-Coin::Affect(Player player){
+void Coin::Affect(Player player){
 	player.AddScore(1);
 }
-Coin::Think(){
+void Coin::Think(){
 	speed_.x = 0;
 	speed_.y = 0;
 }

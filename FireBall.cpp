@@ -5,7 +5,7 @@ FireBall::FireBall(double ax,double ay,char* fname,int size_x,int size_y,bool ri
 	move_ghandle_=loadg.Load("‰æ‘œ/‰Î‰Š‘å–C2(’e‰E•ûŒü).png");
 }
 //ŠÖ”
-FireBall::Think(){
+void FireBall::Think(){
 	speed_.x=3;
 }
 

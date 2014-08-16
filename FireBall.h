@@ -7,7 +7,7 @@
 Bulletの実装例
 */
 
-abstract class FireBall extends Bullet{
+class FireBall : public Bullet{
 public:
 	//コンストラクタ
 	//x座標、ｙ座標、ファイル名（画像/画像ファイル名,オブジェクトの幅,オブジェクトの高さ,向き（右向きならtrue）,ダメージ量

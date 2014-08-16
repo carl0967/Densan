@@ -6,7 +6,7 @@ EmptyBullet::EmptyBullet(double ax,double ay,char* fname,int size_x,int size_y,b
 	move_ghandle_=loadg.Load("‰æ‘œ/‹ó–C.png");
 }
 //ŠÖ”
-EmptyBullet::Think(){
+void EmptyBullet::Think(){
 	Die();
 }
 
