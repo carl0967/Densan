@@ -24,6 +24,8 @@ private:
 	bool end_flag;                //ゲームオーバー画面用フラッグ
 	int end_count;                //ゲームオーバー画面用カウンター
 	bool menu_flag;                //メニュー画面に戻るかどうか判定用
+	int end_graphic_handle;        //ゲームオーバー画像
+	int clear_graphic_handle;      //ゲームクリア画像
 	
 
 public:

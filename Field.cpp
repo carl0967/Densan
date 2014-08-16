@@ -11,6 +11,8 @@ Field::Field(Map* map){
 	end_flag = false;
 	end_count = 0;
 	menu_flag = false;
+	end_graphic_handle = LoadGraph("‰æ‘œ/game_over.png");
+	clear_graphic_handle = LoadGraph("‰æ‘œ/game_clear");
 
 	/*
 	//ƒvƒŒƒCƒ„[¶¬
@@ -52,7 +54,7 @@ int Field::MainLoop(){
 void Field::GameOver(){
 	if(end_flag){
 		end_count++;
-		DrawString(100,100,"GAME OVAER",GetColor(255,0,0),true);
+		DrawGraph(100,100,end_graphic_handle,true);
 		if(end_count >= 100){
 			menu_flag=true;
 		}
