@@ -2,6 +2,7 @@
 #include "DxLib.h"
 #include "Kame.h"
 #include "AObject.h"
+#include "Coin.h"
 
 
 Field::Field(Map* map){
@@ -14,7 +15,7 @@ Field::Field(Map* map){
 	clear_count = 0;
 	end_count = 0;
 	end_graphic_handle = LoadGraph("画像/game_over.png");
-	clear_graphic_handle = LoadGraph("画像/game_clear.png");
+	//clear_graphic_handle = LoadGraph("画像/game_clear.png");
 
 	Initialize();
 }
@@ -106,6 +107,11 @@ void Field::Initialize(){
 				AddObject(new Kame(i*32,k*32,this),false);
 				obj_manager_->FindObject(i,k,KAME); //オブジェクトマネージャーに登録
 				break;
+			case COIN:
+				Coin* coin=new Coin(i*32,k*32);
+				coin->Revival();
+				AddObject(coin,false);
+				obj_manager_->FindObject(i,k,COIN);
 			}
 		}
 	}
@@ -159,7 +165,7 @@ void Field::DrawObjects(){
 	}
 }
 
-//完成
+////完成
 void Field::ThinkObjects(){
 	for(int i=0; i<objects_.size(); i++){
 		objects_.at(i)->Think();

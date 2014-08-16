@@ -2,12 +2,13 @@
 
 //#include "DxLib.h"
 #include "AObject.h"
+#include "Character.h"
 
 /*
 物体である「アイテム」を表す抽象クラス
 */
 
-abstract class Item : public AObject{
+class Item :public  AObject{
 public:
 	//コンストラクタ
 	//x座標、ｙ座標、ファイル名（画像/画像ファイル名,オブジェクトの幅,オブジェクトの高さ,向き（右向きならtrue）
@@ -18,14 +19,14 @@ public:
 	引数のcharacterのフィールド変数を変更して、アイテムの効果を与える関数
 	サブクラスにて実装すること
 	*/
-	abstract void Affect(Character character);
+	 void Affect(Character* character);
 	/*
 	オーバーライドした関数
 	そのアイテムがどのような動きをするかを決定する
 	基本的には自身のスピードを変更する
 	サブクラスにて実装すること
 	*/
-	abstract void Think();
+	 //void Think();
 	
 protected:
 
