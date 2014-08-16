@@ -9,20 +9,8 @@ void GameMain::GameStart(){
 	Menu menu;
 	string filename;
 	menu.Start();
-	int map_num = menu.Select();
-	switch(map_num){
-	case 0:
-		filename = "map.txt";
-		break;
-	case 1:
-		filename = "stage.txt";
-		break;
-	case 2:
-		filename = "stage.txt";
-		break;
-	}
 	MapFactory mf;
-	Map* map=mf.CreateMap(filename);
+	Map* map=mf.CreateMap(menu.Select());
 
 	//Fieldクラスのインスタンスを生成
 	field=new Field(map);
@@ -32,9 +20,10 @@ void GameMain::GameStart(){
 }
 
 /*
-▪ ループの処理はここでする。FPSは60になるように調整。
-▪ ループ内でFieldのMainLoop()を呼び出して、ゲームのメインループにす
-る。*/
+ループの処理はここでする。FPSは60になるように調整。
+ループ内でFieldのMainLoop()を呼び出して、ゲームのメインループにする。
+Wait()はfpsの計測なので、完成時にはコメントアウトで
+*/
 void GameMain::MainLoop () {
 	while( ProcessMessage()==0  && ClearDrawScreen()==0 && CheckHitKey(KEY_INPUT_ESCAPE)==0 ){
 		Update();

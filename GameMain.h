@@ -1,9 +1,9 @@
 #pragma once
-#include "Field.h"
-#include "Menu.h"
-#include <math.h>
 #include "DxLib.h"
+#include "Menu.h"
 #include "MapFactory.h"
+#include "Field.h"
+#include <math.h>
 using namespace std;
 
 class GameMain{
