@@ -9,6 +9,7 @@ void GameMain::GameStart(){
 	Menu menu;
 	string filename;
 	menu.Start();
+
 	MapFactory mf;
 	Map* map=mf.CreateMap(menu.Select());
 
@@ -20,10 +21,9 @@ void GameMain::GameStart(){
 }
 
 /*
-ループの処理はここでする。FPSは60になるように調整。
-ループ内でFieldのMainLoop()を呼び出して、ゲームのメインループにする。
-Wait()はfpsの計測なので、完成時にはコメントアウトで
-*/
+▪ ループの処理はここでする。FPSは60になるように調整。
+▪ ループ内でFieldのMainLoop()を呼び出して、ゲームのメインループにす
+る。*/
 void GameMain::MainLoop () {
 	while( ProcessMessage()==0  && ClearDrawScreen()==0 && CheckHitKey(KEY_INPUT_ESCAPE)==0 ){
 		Update();
