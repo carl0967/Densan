@@ -31,7 +31,7 @@ int ObjectManager::FindObject(int cell_x,int cell_y,MapChip map_chip){
 }
 
 int ObjectManager::GetId(int cell_x,int cell_y){
-	if(cell_x <0 || cell_y<0 )return -1;
+	if(cell_x <0||cell_x>=width ||cell_y>=height|| cell_y<0 )return -1;
 	else return ids[cell_y][cell_x];
 }
 
