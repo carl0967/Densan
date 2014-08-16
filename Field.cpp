@@ -8,22 +8,14 @@ Field::Field(Map* map){
 	map_ = map;
 	obj_manager_=new ObjectManager(map->map_width(),map->map_height());
 	gravity_ = 1.1;
+	clear_flag = false;
 	end_flag = false;
-	end_count = 0;
 	menu_flag = false;
+	clear_count = 0;
+	end_count = 0;
 	end_graphic_handle = LoadGraph("画像/game_over.png");
-	clear_graphic_handle = LoadGraph("画像/game_clear");
+	clear_graphic_handle = LoadGraph("画像/game_clear.png");
 
-	/*
-	//プレイヤー生成
-	Player*  player = new Player(100,200,this);
-	AddObject(player,true);
-	player_ = player;
-
-	//テスト用に敵生成
-	Kame* kame=new Kame(500,300,this);
-	AddObject(kame,false);
-	*/
 	Initialize();
 }
 
@@ -34,9 +26,10 @@ int Field::MainLoop(){
 	ThinkObjects();
 	Scroll();
 	
-	//CheckOutOfArea();
 	TouchObjects2Wall();
 	MoveObjects();
+	CheckOutOfArea();
+	DownObjectsDie();
 	TouchPlayer2Objects();
 	Reset();
 	GameOver();
@@ -44,10 +37,21 @@ int Field::MainLoop(){
 	//最初生存フラグをfalseにするので、これがあると消えてしまう
 	//DeleteObjects();
 	DrawObjects();
-	
+
 	if(menu_flag)
 		return -1;
 	return 0;
+}
+
+//ゲームクリア処理
+void Field::GameClear(){
+	if(clear_flag){
+		clear_flag++;
+		DrawGraph(100,100,clear_graphic_handle,true);
+		if(clear_count >= 100){
+			menu_flag=true;
+		}
+	}
 }
 
 //ゲームオーバー処理
@@ -186,7 +190,6 @@ void Field::TouchPlayer2Objects(){
 
 //完成（仮）
 void Field::TouchObjects2Wall(){
-	
 	for(int i=0; i<objects_.size(); i++){
 		double objectX = objects_.at(i)->pos().x;
 		double objectY = objects_.at(i)->pos().y;
@@ -257,16 +260,20 @@ void Field::DeleteObjects(){
 
 //完成（仮）
 void Field::CheckOutOfArea(){
-	for(int i=0; i<objects_.size(); i++){
-		if(objects_.at(i)->pos().x < -offset_ || 
-			objects_.at(i)->pos().x > -offset_+480 ){
-			//オブジェクト削除
-			delete objects_.at(i);
-			//オブジェクトの参照削除
-			vector<AObject*>::iterator start;
-			start = objects_.begin()+i;
-			objects_.erase(start);
+	for(int i=1; i<objects_.size(); i++){
+		if(objects_.at(i)->isAlive()){
+			if(objects_.at(i)->pos().x < -offset_-320 || 
+			objects_.at(i)->pos().x > -offset_+640+320 ){
+				objects_.at(i)->Die();
+			}
 		}
+	}
+}
+
+void Field::DownObjectsDie(){
+	for(int i=0; i<objects_.size(); i++){
+		if(objects_.at(i)->pos().y>=480)
+			objects_.at(i)->Die();
 	}
 }
 
@@ -327,4 +334,3 @@ int Field::GetNextMapData(TwoDimension pos,TwoDimension speed,bool right){
 TwoDimension Field::GetPlayerPos(){
 	return objects_.at(0)->pos();
 }
-
