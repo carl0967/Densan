@@ -17,7 +17,6 @@ AObject::AObject(double x,double y,char* f_name,int sizex,int sizey,bool r){
 	alive=false;
 	speed_.x=0;
 	speed_.y=0;
-	made_time_=0; //ñ¢äÆê¨
 	live_count_=0;
 	size_.x=sizex;
 	size_.y=sizey;
