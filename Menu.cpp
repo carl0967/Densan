@@ -45,11 +45,13 @@ int Menu::Select(){
 		if( key[ KEY_INPUT_DOWN ] == 1 ){ // 下キーが押された瞬間だけ処理
 						
 			SelectNum = ( SelectNum + 1 ) % MAX_SELECTION; // 現在の選択項目を一つ下にずらす(ループする)
+			PlaySoundFile( "音源/select_sound.wav" , DX_PLAYTYPE_NORMAL ) ;//選択肢がすれたら、選択音を再生
 		}
 
 		if(key[ KEY_INPUT_UP ] == 1 ){ // 上キーが押された瞬間だけ処理
 
 			SelectNum = ( SelectNum + (MAX_SELECTION - 1) ) % MAX_SELECTION; // 現在の選択項目を一つ上にずらす(逆ループする)
+			PlaySoundFile( "音源/select_sound.wav" , DX_PLAYTYPE_NORMAL ) ;//選択肢がすれたら、選択音を再生
 		}
 
 		if( key[ KEY_INPUT_DOWN ] == 1 || key[ KEY_INPUT_UP ] == 1 ){ // 下キーか、上キーが押された瞬間
@@ -63,6 +65,7 @@ int Menu::Select(){
 		}
 
 		if( key[ KEY_INPUT_RETURN ] == 1){
+			PlaySoundFile( "音源/decision_sound.wav" , DX_PLAYTYPE_NORMAL ) ;//決定音を再生
 			return SelectNum;
 		}
 
@@ -71,12 +74,13 @@ int Menu::Select(){
 
 		for( int i=0; i<MAX_SELECTION; i++ ){ // メニュー項目を描画
 			LoadGraphScreen(MenuElement[i].x,MenuElement[i].y,MenuElement[i].name,TRUE);
-			if(i==SelectNum){
+			if(i==SelectNum){//選択中の選択項目なら
 				LoadGraphScreen(MenuElement[i].x-30,MenuElement[i].y+10,"画像/selection_key.png",TRUE);
+				//選択肢の画像を表示
 			}
 		}
-
 	}
+	return -1;
 }
 
 // キーの入力状態を更新する
