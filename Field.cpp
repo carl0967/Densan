@@ -8,6 +8,9 @@ Field::Field(Map* map){
 	map_ = map;
 	obj_manager_=new ObjectManager(map->map_width(),map->map_height());
 	gravity_ = 1.1;
+	end_flag = false;
+	end_count = 0;
+	menu_flag = false;
 
 	/*
 	//プレイヤー生成
@@ -23,7 +26,7 @@ Field::Field(Map* map){
 }
 
 //メインループ
-bool Field::MainLoop(){
+int Field::MainLoop(){
 	FallObjects();
 	
 	ThinkObjects();
@@ -34,13 +37,26 @@ bool Field::MainLoop(){
 	MoveObjects();
 	TouchPlayer2Objects();
 	Reset();
+	GameOver();
 
 	//最初生存フラグをfalseにするので、これがあると消えてしまう
 	//DeleteObjects();
 	DrawObjects();
 	
-	
-	return true;
+	if(menu_flag)
+		return -1;
+	return 0;
+}
+
+//ゲームオーバー処理
+void Field::GameOver(){
+	if(end_flag){
+		end_count++;
+		DrawString(100,100,"GAME OVAER",GetColor(255,0,0),true);
+		if(end_count >= 100){
+			menu_flag=true;
+		}
+	}
 }
 
 void Field::Scroll(){
@@ -113,27 +129,28 @@ void Field::MoveObjects(){
 
 //完成
 void Field::DrawObjects(){
-	//プレイヤー描画
-	if(player_->isAlive()){
-		if(player_->superCount()%2==0)
-			player_->Draw(offset_);
+	if(!end_flag){
+		//プレイヤー描画
+		if(player_->isAlive()){
+			if(player_->superCount()%2==0)
+				player_->Draw(offset_);
+		}
+		//敵描画
+		for(int i=1; i<objects_.size(); i++){
+			if(objects_.at(i)->isAlive())
+				objects_.at(i)->Draw(offset_);
+		}
+		//テスト用マップ描画
+		map_->Draw(offset_);
+		//HPバー描画
+		int percentHp = (player_->hp()*100)/player_->maxHp();
+		DrawString(30,10,"HP",GetColor(255,255,255),true);
+		DrawBox(20,30,120,50,GetColor(0,0,0),true);
+		DrawBox(20,30,20+percentHp,50,GetColor(255,0,0),true);
+		DrawBox(20,30,120,50,GetColor(255,255,255),false);
+		//残機描画
+		DrawFormatString(600,0,GetColor(255,255,255),"%s %d","X",player_->life());
 	}
-	//敵描画
-	for(int i=1; i<objects_.size(); i++){
-		if(objects_.at(i)->isAlive())
-			objects_.at(i)->Draw(offset_);
-	}
-	//テスト用マップ描画
-	map_->Draw(offset_);
-	//HPバー描画
-	int percentHp = (player_->hp()*100)/player_->maxHp();
-	DrawString(30,10,"HP",GetColor(255,255,255),true);
-	DrawBox(20,30,120,50,GetColor(0,0,0),true);
-	DrawBox(20,30,20+percentHp,50,GetColor(255,0,0),true);
-	DrawBox(20,30,120,50,GetColor(255,255,255),false);
-	//残機描画
-	DrawFormatString(600,0,GetColor(255,255,255),"%s %d","X",player_->life());
-
 }
 
 //完成
@@ -161,6 +178,8 @@ void Field::TouchPlayer2Objects(){
 
 	}
 	player_->superTime();
+	if(player_->life()<0)
+		end_flag = true;
 }
 
 //完成（仮）

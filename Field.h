@@ -1,6 +1,4 @@
 
-# ifndef FIELD_H
-# define FIELD_H
 #pragma once
 #include "Map.h"
 #include"AObject.h"
@@ -23,12 +21,15 @@ private:
 	Player* player_;              //プレイヤー管理用
 	double gravity_;             //重力の値
 	int offset_;                  //オフセット
+	bool end_flag;                //ゲームオーバー画面用フラッグ
+	int end_count;                //ゲームオーバー画面用カウンター
+	bool menu_flag;                //メニュー画面に戻るかどうか判定用
 	
 
 public:
 	Field(); //仮コンストラクタ
 	Field(Map* map);   //コンストラクタ
-	bool MainLoop();  //メインループ
+	int MainLoop();  //メインループ
 	int GetMapData(double x, double y); //描画エリア内の座標を引数にとって、そこのマップデータを返す	
 	int GetNextMapData(TwoDimension chara_pos,TwoDimension chara_speed,bool right); //キャラクターが次にいる場所のマップデータを返す
 	TwoDimension GetPlayerPos();//プレイヤーの座標を返す関数
@@ -44,6 +45,7 @@ private:
 	void TouchObjects2Wall();            //オブジェクトと壁の当たり判定
 	void Reset();                        //プレイヤー死亡時のリセット関数
 	void DeleteObjects();                //生存falgがfalseのオブジェクトを削除
+	void GameOver(); //ゲームオーバー処理、ゲームオーバーになった場合trueを返す
 	void CheckOutOfArea();               //画面外にオブジェクトがあれば削除 
 	void AddObject(AObject *object_num, bool isBegin); //引数のオブジェクトを生成
 	int count(){return count_;}          //countのゲッター
@@ -52,5 +54,4 @@ private:
 	bool JudgeCircle(int x1, int y1, int r1, int x2, int y2, int r2); //円同士のの当たり判定
 	bool JudgeHitCharacters(AObject* p, AObject* e); //キャラクター同士の当たり判定
 };
-#endif
 
