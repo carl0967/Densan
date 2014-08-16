@@ -2,7 +2,7 @@
 #include "EmptyBullet.h"
 
 //コンストラクタ
-NoAttack::NoAttack(){
+NoAttack::NoAttack():Attack(){
 	
 }
 //関数

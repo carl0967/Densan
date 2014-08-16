@@ -1,8 +1,8 @@
 #include"Coin.h"
 
 //コンストラクタ
-Coin::Coin(double ax,double ay,char* fname,int size_x,int size_y,bool right){
-	super(double ax,double ay,char* fname,int size_x,int size_y,bool right);
+Coin::Coin(double ax,double ay,char* fname,int size_x,int size_y,bool right):Item(ax,ay,"画像/コイン1.png",size_x,size_y,right){
+	move_ghandle_=loadg.Load("画像/コイン2.png");
 }
 //関数
 Coin::Affect(Player player){

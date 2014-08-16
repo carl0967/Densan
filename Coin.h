@@ -1,6 +1,6 @@
 #pragma once
 
-#include "DxLib.h"
+#include "AObject.h"
 #include "Player.h"
 /*
 アイテムである「コイン」を表す具象クラス

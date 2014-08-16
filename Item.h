@@ -1,7 +1,7 @@
 #pragma once
 
-#include "DxLib.h"
-#include "Character.h"
+//#include "DxLib.h"
+#include "AObject.h"
 
 /*
 物体である「アイテム」を表す抽象クラス

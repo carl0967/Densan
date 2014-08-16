@@ -1,6 +1,6 @@
 #pragma once
 
-#include "DxLib.h"
+#include "Bullet.h"
 
 /*
 攻撃に使用する「弾がない」ことを表す具象クラス

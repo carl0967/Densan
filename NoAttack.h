@@ -1,6 +1,6 @@
 #pragma once
 
-#include "DxLib.h"
+#include "Attack.h"
 
 /*
 「攻撃しない」ことを表す具象クラス

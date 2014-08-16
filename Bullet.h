@@ -1,6 +1,7 @@
 #pragma once
 
-#include "DxLib.h"
+//#include "DxLib.h"
+#include "AObject.h"
 
 /*
 攻撃するための「弾」を表す抽象クラス

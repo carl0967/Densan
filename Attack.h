@@ -1,6 +1,6 @@
 #pragma once
 
-#include "DxLib.h"
+#include "AObject.h"
 #include "Bullet.h"
 
 /*

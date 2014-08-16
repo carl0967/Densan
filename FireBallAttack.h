@@ -1,6 +1,6 @@
 #pragma once
 
-#include "DxLib.h"
+#include "Attack.h"
 
 /*
 「火炎弾で攻撃する」ことを表す具象クラス
