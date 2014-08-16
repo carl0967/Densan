@@ -16,8 +16,8 @@ Map::Map(int cell_width,int cell_hegiht,int** map_datas){
 int Map::GetMapData(double x, double y){
 	int index_x=(int)(x)/cell_width;
 	int index_y=(int)(y)/cell_hegiht;
-
-	return map_datas[index_y][index_x];
+	if(index_x>=0 && index_x<map_width_ &&index_y>=0 && index_y<map_height_) return map_datas[index_y][index_x];
+	return -1;
 }
 int Map::GetMapDataFromCell(int x,int y){
 	if(x>=0 && x<map_width_ && y>=0 && y<map_height_) return map_datas[y][x];

@@ -2,7 +2,7 @@
 
 //マップチップのデータが何を表すか列挙
 //EMPTY=0 WALL=1 ...
-enum MapChip{EMPTY,WALL,PLAYER,KAME };
+enum MapChip{EMPTY,WALL,PLAYER,KAME,COIN };
 
 class Map{
 public:
@@ -16,7 +16,7 @@ private:
 	int** map_datas;	// マップチップデータ
 	int offset_;			// 表示画面領域が全体マップから見てどこかをあらわすための変数
 						// セル単位ではなくピクセル単位(右に30スクロールするなら、offset=30に
-						// して、描画するとき(x-ofset,y)が描画場所になる
+						// して、描画するとき(x+ofset,y)が描画場所になる
 	int wallGraph_;		// 壁の画像
 public:
 	int map_width() {return map_width_;}
