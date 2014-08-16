@@ -4,6 +4,7 @@
 #include <math.h>
 #include "DxLib.h"
 #include "MapFactory.h"
+#include <string>
 using namespace std;
 
 class GameMain{

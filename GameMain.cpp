@@ -7,16 +7,19 @@ MapFactoryで選択したステージのマップを生成する。
 void GameMain::GameStart(){
 	while( ProcessMessage()==0){
 	Menu menu;
-	string filename;
 	menu.Start();
 
 	MapFactory mf;
-	Map* map=mf.CreateMap(menu.Select());
+	string str=menu.Select(); //選択中にウインドウが閉じられたら ""　が返ってくる
+	if(str!=""){
+		Map* map=mf.CreateMap(str);
+		//Fieldクラスのインスタンスを生成
+		field=new Field(map);
 
-	//Fieldクラスのインスタンスを生成
-	field=new Field(map);
-
-	MainLoop();
+		MainLoop();
+		delete field;
+		delete map;
+		}
 	}
 }
 
@@ -57,7 +60,7 @@ bool GameMain::Update(){
 
 //フレームの表示
 void GameMain::Draw(){
-	DrawFormatString(0, 0, GetColor(255,255,255), "%.1f", mFps);
+	//DrawFormatString(0, 0, GetColor(255,255,255), "%.1f", mFps);
 }
 
 //
@@ -68,16 +71,3 @@ void GameMain::Wait(){
 		Sleep(waitTime);	//待機
 	}
 }
-
-/*
-int WINAPI WinMain(HINSTANCE,HINSTANCE,LPSTR,int){
-	ChangeWindowMode(TRUE),DxLib_Init(),SetDrawScreen( DX_SCREEN_BACK );
-
-	GameMain fps;
-	fps.GameStart();
-	fps.MainLoop();
-
-	DxLib_End();
-	return 0;
-}
-*/

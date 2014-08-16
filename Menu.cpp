@@ -83,7 +83,7 @@ string Menu::Select(){
 			}
 		}
 	}
-	return NULL;
+	return "";
 }
 
 // キーの入力状態を更新する
