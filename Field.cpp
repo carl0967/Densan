@@ -222,8 +222,8 @@ void Field::TouchObjects2Wall(){
 
 			int fromTileX = PixelToTiles(fromX);
 			int fromTileY = PixelToTiles(fromY);
-			int toTileX = PixelToTiles(toX+objects_.at(0)->size().x-1);
-			int toTileY = PixelToTiles(toY+objects_.at(0)->size().y-1);
+			int toTileX = PixelToTiles(toX+objects_.at(i)->size().x-1);
+			int toTileY = PixelToTiles(toY+objects_.at(i)->size().y-1);
 			
 			//Õ“Ë‚µ‚Ä‚¢‚é‚©’²‚×‚é
 			for(int x = fromTileX; x<= toTileX; x++){

@@ -13,7 +13,6 @@ AObject::AObject(double x,double y,char* f_name,int sizex,int sizey,bool r){
 	first_pos_.x=pos_.x;
 	first_pos_.y=pos_.y;
 	aerial=false;
-	//alive=true;
 	alive=false;
 	speed_.x=0;
 	speed_.y=0;
@@ -46,6 +45,7 @@ void AObject::Draw(int offset){
 	//右向き左向き変更処理
 	if(speed_.x>0) right=true;
 	else if(speed_.x<0) right=false; 
+	if(speed_.y<0) aerial=true;
 
 	//描画（アニメーション画像がある場合はアニメーション）
 	if(right){
