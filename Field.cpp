@@ -81,8 +81,7 @@ void Field::Initialize(){
 				obj_manager_->FindObject(i,k,PLAYER); //オブジェクトマネージャーに登録
 				break;
 			case KAME:
-				AddEnemy(new Kame(i*32,k*32,this));
-				AddObject(enemys_.at(enemys_.size()-1),false);
+				AddObject(new Kame(i*32,k*32,this),false);
 				obj_manager_->FindObject(i,k,KAME); //オブジェクトマネージャーに登録
 				break;
 			}
@@ -215,9 +214,8 @@ void Field::TouchObjects2Wall(){
 
 void Field::Reset(){
 	if(!player_->isAlive()){
-		player_->Reset();
-		for(int i=0; i<enemys_.size(); i++){
-			enemys_.at(i)->Reset();
+		for(int i=0; i<objects_.size(); i++){
+			objects_.at(i)->Reset();
 		}
 	}
 }
@@ -260,12 +258,6 @@ void Field::AddObject(AObject *object, bool isBegin){
 		place = objects_.end();
 	objects_.insert(place,object);
 
-}
-
-void Field::AddEnemy(Enemy* enemy){
-	vector<Enemy*>::iterator end;
-	end = enemys_.end();
-	enemys_.insert(end,enemy);
 }
 
 int Field::PixelToTiles(double pixels){

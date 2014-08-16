@@ -21,7 +21,6 @@ private:
 	int count_;                  //時間計測用
 	vector<AObject*> objects_;   //全てのオブジェクト管理用
 	Player* player_;              //プレイヤー管理用
-	vector<Enemy*> enemys_;
 	double gravity_;             //重力の値
 	int offset_;                  //オフセット
 	
@@ -47,7 +46,6 @@ private:
 	void DeleteObjects();                //生存falgがfalseのオブジェクトを削除
 	void CheckOutOfArea();               //画面外にオブジェクトがあれば削除 
 	void AddObject(AObject *object_num, bool isBegin); //引数のオブジェクトを生成
-	void AddEnemy(Enemy* enemy_num);//引数の敵をenemysの格納
 	int count(){return count_;}          //countのゲッター
 	int PixelToTiles(double pixels);     //ピクセル単位をタイル単位に変換
 	int TilesToPixels(int tiles);        //タイル単位をピクセル単位に変換
