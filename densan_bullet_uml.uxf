@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="11.3">
+  <zoom_level>10</zoom_level>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>840</x>
+      <y>160</y>
+      <w>510</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>Bullet
+--
+# damage_: int
+# speed_: int
+# derection_: int
+--
++ Bullet(x: double, y double, damage: int, speed: int, fname: char*, 
+             hit_size_x: int, hit_size_y: int, right: bool)
+/+ Think(): void/
++ DieBullet(): void
++ Initialize(): void
++ damage(): int
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>340</x>
+      <y>110</y>
+      <w>360</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>Atack
+--
+# bullets_: vector&lt;Bullet*&gt;
+# chara_: Character*
+# damage_: int
+# speed_: int
+# interval_: int
+# interval_count_:int
+--
++ Atack(damage: int, speed: int, interval:int, 
+             chara: Character*)
+/+ Doatack(): void/
++ DoAtack(bullet:Bullet*):void
++ ThinkBullets():void
++ DrawBullets(offset: int):void
++ bullets():vector&lt;Bullet*&gt;
++GetBulletSize():int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>840</x>
+      <y>530</y>
+      <w>460</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>NormalBullet
+--
+--
++ NormalBullet(x: double, y:double, damage:int, speed:int,
+                       hit_size_x:double, hit_size_y:double, righr: bool)
++ Think(): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>0</x>
+      <y>540</y>
+      <w>400</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>NormalAtack
+--
+--
++ NormalAtack(damage: int, speed:int, interval:int, 
+                         chara:Character*)
++ DoAtack(): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>670</x>
+      <y>240</y>
+      <w>190</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>30;30;170;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>480</x>
+      <y>360</y>
+      <w>50</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>30;30;30;80</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>1050</x>
+      <y>330</y>
+      <w>50</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>30;30;30;200</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>1020</x>
+      <y>50</y>
+      <w>160</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>AObject</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>1060</x>
+      <y>50</y>
+      <w>50</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>30;30;30;110</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>520</x>
+      <y>540</y>
+      <w>210</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>NoAtack
+--
+--
++ NoAtack(chara:Character*)
++ DoAtack(): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>190</x>
+      <y>410</y>
+      <w>450</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>30;30;430;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>590</x>
+      <y>410</y>
+      <w>50</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>30;30;30;130</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>190</x>
+      <y>410</y>
+      <w>50</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>30;30;30;130</additional_attributes>
+  </element>
+</diagram>
