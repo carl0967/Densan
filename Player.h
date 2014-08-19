@@ -6,7 +6,7 @@
 
 #include "DxLib.h"
 #include "Character.h"
-#include "NormalAtack.h"
+#include "NormalAttack.h"
 
 
 class Player: public Character{

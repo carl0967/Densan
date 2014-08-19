@@ -6,14 +6,14 @@
 
 #include "DxLib.h"
 #include "AObject.h"
-#include "Atack.h"
+#include "Attack.h"
 class Field;
 class CharacterController;
-class Atack;
+class Attack;
 
 class Character: public AObject{
 public:
-	Character(double x,double y,int hp ,char* f_name,int size_x,int size_y,bool right,Atack* atack); //コンストラクタ
+	Character(double x,double y,int hp ,char* f_name,int size_x,int size_y,bool right,Attack* attack); //コンストラクタ
 
 	//下位クラスで挙動を変えたい場合は、これらをオーバーライドする
 	virtual void Jump();   //ジャンプする
@@ -30,7 +30,7 @@ public:
 	//ゲッター
 	int hp(){return hp_;} //hpのゲッター
 	int maxHp(){return max_hp_;}//maxHpのゲッター
-	int GetBulletsSize(){return atack_->GetBulletsSize();} //持っている弾の数を返す
+	int GetBulletsSize(){return attack_->GetBulletsSize();} //持っている弾の数を返す
 
 	//オーバーライド
 	void Reset();
@@ -41,7 +41,7 @@ protected:
 	int max_hp_; //体力の最大値
 	int status_; //キャラクターの状態を表す
 	CharacterController *controller_; //キャラクターを動かすためのコントローラ
-	Atack* atack_;
+	Attack* attack_;
 
 
 private:

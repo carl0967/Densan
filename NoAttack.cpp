@@ -1,12 +1,15 @@
 #include "NoAttack.h"
-#include "EmptyBullet.h"
 
-//コンストラクタ
-NoAttack::NoAttack():Attack(){
-	
+
+NoAttack::NoAttack(Character* chara):Attack(0,0,0,chara)
+{
 }
-//関数
-void NoAttack::CreateBullet(){
-	Bullet bullet = new EmptyBullet(ax,ay,fname,size_x,size_y,right,damageValue);
-	bullets.add(bullet);
+
+
+void NoAttack::DoAttack(){
+	//何もしない
+}
+
+NoAttack::~NoAttack(void)
+{
 }

@@ -2,15 +2,15 @@
 #include "CharacterController.h"
 
 
-Character::Character(double x,double y,int hp,char* f_name,int sizex,int sizey,bool r,Atack* atack):AObject(x,y,f_name,sizex,sizey,r){
+Character::Character(double x,double y,int hp,char* f_name,int sizex,int sizey,bool r,Attack* attack):AObject(x,y,f_name,sizex,sizey,r){
 	hp_=hp;
 	max_hp_=hp_;
 	status_=0;
-	atack_ = atack;
+	attack_ = attack;
 }
 
 void Character::DoAttack(){
-	atack_->DoAtack();
+	attack_->DoAttack();
 }
 
 void Character::Damaged(int damage){
@@ -31,7 +31,7 @@ void Character::Jump(){
 }
 void Character::Think(){
 	controller_->Think();
-	atack_->ThinkBullets();
+	attack_->ThinkBullets();
 }
 
 void Character::NoMove(){
@@ -46,9 +46,9 @@ void Character::Reset(){
 
 void Character::Draw(int offset){
 	AObject::Draw(offset);
-	atack_->DrawBullets(offset);
+	attack_->DrawBullets(offset);
 }
 
 vector<Bullet*> Character::GetBullets(){
-	return atack_->bullets();
+	return attack_->bullets();
 }

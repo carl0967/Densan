@@ -2,7 +2,7 @@
 #include "PlayerController.h"
 #include "WalkStraight.h"
 
-Player::Player(double x,double y,Field* field):Character(x,y,5,"‰æ‘œ/–‚—2.png",1,1,true, new NormalAtack(1,7,10,this)){
+Player::Player(double x,double y,Field* field):Character(x,y,5,"‰æ‘œ/–‚—2.png",1,1,true, new NormalAttack(1,7,10,this)){
 	//‰Šú‰»
 	score_=0;
 	life_=1;
@@ -47,6 +47,6 @@ void Player::Reset(){
 void Player::Draw(int offset){
 	if(superCount()%2==0)
 		AObject::Draw(offset);
-	atack_->DrawBullets(offset);
+	attack_->DrawBullets(offset);
 
 }

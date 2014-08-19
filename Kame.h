@@ -3,7 +3,7 @@
 ƒJƒƒNƒ‰ƒX
 */
 #pragma once
-#include "NoAtack.h"
+#include "NoAttack.h"
 
 #include "Enemy.h"
 
