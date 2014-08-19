@@ -11,4 +11,8 @@ public:
 	PlayerController(); //こっちは使わない
 	PlayerController(Character* character,Field* field); //コンストラクタ
 	void Think(); //抽象クラスのThink関数をオーバーライド
+
+private:
+	char key[256];
+	void UpdateKey();
 };

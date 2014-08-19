@@ -19,7 +19,7 @@ public:
 	引数のcharacterのフィールド変数を変更して、アイテムの効果を与える関数
 	サブクラスにて実装すること
 	*/
-	 void Affect(Character* character);
+	virtual void Affect(Character* character) = 0;
 	/*
 	オーバーライドした関数
 	そのアイテムがどのような動きをするかを決定する

@@ -2,7 +2,7 @@
 #include "PlayerController.h"
 #include "WalkStraight.h"
 
-Player::Player(double x,double y,Field* field):Character(x,y,"‰æ‘œ/–‚—2.png",1,1,true){
+Player::Player(double x,double y,Field* field):Character(x,y,5,"‰æ‘œ/–‚—2.png",1,1,true, new NormalAtack(1,7,10,this)){
 	//‰Šú‰»
 	score_=0;
 	life_=1;
@@ -11,6 +11,7 @@ Player::Player(double x,double y,Field* field):Character(x,y,"‰æ‘œ/–‚—2.png",1,
 	controller_=new PlayerController(this,field);
 	//controller_=new WalkStraight(this);
 	move_ghandle_=loadg.Load("‰æ‘œ/–‚—3.png");
+	object_type_ = O_PLAYER;
 }
 
 void Player::addScore(int point){
@@ -41,4 +42,11 @@ void Player::Reset(){
 	super_ = false;
 	super_count_ = 0;
 	life_--;
+}
+
+void Player::Draw(int offset){
+	if(superCount()%2==0)
+		AObject::Draw(offset);
+	atack_->DrawBullets(offset);
+
 }

@@ -1,42 +1,26 @@
 #pragma once
+#include "aobject.h"
 
-//#include "DxLib.h"
-#include "AObject.h"
-
-/*
-攻撃するための「弾」を表す抽象クラス
-*/
-/*
-注意点
-コンストラクタの引数にてダメージ設定を行うようにしています
-*/
-
-abstract class Bullet :public AObject{
-public:
-	//コンストラクタ
-	//x座標、ｙ座標、ファイル名（画像/画像ファイル名,オブジェクトの幅,オブジェクトの高さ,向き（右向きならtrue）,ダメージ量
-	Bullet(double ax,double ay,char* fname,int size_x,int size_y,bool right,int damageValue);
-	//ゲッター
-	/*
-	フィールドに設定したダメージを返す
-	*/
-	int damage(){return damage;}
-	//関数
-	/*
-	そのアイテムがどのような動きをするかを決定する
-	基本的には自身のスピードを変更する
-	サブクラスにて実装すること
-	*/
-	abstract void Think();
-	
-protected:
-
-	//フィールド
-	/*
-	敵にぶつかった時にどれだけダメージを与えるのか
-	*/
-	int damage;
-
-private:
-	
+enum Direction{
+	RIGHT = 1, LEFT = -1
 };
+
+class Bullet :public AObject
+{
+public:
+	Bullet(double x,double y,int damage,int speed, char* fname, int hit_size_x, int hit_size_y,bool right);//コンストラクタ
+	virtual void Think() = 0;
+	void DieBullet(); //離れた弾を消滅させる
+	void Initialize(double x, double y,int direction);//初期化処理(再出現させる際に呼び出す)
+	~Bullet(void);
+
+
+	//ゲッター
+	int damage(){return damage_;}
+
+protected:
+	int damage_;
+	int bullet_speed_; //弾の速度
+	int direction_;   //1のとき右方向,-1の時左方向
+};
+

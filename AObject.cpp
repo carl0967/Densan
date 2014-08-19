@@ -41,23 +41,24 @@ void AObject::Move(){
 	pos_.y+=speed_.y;
 }
 void AObject::Draw(int offset){
-	live_count_++; //１周期のカウンタを進める
+	if(alive){
+		live_count_++; //１周期のカウンタを進める
 
-	//右向き左向き変更処理
-	if(speed_.x>0) right=true;
-	else if(speed_.x<0) right=false; 
-	if(speed_.y<0) aerial=true;
-
-	//描画（アニメーション画像がある場合はアニメーション）
-	if(right){
-		if(speed_.x>0 && move_ghandle_!=0 &&live_count_%2==0)   DrawGraph( (int)pos_.x+offset , (int)pos_.y , move_ghandle_ ,TRUE );
-		else DrawGraph( (int)pos_.x+offset , (int)pos_.y , graphic_handle_ ,TRUE ) ;
+		//右向き左向き変更処理
+		if(speed_.x>0) right=true;
+		else if(speed_.x<0) right=false; 
+		if(speed_.y<0) aerial=true;
+		
+		//描画（アニメーション画像がある場合はアニメーション）
+		if(right){
+			if(speed_.x>0 && move_ghandle_!=0 &&live_count_%2==0)   DrawGraph( (int)pos_.x+offset , (int)pos_.y , move_ghandle_ ,TRUE );
+			else DrawGraph( (int)pos_.x+offset , (int)pos_.y , graphic_handle_ ,TRUE ) ;
+		}
+		else{
+			if(speed_.x<0 && move_ghandle_!=0  &&live_count_%2==0)   DrawTurnGraph( (int)pos_.x+offset , (int)pos_.y , move_ghandle_ ,TRUE );
+			else DrawTurnGraph( (int)pos_.x+offset , (int)pos_.y , graphic_handle_ ,TRUE ) ;
+		}
 	}
-	else{
-		if(speed_.x<0 && move_ghandle_!=0  &&live_count_%2==0)   DrawTurnGraph( (int)pos_.x+offset , (int)pos_.y , move_ghandle_ ,TRUE );
-		else DrawTurnGraph( (int)pos_.x+offset , (int)pos_.y , graphic_handle_ ,TRUE ) ;
-	}
-
 }
 
 void AObject::TouchedBlockX(double block_x){
@@ -112,6 +113,14 @@ void AObject::GetObjectSize(){
 	GetGraphSize(graphic_handle_,p_sizeX,p_sizeY);
 	size_.x = *p_sizeX;
 	size_.y = *p_sizeY;
+}
+
+double AObject::GetCenterPosX(){
+	return pos_.x+size_.x/2;
+}
+
+double AObject::GetCenterPosY(){
+	return pos_.y+size_.y/2;
 }
 
 

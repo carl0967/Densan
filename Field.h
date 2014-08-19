@@ -5,9 +5,11 @@
 #include "Character.h"
 #include "Enemy.h"
 #include "Player.h"
+#include "Item.h"
 #include "ObjectManager.h"
 #include <math.h>
 #include <vector>
+#include<typeinfo>
 using namespace std;
 
 class Field

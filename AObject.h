@@ -9,6 +9,8 @@
 敵キャラクターや自機、アイテムなどの共通部分をまとめている。
 */
 
+//プレイヤーか敵かアイテムかを判断するよう
+enum ObjectType{O_PLAYER,O_ENEMY,O_ITEM};
 
 //２次元をあらわす構造体。x軸とy軸をまとめている。
 typedef struct{
@@ -23,7 +25,7 @@ public:
 	AObject(double ax,double ay,char* fname,int hit_size_x,int hit_size_y,bool right);
 	virtual void Reset(); //リセット処理
 	void Move();                  //自身のスピード分移動する
-	void Draw(int offset);   //offsetを使って自身の描画位置を算出して描画する
+	virtual void Draw(int offset);   //offsetを使って自身の描画位置を算出して描画する
 	virtual void Think()=0;  //自身のスピードを操作して行動を決める
 	void Fall(double gravity);  // 引数の重力分落ちる
 	void Die(); //生存フラグをfalseにする
@@ -34,7 +36,10 @@ public:
 	void TouchedBlockX(double set_x); //x軸でブロックと接触した場合に呼び出す
 	void TouchedBlockY(double set_y); //y軸でブロックと接触した場合に呼び出す
 
-	void GetObjectSize();
+	void GetObjectSize();//オブジェクトのサイズを画像から読み取る
+
+	double GetCenterPosX(); //オブジェクトの中心座標を返す
+	double GetCenterPosY(); //オブジェクトの中心座標を返す
 
 	//ゲッター
 	TwoDimension pos() {return pos_;}
@@ -44,8 +49,7 @@ public:
 	bool isAerial() {return aerial;}
 	bool isRight() {return right;}
 	bool isAlive() {return alive;}
-
-
+	int object_type(){return object_type_;}
 
 protected:
 	int live_count_;//生成されたから経過した時間
@@ -60,6 +64,7 @@ protected:
 	bool right; //向きを表す。右向きならtrue。左向きならfalse
 	bool first_right;//初期の向き
 	bool aerial; //空中にいるならtrue。地面に接しているならfalse
+	int object_type_;//どのオブジェクトか判断用
 
 	static LoadGraphic loadg;  //画像のメモリ管理をするためのクラス
 

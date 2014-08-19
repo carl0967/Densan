@@ -129,28 +129,24 @@ void Field::Initialize(){
 
 //完成
 void Field::FallObjects(){
-	for(int i=0; i<objects_.size(); i++)
+	for(int i=0; i<(int)objects_.size(); i++)
 		objects_.at(i)->Fall(gravity_);
 }
 
 //完成
 void Field::MoveObjects(){
-	for(int i=0; i<objects_.size(); i++)
+	for(int i=0; i<(int)objects_.size(); i++)
 		objects_.at(i)->Move();
 }
 
 //完成
 void Field::DrawObjects(){
-	if(!end_flag){
-		//プレイヤー描画
-		if(player_->isAlive()){
-			if(player_->superCount()%2==0)
-				player_->Draw(offset_);
-		}
-		//敵描画
-		for(int i=1; i<objects_.size(); i++){
-			if(objects_.at(i)->isAlive())
+	if(!end_flag && !clear_flag){
+		//オブジェクト描画
+		for(int i=0; i<(int)objects_.size(); i++){
+			if(objects_.at(i)->isAlive()){
 				objects_.at(i)->Draw(offset_);
+			}
 		}
 		//テスト用マップ描画
 		map_->Draw(offset_);
@@ -160,14 +156,18 @@ void Field::DrawObjects(){
 		DrawBox(20,30,120,50,GetColor(0,0,0),true);
 		DrawBox(20,30,20+percentHp,50,GetColor(255,0,0),true);
 		DrawBox(20,30,120,50,GetColor(255,255,255),false);
+		//スコア表示
+		DrawString(350,0,"スコア",GetColor(255,255,255),true);
+		DrawFormatString(410,0,GetColor(255,255,255),"%d",player_->score(),true);
 		//残機描画
+		DrawString(550,0,"残機",GetColor(255,255,255),true);
 		DrawFormatString(600,0,GetColor(255,255,255),"%s %d","X",player_->life());
 	}
 }
 
 ////完成
 void Field::ThinkObjects(){
-	for(int i=0; i<objects_.size(); i++){
+	for(int i=0; i<(int)objects_.size(); i++){
 		objects_.at(i)->Think();
 	}
 }
@@ -177,16 +177,47 @@ void Field::TouchPlayer2Objects(){
 		int px = (int)objects_.at(0)->pos().x;
 		int py = (int)objects_.at(0)->pos().y;
 	//objects_の要素０はプレイヤーなのでi=1からはじめる
-	for(int i=1; i<objects_.size(); i++){
+	for(int i=1; i<(int)objects_.size(); i++){
 		//プレイヤーと敵との接触判定
-		if(objects_.at(i)->isAlive()){
+		if(objects_.at(i)->object_type()==O_ENEMY && objects_.at(i)->isAlive()){
 			if(JudgeHitCharacters(player_,objects_.at(i)) && !player_->super()){
 				player_->Damaged(1);
 			}
 		}
-		//プレイヤーの弾と敵とのあたり判定
+		//プレイヤーとアイテムとの接触判定
+		if(objects_.at(i)->object_type() == O_ITEM && objects_.at(i)->isAlive()){
+			if(JudgeHitCharacters(player_,objects_.at(i)) && !player_->super()){
+				dynamic_cast<Item*>(objects_.at(i))->Affect(dynamic_cast<Character*>(objects_.at(0)));
+				objects_.at(i)->Die();
+			}
+		}
 
-		//敵の弾とプレイヤーとのあたり判定
+		//弾の当たり判定
+		if(player_->isAlive()){
+			for(int i=0 ; i<(int)objects_.size(); i++){
+				if(objects_.at(i)->object_type()==O_ENEMY && objects_.at(i)->isAlive()){
+				//プレイヤーの弾と敵とのあたり判定
+					for(int k=0; k<player_->GetBulletsSize(); k++){
+						if(player_->GetBullets().at(k)->isAlive()){
+							if(this->JudgeHitCharacters (player_->GetBullets().at(k), objects_.at(i)) ){
+								dynamic_cast<Character*>(objects_.at(i))->Damaged(player_->GetBullets().at(k)->damage());
+								player_->GetBullets().at(k)->Die();
+							}
+						}
+					}
+			
+					//敵の弾とプレイヤーとのあたり判定)
+					for(int k=0; k < dynamic_cast<Character*>(objects_.at(i))->GetBulletsSize(); k++){
+						if(dynamic_cast<Character*>(objects_.at(i))->GetBullets().at(k)->isAlive()){
+							if(this->JudgeHitCharacters(dynamic_cast<Character*>(objects_.at(i))->GetBullets().at(k), player_)){
+								player_->Damaged(dynamic_cast<Character*>(objects_.at(i))->GetBullets().at(k)->damage());
+								dynamic_cast<Character*>(objects_.at(i))->GetBullets().at(k)->Die();
+							}
+						}
+					}
+				}
+			}
+		}
 
 	}
 	player_->superTime();
@@ -196,7 +227,7 @@ void Field::TouchPlayer2Objects(){
 
 //完成（仮）
 void Field::TouchObjects2Wall(){
-	for(int i=0; i<objects_.size(); i++){
+	for(int i=0; i<(int)objects_.size(); i++){
 		double objectX = objects_.at(i)->pos().x;
 		double objectY = objects_.at(i)->pos().y;
 		double newX = 0;
@@ -244,7 +275,7 @@ void Field::TouchObjects2Wall(){
 
 void Field::Reset(){
 	if(!player_->isAlive()){
-		for(int i=0; i<objects_.size(); i++){
+		for(int i=0; i<(int)objects_.size(); i++){
 			objects_.at(i)->Reset();
 		}
 	}
@@ -252,7 +283,7 @@ void Field::Reset(){
 
 //完成（仮）
 void Field::DeleteObjects(){
-	for(int i=0; i<objects_.size(); i++){
+	for(int i=0; i<(int)objects_.size(); i++){
 		if(!objects_.at(i)->isAlive()){
 			//オブジェクト削除
 			delete objects_.at(i);
@@ -266,7 +297,7 @@ void Field::DeleteObjects(){
 
 //完成（仮）
 void Field::CheckOutOfArea(){
-	for(int i=1; i<objects_.size(); i++){
+	for(int i=1; i<(int)objects_.size(); i++){
 		if(objects_.at(i)->isAlive()){
 			if(objects_.at(i)->pos().x < -offset_-320 || 
 			objects_.at(i)->pos().x > -offset_+640+320 ){
@@ -277,7 +308,7 @@ void Field::CheckOutOfArea(){
 }
 
 void Field::DownObjectsDie(){
-	for(int i=0; i<objects_.size(); i++){
+	for(int i=0; i<(int)objects_.size(); i++){
 		if(objects_.at(i)->pos().y>=480)
 			objects_.at(i)->Die();
 	}
@@ -295,7 +326,7 @@ void Field::AddObject(AObject *object, bool isBegin){
 }
 
 int Field::PixelToTiles(double pixels){
-	return floor(pixels/32);
+	return (int)floor(pixels/32);
 }
 
 int Field::TilesToPixels(int tiles){

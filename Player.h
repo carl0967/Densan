@@ -6,6 +6,7 @@
 
 #include "DxLib.h"
 #include "Character.h"
+#include "NormalAtack.h"
 
 
 class Player: public Character{
@@ -24,6 +25,7 @@ public:
 	void Jump();
 	void Damaged(int damage);
 	void Reset();
+	void Draw(int offset); //無敵時間中の処理を書くためオーバーライド
 private:
 	int life_;  //プレイヤーの残機
 	int score_; //得点

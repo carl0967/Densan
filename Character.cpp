@@ -2,11 +2,15 @@
 #include "CharacterController.h"
 
 
-Character::Character(double x,double y,char* f_name,int sizex,int sizey,bool r):AObject(x,y,f_name,sizex,sizey,r){
-	hp_=10;
+Character::Character(double x,double y,int hp,char* f_name,int sizex,int sizey,bool r,Atack* atack):AObject(x,y,f_name,sizex,sizey,r){
+	hp_=hp;
 	max_hp_=hp_;
 	status_=0;
+	atack_ = atack;
+}
 
+void Character::DoAttack(){
+	atack_->DoAtack();
 }
 
 void Character::Damaged(int damage){
@@ -27,9 +31,8 @@ void Character::Jump(){
 }
 void Character::Think(){
 	controller_->Think();
+	atack_->ThinkBullets();
 }
-
-
 
 void Character::NoMove(){
 	speed_.x=0;
@@ -39,4 +42,13 @@ void Character::NoMove(){
 void Character::Reset(){
 	AObject::Reset();
 	hp_ = max_hp_;
+}
+
+void Character::Draw(int offset){
+	AObject::Draw(offset);
+	atack_->DrawBullets(offset);
+}
+
+vector<Bullet*> Character::GetBullets(){
+	return atack_->bullets();
 }
