@@ -8,6 +8,7 @@ Player::Player(double x,double y,Field* field):Character(x,y,5,"‰æ‘œ/–‚—2.png",
 	life_=1;
 	super_=false;
 	super_count_=0;
+	clear=false;
 	controller_=new PlayerController(this,field);
 	//controller_=new WalkStraight(this);
 	move_ghandle_=loadg.Load("‰æ‘œ/–‚—3.png");

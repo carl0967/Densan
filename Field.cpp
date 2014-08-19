@@ -1,8 +1,10 @@
+
 #include "Field.h"
 #include "DxLib.h"
 #include "Kame.h"
 #include "AObject.h"
 #include "Coin.h"
+#include "GoalFlag.h"
 
 
 Field::Field(Map* map){
@@ -15,7 +17,7 @@ Field::Field(Map* map){
 	clear_count = 0;
 	end_count = 0;
 	end_graphic_handle = LoadGraph("画像/game_over.png");
-	//clear_graphic_handle = LoadGraph("画像/game_clear.png");
+	clear_graphic_handle = LoadGraph("画像/game_clear.png");
 
 	Initialize();
 }
@@ -34,6 +36,7 @@ int Field::MainLoop(){
 	TouchPlayer2Objects();
 	Reset();
 	GameOver();
+	GameClear();
 
 	//最初生存フラグをfalseにするので、これがあると消えてしまう
 	//DeleteObjects();
@@ -46,8 +49,9 @@ int Field::MainLoop(){
 
 //ゲームクリア処理
 void Field::GameClear(){
+	clear_flag=player_->IsClear();
 	if(clear_flag){
-		clear_flag++;
+		clear_count++;
 		DrawGraph(100,100,clear_graphic_handle,true);
 		if(clear_count >= 100){
 			menu_flag=true;
@@ -94,9 +98,6 @@ void Field::Initialize(){
 		for(int k=0; k<map_->map_height(); k++){
 			int map_chip=map_->GetMapDataFromCell(i,k);
 			switch(map_chip){
-			case EMPTY:
-				break;
-
 			case PLAYER:
 				player_  = new Player(i*32,k*32,this);
 				player_->Revival(); //Objectは最初は死んでるので起こす
@@ -107,11 +108,27 @@ void Field::Initialize(){
 				AddObject(new Kame(i*32,k*32,this),false);
 				obj_manager_->FindObject(i,k,KAME); //オブジェクトマネージャーに登録
 				break;
+				
+				
+				
 			case COIN:
+				{
 				Coin* coin=new Coin(i*32,k*32);
 				coin->Revival();
 				AddObject(coin,false);
 				obj_manager_->FindObject(i,k,COIN);
+				break;
+				}
+			case G_FLAG:
+				{
+				GoalFlag* g_flag=new GoalFlag(i*32,k*32);
+				g_flag->Revival();
+				AddObject(g_flag,false);
+				obj_manager_->FindObject(i,k,G_FLAG);
+				break;
+				}
+
+				
 			}
 		}
 	}

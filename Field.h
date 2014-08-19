@@ -10,6 +10,7 @@
 #include <math.h>
 #include <vector>
 #include<typeinfo>
+
 using namespace std;
 
 class Field

@@ -13,6 +13,7 @@ class Player: public Character{
 public:
 	Player(double x,double y,Field* field);//コンストラクタ
 	void addScore(int point); //得点加算
+	void ChangeClear() {clear=true;} //clearをtrueにする
 	void superTime(); //無敵時間管理
 
 	//ゲッター
@@ -20,6 +21,7 @@ public:
 	int life(){return life_;}
 	bool super(){return super_;}
 	int superCount(){return super_count_;}
+	bool IsClear() {return clear;}
 
 	//オーバーライド
 	void Jump();
@@ -31,4 +33,5 @@ private:
 	int score_; //得点
 	bool super_;//ダメージを食らった際の無敵時間判定用
 	int super_count_; //無敵時間カウント用
+	bool clear; //ステージクリアしたかどうか。したならtrue。
 };
