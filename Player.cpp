@@ -2,15 +2,15 @@
 #include "PlayerController.h"
 #include "WalkStraight.h"
 
-Player::Player(double x,double y,Field* field):Character(x,y,5,"‰æ‘œ/–‚—2.png",1,1,true, new NormalAttack(1,7,10,this)){
+Player::Player(double x,double y,Field* field)
+	:Character(x,y,5,"‰æ‘œ/–‚—2.png",1,1,true,new PlayerController(this,field), new NormalAttack(1,7,10,this)){
 	//‰Šú‰»
 	score_=0;
 	life_=1;
 	super_=false;
 	super_count_=0;
 	clear=false;
-	controller_=new PlayerController(this,field);
-	//controller_=new WalkStraight(this);
+	alive=true;
 	move_ghandle_=loadg.Load("‰æ‘œ/–‚—3.png");
 	object_type_ = O_PLAYER;
 }

@@ -13,7 +13,7 @@ class Attack;
 
 class Character: public AObject{
 public:
-	Character(double x,double y,int hp ,char* f_name,int size_x,int size_y,bool right,Attack* attack); //コンストラクタ
+	Character(double x,double y,int hp ,char* f_name,int size_x,int size_y,bool right,CharacterController* controller,Attack* attack); //コンストラクタ
 
 	//下位クラスで挙動を変えたい場合は、これらをオーバーライドする
 	virtual void Jump();   //ジャンプする
@@ -41,7 +41,7 @@ protected:
 	int max_hp_; //体力の最大値
 	int status_; //キャラクターの状態を表す
 	CharacterController *controller_; //キャラクターを動かすためのコントローラ
-	Attack* attack_;
+	Attack* attack_; 
 
 
 private:

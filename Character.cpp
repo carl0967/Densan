@@ -2,11 +2,13 @@
 #include "CharacterController.h"
 
 
-Character::Character(double x,double y,int hp,char* f_name,int sizex,int sizey,bool r,Attack* attack):AObject(x,y,f_name,sizex,sizey,r){
+Character::Character(double x,double y,int hp,char* f_name,int sizex,int sizey,bool right,CharacterController* controller,Attack* attack)
+	:AObject(x,y,f_name,sizex,sizey,right){
 	hp_=hp;
 	max_hp_=hp_;
 	status_=0;
 	attack_ = attack;
+	controller_=controller;
 }
 
 void Character::DoAttack(){

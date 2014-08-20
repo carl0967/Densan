@@ -100,7 +100,6 @@ void Field::Initialize(){
 			switch(map_chip){
 			case PLAYER:
 				player_  = new Player(i*32,k*32,this);
-				player_->Revival(); //Objectは最初は死んでるので起こす
 				AddObject(player_,true);
 				obj_manager_->FindObject(i,k,PLAYER); //オブジェクトマネージャーに登録
 				break;
@@ -114,7 +113,6 @@ void Field::Initialize(){
 			case COIN:
 				{
 				Coin* coin=new Coin(i*32,k*32);
-				coin->Revival();
 				AddObject(coin,false);
 				obj_manager_->FindObject(i,k,COIN);
 				break;
@@ -122,7 +120,6 @@ void Field::Initialize(){
 			case G_FLAG:
 				{
 				GoalFlag* g_flag=new GoalFlag(i*32,k*32);
-				g_flag->Revival();
 				AddObject(g_flag,false);
 				obj_manager_->FindObject(i,k,G_FLAG);
 				break;
