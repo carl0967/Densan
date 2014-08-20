@@ -1,9 +1,12 @@
 #include "MapFactory.h"
-#include <iostream>
+#include <fstream>
+#include <string>
 #include <vector>
 #include "DxLib.h"
 
-using namespace std;
+using std::vector;
+using std::string;
+using std::fstream;
 
 #define CELL_WIDTH	32		// セルの幅
 #define CELL_HEIGHT 32		// セルの高さ
@@ -23,12 +26,19 @@ vector<string> split(const string &str, char delim){
 Map* MapFactory::CreateMap(std::string fileName){
 	const char* fileC = fileName.c_str();
 	vector<int> orignal;
-	char source[120];
+//----------1行を読み込んで、幅を算出
+	std::string temp;							// 文字列格納用変数
+	fstream fin(fileC);							// ストリーム作成
+	getline(fin,temp);							// 1行読む
+	int charNumber = temp.size()+3;				// 文字数取得(+3でバッファに少し余裕を持たせておく)
+	fin.close();								// ファイルを閉じる
+
+  	char* source = new char[charNumber];
 	int charSize;			// 現在行のサイズ
 	int fileHandle = FileRead_open(fileC);
 	int x=0,y=0;
 	while(true){
-		if(FileRead_gets(source,120,fileHandle)==-1)
+		if(FileRead_gets(source,charNumber,fileHandle)==-1)
 			break;
 		y++;
 		// スプリット
@@ -54,6 +64,7 @@ Map* MapFactory::CreateMap(std::string fileName){
 	 
 	Map *map = new Map(CELL_WIDTH,CELL_HEIGHT,mapdata);
 	map->SetMapHeightAndWidth(y,x);
+	delete source;
 	return map;
 }
 
