@@ -34,6 +34,8 @@ int Field::MainLoop(){
 	CheckOutOfArea();
 	DownObjectsDie();
 	TouchPlayer2Objects();
+	BulletTouchWall();
+
 	Reset();
 	GameOver();
 	GameClear();
@@ -110,8 +112,6 @@ void Field::Initialize(){
 				AddObject(new Kame(i*32,k*32,this),false);
 				obj_manager_->FindObject(i,k,KAME); //オブジェクトマネージャーに登録
 				break;
-				
-				
 				
 			case COIN:
 				{
@@ -212,28 +212,27 @@ void Field::TouchPlayer2Objects(){
 				objects_.at(i)->Die();
 			}
 		}
-
-		//弾の当たり判定
-		if(player_->isAlive()){
-			for(int i=0 ; i<(int)objects_.size(); i++){
-				if(objects_.at(i)->object_type()==O_ENEMY && objects_.at(i)->isAlive()){
-				//プレイヤーの弾と敵とのあたり判定
-					for(int k=0; k<player_->GetBulletsSize(); k++){
-						if(player_->GetBullets().at(k)->isAlive()){
-							if(this->JudgeHitCharacters (player_->GetBullets().at(k), objects_.at(i)) ){
-								dynamic_cast<Character*>(objects_.at(i))->Damaged(player_->GetBullets().at(k)->damage());
-								player_->GetBullets().at(k)->Die();
-							}
+	}
+	//弾の当たり判定
+	if(player_->isAlive()){
+		for(int i=0 ; i<(int)objects_.size(); i++){
+			if(objects_.at(i)->object_type()==O_ENEMY && objects_.at(i)->isAlive()){
+			//プレイヤーの弾と敵とのあたり判定
+				for(int k=0; k<player_->GetBulletsSize(); k++){
+					if(player_->GetBullets().at(k)->isAlive()){
+						if(this->JudgeHitCharacters (player_->GetBullets().at(k), objects_.at(i)) ){
+							dynamic_cast<Character*>(objects_.at(i))->Damaged(player_->GetBullets().at(k)->damage());
+							player_->GetBullets().at(k)->Die();
 						}
 					}
-			
-					//敵の弾とプレイヤーとのあたり判定)
-					for(int k=0; k < dynamic_cast<Character*>(objects_.at(i))->GetBulletsSize(); k++){
-						if(dynamic_cast<Character*>(objects_.at(i))->GetBullets().at(k)->isAlive()){
-							if(this->JudgeHitCharacters(dynamic_cast<Character*>(objects_.at(i))->GetBullets().at(k), player_)){
-								player_->Damaged(dynamic_cast<Character*>(objects_.at(i))->GetBullets().at(k)->damage());
-								dynamic_cast<Character*>(objects_.at(i))->GetBullets().at(k)->Die();
-							}
+				}
+		
+				//敵の弾とプレイヤーとのあたり判定)
+				for(int k=0; k < dynamic_cast<Character*>(objects_.at(i))->GetBulletsSize(); k++){
+					if(dynamic_cast<Character*>(objects_.at(i))->GetBullets().at(k)->isAlive()){
+						if(this->JudgeHitCharacters(dynamic_cast<Character*>(objects_.at(i))->GetBullets().at(k), player_)){
+							player_->Damaged(dynamic_cast<Character*>(objects_.at(i))->GetBullets().at(k)->damage());
+							dynamic_cast<Character*>(objects_.at(i))->GetBullets().at(k)->Die();
 						}
 					}
 				}
@@ -288,6 +287,23 @@ void Field::TouchObjects2Wall(){
 							objects_.at(i)->TouchedBlockY(TilesToPixels(y));
 						} 
 					}
+				}
+			}
+		}
+	}
+}
+
+void Field::BulletTouchWall(){
+	for(int i=0; i < (int)objects_.size() ;i++){
+		if(objects_.at(i)->object_type() != O_ITEM){
+			for(int k=0; k < dynamic_cast<Character*>(objects_.at(i))->GetBulletsSize(); k++){
+				double bulletX = dynamic_cast<Character*>(objects_.at(i))->GetBullets().at(k)->pos().x;
+				double bulletY = dynamic_cast<Character*>(objects_.at(i))->GetBullets().at(k)->pos().y;
+				double bulletSizeX = dynamic_cast<Character*>(objects_.at(i))->GetBullets().at(k)->size().x;
+				double bulletSizeY = dynamic_cast<Character*>(objects_.at(i))->GetBullets().at(k)->size().y;
+				if(map_->GetMapData(bulletX, bulletY) == WALL || map_->GetMapData(bulletX+bulletSizeX, bulletY) == WALL ||
+					map_->GetMapData(bulletX, bulletY+bulletSizeY) == WALL || map_->GetMapData(bulletX+bulletSizeX, bulletY+bulletSizeY) == WALL){
+					dynamic_cast<Character*>(objects_.at(i))->GetBullets().at(k)->Die();
 				}
 			}
 		}

@@ -53,6 +53,7 @@ private:
 	void ThinkObjects();                 //各オブジェクトに対して
 	void TouchPlayer2Objects();          //プレイヤー、弾と敵、アイテムとの当たり判定
 	void TouchObjects2Wall();            //オブジェクトと壁の当たり判定
+	void BulletTouchWall();                //壁と弾の当たり判定
 	void Reset();                        //プレイヤー死亡時のリセット関数
 	//void DeleteObjects();                //生存falgがfalseのオブジェクトを削除
 	void GameOver();                     //ゲームオーバー処理
