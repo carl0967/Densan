@@ -41,6 +41,8 @@ public:
 	int GetMapData(double x, double y); //描画エリア内の座標を引数にとって、そこのマップデータを返す	
 	int GetNextMapData(TwoDimension chara_pos,TwoDimension chara_speed,bool right); //キャラクターが次にいる場所のマップデータを返す
 	TwoDimension GetPlayerPos();//プレイヤーの座標を返す関数
+	int count(){return count_;}          //countのゲッター
+	~Field();
 
 private:
 	void Initialize();                   //初期化処理
@@ -52,16 +54,17 @@ private:
 	void TouchPlayer2Objects();          //プレイヤー、弾と敵、アイテムとの当たり判定
 	void TouchObjects2Wall();            //オブジェクトと壁の当たり判定
 	void Reset();                        //プレイヤー死亡時のリセット関数
-	void DeleteObjects();                //生存falgがfalseのオブジェクトを削除
+	//void DeleteObjects();                //生存falgがfalseのオブジェクトを削除
 	void GameOver();                     //ゲームオーバー処理
 	void GameClear();                    //ゲームクリア処理                      
 	void CheckOutOfArea();               //画面外の敵を殺す
 	void DownObjectsDie();               //画面下のオブジェクトを殺す
 	void AddObject(AObject *object_num, bool isBegin); //引数のオブジェクトを生成
-	int count(){return count_;}          //countのゲッター
 	int PixelToTiles(double pixels);     //ピクセル単位をタイル単位に変換
 	int TilesToPixels(int tiles);        //タイル単位をピクセル単位に変換
 	bool JudgeCircle(int x1, int y1, int r1, int x2, int y2, int r2); //円同士のの当たり判定
 	bool JudgeHitCharacters(AObject* p, AObject* e); //キャラクター同士の当たり判定
+	void FindObject(int from_y,int to_y,int from_x, int to_x);   //描画エリアに入ったenemyの生存フラグをtrueにする
+
 };
 

@@ -42,8 +42,7 @@ int Field::MainLoop(){
 	//DeleteObjects();
 	DrawObjects();
 
-	if(menu_flag)
-		return -1;
+	if(menu_flag) return -1;
 	return 0;
 }
 
@@ -81,6 +80,9 @@ void Field::Scroll(){
 	if(PixelToTiles(old_offset)!=PixelToTiles(offset_)){
 		//右端を読み込む場合
 		if(player_->isRight()){
+			int x=PixelToTiles(-offset_+width); //offset+widthで読み込むx座標になる
+			FindObject(0,map_->map_height(),x,x+1);
+			/*
 			for(int i=0;i<15;i++){
 			int x=PixelToTiles(-offset_+width); //offset+widthで読み込むx座標になる
 			int id=obj_manager_->GetId(x,i);
@@ -88,6 +90,7 @@ void Field::Scroll(){
 				if(objects_.at(id)->isAlive()==false) objects_.at(id)->Reset();
 			}
 			}
+			*/
 		}
 	}
 }
@@ -130,15 +133,19 @@ void Field::Initialize(){
 		}
 	}
 	
-	//最初の描画領域の敵のみ動かす(Reset関数を呼び出して生存フラグをtrueにしてる)
-	for(int i=0;i<15;i++){
-		for(int j=0;j<20;j++){
+	//最初の描画領域の敵のみ動かす
+	FindObject(0,map_->map_height(),0,20);
+
+}
+void Field::FindObject(int from_y,int to_y,int from_x,int to_x){
+	for(int i=from_y;i<to_y;i++){
+		for(int j=from_x;j<to_x;j++){
 			int id=obj_manager_->GetId(j,i);
-			if(id!=-1) objects_.at(id)->Reset();
+			if(id!=-1){
+				if(objects_.at(id)->object_type()==O_ENEMY && objects_.at(id)->isAlive()==false) objects_.at(id)->Reset();
+			}
 		}
 	}
-	
-
 }
 
 //完成
@@ -296,6 +303,7 @@ void Field::Reset(){
 }
 
 //完成（仮）
+/*
 void Field::DeleteObjects(){
 	for(int i=0; i<(int)objects_.size(); i++){
 		if(!objects_.at(i)->isAlive()){
@@ -308,6 +316,7 @@ void Field::DeleteObjects(){
 		}
 	}
 }
+*/
 
 //完成（仮）
 void Field::CheckOutOfArea(){
@@ -397,4 +406,12 @@ int Field::GetNextMapData(TwoDimension pos,TwoDimension speed,bool right){
 //プレイヤーの座標を返す関数
 TwoDimension Field::GetPlayerPos(){
 	return objects_.at(0)->pos();
+}
+
+Field::~Field(){
+	
+	for(int i=0;i<objects_.size();i++){
+		delete objects_.at(i);
+	}
+	delete obj_manager_;
 }
