@@ -324,7 +324,7 @@ void Field::CheckOutOfArea(){
 		if(objects_.at(i)->isAlive()){
 			if(objects_.at(i)->pos().x < -offset_-320 || 
 			objects_.at(i)->pos().x > -offset_+640+320 ){
-				objects_.at(i)->Die();
+				if(objects_.at(i)->object_type()==O_ENEMY)objects_.at(i)->Die();
 			}
 		}
 	}
