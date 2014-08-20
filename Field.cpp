@@ -410,7 +410,7 @@ TwoDimension Field::GetPlayerPos(){
 
 Field::~Field(){
 	
-	for(int i=0;i<objects_.size();i++){
+	for(int i=objects_.size()-1;i>=0;i--){
 		delete objects_.at(i);
 	}
 	delete obj_manager_;
