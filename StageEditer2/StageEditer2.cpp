@@ -37,6 +37,7 @@ StageEditer2::StageEditer2(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 
 	//‰Šú‰»
 	map = nullptr;
+	HPos=0;
 
 	//WIN APIŠÖŒW
 	UNREFERENCED_PARAMETER(hPrevInstance);
@@ -213,9 +214,9 @@ void StageEditer2::OnHScroll(HWND hWnd, int mes)
 
 LRESULT CALLBACK StageEditer2::WndProcOfInstance(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam){
 	int wmId, wmEvent;
-	static PAINTSTRUCT ps;
-	static HDC hdc;
-	static SCROLLINFO scr;
+	PAINTSTRUCT ps;
+	HDC hdc;
+	SCROLLINFO scr;
 
 	OpenDialog open(hWnd);
 	SaveDialog save(hWnd);
@@ -280,10 +281,10 @@ LRESULT CALLBACK StageEditer2::WndProcOfInstance(HWND hWnd, UINT message, WPARAM
 		break;
 	case WM_PAINT:
 		if(map){
-			//hdc = BeginPaint(hWnd, &ps);
+			hdc = BeginPaint(hWnd, &ps);
 			map->DrawMap(hWnd,&ps,hdc);
 			// TODO: •`‰æƒR[ƒh‚ğ‚±‚±‚É’Ç‰Á‚µ‚Ä‚­‚¾‚³‚¢...
-			//EndPaint(hWnd, &ps);
+			EndPaint(hWnd, &ps);
 		}
 		break;
 	case WM_DESTROY:
@@ -296,6 +297,7 @@ LRESULT CALLBACK StageEditer2::WndProcOfInstance(HWND hWnd, UINT message, WPARAM
 		break;
 	case WM_HSCROLL:
 		OnHScroll(hWnd,LOWORD(wParam));
+		map->setOffset(HPos);
 		InvalidateRect(hWnd , NULL , TRUE);	// Ä•`‰æ—v‹
 		break;
 	default:
