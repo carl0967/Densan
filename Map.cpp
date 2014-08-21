@@ -22,7 +22,9 @@ int Map::GetMapData(double x, double y){
 	int index_x=(int)(x)/cell_width;
 	int index_y=(int)(y)/cell_hegiht;
 
-	return map_datas[index_y][index_x];
+	if(index_x>=0 && index_x<map_width_ && index_y>=0 && index_y<map_height_)
+		return map_datas[index_y][index_x];
+	else return -1;
 }
 
 Map::~Map(){
@@ -48,11 +50,13 @@ void Map::Draw(int offset){
 		offset= -(map_width_*cell_width - MAP_WIDTH);
 
 	//---------------”wŒi‚Ì•`‰æ---------------
-	int width = 0,height = 0;
-	GetGraphSize(background_,&width,&height);
+	if(background_ !=-1){
+		int width = 0,height = 0;
+		GetGraphSize(background_,&width,&height);
 
-	for(int i=0;width*i+offset%MAP_WIDTH<MAP_WIDTH;i++){
-		DrawGraph(width*i+offset,0,background_,FALSE);
+		for(int i=0;width*i+offset%MAP_WIDTH<MAP_WIDTH;i++){
+			DrawGraph(width*i+offset,0,background_,FALSE);
+		}
 	}
 	
 	
