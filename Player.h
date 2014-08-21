@@ -8,7 +8,7 @@
 #include "Character.h"
 #include "NormalAttack.h"
 
-//ゲームがどのような状態かを表す列挙型 ,何もなし,ゲームクリアー,次のマップへ
+//ゲームがどのような状態かを表す列挙型 ,何もなし,ゲームクリアー,ゲームオーバー
 enum GAME_STATUS{NOTHING,CLEAR,OVER,NEXT};
 
 class Player: public Character{

@@ -1,6 +1,7 @@
 # include "Player.h"
 #include "PlayerController.h"
 #include "WalkStraight.h"
+#include "AimAttack.h"
 
 Player::Player(double x,double y,Field* field)
 	:Character(x,y,5,"‰æ‘œ/–‚—2.png",1,1,true,new PlayerController(this,field), new NormalAttack(1,7,10,this)){

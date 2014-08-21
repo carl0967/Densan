@@ -5,10 +5,9 @@ WalkStraight::WalkStraight(Character* character,Field* field) :CharacterControll
 }
 
 void WalkStraight::Think(){
-	//次の移動先のマップ情報を取ってくる
-	int next=field_->GetNextMapData(character_->pos(),character_->speed(),character_->isRight());
+	
 	//もし次が壁なら反転。違うならそのまま歩く
-	if(next==WALL) character_->Walk(!character_->isRight());
+	if(field_->IsNextMapDataAWall(character_->pos(),character_->speed(),character_->isRight())) character_->Walk(!character_->isRight());
 	else  character_->Walk(character_->isRight());
 
 }
