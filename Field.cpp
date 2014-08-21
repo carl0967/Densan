@@ -12,8 +12,7 @@ Field::Field(Map* map){
 	obj_manager_=new ObjectManager(map->map_width(),map->map_height());
 	gravity_ = 1.1;
 	menu_flag = false;
-	clear_count = 0;
-	end_count = 0;
+	wait_count_=0;
 	end_graphic_handle = LoadGraph("画像/game_over.png");
 	clear_graphic_handle = LoadGraph("画像/game_clear.png");
 
@@ -35,8 +34,8 @@ int Field::MainLoop(){
 	BulletTouchWall();
 
 	Reset();
-	GameOver();
-	GameClear();
+	if(player_->game_status()==OVER) GameOver();
+	if(player_->game_status()==CLEAR) GameClear();
 
 	//最初生存フラグをfalseにするので、これがあると消えてしまう
 	//DeleteObjects();
@@ -48,24 +47,21 @@ int Field::MainLoop(){
 
 //ゲームクリア処理
 void Field::GameClear(){
-	if(player_->game_status()==CLEAR){
-		clear_count++;
-		DrawGraph(100,100,clear_graphic_handle,true);
-		if(clear_count >= 100){
-			menu_flag=true;
-		}
+	wait_count_++;
+	DrawGraph(100,100,clear_graphic_handle,true);
+	if(wait_count_>= 100){
+		menu_flag=true;
 	}
 }
 
 //ゲームオーバー処理
 void Field::GameOver(){
-	if(player_->game_status()==OVER){
-		end_count++;
-		DrawGraph(100,100,end_graphic_handle,true);
-		if(end_count >= 100){
-			menu_flag=true;
-		}
+	wait_count_++;
+	DrawGraph(100,100,end_graphic_handle,true);
+	if(wait_count_ >= 100){
+		menu_flag=true;
 	}
+	
 }
 
 void Field::Scroll(){
@@ -122,7 +118,7 @@ void Field::Initialize(){
 	}
 	
 	//最初の描画領域の敵のみ動かす
-	FindObject(0,15,0,20);
+	FindObject(0,map_->map_height(),0,20);
 
 }
 void Field::FindObject(int from_y,int to_y,int from_x,int to_x){
@@ -157,7 +153,7 @@ void Field::DrawObjects(){
 				objects_.at(i)->Draw(offset_);
 			}
 		}
-		//テスト用マップ描画
+		//マップ描画
 		map_->Draw(offset_);
 		//HPバー描画
 		int percentHp = (player_->hp()*100)/player_->maxHp();

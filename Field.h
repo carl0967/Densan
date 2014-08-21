@@ -26,8 +26,7 @@ private:
 	int offset_;                 //オフセット
 
 	bool menu_flag;              //メニュー画面に戻るかどうか判定用
-	int clear_count;             //クリアカウンタ
-	int end_count;               //ゲームオーバー画面用カウンター
+	int wait_count_;
 
 	int end_graphic_handle;      //ゲームオーバー画像
 	int clear_graphic_handle;    //ゲームクリア画像
