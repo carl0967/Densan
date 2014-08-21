@@ -1,7 +1,7 @@
 #include "Bullet.h"
 
 
-Bullet::Bullet(double x, double y,int damage,int speed, char* fname, int hit_size_x, int hit_size_y): AObject(x, y, fname,hit_size_x,hit_size_y,true)
+Bullet::Bullet(double x, double y,int damage,int speed, char* fname, double hit_size_x, double hit_size_y): AObject(x, y, fname,hit_size_x,hit_size_y,true)
 {
 	//’e‚ð”­ŽË
 	Revival();
@@ -14,6 +14,9 @@ Bullet::Bullet(double x, double y,int damage,int speed, char* fname, int hit_siz
 	damage_ = damage;
 	//•ûŒüÝ’è
 	this->right = false;
+}
+
+Bullet::~Bullet(){
 }
 
 void Bullet::Initialize(double x, double y){
@@ -34,8 +37,4 @@ void Bullet::DieBullet(){
 		pos_.y<=-100 || pos_.y>=580){
 			Die();
 	}
-}
-
-Bullet::~Bullet(void)
-{
 }

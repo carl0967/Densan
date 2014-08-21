@@ -23,6 +23,7 @@ public:
 	//コンストラクタ
 	//x座標、ｙ座標、ファイル名（画像/画像ファイル名,オブジェクトの当たり幅,オブジェクトの高さ,向き（右向きならtrue）
 	AObject(double ax,double ay,char* fname,int hit_size_x,int hit_size_y,bool right);
+	virtual ~AObject();
 	virtual void Reset(); //リセット処理
 	void Move();                  //自身のスピード分移動する
 	virtual void Draw(int offset);   //offsetを使って自身の描画位置を算出して描画する

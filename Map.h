@@ -2,7 +2,7 @@
 
 //マップチップのデータが何を表すか列挙
 //EMPTY=0 WALL=1 ...
-enum MapChip{EMPTY,WALL,PLAYER,KAME,COIN,G_FLAG,JUMPKAME};
+enum MapChip{EMPTY,WALL,PLAYER,KAME,COIN,G_FLAG,JUMPKAME,TAIHOU};
 
 class Map{
 public:

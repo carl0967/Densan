@@ -15,6 +15,7 @@ public:
 	virtual void InitializeBullet(int num) = 0; //ˆø”‚Åw’è‚µ‚½’e‚ğ‰Šú‰»
 	void ThinkBullets(); //¶‚«‚Ä‚¢‚é‘S‚Ä‚Ì’e‚ÉThink
 	void DrawBullets(int offset);//’e‚ğ•`‰æ
+	void ResetBullets();//‘S‚Ä‚Ì’e‚ğÁ‚·
 	~Attack(void);
 
 	//ƒQƒbƒ^[

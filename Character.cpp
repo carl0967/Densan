@@ -11,6 +11,12 @@ Character::Character(double x,double y,int hp,char* f_name,int sizex,int sizey,b
 	controller_=controller;
 }
 
+Character::~Character(){
+	delete controller_;
+	delete attack_;
+}
+
+
 void Character::DoAttack(){
 	attack_->DoAttack();
 }
@@ -44,6 +50,7 @@ void Character::NoMove(){
 void Character::Reset(){
 	AObject::Reset();
 	hp_ = max_hp_;
+	attack_->ResetBullets();
 }
 
 void Character::Draw(int offset){

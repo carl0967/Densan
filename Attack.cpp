@@ -42,15 +42,17 @@ void Attack::DoAttack(Bullet* bullet){
 			}
 		}
 	}
+	else
+		delete bullet;
 }
 
 
 void Attack::ThinkBullets(){
 	for(int i=0; i<bullets_.size(); i++){
 		bullets_.at(i)->Think();
-		interval_count_++;
 		bullets_.at(i)->DieBullet();
 	}
+	interval_count_++;
 }
 
 void Attack::DrawBullets(int offset){
@@ -66,6 +68,15 @@ int Attack::GetBulletsSize(){
 		return (int)bullets_.size();
 }
 
+void Attack::ResetBullets(){
+	for(int i=0; i<(int)bullets_.size(); i++){
+		bullets_.at(i)->Die();
+	}
+}
+
 Attack::~Attack(void)
 {
+	for(int i=(int)bullets_.size()-1; i>=0; i--){
+		delete bullets_.at(i);
+	}
 }

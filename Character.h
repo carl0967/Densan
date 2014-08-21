@@ -14,6 +14,7 @@ class Attack;
 class Character: public AObject{
 public:
 	Character(double x,double y,int hp ,char* f_name,int size_x,int size_y,bool right,CharacterController* controller,Attack* attack); //コンストラクタ
+	virtual ~Character();
 
 	//下位クラスで挙動を変えたい場合は、これらをオーバーライドする
 	virtual void Jump();   //ジャンプする

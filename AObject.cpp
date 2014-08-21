@@ -24,6 +24,8 @@ AObject::AObject(double x,double y,char* f_name,int hit_size_x,int hit_size_y,bo
 	first_right=right;
 }
 
+AObject::~AObject(){
+}
 
 void AObject::Reset(){
 	pos_.x = first_pos_.x;

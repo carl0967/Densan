@@ -6,6 +6,7 @@
 #include "Coin.h"
 #include "GoalFlag.h"
 #include "JumpKame.h"
+#include "Taihou.h"
 
 
 Field::Field(Map* map){
@@ -113,10 +114,17 @@ void Field::Initialize(){
 				break;
 				}
 			case JUMPKAME:
+				{
 				AddObject(new JumpKame(i*32,k*32,this),false);
 				obj_manager_->RegisterObject(i,k,JUMPKAME); //オブジェクトマネージャーに登録
 				break;
-				
+				}
+			case TAIHOU:
+				{
+					AddObject(new Taihou(i*32,k*32,this),false);
+					obj_manager_->RegisterObject(i,k,TAIHOU);
+					break;
+				}
 			}
 		}
 	}
