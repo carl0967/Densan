@@ -28,10 +28,10 @@ Map* MapFactory::CreateMap(std::string fileName){
 	vector<int> orignal;
 //----------1行を読み込んで、幅を算出
 	std::string temp;							// 文字列格納用変数
-	fstream fin(fileC);							// ストリーム作成
+	fstream fin(fileC,std::ios::in);			// ストリーム作成
 	getline(fin,temp);							// 1行読む
 	int charNumber = temp.size()+3;				// 文字数取得(+3でバッファに少し余裕を持たせておく)
-	fin.close();								// ファイルを閉じる
+	fin.close(); // ファイルを閉じる
 
   	char* source = new char[charNumber];
 	int charSize;			// 現在行のサイズ
