@@ -94,25 +94,25 @@ void Field::Initialize(){
 			case PLAYER:
 				player_  = new Player(i*32,k*32,this);
 				AddObject(player_,true);
-				obj_manager_->FindObject(i,k,PLAYER); //オブジェクトマネージャーに登録
+				obj_manager_->RegisterObject(i,k,PLAYER); //オブジェクトマネージャーに登録
 				break;
 			case KAME:
 				AddObject(new Kame(i*32,k*32,this),false);
-				obj_manager_->FindObject(i,k,KAME); //オブジェクトマネージャーに登録
+				obj_manager_->RegisterObject(i,k,KAME); //オブジェクトマネージャーに登録
 				break;
 				
 			case COIN:
 				{
 				Coin* coin=new Coin(i*32,k*32);
 				AddObject(coin,false);
-				obj_manager_->FindObject(i,k,COIN);
+				obj_manager_->RegisterObject(i,k,COIN);
 				break;
 				}
 			case G_FLAG:
 				{
 				GoalFlag* g_flag=new GoalFlag(i*32,k*32);
 				AddObject(g_flag,false);
-				obj_manager_->FindObject(i,k,G_FLAG);
+				obj_manager_->RegisterObject(i,k,G_FLAG);
 				break;
 				}
 

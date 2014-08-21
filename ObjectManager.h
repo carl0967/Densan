@@ -10,7 +10,7 @@ class ObjectManager{
 public:
 	ObjectManager();
 	ObjectManager(int map_width,int map_height); //コンストラクタ。引数はセルの座標
-	int FindObject(int cell_x,int cell_y,MapChip map_chip); //オブジェクトをみつけたときに呼び出す。idを返す
+	int RegisterObject(int cell_x,int cell_y,MapChip map_chip); //オブジェクトを登録する。 (登録したときのIDを返すけど別に使わないかも)
 	int GetId(int cell_x,int cell_y); //テスト用関数
 	TwoDimension GetCellPosFromId(int id); //idを引数にとって、セルの座標を返す
 	~ObjectManager(); //デストラクタ

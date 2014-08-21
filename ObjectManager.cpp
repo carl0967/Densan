@@ -17,7 +17,7 @@ ObjectManager::ObjectManager(int map_width,int map_height){
 	}
 }
 
-int ObjectManager::FindObject(int cell_x,int cell_y,MapChip map_chip){
+int ObjectManager::RegisterObject(int cell_x,int cell_y,MapChip map_chip){
 	if(ids[cell_y][cell_x]==-1){
 		if(map_chip==PLAYER) ids[cell_y][cell_x]=0;
 		else{
