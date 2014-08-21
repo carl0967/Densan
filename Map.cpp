@@ -42,17 +42,17 @@ void Map::Draw(){
 }
 
 void Map::Draw(int offset){
-	if( offset<0)
+	if( -offset<0)
 		offset=0; 
-	else if(offset+MAP_WIDTH>map_width_*cell_width)
-		offset=map_width_*cell_width - MAP_WIDTH;
+	else if(-offset+MAP_WIDTH>map_width_*cell_width)
+		offset= -(map_width_*cell_width - MAP_WIDTH);
 
 	//---------------”wŒi‚Ì•`‰æ---------------
 	int width = 0,height = 0;
 	GetGraphSize(background_,&width,&height);
 
-	for(int i=0;width*i-offset%MAP_WIDTH<MAP_WIDTH;i++){
-		DrawGraph(width*i-offset,0,background_,FALSE);
+	for(int i=0;width*i+offset%MAP_WIDTH<MAP_WIDTH;i++){
+		DrawGraph(width*i+offset,0,background_,FALSE);
 	}
 	
 	
@@ -60,11 +60,11 @@ void Map::Draw(int offset){
 	//---------------ƒZƒ‹‚Ì•`‰æ---------------
 	for(int i=0;i<map_height_;i++){
 		for(int j=0;j<MAP_WIDTH/cell_width+1;j++){
-			switch(GetMapData((j+(int)(offset/cell_width))*cell_width,i*cell_hegiht)){
+			switch(GetMapData((j+(int)(-offset/cell_width))*cell_width,i*cell_hegiht)){
 			case EMPTY:
 				break;
 			case WALL:
-					DrawGraph(j*cell_width-(offset%cell_width),i*cell_hegiht,wallGraph_,FALSE);
+					DrawGraph(j*cell_width-(-offset%cell_width),i*cell_hegiht,wallGraph_,FALSE);
 				break;
 			}
 		}
@@ -74,4 +74,8 @@ void Map::Draw(int offset){
 void Map::SetMapHeightAndWidth(int height, int width){
 	map_height_ = height;
 	map_width_ = width;
+}
+
+int Map::GetMapDataFromCell(int x,int y){
+	return (x>=0 && x<map_width_ && y>=0 && y<map_height_) ? map_datas[y][x] : -1;
 }

@@ -1,7 +1,7 @@
-#pragma once
+ï»¿#pragma once
 #include <string>
 
-//ƒ}ƒbƒvƒ`ƒbƒv‚Ìƒf[ƒ^‚ª‰½‚ğ•\‚·‚©—ñ‹“
+//ãƒãƒƒãƒ—ãƒãƒƒãƒ—ã®ãƒ‡ãƒ¼ã‚¿ãŒä½•ã‚’è¡¨ã™ã‹åˆ—æŒ™
 //EMPTY=0 WALL=1 ...
 enum MapChip{EMPTY,WALL,PLAYER,KAME };
 
@@ -9,30 +9,31 @@ class Map{
 public:
 
 private:
-	int background_;	// ”wŒi‰æ‘œ
-	int cell_width;		// ƒ}ƒbƒv‚Ì1ƒZƒ‹‚Ì•
-	int cell_hegiht;	// ƒ}ƒbƒv‚Ì1ƒZƒ‹‚Ì‚‚³
-	int map_width_;		// ƒ}ƒbƒv‚Ì‘S‘Ì‚Ì•
-	int map_height_;		// ƒ}ƒbƒv‚Ì‘S‘Ì‚Ì‚‚³
-	int** map_datas;	// ƒ}ƒbƒvƒ`ƒbƒvƒf[ƒ^
-	int offset_;			// •\¦‰æ–Ê—Ìˆæ‚ª‘S‘Ìƒ}ƒbƒv‚©‚çŒ©‚Ä‚Ç‚±‚©‚ğ‚ ‚ç‚í‚·‚½‚ß‚Ì•Ï”
-						// ƒZƒ‹’PˆÊ‚Å‚Í‚È‚­ƒsƒNƒZƒ‹’PˆÊ(‰E‚É30ƒXƒNƒ[ƒ‹‚·‚é‚È‚çAoffset=30‚É
-						// ‚µ‚ÄA•`‰æ‚·‚é‚Æ‚«(x-ofset,y)‚ª•`‰æêŠ‚É‚È‚é
-	int wallGraph_;		// •Ç‚Ì‰æ‘œ
+	int background_;	// èƒŒæ™¯ç”»åƒ
+	int cell_width;		// ãƒãƒƒãƒ—ã®1ã‚»ãƒ«ã®å¹…
+	int cell_hegiht;	// ãƒãƒƒãƒ—ã®1ã‚»ãƒ«ã®é«˜ã•
+	int map_width_;		// ãƒãƒƒãƒ—ã®å…¨ä½“ã®å¹…
+	int map_height_;	// ãƒãƒƒãƒ—ã®å…¨ä½“ã®é«˜ã•
+	int** map_datas;	// ãƒãƒƒãƒ—ãƒãƒƒãƒ—ãƒ‡ãƒ¼ã‚¿
+	int offset_;		// è¡¨ç¤ºç”»é¢é ˜åŸŸãŒå…¨ä½“ãƒãƒƒãƒ—ã‹ã‚‰è¦‹ã¦ã©ã“ã‹ã‚’ã‚ã‚‰ã‚ã™ãŸã‚ã®å¤‰æ•°
+						// ã‚»ãƒ«å˜ä½ã§ã¯ãªããƒ”ã‚¯ã‚»ãƒ«å˜ä½(å³ã«30ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ã™ã‚‹ãªã‚‰ã€offset=30ã«
+						// ã—ã¦ã€æç”»ã™ã‚‹ã¨ã(x-ofset,y)ãŒæç”»å ´æ‰€ã«ãªã‚‹
+	int wallGraph_;		// å£ã®ç”»åƒ
 public:
 	int map_width() {return map_width_;}
 	int map_height() {return map_height_;}
 
 	Map();
 
-	Map(int cell_width,int cell_hegiht,int** map_datas);		// ƒRƒ“ƒXƒgƒ‰ƒNƒ^
-	int GetMapData(double x,double y);	// •`‰æ—Ìˆæ‚Ìx,yÀ•W‚ğˆø”‚É‚Æ‚Á‚ÄA
-										// ƒ}ƒbƒvƒf[ƒ^‚Ì”z—ñ‚ÌŠY“–‚·‚éêŠ‚É‰½‚ª‚ ‚é‚©‚ğ•Ô‚·
-	int SetBackground(std::string filename);					// ”wŒi‰æ‘œ‚ğİ’è
-	void Draw();				// •`‰æ
-	void Draw(int offset);		// •`‰æ
-	void Scroll(int);	// offset‚ğ“®‚©‚·
-	~Map();				// ƒfƒXƒgƒ‰ƒNƒ^
+	Map(int cell_width,int cell_hegiht,int** map_datas);		// ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+	int GetMapData(double x,double y);							// æç”»é ˜åŸŸã®x,yåº§æ¨™ã‚’å¼•æ•°ã«ã¨ã£ã¦ã€
+																// ãƒãƒƒãƒ—ãƒ‡ãƒ¼ã‚¿ã®é…åˆ—ã®è©²å½“ã™ã‚‹å ´æ‰€ã«ä½•ãŒã‚ã‚‹ã‹ã‚’è¿”ã™
+	int SetBackground(std::string filename);					// èƒŒæ™¯ç”»åƒã‚’è¨­å®š
+	int GetMapDataFromCell(int x,int y);						// ã‚»ãƒ«ã®åº§æ¨™ã‹ã‚‰ãƒãƒƒãƒ—ãƒ‡ãƒ¼ã‚¿ã‚’å–å¾—
+	void Draw();						// æç”»
+	void Draw(int offset);				// æç”»
+	void Scroll(int);					// offsetã‚’å‹•ã‹ã™
+	~Map();								// ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 
-	void SetMapHeightAndWidth(int height,int width);		// ƒ}ƒbƒv‘S‘Ì‚Ì‚‚³‚Æ•‚ğİ’è‚·‚é
+	void SetMapHeightAndWidth(int height,int width);		// ãƒãƒƒãƒ—å…¨ä½“ã®é«˜ã•ã¨å¹…ã‚’è¨­å®šã™ã‚‹
 };
