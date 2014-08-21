@@ -12,13 +12,12 @@ void Map::AddMapData(int xPos,int yPos,HWND hWnd){
 	int index_x=(int)(xPos)/CELL_WIDTH;
 	int index_y=(int)(yPos)/CELL_HEIGHT;
 	index_x += offset;
-	if(orignal[index_y*width+index_x]<3){
+	if(orignal[index_y*width+index_x]<GRAPHIC_NUM-1){
 		orignal[index_y*width+index_x]++;
-		InvalidateRect(hWnd , NULL , FALSE);	// 再描画要求
 	}else{
 		orignal[index_y*width+index_x] = 0;
-		InvalidateRect(hWnd , NULL , TRUE);		// 再描画要求
 	}
+	InvalidateRect(hWnd , NULL , TRUE);	// 再描画要求
 }
 void Map::LoadMap(HWND hWnd){
 	static HBITMAP hBitmap;		// ビットマップハンドル
