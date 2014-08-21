@@ -1,0 +1,323 @@
+\hypertarget{class_a_object}{\section{A\+Object クラス}
+\label{class_a_object}\index{A\+Object@{A\+Object}}
+}
+
+
+{\ttfamily \#include $<$A\+Object.\+h$>$}
+
+A\+Object の継承関係図\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_a_object}
+\end{center}
+\end{figure}
+\subsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_a_object_a1956c3120bdc7f0372a5aab8c0b1cbb6}{A\+Object} (double ax, double ay, char $\ast$fname, int hit\+\_\+size\+\_\+x, int hit\+\_\+size\+\_\+y, bool \hyperlink{class_a_object_a7453abe76bbddf446aa5787231428a52}{right})
+\item 
+virtual void \hyperlink{class_a_object_aa07f4874e508e22cc0980e5ab6eb7f54}{Reset} ()
+\item 
+void \hyperlink{class_a_object_a60fae4021ac710983beefcf8cdb7f3bd}{Move} ()
+\item 
+virtual void \hyperlink{class_a_object_a0e279a93c79be5807e9bbd20875369a2}{Draw} (int offset)
+\item 
+virtual void \hyperlink{class_a_object_a61f89197cb14b1270a0a232ee88333a0}{Think} ()=0
+\item 
+void \hyperlink{class_a_object_a95c42b1bcef8f364389d9cf131a37921}{Fall} (double gravity)
+\item 
+void \hyperlink{class_a_object_a6661473a035f6e0ee0e7d98182630389}{Die} ()
+\item 
+void \hyperlink{class_a_object_aab646016a7b8d3040e2e3675e74d0629}{Revival} ()
+\item 
+void \hyperlink{class_a_object_a5266e7cb202fc1c27ac66fb8372410cb}{Set\+\_\+\+Speed} (double speed\+\_\+x, double speed\+\_\+y)
+\item 
+void \hyperlink{class_a_object_a6547fb1f7e3b5c5aab84b0b787e2869c}{Touched\+Block\+X} (double set\+\_\+x)
+\item 
+void \hyperlink{class_a_object_acfe5d595ef8c3387b1bbba51cb397602}{Touched\+Block\+Y} (double set\+\_\+y)
+\item 
+void \hyperlink{class_a_object_aa4d5ec1e9ece904effd747657f4e4530}{Get\+Object\+Size} ()
+\item 
+double \hyperlink{class_a_object_af18a89079a95159f7b93a92a921f4b54}{Get\+Center\+Pos\+X} ()
+\item 
+double \hyperlink{class_a_object_a33c32784ef245183b0207811c0f88521}{Get\+Center\+Pos\+Y} ()
+\item 
+\hyperlink{struct_two_dimension}{Two\+Dimension} \hyperlink{class_a_object_a71a4ba584e2a76b73ed623deeb7d1358}{pos} ()
+\item 
+\hyperlink{struct_two_dimension}{Two\+Dimension} \hyperlink{class_a_object_abb924b7e558a2f9d86f2db2bc2fb18a4}{speed} ()
+\item 
+\hyperlink{struct_two_dimension}{Two\+Dimension} \hyperlink{class_a_object_a42d73d2bad560ba5d83a1b7193347c48}{size} ()
+\item 
+\hyperlink{struct_two_dimension}{Two\+Dimension} \hyperlink{class_a_object_a3505a72b54c24e488b7daa64161f9ca6}{hit\+\_\+size} ()
+\item 
+bool \hyperlink{class_a_object_a2ceff5dd8626fcc399e583ce2b204200}{is\+Aerial} ()
+\item 
+bool \hyperlink{class_a_object_aa02494588289ed9662abd082bdec716d}{is\+Right} ()
+\item 
+bool \hyperlink{class_a_object_ac26a24066236bc7d4f8cc4324a4ae01f}{is\+Alive} ()
+\item 
+int \hyperlink{class_a_object_a0bfe4dc75e67969c28cda83f301e84ec}{object\+\_\+type} ()
+\end{DoxyCompactItemize}
+\subsection*{限定公開変数類}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_a_object_abf9e02eedf75207898d7059bb6815819}{live\+\_\+count\+\_\+}
+\item 
+int \hyperlink{class_a_object_a1f9d082036ee3272dacb9a732fa7cdcc}{graphic\+\_\+handle\+\_\+}
+\item 
+int \hyperlink{class_a_object_a00038f72ce7400697c2be7f4fdd15d77}{move\+\_\+ghandle\+\_\+}
+\item 
+\hyperlink{struct_two_dimension}{Two\+Dimension} \hyperlink{class_a_object_aff37fc81435924247fe0e4d7fa0186cf}{pos\+\_\+}
+\item 
+\hyperlink{struct_two_dimension}{Two\+Dimension} \hyperlink{class_a_object_a7d817eebc8b7151ff99d48c16c94b73f}{first\+\_\+pos\+\_\+}
+\item 
+\hyperlink{struct_two_dimension}{Two\+Dimension} \hyperlink{class_a_object_a640b3a323c205046b20640123222cdd3}{speed\+\_\+}
+\item 
+\hyperlink{struct_two_dimension}{Two\+Dimension} \hyperlink{class_a_object_a50bc88cfccd518e158096b5f033c0728}{size\+\_\+}
+\item 
+\hyperlink{struct_two_dimension}{Two\+Dimension} \hyperlink{class_a_object_a893dc760682c3fbafc5c96229939a8ec}{hit\+\_\+size\+\_\+}
+\item 
+bool \hyperlink{class_a_object_a98663f6d7145a2b7fc2009f95804325a}{alive}
+\item 
+bool \hyperlink{class_a_object_a7453abe76bbddf446aa5787231428a52}{right}
+\item 
+bool \hyperlink{class_a_object_aad0f6917ebc7fb2e44163302a67638a6}{first\+\_\+right}
+\item 
+bool \hyperlink{class_a_object_a0396b51efa313b95783f3582f1327ad1}{aerial}
+\item 
+int \hyperlink{class_a_object_a47a6ff0cef7449975ce63f07aade9d5d}{object\+\_\+type\+\_\+}
+\end{DoxyCompactItemize}
+\subsection*{静的限定公開変数類}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_load_graphic}{Load\+Graphic} \hyperlink{class_a_object_a18177a7a13f626091e935c1846b7607a}{loadg} =\hyperlink{class_load_graphic}{Load\+Graphic}()
+\end{DoxyCompactItemize}
+
+
+\subsection{構築子と解体子}
+\hypertarget{class_a_object_a1956c3120bdc7f0372a5aab8c0b1cbb6}{\index{A\+Object@{A\+Object}!A\+Object@{A\+Object}}
+\index{A\+Object@{A\+Object}!A\+Object@{A\+Object}}
+\subsubsection[{A\+Object}]{\setlength{\rightskip}{0pt plus 5cm}A\+Object\+::\+A\+Object (
+\begin{DoxyParamCaption}
+\item[{double}]{ax, }
+\item[{double}]{ay, }
+\item[{char $\ast$}]{fname, }
+\item[{int}]{hit\+\_\+size\+\_\+x, }
+\item[{int}]{hit\+\_\+size\+\_\+y, }
+\item[{bool}]{right}
+\end{DoxyParamCaption}
+)}}\label{class_a_object_a1956c3120bdc7f0372a5aab8c0b1cbb6}
+
+
+\subsection{関数詳解}
+\hypertarget{class_a_object_a6661473a035f6e0ee0e7d98182630389}{\index{A\+Object@{A\+Object}!Die@{Die}}
+\index{Die@{Die}!A\+Object@{A\+Object}}
+\subsubsection[{Die}]{\setlength{\rightskip}{0pt plus 5cm}void A\+Object\+::\+Die (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_a_object_a6661473a035f6e0ee0e7d98182630389}
+\hypertarget{class_a_object_a0e279a93c79be5807e9bbd20875369a2}{\index{A\+Object@{A\+Object}!Draw@{Draw}}
+\index{Draw@{Draw}!A\+Object@{A\+Object}}
+\subsubsection[{Draw}]{\setlength{\rightskip}{0pt plus 5cm}void A\+Object\+::\+Draw (
+\begin{DoxyParamCaption}
+\item[{int}]{offset}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_a_object_a0e279a93c79be5807e9bbd20875369a2}
+
+
+\hyperlink{class_character_ad359a991510783008ee96060f247c990}{Character}, \hyperlink{class_player_a5e32dec9258cfa8145e482fed4c42c83}{Player}で再実装されています。
+
+\hypertarget{class_a_object_a95c42b1bcef8f364389d9cf131a37921}{\index{A\+Object@{A\+Object}!Fall@{Fall}}
+\index{Fall@{Fall}!A\+Object@{A\+Object}}
+\subsubsection[{Fall}]{\setlength{\rightskip}{0pt plus 5cm}void A\+Object\+::\+Fall (
+\begin{DoxyParamCaption}
+\item[{double}]{gravity}
+\end{DoxyParamCaption}
+)}}\label{class_a_object_a95c42b1bcef8f364389d9cf131a37921}
+\hypertarget{class_a_object_af18a89079a95159f7b93a92a921f4b54}{\index{A\+Object@{A\+Object}!Get\+Center\+Pos\+X@{Get\+Center\+Pos\+X}}
+\index{Get\+Center\+Pos\+X@{Get\+Center\+Pos\+X}!A\+Object@{A\+Object}}
+\subsubsection[{Get\+Center\+Pos\+X}]{\setlength{\rightskip}{0pt plus 5cm}double A\+Object\+::\+Get\+Center\+Pos\+X (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_a_object_af18a89079a95159f7b93a92a921f4b54}
+\hypertarget{class_a_object_a33c32784ef245183b0207811c0f88521}{\index{A\+Object@{A\+Object}!Get\+Center\+Pos\+Y@{Get\+Center\+Pos\+Y}}
+\index{Get\+Center\+Pos\+Y@{Get\+Center\+Pos\+Y}!A\+Object@{A\+Object}}
+\subsubsection[{Get\+Center\+Pos\+Y}]{\setlength{\rightskip}{0pt plus 5cm}double A\+Object\+::\+Get\+Center\+Pos\+Y (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_a_object_a33c32784ef245183b0207811c0f88521}
+\hypertarget{class_a_object_aa4d5ec1e9ece904effd747657f4e4530}{\index{A\+Object@{A\+Object}!Get\+Object\+Size@{Get\+Object\+Size}}
+\index{Get\+Object\+Size@{Get\+Object\+Size}!A\+Object@{A\+Object}}
+\subsubsection[{Get\+Object\+Size}]{\setlength{\rightskip}{0pt plus 5cm}void A\+Object\+::\+Get\+Object\+Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_a_object_aa4d5ec1e9ece904effd747657f4e4530}
+\hypertarget{class_a_object_a3505a72b54c24e488b7daa64161f9ca6}{\index{A\+Object@{A\+Object}!hit\+\_\+size@{hit\+\_\+size}}
+\index{hit\+\_\+size@{hit\+\_\+size}!A\+Object@{A\+Object}}
+\subsubsection[{hit\+\_\+size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Two\+Dimension} A\+Object\+::hit\+\_\+size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_a_object_a3505a72b54c24e488b7daa64161f9ca6}
+\hypertarget{class_a_object_a2ceff5dd8626fcc399e583ce2b204200}{\index{A\+Object@{A\+Object}!is\+Aerial@{is\+Aerial}}
+\index{is\+Aerial@{is\+Aerial}!A\+Object@{A\+Object}}
+\subsubsection[{is\+Aerial}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+Object\+::is\+Aerial (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_a_object_a2ceff5dd8626fcc399e583ce2b204200}
+\hypertarget{class_a_object_ac26a24066236bc7d4f8cc4324a4ae01f}{\index{A\+Object@{A\+Object}!is\+Alive@{is\+Alive}}
+\index{is\+Alive@{is\+Alive}!A\+Object@{A\+Object}}
+\subsubsection[{is\+Alive}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+Object\+::is\+Alive (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_a_object_ac26a24066236bc7d4f8cc4324a4ae01f}
+\hypertarget{class_a_object_aa02494588289ed9662abd082bdec716d}{\index{A\+Object@{A\+Object}!is\+Right@{is\+Right}}
+\index{is\+Right@{is\+Right}!A\+Object@{A\+Object}}
+\subsubsection[{is\+Right}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+Object\+::is\+Right (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_a_object_aa02494588289ed9662abd082bdec716d}
+\hypertarget{class_a_object_a60fae4021ac710983beefcf8cdb7f3bd}{\index{A\+Object@{A\+Object}!Move@{Move}}
+\index{Move@{Move}!A\+Object@{A\+Object}}
+\subsubsection[{Move}]{\setlength{\rightskip}{0pt plus 5cm}void A\+Object\+::\+Move (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_a_object_a60fae4021ac710983beefcf8cdb7f3bd}
+\hypertarget{class_a_object_a0bfe4dc75e67969c28cda83f301e84ec}{\index{A\+Object@{A\+Object}!object\+\_\+type@{object\+\_\+type}}
+\index{object\+\_\+type@{object\+\_\+type}!A\+Object@{A\+Object}}
+\subsubsection[{object\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}int A\+Object\+::object\+\_\+type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_a_object_a0bfe4dc75e67969c28cda83f301e84ec}
+\hypertarget{class_a_object_a71a4ba584e2a76b73ed623deeb7d1358}{\index{A\+Object@{A\+Object}!pos@{pos}}
+\index{pos@{pos}!A\+Object@{A\+Object}}
+\subsubsection[{pos}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Two\+Dimension} A\+Object\+::pos (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_a_object_a71a4ba584e2a76b73ed623deeb7d1358}
+\hypertarget{class_a_object_aa07f4874e508e22cc0980e5ab6eb7f54}{\index{A\+Object@{A\+Object}!Reset@{Reset}}
+\index{Reset@{Reset}!A\+Object@{A\+Object}}
+\subsubsection[{Reset}]{\setlength{\rightskip}{0pt plus 5cm}void A\+Object\+::\+Reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_a_object_aa07f4874e508e22cc0980e5ab6eb7f54}
+
+
+\hyperlink{class_character_a6c1fa20d22b5ea6edc4dbd6ca9496411}{Character}, \hyperlink{class_player_a22a0d2b901622c497b677b7c75fafe45}{Player}で再実装されています。
+
+\hypertarget{class_a_object_aab646016a7b8d3040e2e3675e74d0629}{\index{A\+Object@{A\+Object}!Revival@{Revival}}
+\index{Revival@{Revival}!A\+Object@{A\+Object}}
+\subsubsection[{Revival}]{\setlength{\rightskip}{0pt plus 5cm}void A\+Object\+::\+Revival (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_a_object_aab646016a7b8d3040e2e3675e74d0629}
+\hypertarget{class_a_object_a5266e7cb202fc1c27ac66fb8372410cb}{\index{A\+Object@{A\+Object}!Set\+\_\+\+Speed@{Set\+\_\+\+Speed}}
+\index{Set\+\_\+\+Speed@{Set\+\_\+\+Speed}!A\+Object@{A\+Object}}
+\subsubsection[{Set\+\_\+\+Speed}]{\setlength{\rightskip}{0pt plus 5cm}void A\+Object\+::\+Set\+\_\+\+Speed (
+\begin{DoxyParamCaption}
+\item[{double}]{speed\+\_\+x, }
+\item[{double}]{speed\+\_\+y}
+\end{DoxyParamCaption}
+)}}\label{class_a_object_a5266e7cb202fc1c27ac66fb8372410cb}
+\hypertarget{class_a_object_a42d73d2bad560ba5d83a1b7193347c48}{\index{A\+Object@{A\+Object}!size@{size}}
+\index{size@{size}!A\+Object@{A\+Object}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Two\+Dimension} A\+Object\+::size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_a_object_a42d73d2bad560ba5d83a1b7193347c48}
+\hypertarget{class_a_object_abb924b7e558a2f9d86f2db2bc2fb18a4}{\index{A\+Object@{A\+Object}!speed@{speed}}
+\index{speed@{speed}!A\+Object@{A\+Object}}
+\subsubsection[{speed}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Two\+Dimension} A\+Object\+::speed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_a_object_abb924b7e558a2f9d86f2db2bc2fb18a4}
+\hypertarget{class_a_object_a61f89197cb14b1270a0a232ee88333a0}{\index{A\+Object@{A\+Object}!Think@{Think}}
+\index{Think@{Think}!A\+Object@{A\+Object}}
+\subsubsection[{Think}]{\setlength{\rightskip}{0pt plus 5cm}void A\+Object\+::\+Think (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_a_object_a61f89197cb14b1270a0a232ee88333a0}
+
+
+\hyperlink{class_character_a953e7c76dce887426f74e568e5ebbe39}{Character}, \hyperlink{class_coin_a3bfc309bcea6da0bda2913ffc20adbdd}{Coin}, \hyperlink{class_bullet_a0f3207f4dc7244fd3510b89943f939f3}{Bullet}, \hyperlink{class_goal_flag_a343f277b68067d9d19bff4815b14c6ac}{Goal\+Flag}で実装されています。
+
+\hypertarget{class_a_object_a6547fb1f7e3b5c5aab84b0b787e2869c}{\index{A\+Object@{A\+Object}!Touched\+Block\+X@{Touched\+Block\+X}}
+\index{Touched\+Block\+X@{Touched\+Block\+X}!A\+Object@{A\+Object}}
+\subsubsection[{Touched\+Block\+X}]{\setlength{\rightskip}{0pt plus 5cm}void A\+Object\+::\+Touched\+Block\+X (
+\begin{DoxyParamCaption}
+\item[{double}]{set\+\_\+x}
+\end{DoxyParamCaption}
+)}}\label{class_a_object_a6547fb1f7e3b5c5aab84b0b787e2869c}
+\hypertarget{class_a_object_acfe5d595ef8c3387b1bbba51cb397602}{\index{A\+Object@{A\+Object}!Touched\+Block\+Y@{Touched\+Block\+Y}}
+\index{Touched\+Block\+Y@{Touched\+Block\+Y}!A\+Object@{A\+Object}}
+\subsubsection[{Touched\+Block\+Y}]{\setlength{\rightskip}{0pt plus 5cm}void A\+Object\+::\+Touched\+Block\+Y (
+\begin{DoxyParamCaption}
+\item[{double}]{set\+\_\+y}
+\end{DoxyParamCaption}
+)}}\label{class_a_object_acfe5d595ef8c3387b1bbba51cb397602}
+
+
+\subsection{メンバ詳解}
+\hypertarget{class_a_object_a0396b51efa313b95783f3582f1327ad1}{\index{A\+Object@{A\+Object}!aerial@{aerial}}
+\index{aerial@{aerial}!A\+Object@{A\+Object}}
+\subsubsection[{aerial}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+Object\+::aerial\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_a_object_a0396b51efa313b95783f3582f1327ad1}
+\hypertarget{class_a_object_a98663f6d7145a2b7fc2009f95804325a}{\index{A\+Object@{A\+Object}!alive@{alive}}
+\index{alive@{alive}!A\+Object@{A\+Object}}
+\subsubsection[{alive}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+Object\+::alive\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_a_object_a98663f6d7145a2b7fc2009f95804325a}
+\hypertarget{class_a_object_a7d817eebc8b7151ff99d48c16c94b73f}{\index{A\+Object@{A\+Object}!first\+\_\+pos\+\_\+@{first\+\_\+pos\+\_\+}}
+\index{first\+\_\+pos\+\_\+@{first\+\_\+pos\+\_\+}!A\+Object@{A\+Object}}
+\subsubsection[{first\+\_\+pos\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Two\+Dimension} A\+Object\+::first\+\_\+pos\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_a_object_a7d817eebc8b7151ff99d48c16c94b73f}
+\hypertarget{class_a_object_aad0f6917ebc7fb2e44163302a67638a6}{\index{A\+Object@{A\+Object}!first\+\_\+right@{first\+\_\+right}}
+\index{first\+\_\+right@{first\+\_\+right}!A\+Object@{A\+Object}}
+\subsubsection[{first\+\_\+right}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+Object\+::first\+\_\+right\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_a_object_aad0f6917ebc7fb2e44163302a67638a6}
+\hypertarget{class_a_object_a1f9d082036ee3272dacb9a732fa7cdcc}{\index{A\+Object@{A\+Object}!graphic\+\_\+handle\+\_\+@{graphic\+\_\+handle\+\_\+}}
+\index{graphic\+\_\+handle\+\_\+@{graphic\+\_\+handle\+\_\+}!A\+Object@{A\+Object}}
+\subsubsection[{graphic\+\_\+handle\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}int A\+Object\+::graphic\+\_\+handle\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_a_object_a1f9d082036ee3272dacb9a732fa7cdcc}
+\hypertarget{class_a_object_a893dc760682c3fbafc5c96229939a8ec}{\index{A\+Object@{A\+Object}!hit\+\_\+size\+\_\+@{hit\+\_\+size\+\_\+}}
+\index{hit\+\_\+size\+\_\+@{hit\+\_\+size\+\_\+}!A\+Object@{A\+Object}}
+\subsubsection[{hit\+\_\+size\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Two\+Dimension} A\+Object\+::hit\+\_\+size\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_a_object_a893dc760682c3fbafc5c96229939a8ec}
+\hypertarget{class_a_object_abf9e02eedf75207898d7059bb6815819}{\index{A\+Object@{A\+Object}!live\+\_\+count\+\_\+@{live\+\_\+count\+\_\+}}
+\index{live\+\_\+count\+\_\+@{live\+\_\+count\+\_\+}!A\+Object@{A\+Object}}
+\subsubsection[{live\+\_\+count\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}int A\+Object\+::live\+\_\+count\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_a_object_abf9e02eedf75207898d7059bb6815819}
+\hypertarget{class_a_object_a18177a7a13f626091e935c1846b7607a}{\index{A\+Object@{A\+Object}!loadg@{loadg}}
+\index{loadg@{loadg}!A\+Object@{A\+Object}}
+\subsubsection[{loadg}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Load\+Graphic} A\+Object\+::loadg ={\bf Load\+Graphic}()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{class_a_object_a18177a7a13f626091e935c1846b7607a}
+\hypertarget{class_a_object_a00038f72ce7400697c2be7f4fdd15d77}{\index{A\+Object@{A\+Object}!move\+\_\+ghandle\+\_\+@{move\+\_\+ghandle\+\_\+}}
+\index{move\+\_\+ghandle\+\_\+@{move\+\_\+ghandle\+\_\+}!A\+Object@{A\+Object}}
+\subsubsection[{move\+\_\+ghandle\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}int A\+Object\+::move\+\_\+ghandle\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_a_object_a00038f72ce7400697c2be7f4fdd15d77}
+\hypertarget{class_a_object_a47a6ff0cef7449975ce63f07aade9d5d}{\index{A\+Object@{A\+Object}!object\+\_\+type\+\_\+@{object\+\_\+type\+\_\+}}
+\index{object\+\_\+type\+\_\+@{object\+\_\+type\+\_\+}!A\+Object@{A\+Object}}
+\subsubsection[{object\+\_\+type\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}int A\+Object\+::object\+\_\+type\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_a_object_a47a6ff0cef7449975ce63f07aade9d5d}
+\hypertarget{class_a_object_aff37fc81435924247fe0e4d7fa0186cf}{\index{A\+Object@{A\+Object}!pos\+\_\+@{pos\+\_\+}}
+\index{pos\+\_\+@{pos\+\_\+}!A\+Object@{A\+Object}}
+\subsubsection[{pos\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Two\+Dimension} A\+Object\+::pos\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_a_object_aff37fc81435924247fe0e4d7fa0186cf}
+\hypertarget{class_a_object_a7453abe76bbddf446aa5787231428a52}{\index{A\+Object@{A\+Object}!right@{right}}
+\index{right@{right}!A\+Object@{A\+Object}}
+\subsubsection[{right}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+Object\+::right\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_a_object_a7453abe76bbddf446aa5787231428a52}
+\hypertarget{class_a_object_a50bc88cfccd518e158096b5f033c0728}{\index{A\+Object@{A\+Object}!size\+\_\+@{size\+\_\+}}
+\index{size\+\_\+@{size\+\_\+}!A\+Object@{A\+Object}}
+\subsubsection[{size\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Two\+Dimension} A\+Object\+::size\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_a_object_a50bc88cfccd518e158096b5f033c0728}
+\hypertarget{class_a_object_a640b3a323c205046b20640123222cdd3}{\index{A\+Object@{A\+Object}!speed\+\_\+@{speed\+\_\+}}
+\index{speed\+\_\+@{speed\+\_\+}!A\+Object@{A\+Object}}
+\subsubsection[{speed\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Two\+Dimension} A\+Object\+::speed\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_a_object_a640b3a323c205046b20640123222cdd3}
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_a_object_8h}{A\+Object.\+h}\item 
+\hyperlink{_a_object_8cpp}{A\+Object.\+cpp}\end{DoxyCompactItemize}

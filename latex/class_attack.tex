@@ -1,0 +1,156 @@
+\hypertarget{class_attack}{\section{Attack クラス}
+\label{class_attack}\index{Attack@{Attack}}
+}
+
+
+{\ttfamily \#include $<$Attack.\+h$>$}
+
+Attack の継承関係図\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_attack}
+\end{center}
+\end{figure}
+\subsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_attack_a7bfe78a7f5c0f41fad5e87f1cae7f6a5}{Attack} (int damage, int speed, int interval, \hyperlink{class_character}{Character} $\ast$chara)
+\item 
+void \hyperlink{class_attack_af2ea0dae02dde12d3fd31f10ceb374d0}{Do\+Attack} (\hyperlink{class_bullet}{Bullet} $\ast$bullet)
+\item 
+virtual void \hyperlink{class_attack_a06d145ff7c11cfef2b688eefcd11dac1}{Do\+Attack} ()=0
+\item 
+virtual void \hyperlink{class_attack_ac02b84493ca19adf8425c1ed2efaf54c}{Initialize\+Bullet} (int num)=0
+\item 
+void \hyperlink{class_attack_a60e57896cd31f3735746e2881f41f689}{Think\+Bullets} ()
+\item 
+void \hyperlink{class_attack_a82056bd6da4f30f961df75642cf6b2a6}{Draw\+Bullets} (int offset)
+\item 
+\hyperlink{class_attack_a178107a2b20a45b02adfdec72269711c}{$\sim$\+Attack} (void)
+\item 
+vector$<$ \hyperlink{class_bullet}{Bullet} $\ast$ $>$ \hyperlink{class_attack_ad6c6c719f3a56fafdf515394cc92869f}{bullets} ()
+\item 
+int \hyperlink{class_attack_aaa4045e8fe9f2ce9b3f473d3bf869c87}{Get\+Bullets\+Size} ()
+\end{DoxyCompactItemize}
+\subsection*{限定公開変数類}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ \hyperlink{class_bullet}{Bullet} $\ast$ $>$ \hyperlink{class_attack_a4cacf753c3dd709aa9d09260f526213c}{bullets\+\_\+}
+\item 
+\hyperlink{class_character}{Character} $\ast$ \hyperlink{class_attack_a483c58b104388d57b0f9b380897a49c3}{chara\+\_\+}
+\item 
+int \hyperlink{class_attack_a2bfc44a2d532e0c38fa57c53e57e2995}{damage\+\_\+}
+\item 
+int \hyperlink{class_attack_a1baab21d135d9b9c7c4072b303c58963}{speed\+\_\+}
+\item 
+int \hyperlink{class_attack_a80bac689222ec4b3aa22691fe7b01380}{interval\+\_\+}
+\item 
+int \hyperlink{class_attack_a6fa9915c652fa7b30a80382b81cd9c1e}{interval\+\_\+count\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{構築子と解体子}
+\hypertarget{class_attack_a7bfe78a7f5c0f41fad5e87f1cae7f6a5}{\index{Attack@{Attack}!Attack@{Attack}}
+\index{Attack@{Attack}!Attack@{Attack}}
+\subsubsection[{Attack}]{\setlength{\rightskip}{0pt plus 5cm}Attack\+::\+Attack (
+\begin{DoxyParamCaption}
+\item[{int}]{damage, }
+\item[{int}]{speed, }
+\item[{int}]{interval, }
+\item[{{\bf Character} $\ast$}]{chara}
+\end{DoxyParamCaption}
+)}}\label{class_attack_a7bfe78a7f5c0f41fad5e87f1cae7f6a5}
+\hypertarget{class_attack_a178107a2b20a45b02adfdec72269711c}{\index{Attack@{Attack}!````~Attack@{$\sim$\+Attack}}
+\index{````~Attack@{$\sim$\+Attack}!Attack@{Attack}}
+\subsubsection[{$\sim$\+Attack}]{\setlength{\rightskip}{0pt plus 5cm}Attack\+::$\sim$\+Attack (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{class_attack_a178107a2b20a45b02adfdec72269711c}
+
+
+\subsection{関数詳解}
+\hypertarget{class_attack_ad6c6c719f3a56fafdf515394cc92869f}{\index{Attack@{Attack}!bullets@{bullets}}
+\index{bullets@{bullets}!Attack@{Attack}}
+\subsubsection[{bullets}]{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf Bullet}$\ast$$>$ Attack\+::bullets (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_attack_ad6c6c719f3a56fafdf515394cc92869f}
+\hypertarget{class_attack_af2ea0dae02dde12d3fd31f10ceb374d0}{\index{Attack@{Attack}!Do\+Attack@{Do\+Attack}}
+\index{Do\+Attack@{Do\+Attack}!Attack@{Attack}}
+\subsubsection[{Do\+Attack}]{\setlength{\rightskip}{0pt plus 5cm}void Attack\+::\+Do\+Attack (
+\begin{DoxyParamCaption}
+\item[{{\bf Bullet} $\ast$}]{bullet}
+\end{DoxyParamCaption}
+)}}\label{class_attack_af2ea0dae02dde12d3fd31f10ceb374d0}
+\hypertarget{class_attack_a06d145ff7c11cfef2b688eefcd11dac1}{\index{Attack@{Attack}!Do\+Attack@{Do\+Attack}}
+\index{Do\+Attack@{Do\+Attack}!Attack@{Attack}}
+\subsubsection[{Do\+Attack}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Attack\+::\+Do\+Attack (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_attack_a06d145ff7c11cfef2b688eefcd11dac1}
+
+
+\hyperlink{class_aim_attack_abc5f35b870b83aecd372e5b3aef30b37}{Aim\+Attack}, \hyperlink{class_normal_attack_a39d8e90194dca1a89ba961163b7d0e18}{Normal\+Attack}, \hyperlink{class_no_attack_a42e89327c50ecc690056bf5c605a898b}{No\+Attack}で実装されています。
+
+\hypertarget{class_attack_a82056bd6da4f30f961df75642cf6b2a6}{\index{Attack@{Attack}!Draw\+Bullets@{Draw\+Bullets}}
+\index{Draw\+Bullets@{Draw\+Bullets}!Attack@{Attack}}
+\subsubsection[{Draw\+Bullets}]{\setlength{\rightskip}{0pt plus 5cm}void Attack\+::\+Draw\+Bullets (
+\begin{DoxyParamCaption}
+\item[{int}]{offset}
+\end{DoxyParamCaption}
+)}}\label{class_attack_a82056bd6da4f30f961df75642cf6b2a6}
+\hypertarget{class_attack_aaa4045e8fe9f2ce9b3f473d3bf869c87}{\index{Attack@{Attack}!Get\+Bullets\+Size@{Get\+Bullets\+Size}}
+\index{Get\+Bullets\+Size@{Get\+Bullets\+Size}!Attack@{Attack}}
+\subsubsection[{Get\+Bullets\+Size}]{\setlength{\rightskip}{0pt plus 5cm}int Attack\+::\+Get\+Bullets\+Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_attack_aaa4045e8fe9f2ce9b3f473d3bf869c87}
+\hypertarget{class_attack_ac02b84493ca19adf8425c1ed2efaf54c}{\index{Attack@{Attack}!Initialize\+Bullet@{Initialize\+Bullet}}
+\index{Initialize\+Bullet@{Initialize\+Bullet}!Attack@{Attack}}
+\subsubsection[{Initialize\+Bullet}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Attack\+::\+Initialize\+Bullet (
+\begin{DoxyParamCaption}
+\item[{int}]{num}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_attack_ac02b84493ca19adf8425c1ed2efaf54c}
+
+
+\hyperlink{class_aim_attack_a965a7108493329d5d4b869e7289a3835}{Aim\+Attack}, \hyperlink{class_normal_attack_a95c5acd8739229d71395a8423c32a455}{Normal\+Attack}, \hyperlink{class_no_attack_a183ab68341fef13f86ea3ef020a53546}{No\+Attack}で実装されています。
+
+\hypertarget{class_attack_a60e57896cd31f3735746e2881f41f689}{\index{Attack@{Attack}!Think\+Bullets@{Think\+Bullets}}
+\index{Think\+Bullets@{Think\+Bullets}!Attack@{Attack}}
+\subsubsection[{Think\+Bullets}]{\setlength{\rightskip}{0pt plus 5cm}void Attack\+::\+Think\+Bullets (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_attack_a60e57896cd31f3735746e2881f41f689}
+
+
+\subsection{メンバ詳解}
+\hypertarget{class_attack_a4cacf753c3dd709aa9d09260f526213c}{\index{Attack@{Attack}!bullets\+\_\+@{bullets\+\_\+}}
+\index{bullets\+\_\+@{bullets\+\_\+}!Attack@{Attack}}
+\subsubsection[{bullets\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf Bullet}$\ast$$>$ Attack\+::bullets\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_attack_a4cacf753c3dd709aa9d09260f526213c}
+\hypertarget{class_attack_a483c58b104388d57b0f9b380897a49c3}{\index{Attack@{Attack}!chara\+\_\+@{chara\+\_\+}}
+\index{chara\+\_\+@{chara\+\_\+}!Attack@{Attack}}
+\subsubsection[{chara\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Character}$\ast$ Attack\+::chara\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_attack_a483c58b104388d57b0f9b380897a49c3}
+\hypertarget{class_attack_a2bfc44a2d532e0c38fa57c53e57e2995}{\index{Attack@{Attack}!damage\+\_\+@{damage\+\_\+}}
+\index{damage\+\_\+@{damage\+\_\+}!Attack@{Attack}}
+\subsubsection[{damage\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}int Attack\+::damage\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_attack_a2bfc44a2d532e0c38fa57c53e57e2995}
+\hypertarget{class_attack_a80bac689222ec4b3aa22691fe7b01380}{\index{Attack@{Attack}!interval\+\_\+@{interval\+\_\+}}
+\index{interval\+\_\+@{interval\+\_\+}!Attack@{Attack}}
+\subsubsection[{interval\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}int Attack\+::interval\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_attack_a80bac689222ec4b3aa22691fe7b01380}
+\hypertarget{class_attack_a6fa9915c652fa7b30a80382b81cd9c1e}{\index{Attack@{Attack}!interval\+\_\+count\+\_\+@{interval\+\_\+count\+\_\+}}
+\index{interval\+\_\+count\+\_\+@{interval\+\_\+count\+\_\+}!Attack@{Attack}}
+\subsubsection[{interval\+\_\+count\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}int Attack\+::interval\+\_\+count\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_attack_a6fa9915c652fa7b30a80382b81cd9c1e}
+\hypertarget{class_attack_a1baab21d135d9b9c7c4072b303c58963}{\index{Attack@{Attack}!speed\+\_\+@{speed\+\_\+}}
+\index{speed\+\_\+@{speed\+\_\+}!Attack@{Attack}}
+\subsubsection[{speed\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}int Attack\+::speed\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_attack_a1baab21d135d9b9c7c4072b303c58963}
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_attack_8h}{Attack.\+h}\item 
+\hyperlink{_attack_8cpp}{Attack.\+cpp}\end{DoxyCompactItemize}

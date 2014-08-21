@@ -1,0 +1,214 @@
+\hypertarget{class_player}{\section{Player クラス}
+\label{class_player}\index{Player@{Player}}
+}
+
+
+{\ttfamily \#include $<$Player.\+h$>$}
+
+Player の継承関係図\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_player}
+\end{center}
+\end{figure}
+\subsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_player_a03542e946924b8084cb2a8af99dc30e5}{Player} (double x, double y, \hyperlink{class_field}{Field} $\ast$field)
+\item 
+void \hyperlink{class_player_abc93f150c044405d86ebfceb5026b546}{add\+Score} (int point)
+\item 
+void \hyperlink{class_player_a8fa34b8279dd879ad2b56d3ed77e4963}{Change\+Clear} ()
+\item 
+void \hyperlink{class_player_a33b2feb64c47c415d4ce2709bac934cc}{Set\+Game\+Status} (\hyperlink{_player_8h_a3f619558ea4f7947c437250166fbd29b}{G\+A\+M\+E\+\_\+\+S\+T\+A\+T\+U\+S} \hyperlink{class_player_a6eaebcae8a2d8e90033ba21ed3065b91}{game\+\_\+status})
+\item 
+void \hyperlink{class_player_a2e85dba0b04af54c87dd2819b637512b}{super\+Time} ()
+\item 
+int \hyperlink{class_player_a0b5af9f507f7901efcc8ab8ee85e02a5}{score} ()
+\item 
+int \hyperlink{class_player_a012e5b3b06efa727a230b0b4d44eeafd}{life} ()
+\item 
+bool \hyperlink{class_player_abaf0c48bc8bd4a1f04d45821cebc17ea}{super} ()
+\item 
+int \hyperlink{class_player_ac8f40782910567cac2a45bc12bd668b5}{super\+Count} ()
+\item 
+bool \hyperlink{class_player_aa620c2ad442cf120fab24bee89006050}{Is\+Clear} ()
+\item 
+\hyperlink{_player_8h_a3f619558ea4f7947c437250166fbd29b}{G\+A\+M\+E\+\_\+\+S\+T\+A\+T\+U\+S} \hyperlink{class_player_a6eaebcae8a2d8e90033ba21ed3065b91}{game\+\_\+status} ()
+\item 
+void \hyperlink{class_player_a1334990b8b7aaaad904e22f03f4d947d}{Jump} ()
+\item 
+void \hyperlink{class_player_ab60f92a8070d5522ffaf30dbc8224a36}{Damaged} (int damage)
+\item 
+void \hyperlink{class_player_a22a0d2b901622c497b677b7c75fafe45}{Reset} ()
+\item 
+void \hyperlink{class_player_a5e32dec9258cfa8145e482fed4c42c83}{Draw} (int offset)
+\end{DoxyCompactItemize}
+\subsection*{非公開変数類}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_player_a3ffa2ba8dfce8924e4b2b2cae65e2831}{life\+\_\+}
+\item 
+int \hyperlink{class_player_a423e2096b25d4965a84e4a8bf38c7683}{score\+\_\+}
+\item 
+bool \hyperlink{class_player_a36ffd35693d223b63089517cc059f98a}{super\+\_\+}
+\item 
+int \hyperlink{class_player_a141db66821f18e72907efd017533603f}{super\+\_\+count\+\_\+}
+\item 
+bool \hyperlink{class_player_a186aacf08edf0bd9eb3d3ade1c012409}{clear}
+\item 
+\hyperlink{_player_8h_a3f619558ea4f7947c437250166fbd29b}{G\+A\+M\+E\+\_\+\+S\+T\+A\+T\+U\+S} \hyperlink{class_player_adcdab78aadb61281eb3346e32c103192}{game\+\_\+status\+\_\+}
+\end{DoxyCompactItemize}
+\subsection*{その他の継承メンバ}
+
+
+\subsection{構築子と解体子}
+\hypertarget{class_player_a03542e946924b8084cb2a8af99dc30e5}{\index{Player@{Player}!Player@{Player}}
+\index{Player@{Player}!Player@{Player}}
+\subsubsection[{Player}]{\setlength{\rightskip}{0pt plus 5cm}Player\+::\+Player (
+\begin{DoxyParamCaption}
+\item[{double}]{x, }
+\item[{double}]{y, }
+\item[{{\bf Field} $\ast$}]{field}
+\end{DoxyParamCaption}
+)}}\label{class_player_a03542e946924b8084cb2a8af99dc30e5}
+
+
+\subsection{関数詳解}
+\hypertarget{class_player_abc93f150c044405d86ebfceb5026b546}{\index{Player@{Player}!add\+Score@{add\+Score}}
+\index{add\+Score@{add\+Score}!Player@{Player}}
+\subsubsection[{add\+Score}]{\setlength{\rightskip}{0pt plus 5cm}void Player\+::add\+Score (
+\begin{DoxyParamCaption}
+\item[{int}]{point}
+\end{DoxyParamCaption}
+)}}\label{class_player_abc93f150c044405d86ebfceb5026b546}
+\hypertarget{class_player_a8fa34b8279dd879ad2b56d3ed77e4963}{\index{Player@{Player}!Change\+Clear@{Change\+Clear}}
+\index{Change\+Clear@{Change\+Clear}!Player@{Player}}
+\subsubsection[{Change\+Clear}]{\setlength{\rightskip}{0pt plus 5cm}void Player\+::\+Change\+Clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_player_a8fa34b8279dd879ad2b56d3ed77e4963}
+\hypertarget{class_player_ab60f92a8070d5522ffaf30dbc8224a36}{\index{Player@{Player}!Damaged@{Damaged}}
+\index{Damaged@{Damaged}!Player@{Player}}
+\subsubsection[{Damaged}]{\setlength{\rightskip}{0pt plus 5cm}void Player\+::\+Damaged (
+\begin{DoxyParamCaption}
+\item[{int}]{damage}
+\end{DoxyParamCaption}
+)}}\label{class_player_ab60f92a8070d5522ffaf30dbc8224a36}
+\hypertarget{class_player_a5e32dec9258cfa8145e482fed4c42c83}{\index{Player@{Player}!Draw@{Draw}}
+\index{Draw@{Draw}!Player@{Player}}
+\subsubsection[{Draw}]{\setlength{\rightskip}{0pt plus 5cm}void Player\+::\+Draw (
+\begin{DoxyParamCaption}
+\item[{int}]{offset}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_player_a5e32dec9258cfa8145e482fed4c42c83}
+
+
+\hyperlink{class_character_ad359a991510783008ee96060f247c990}{Character}を再実装しています。
+
+\hypertarget{class_player_a6eaebcae8a2d8e90033ba21ed3065b91}{\index{Player@{Player}!game\+\_\+status@{game\+\_\+status}}
+\index{game\+\_\+status@{game\+\_\+status}!Player@{Player}}
+\subsubsection[{game\+\_\+status}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+A\+M\+E\+\_\+\+S\+T\+A\+T\+U\+S} Player\+::game\+\_\+status (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_player_a6eaebcae8a2d8e90033ba21ed3065b91}
+\hypertarget{class_player_aa620c2ad442cf120fab24bee89006050}{\index{Player@{Player}!Is\+Clear@{Is\+Clear}}
+\index{Is\+Clear@{Is\+Clear}!Player@{Player}}
+\subsubsection[{Is\+Clear}]{\setlength{\rightskip}{0pt plus 5cm}bool Player\+::\+Is\+Clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_player_aa620c2ad442cf120fab24bee89006050}
+\hypertarget{class_player_a1334990b8b7aaaad904e22f03f4d947d}{\index{Player@{Player}!Jump@{Jump}}
+\index{Jump@{Jump}!Player@{Player}}
+\subsubsection[{Jump}]{\setlength{\rightskip}{0pt plus 5cm}void Player\+::\+Jump (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_player_a1334990b8b7aaaad904e22f03f4d947d}
+
+
+\hyperlink{class_character_a7622bdde334c8d37358218e64dd6850a}{Character}を再実装しています。
+
+\hypertarget{class_player_a012e5b3b06efa727a230b0b4d44eeafd}{\index{Player@{Player}!life@{life}}
+\index{life@{life}!Player@{Player}}
+\subsubsection[{life}]{\setlength{\rightskip}{0pt plus 5cm}int Player\+::life (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_player_a012e5b3b06efa727a230b0b4d44eeafd}
+\hypertarget{class_player_a22a0d2b901622c497b677b7c75fafe45}{\index{Player@{Player}!Reset@{Reset}}
+\index{Reset@{Reset}!Player@{Player}}
+\subsubsection[{Reset}]{\setlength{\rightskip}{0pt plus 5cm}void Player\+::\+Reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_player_a22a0d2b901622c497b677b7c75fafe45}
+
+
+\hyperlink{class_character_a6c1fa20d22b5ea6edc4dbd6ca9496411}{Character}を再実装しています。
+
+\hypertarget{class_player_a0b5af9f507f7901efcc8ab8ee85e02a5}{\index{Player@{Player}!score@{score}}
+\index{score@{score}!Player@{Player}}
+\subsubsection[{score}]{\setlength{\rightskip}{0pt plus 5cm}int Player\+::score (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_player_a0b5af9f507f7901efcc8ab8ee85e02a5}
+\hypertarget{class_player_a33b2feb64c47c415d4ce2709bac934cc}{\index{Player@{Player}!Set\+Game\+Status@{Set\+Game\+Status}}
+\index{Set\+Game\+Status@{Set\+Game\+Status}!Player@{Player}}
+\subsubsection[{Set\+Game\+Status}]{\setlength{\rightskip}{0pt plus 5cm}void Player\+::\+Set\+Game\+Status (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+A\+M\+E\+\_\+\+S\+T\+A\+T\+U\+S}}]{game\+\_\+status}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_player_a33b2feb64c47c415d4ce2709bac934cc}
+\hypertarget{class_player_abaf0c48bc8bd4a1f04d45821cebc17ea}{\index{Player@{Player}!super@{super}}
+\index{super@{super}!Player@{Player}}
+\subsubsection[{super}]{\setlength{\rightskip}{0pt plus 5cm}bool Player\+::super (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_player_abaf0c48bc8bd4a1f04d45821cebc17ea}
+\hypertarget{class_player_ac8f40782910567cac2a45bc12bd668b5}{\index{Player@{Player}!super\+Count@{super\+Count}}
+\index{super\+Count@{super\+Count}!Player@{Player}}
+\subsubsection[{super\+Count}]{\setlength{\rightskip}{0pt plus 5cm}int Player\+::super\+Count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_player_ac8f40782910567cac2a45bc12bd668b5}
+\hypertarget{class_player_a2e85dba0b04af54c87dd2819b637512b}{\index{Player@{Player}!super\+Time@{super\+Time}}
+\index{super\+Time@{super\+Time}!Player@{Player}}
+\subsubsection[{super\+Time}]{\setlength{\rightskip}{0pt plus 5cm}void Player\+::super\+Time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_player_a2e85dba0b04af54c87dd2819b637512b}
+
+
+\subsection{メンバ詳解}
+\hypertarget{class_player_a186aacf08edf0bd9eb3d3ade1c012409}{\index{Player@{Player}!clear@{clear}}
+\index{clear@{clear}!Player@{Player}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}bool Player\+::clear\hspace{0.3cm}{\ttfamily [private]}}}\label{class_player_a186aacf08edf0bd9eb3d3ade1c012409}
+\hypertarget{class_player_adcdab78aadb61281eb3346e32c103192}{\index{Player@{Player}!game\+\_\+status\+\_\+@{game\+\_\+status\+\_\+}}
+\index{game\+\_\+status\+\_\+@{game\+\_\+status\+\_\+}!Player@{Player}}
+\subsubsection[{game\+\_\+status\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+A\+M\+E\+\_\+\+S\+T\+A\+T\+U\+S} Player\+::game\+\_\+status\+\_\+\hspace{0.3cm}{\ttfamily [private]}}}\label{class_player_adcdab78aadb61281eb3346e32c103192}
+\hypertarget{class_player_a3ffa2ba8dfce8924e4b2b2cae65e2831}{\index{Player@{Player}!life\+\_\+@{life\+\_\+}}
+\index{life\+\_\+@{life\+\_\+}!Player@{Player}}
+\subsubsection[{life\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}int Player\+::life\+\_\+\hspace{0.3cm}{\ttfamily [private]}}}\label{class_player_a3ffa2ba8dfce8924e4b2b2cae65e2831}
+\hypertarget{class_player_a423e2096b25d4965a84e4a8bf38c7683}{\index{Player@{Player}!score\+\_\+@{score\+\_\+}}
+\index{score\+\_\+@{score\+\_\+}!Player@{Player}}
+\subsubsection[{score\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}int Player\+::score\+\_\+\hspace{0.3cm}{\ttfamily [private]}}}\label{class_player_a423e2096b25d4965a84e4a8bf38c7683}
+\hypertarget{class_player_a36ffd35693d223b63089517cc059f98a}{\index{Player@{Player}!super\+\_\+@{super\+\_\+}}
+\index{super\+\_\+@{super\+\_\+}!Player@{Player}}
+\subsubsection[{super\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}bool Player\+::super\+\_\+\hspace{0.3cm}{\ttfamily [private]}}}\label{class_player_a36ffd35693d223b63089517cc059f98a}
+\hypertarget{class_player_a141db66821f18e72907efd017533603f}{\index{Player@{Player}!super\+\_\+count\+\_\+@{super\+\_\+count\+\_\+}}
+\index{super\+\_\+count\+\_\+@{super\+\_\+count\+\_\+}!Player@{Player}}
+\subsubsection[{super\+\_\+count\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}int Player\+::super\+\_\+count\+\_\+\hspace{0.3cm}{\ttfamily [private]}}}\label{class_player_a141db66821f18e72907efd017533603f}
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_player_8h}{Player.\+h}\item 
+\hyperlink{_player_8cpp}{Player.\+cpp}\end{DoxyCompactItemize}

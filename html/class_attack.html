@@ -1,0 +1,467 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>My Project: Attack クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>クラス一覧</span></a></li>
+      <li><a href="classes.html"><span>クラス索引</span></a></li>
+      <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>クラスメンバ</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>クラス</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>列挙型</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>列挙値</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>マクロ定義</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pro-attribs">限定公開変数類</a> &#124;
+<a href="class_attack-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">Attack クラス<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_attack_8h_source.html">Attack.h</a>&gt;</code></p>
+<div class="dynheader">
+Attack の継承関係図</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_attack.png" usemap="#Attack_map" alt=""/>
+  <map id="Attack_map" name="Attack_map">
+<area href="class_aim_attack.html" alt="AimAttack" shape="rect" coords="0,56,87,80"/>
+<area href="class_no_attack.html" alt="NoAttack" shape="rect" coords="97,56,184,80"/>
+<area href="class_normal_attack.html" alt="NormalAttack" shape="rect" coords="194,56,281,80"/>
+</map>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a7bfe78a7f5c0f41fad5e87f1cae7f6a5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_attack.html#a7bfe78a7f5c0f41fad5e87f1cae7f6a5">Attack</a> (int damage, int speed, int interval, <a class="el" href="class_character.html">Character</a> *chara)</td></tr>
+<tr class="separator:a7bfe78a7f5c0f41fad5e87f1cae7f6a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2ea0dae02dde12d3fd31f10ceb374d0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_attack.html#af2ea0dae02dde12d3fd31f10ceb374d0">DoAttack</a> (<a class="el" href="class_bullet.html">Bullet</a> *bullet)</td></tr>
+<tr class="separator:af2ea0dae02dde12d3fd31f10ceb374d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06d145ff7c11cfef2b688eefcd11dac1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_attack.html#a06d145ff7c11cfef2b688eefcd11dac1">DoAttack</a> ()=0</td></tr>
+<tr class="separator:a06d145ff7c11cfef2b688eefcd11dac1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac02b84493ca19adf8425c1ed2efaf54c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_attack.html#ac02b84493ca19adf8425c1ed2efaf54c">InitializeBullet</a> (int num)=0</td></tr>
+<tr class="separator:ac02b84493ca19adf8425c1ed2efaf54c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60e57896cd31f3735746e2881f41f689"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_attack.html#a60e57896cd31f3735746e2881f41f689">ThinkBullets</a> ()</td></tr>
+<tr class="separator:a60e57896cd31f3735746e2881f41f689"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82056bd6da4f30f961df75642cf6b2a6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_attack.html#a82056bd6da4f30f961df75642cf6b2a6">DrawBullets</a> (int offset)</td></tr>
+<tr class="separator:a82056bd6da4f30f961df75642cf6b2a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a178107a2b20a45b02adfdec72269711c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_attack.html#a178107a2b20a45b02adfdec72269711c">~Attack</a> (void)</td></tr>
+<tr class="separator:a178107a2b20a45b02adfdec72269711c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6c6c719f3a56fafdf515394cc92869f"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="class_bullet.html">Bullet</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_attack.html#ad6c6c719f3a56fafdf515394cc92869f">bullets</a> ()</td></tr>
+<tr class="separator:ad6c6c719f3a56fafdf515394cc92869f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa4045e8fe9f2ce9b3f473d3bf869c87"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_attack.html#aaa4045e8fe9f2ce9b3f473d3bf869c87">GetBulletsSize</a> ()</td></tr>
+<tr class="separator:aaa4045e8fe9f2ce9b3f473d3bf869c87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+限定公開変数類</h2></td></tr>
+<tr class="memitem:a4cacf753c3dd709aa9d09260f526213c"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="class_bullet.html">Bullet</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_attack.html#a4cacf753c3dd709aa9d09260f526213c">bullets_</a></td></tr>
+<tr class="separator:a4cacf753c3dd709aa9d09260f526213c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a483c58b104388d57b0f9b380897a49c3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_character.html">Character</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_attack.html#a483c58b104388d57b0f9b380897a49c3">chara_</a></td></tr>
+<tr class="separator:a483c58b104388d57b0f9b380897a49c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bfc44a2d532e0c38fa57c53e57e2995"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_attack.html#a2bfc44a2d532e0c38fa57c53e57e2995">damage_</a></td></tr>
+<tr class="separator:a2bfc44a2d532e0c38fa57c53e57e2995"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1baab21d135d9b9c7c4072b303c58963"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_attack.html#a1baab21d135d9b9c7c4072b303c58963">speed_</a></td></tr>
+<tr class="separator:a1baab21d135d9b9c7c4072b303c58963"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80bac689222ec4b3aa22691fe7b01380"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_attack.html#a80bac689222ec4b3aa22691fe7b01380">interval_</a></td></tr>
+<tr class="separator:a80bac689222ec4b3aa22691fe7b01380"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fa9915c652fa7b30a80382b81cd9c1e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_attack.html#a6fa9915c652fa7b30a80382b81cd9c1e">interval_count_</a></td></tr>
+<tr class="separator:a6fa9915c652fa7b30a80382b81cd9c1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">構築子と解体子</h2>
+<a class="anchor" id="a7bfe78a7f5c0f41fad5e87f1cae7f6a5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Attack::Attack </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>damage</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>speed</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>interval</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_character.html">Character</a> *&#160;</td>
+          <td class="paramname"><em>chara</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a178107a2b20a45b02adfdec72269711c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Attack::~Attack </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a class="anchor" id="ad6c6c719f3a56fafdf515394cc92869f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt;<a class="el" href="class_bullet.html">Bullet</a>*&gt; Attack::bullets </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af2ea0dae02dde12d3fd31f10ceb374d0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Attack::DoAttack </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_bullet.html">Bullet</a> *&#160;</td>
+          <td class="paramname"><em>bullet</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a06d145ff7c11cfef2b688eefcd11dac1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Attack::DoAttack </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_aim_attack.html#abc5f35b870b83aecd372e5b3aef30b37">AimAttack</a>, <a class="el" href="class_normal_attack.html#a39d8e90194dca1a89ba961163b7d0e18">NormalAttack</a>, <a class="el" href="class_no_attack.html#a42e89327c50ecc690056bf5c605a898b">NoAttack</a>で実装されています。</p>
+
+</div>
+</div>
+<a class="anchor" id="a82056bd6da4f30f961df75642cf6b2a6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Attack::DrawBullets </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>offset</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aaa4045e8fe9f2ce9b3f473d3bf869c87"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Attack::GetBulletsSize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac02b84493ca19adf8425c1ed2efaf54c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Attack::InitializeBullet </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>num</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_aim_attack.html#a965a7108493329d5d4b869e7289a3835">AimAttack</a>, <a class="el" href="class_normal_attack.html#a95c5acd8739229d71395a8423c32a455">NormalAttack</a>, <a class="el" href="class_no_attack.html#a183ab68341fef13f86ea3ef020a53546">NoAttack</a>で実装されています。</p>
+
+</div>
+</div>
+<a class="anchor" id="a60e57896cd31f3735746e2881f41f689"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Attack::ThinkBullets </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a class="anchor" id="a4cacf753c3dd709aa9d09260f526213c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt;<a class="el" href="class_bullet.html">Bullet</a>*&gt; Attack::bullets_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a483c58b104388d57b0f9b380897a49c3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_character.html">Character</a>* Attack::chara_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2bfc44a2d532e0c38fa57c53e57e2995"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Attack::damage_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a80bac689222ec4b3aa22691fe7b01380"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Attack::interval_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6fa9915c652fa7b30a80382b81cd9c1e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Attack::interval_count_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1baab21d135d9b9c7c4072b303c58963"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Attack::speed_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="_attack_8h_source.html">Attack.h</a></li>
+<li><a class="el" href="_attack_8cpp.html">Attack.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+2014年08月21日(木) 17時11分51秒作成 - My Project / 構成:  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.7
+</small></address>
+</body>
+</html>

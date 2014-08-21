@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>My Project: Field.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>クラス</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>列挙型</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>列挙値</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>マクロ定義</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Field.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_field_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_map_8h.html">Map.h</a>&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include&quot;<a class="code" href="_a_object_8h.html">AObject.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_character_8h.html">Character.h</a>&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_enemy_8h.html">Enemy.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_player_8h.html">Player.h</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_item_8h.html">Item.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_object_manager_8h.html">ObjectManager.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;math.h&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include&lt;typeinfo&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_field.html">   16</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_field.html">Field</a></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">//フィールド</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="class_field.html#afa58380f2c246abfac40e368e9a157f0">   20</a></span>&#160;    <a class="code" href="class_map.html">Map</a>* <a class="code" href="class_field.html#afa58380f2c246abfac40e368e9a157f0">map_</a>;                    <span class="comment">//マップ</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="class_field.html#af51776b9b909f421068a8bcd9701e142">   21</a></span>&#160;    <a class="code" href="class_object_manager.html">ObjectManager</a>* <a class="code" href="class_field.html#af51776b9b909f421068a8bcd9701e142">obj_manager_</a>; </div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="class_field.html#a5c4f6af48254c9dcc602879aaf86d03e">   22</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_field.html#a5c4f6af48254c9dcc602879aaf86d03e">count_</a>;                  <span class="comment">//時間計測用</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="class_field.html#a0e7ed8b2be66267ec1570648f6cdbe40">   23</a></span>&#160;    vector&lt;AObject*&gt; <a class="code" href="class_field.html#a0e7ed8b2be66267ec1570648f6cdbe40">objects_</a>;   <span class="comment">//全てのオブジェクト管理用</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="class_field.html#a4376e5c7cac9ae060281c65a9bb10546">   24</a></span>&#160;    <a class="code" href="class_player.html">Player</a>* <a class="code" href="class_field.html#a4376e5c7cac9ae060281c65a9bb10546">player_</a>;              <span class="comment">//プレイヤー管理用</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="class_field.html#a3bbc1c73deeb5dc6b2ac78487b121353">   25</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="class_field.html#a3bbc1c73deeb5dc6b2ac78487b121353">gravity_</a>;             <span class="comment">//重力の値</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="class_field.html#ae160817fea72d1483d556eba3f97dfe6">   26</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_field.html#ae160817fea72d1483d556eba3f97dfe6">offset_</a>;                 <span class="comment">//オフセット</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_field.html#a7b31ee36e5115d099c6b7beb47397621">   28</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_field.html#a7b31ee36e5115d099c6b7beb47397621">menu_flag</a>;              <span class="comment">//メニュー画面に戻るかどうか判定用</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="class_field.html#a20e399af0fc61f66c5b0a7aadcb5e10b">   29</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_field.html#a20e399af0fc61f66c5b0a7aadcb5e10b">wait_count_</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="class_field.html#ac77b13cecde2f70c728d9a8d4355928e">   31</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_field.html#ac77b13cecde2f70c728d9a8d4355928e">end_graphic_handle</a>;      <span class="comment">//ゲームオーバー画像</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="class_field.html#a00ee4da146cd30fce7aa9e7ce5b3a781">   32</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_field.html#a00ee4da146cd30fce7aa9e7ce5b3a781">clear_graphic_handle</a>;    <span class="comment">//ゲームクリア画像</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="class_field.html">Field</a>(); <span class="comment">//仮コンストラクタ</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="class_field.html">Field</a>(<a class="code" href="class_map.html">Map</a>* map);   <span class="comment">//コンストラクタ</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">int</span> MainLoop();  <span class="comment">//メインループ</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">int</span> GetMapData(<span class="keywordtype">double</span> x, <span class="keywordtype">double</span> y); <span class="comment">//描画エリア内の座標を引数にとって、そこのマップデータを返す    </span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">int</span> GetNextMapData(<a class="code" href="struct_two_dimension.html">TwoDimension</a> chara_pos,<a class="code" href="struct_two_dimension.html">TwoDimension</a> chara_speed,<span class="keywordtype">bool</span> right); <span class="comment">//キャラクターが次にいる場所のマップデータを返す</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="struct_two_dimension.html">TwoDimension</a> GetPlayerPos();<span class="comment">//プレイヤーの座標を返す関数</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="class_field.html#a7fd8d8172b36ef5f764e9b98b178c8eb">   41</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_field.html#a7fd8d8172b36ef5f764e9b98b178c8eb">count</a>(){<span class="keywordflow">return</span> count_;}          <span class="comment">//countのゲッター</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="class_field.html#aa135a6f54b5b6779b36e147e46c70696">   42</a></span>&#160;    <a class="code" href="class_player.html">Player</a>* <a class="code" href="class_field.html#aa135a6f54b5b6779b36e147e46c70696">player</a>(){<span class="keywordflow">return</span> player_;} <span class="comment">//プレイヤーを返す</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    ~<a class="code" href="class_field.html">Field</a>(); <span class="comment">//デストラクタ</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">void</span> Initialize();                   <span class="comment">//初期化処理</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">void</span> Scroll();                       <span class="comment">//スクロール処理</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">void</span> FallObjects();                  <span class="comment">//各オブジェクトに対して、空中にいる場合Fallを呼び出す</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">void</span> MoveObjects();                  <span class="comment">//各オブジェクトに対してMoveを呼び出す</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">void</span> DrawObjects();                  <span class="comment">//各オブジェクトに対してDrawを呼び出す</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">void</span> ThinkObjects();                 <span class="comment">//各オブジェクトに対して</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">void</span> TouchPlayerToObjects();          <span class="comment">//プレイヤー、弾と敵、アイテムとの当たり判定</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">void</span> TouchObjectsToWall();            <span class="comment">//オブジェクトと壁の当たり判定</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">void</span> BulletTouchWall();                <span class="comment">//壁と弾の当たり判定</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">void</span> Reset();                        <span class="comment">//プレイヤー死亡時のリセット関数</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment">//void DeleteObjects();                //生存falgがfalseのオブジェクトを削除</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">void</span> GameOver();                     <span class="comment">//ゲームオーバー処理</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">void</span> GameClear();                    <span class="comment">//ゲームクリア処理                      </span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">void</span> CheckOutOfArea();               <span class="comment">//画面外の敵を殺す</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">void</span> DownObjectsDie();               <span class="comment">//画面下のオブジェクトを殺す</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">void</span> AddObject(<a class="code" href="class_a_object.html">AObject</a> *object_num, <span class="keywordtype">bool</span> isBegin); <span class="comment">//引数のオブジェクトを生成</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">int</span> PixelToTiles(<span class="keywordtype">double</span> pixels);     <span class="comment">//ピクセル単位をタイル単位に変換</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">int</span> TilesToPixels(<span class="keywordtype">int</span> tiles);        <span class="comment">//タイル単位をピクセル単位に変換</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">bool</span> JudgeCircle(<span class="keywordtype">int</span> x1, <span class="keywordtype">int</span> y1, <span class="keywordtype">int</span> r1, <span class="keywordtype">int</span> x2, <span class="keywordtype">int</span> y2, <span class="keywordtype">int</span> r2); <span class="comment">//円同士のの当たり判定</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordtype">bool</span> JudgeHitCharacters(<a class="code" href="class_a_object.html">AObject</a>* p, <a class="code" href="class_a_object.html">AObject</a>* e); <span class="comment">//キャラクター同士の当たり判定</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordtype">void</span> FindObject(<span class="keywordtype">int</span> from_y,<span class="keywordtype">int</span> to_y,<span class="keywordtype">int</span> from_x, <span class="keywordtype">int</span> to_x);   <span class="comment">//描画エリアに入ったenemyの生存フラグをtrueにする</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;};</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="ttc" id="class_field_html_a00ee4da146cd30fce7aa9e7ce5b3a781"><div class="ttname"><a href="class_field.html#a00ee4da146cd30fce7aa9e7ce5b3a781">Field::clear_graphic_handle</a></div><div class="ttdeci">int clear_graphic_handle</div><div class="ttdef"><b>Definition:</b> Field.h:32</div></div>
+<div class="ttc" id="class_field_html_afa58380f2c246abfac40e368e9a157f0"><div class="ttname"><a href="class_field.html#afa58380f2c246abfac40e368e9a157f0">Field::map_</a></div><div class="ttdeci">Map * map_</div><div class="ttdef"><b>Definition:</b> Field.h:20</div></div>
+<div class="ttc" id="_player_8h_html"><div class="ttname"><a href="_player_8h.html">Player.h</a></div></div>
+<div class="ttc" id="_character_8h_html"><div class="ttname"><a href="_character_8h.html">Character.h</a></div></div>
+<div class="ttc" id="_item_8h_html"><div class="ttname"><a href="_item_8h.html">Item.h</a></div></div>
+<div class="ttc" id="class_field_html_a7fd8d8172b36ef5f764e9b98b178c8eb"><div class="ttname"><a href="class_field.html#a7fd8d8172b36ef5f764e9b98b178c8eb">Field::count</a></div><div class="ttdeci">int count()</div><div class="ttdef"><b>Definition:</b> Field.h:41</div></div>
+<div class="ttc" id="class_field_html_a3bbc1c73deeb5dc6b2ac78487b121353"><div class="ttname"><a href="class_field.html#a3bbc1c73deeb5dc6b2ac78487b121353">Field::gravity_</a></div><div class="ttdeci">double gravity_</div><div class="ttdef"><b>Definition:</b> Field.h:25</div></div>
+<div class="ttc" id="_object_manager_8h_html"><div class="ttname"><a href="_object_manager_8h.html">ObjectManager.h</a></div></div>
+<div class="ttc" id="class_field_html_a20e399af0fc61f66c5b0a7aadcb5e10b"><div class="ttname"><a href="class_field.html#a20e399af0fc61f66c5b0a7aadcb5e10b">Field::wait_count_</a></div><div class="ttdeci">int wait_count_</div><div class="ttdef"><b>Definition:</b> Field.h:29</div></div>
+<div class="ttc" id="class_field_html_a7b31ee36e5115d099c6b7beb47397621"><div class="ttname"><a href="class_field.html#a7b31ee36e5115d099c6b7beb47397621">Field::menu_flag</a></div><div class="ttdeci">bool menu_flag</div><div class="ttdef"><b>Definition:</b> Field.h:28</div></div>
+<div class="ttc" id="class_field_html_af51776b9b909f421068a8bcd9701e142"><div class="ttname"><a href="class_field.html#af51776b9b909f421068a8bcd9701e142">Field::obj_manager_</a></div><div class="ttdeci">ObjectManager * obj_manager_</div><div class="ttdef"><b>Definition:</b> Field.h:21</div></div>
+<div class="ttc" id="_map_8h_html"><div class="ttname"><a href="_map_8h.html">Map.h</a></div></div>
+<div class="ttc" id="struct_two_dimension_html"><div class="ttname"><a href="struct_two_dimension.html">TwoDimension</a></div><div class="ttdef"><b>Definition:</b> AObject.h:16</div></div>
+<div class="ttc" id="class_field_html"><div class="ttname"><a href="class_field.html">Field</a></div><div class="ttdef"><b>Definition:</b> Field.h:16</div></div>
+<div class="ttc" id="class_field_html_a4376e5c7cac9ae060281c65a9bb10546"><div class="ttname"><a href="class_field.html#a4376e5c7cac9ae060281c65a9bb10546">Field::player_</a></div><div class="ttdeci">Player * player_</div><div class="ttdef"><b>Definition:</b> Field.h:24</div></div>
+<div class="ttc" id="_enemy_8h_html"><div class="ttname"><a href="_enemy_8h.html">Enemy.h</a></div></div>
+<div class="ttc" id="class_map_html"><div class="ttname"><a href="class_map.html">Map</a></div><div class="ttdef"><b>Definition:</b> Map.h:7</div></div>
+<div class="ttc" id="class_field_html_a5c4f6af48254c9dcc602879aaf86d03e"><div class="ttname"><a href="class_field.html#a5c4f6af48254c9dcc602879aaf86d03e">Field::count_</a></div><div class="ttdeci">int count_</div><div class="ttdef"><b>Definition:</b> Field.h:22</div></div>
+<div class="ttc" id="class_field_html_aa135a6f54b5b6779b36e147e46c70696"><div class="ttname"><a href="class_field.html#aa135a6f54b5b6779b36e147e46c70696">Field::player</a></div><div class="ttdeci">Player * player()</div><div class="ttdef"><b>Definition:</b> Field.h:42</div></div>
+<div class="ttc" id="class_field_html_a0e7ed8b2be66267ec1570648f6cdbe40"><div class="ttname"><a href="class_field.html#a0e7ed8b2be66267ec1570648f6cdbe40">Field::objects_</a></div><div class="ttdeci">vector&lt; AObject * &gt; objects_</div><div class="ttdef"><b>Definition:</b> Field.h:23</div></div>
+<div class="ttc" id="class_field_html_ac77b13cecde2f70c728d9a8d4355928e"><div class="ttname"><a href="class_field.html#ac77b13cecde2f70c728d9a8d4355928e">Field::end_graphic_handle</a></div><div class="ttdeci">int end_graphic_handle</div><div class="ttdef"><b>Definition:</b> Field.h:31</div></div>
+<div class="ttc" id="class_field_html_ae160817fea72d1483d556eba3f97dfe6"><div class="ttname"><a href="class_field.html#ae160817fea72d1483d556eba3f97dfe6">Field::offset_</a></div><div class="ttdeci">int offset_</div><div class="ttdef"><b>Definition:</b> Field.h:26</div></div>
+<div class="ttc" id="class_object_manager_html"><div class="ttname"><a href="class_object_manager.html">ObjectManager</a></div><div class="ttdef"><b>Definition:</b> ObjectManager.h:9</div></div>
+<div class="ttc" id="class_a_object_html"><div class="ttname"><a href="class_a_object.html">AObject</a></div><div class="ttdef"><b>Definition:</b> AObject.h:21</div></div>
+<div class="ttc" id="class_player_html"><div class="ttname"><a href="class_player.html">Player</a></div><div class="ttdef"><b>Definition:</b> Player.h:14</div></div>
+<div class="ttc" id="_a_object_8h_html"><div class="ttname"><a href="_a_object_8h.html">AObject.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+2014年08月21日(木) 17時11分51秒作成 - My Project / 構成:  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.7
+</small></address>
+</body>
+</html>
