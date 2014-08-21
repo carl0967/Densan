@@ -8,7 +8,6 @@
 #include "JumpKame.h"
 #include "Taihou.h"
 
-
 Field::Field(Map* map){
 	map_ = map;
 	obj_manager_=new ObjectManager(map->map_width(),map->map_height());
@@ -99,6 +98,7 @@ void Field::Initialize(){
 				AddObject(new Kame(i*32,k*32,this),false);
 				obj_manager_->RegisterObject(i,k,KAME); //オブジェクトマネージャーに登録
 				break;
+				
 			case COIN:
 				{
 				Coin* coin=new Coin(i*32,k*32);
@@ -113,10 +113,10 @@ void Field::Initialize(){
 				obj_manager_->RegisterObject(i,k,G_FLAG);
 				break;
 				}
-			case JUMPKAME:
+							case JUMPKAME:
 				{
 				AddObject(new JumpKame(i*32,k*32,this),false);
-				obj_manager_->RegisterObject(i,k,JUMPKAME); //オブジェクトマネージャーに登録
+				obj_manager_->RegisterObject(i,k,JUMPKAME);
 				break;
 				}
 			case TAIHOU:
@@ -125,6 +125,7 @@ void Field::Initialize(){
 					obj_manager_->RegisterObject(i,k,TAIHOU);
 					break;
 				}
+				
 			}
 		}
 	}
@@ -403,15 +404,20 @@ bool Field::JudgeHitCharacters(AObject* p, AObject* e){
 	}
 	return false;
 }
-
+/*
 int Field::GetMapData(double x, double y){
 	return map_->GetMapData(x,y);
 }
-int Field::GetNextMapData(TwoDimension pos,TwoDimension speed,bool right){
+*/
+bool Field::IsNextMapDataAWall(TwoDimension pos,TwoDimension speed,bool right){
 	if(right){
-		return map_->GetMapData(pos.x+speed.x+32,pos.y);
+		if( map_->GetMapData(pos.x+speed.x+32,pos.y)==WALL) return  true;
+		else return false;
 	}
-	else return map_->GetMapData(pos.x+speed.x,pos.y);
+	else{
+		if(map_->GetMapData(pos.x+speed.x,pos.y)==WALL) return true;
+		else return false;
+	}
 }
 
 //プレイヤーの座標を返す関数
