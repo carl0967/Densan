@@ -26,11 +26,11 @@ int Field::MainLoop(){
 	ThinkObjects();
 	Scroll();
 	
-	TouchObjects2Wall();
+	TouchObjectsToWall();
 	MoveObjects();
 	CheckOutOfArea();
 	DownObjectsDie();
-	TouchPlayer2Objects();
+	TouchPlayerToObjects();
 	BulletTouchWall();
 
 	Reset();
@@ -75,7 +75,7 @@ void Field::Scroll(){
 	if(PixelToTiles(old_offset)!=PixelToTiles(offset_)){
 		//右端を読み込む場合
 		if(player_->isRight()){
-			int x=PixelToTiles(-offset_+width); //offset+widthで読み込むx座標になる
+			int x=PixelToTiles(-offset_+width); //offset+widthで読み込むx座標になる。offsetは-のため反転
 			FindObject(0,map_->map_height(),x,x+1);
 		}
 	}
@@ -83,6 +83,7 @@ void Field::Scroll(){
 
 void Field::Initialize(){
 	//オブジェクト生成
+	//新しくオブジェクトを生成するときは、ここのcaseを追加する
 	for(int i=0; i<map_->map_width(); i++){
 		for(int k=0; k<map_->map_height(); k++){
 			int map_chip=map_->GetMapDataFromCell(i,k);
@@ -178,7 +179,7 @@ void Field::ThinkObjects(){
 }
 
 //未完成(プレイヤーの無敵時間管理も行う)
-void Field::TouchPlayer2Objects(){
+void Field::TouchPlayerToObjects(){
 		int px = (int)objects_.at(0)->pos().x;
 		int py = (int)objects_.at(0)->pos().y;
 	//objects_の要素０はプレイヤーなのでi=1からはじめる
@@ -186,12 +187,12 @@ void Field::TouchPlayer2Objects(){
 		//プレイヤーと敵との接触判定
 		if(objects_.at(i)->object_type()==O_ENEMY && objects_.at(i)->isAlive()){
 			if(JudgeHitCharacters(player_,objects_.at(i)) && !player_->super()){
-				player_->Damaged(1);
+				player_->Damaged(1); //プレイヤーに１ダメージ
 			}
 		}
 		//プレイヤーとアイテムとの接触判定
 		if(objects_.at(i)->object_type() == O_ITEM && objects_.at(i)->isAlive()){
-			if(JudgeHitCharacters(player_,objects_.at(i)) && !player_->super()){
+			if(JudgeHitCharacters(player_,objects_.at(i))){
 				dynamic_cast<Item*>(objects_.at(i))->Affect(dynamic_cast<Character*>(objects_.at(0)));
 				objects_.at(i)->Die();
 			}
@@ -229,7 +230,7 @@ void Field::TouchPlayer2Objects(){
 }
 
 //完成（仮）
-void Field::TouchObjects2Wall(){
+void Field::TouchObjectsToWall(){
 	for(int i=0; i<(int)objects_.size(); i++){
 		double objectX = objects_.at(i)->pos().x;
 		double objectY = objects_.at(i)->pos().y;
