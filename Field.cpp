@@ -50,7 +50,7 @@ int Field::MainLoop(){
 
 //ƒQ[ƒ€ƒNƒŠƒAˆ—
 void Field::GameClear(){
-	clear_flag=player_->IsClear();
+	if(player_->game_status()==CLEAR) clear_flag=true;
 	if(clear_flag){
 		clear_count++;
 		DrawGraph(100,100,clear_graphic_handle,true);
@@ -84,15 +84,6 @@ void Field::Scroll(){
 		if(player_->isRight()){
 			int x=PixelToTiles(-offset_+width); //offset+width‚Å“Ç‚Ýž‚ÞxÀ•W‚É‚È‚é
 			FindObject(0,map_->map_height(),x,x+1);
-			/*
-			for(int i=0;i<15;i++){
-			int x=PixelToTiles(-offset_+width); //offset+width‚Å“Ç‚Ýž‚ÞxÀ•W‚É‚È‚é
-			int id=obj_manager_->GetId(x,i);
-			if(id!=-1){
-				if(objects_.at(id)->isAlive()==false) objects_.at(id)->Reset();
-			}
-			}
-			*/
 		}
 	}
 }
@@ -134,7 +125,7 @@ void Field::Initialize(){
 	}
 	
 	//Å‰‚Ì•`‰æ—Ìˆæ‚Ì“G‚Ì‚Ý“®‚©‚·
-	FindObject(0,map_->map_height(),0,20);
+	FindObject(0,15,0,20);
 
 }
 void Field::FindObject(int from_y,int to_y,int from_x,int to_x){
