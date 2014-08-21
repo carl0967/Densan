@@ -12,6 +12,7 @@ public:
 	Attack(int damage, int speed, int interval, Character* chara); //コンストラクタ
 	void DoAttack(Bullet* bullet); //弾を一個発射
 	virtual void DoAttack() = 0;     //弾を発射(抽象クラス)
+	virtual void InitializeBullet(int num) = 0; //引数で指定した弾を初期化
 	void ThinkBullets(); //生きている全ての弾にThink
 	void DrawBullets(int offset);//弾を描画
 	~Attack(void);

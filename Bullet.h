@@ -1,17 +1,16 @@
 #pragma once
 #include "aobject.h"
+#include <math.h>
 
-enum Direction{
-	RIGHT = 1, LEFT = -1
-};
+#define PAI 3.14
 
 class Bullet :public AObject
 {
 public:
-	Bullet(double x,double y,int damage,int speed, char* fname, int hit_size_x, int hit_size_y,bool right);//コンストラクタ
-	virtual void Think() = 0;
+	Bullet(double x,double y,int damage,int speed, char* fname, int hit_size_x, int hit_size_y);//コンストラクタ
+	virtual void Think();
 	void DieBullet(); //離れた弾を消滅させる
-	void Initialize(double x, double y,int direction);//初期化処理(再出現させる際に呼び出す)
+	virtual void Initialize(double x, double y);//初期化処理(再出現させる際に呼び出す)
 	~Bullet(void);
 
 
@@ -21,6 +20,6 @@ public:
 protected:
 	int damage_;
 	int bullet_speed_; //弾の速度
-	int direction_;   //1のとき右方向,-1の時左方向
+	double angle_; //発射角度
 };
 

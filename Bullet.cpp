@@ -1,7 +1,7 @@
 #include "Bullet.h"
 
 
-Bullet::Bullet(double x, double y,int damage,int speed, char* fname, int hit_size_x, int hit_size_y,bool right): AObject(x, y, fname,hit_size_x,hit_size_y,right)
+Bullet::Bullet(double x, double y,int damage,int speed, char* fname, int hit_size_x, int hit_size_y): AObject(x, y, fname,hit_size_x,hit_size_y,true)
 {
 	//’e‚ð”­ŽË
 	Revival();
@@ -14,19 +14,19 @@ Bullet::Bullet(double x, double y,int damage,int speed, char* fname, int hit_siz
 	damage_ = damage;
 	//•ûŒüÝ’è
 	this->right = false;
-	if(right)
-		direction_ = RIGHT;
-	else
-		direction_ = LEFT;
 }
 
-void Bullet::Initialize(double x, double y, int direction){
+void Bullet::Initialize(double x, double y){
 	Revival();
 	pos_.x = x-size_.x/2;
 	pos_.y = y-size_.y/2;
 	first_pos_.x = pos_.x;
 	first_pos_.y = pos_.y;
-	direction_ = direction;
+}
+
+void Bullet::Think(){
+	pos_.x += bullet_speed_*cos(angle_);
+	pos_.y += bullet_speed_*sin(angle_);
 }
 
 void Bullet::DieBullet(){

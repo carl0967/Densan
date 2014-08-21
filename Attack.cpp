@@ -37,12 +37,7 @@ void Attack::DoAttack(Bullet* bullet){
 			}
 			//Ž€‚ñ‚Å‚¢‚é’e(alive_==false)‚ª‚ ‚éê‡‚»‚Ì’e‚ðÄ—˜—p
 			else{
-				int dir=0;
-				if(chara_->isRight())
-					dir = 1;
-				else
-					dir = -1;
-				bullets_.at(count)->Initialize(chara_->GetCenterPosX(),chara_->GetCenterPosY(),dir);
+				InitializeBullet(count);
 				delete bullet;
 			}
 		}

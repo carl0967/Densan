@@ -6,6 +6,7 @@ class NoAttack :
 public:
 	NoAttack(Character* chara);
 	void DoAttack();
+	void InitializeBullet(int num);
 	~NoAttack(void);
 };
 
