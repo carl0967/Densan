@@ -160,14 +160,14 @@ void Field::MoveObjects(){
 //完成
 void Field::DrawObjects(){
 	if(player_->game_status()==NOTHING){
+		//マップ描画
+		map_->Draw(offset_);
 		//オブジェクト描画
 		for(int i=0; i<(int)objects_.size(); i++){
 			if(objects_.at(i)->isAlive()){
 				objects_.at(i)->Draw(offset_);
 			}
 		}
-		//マップ描画
-		map_->Draw(offset_);
 		//HPバー描画
 		int percentHp = (player_->hp()*100)/player_->maxHp();
 		DrawString(30,10,"HP",GetColor(255,255,255),true);
