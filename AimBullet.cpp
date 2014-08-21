@@ -7,6 +7,7 @@ AimBullet::AimBullet(double x, double y,int damage, int speed, double hit_size_x
 }
 
 void AimBullet::Initialize(double x, double y, double aim_x, double aim_y){
+	Bullet::Initialize(x,y);
 	angle_ = atan2(aim_y-y, aim_x-x);
 }
 
