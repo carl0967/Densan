@@ -19,6 +19,7 @@ private:
 						// セル単位ではなくピクセル単位(右に30スクロールするなら、offset=30に
 						// して、描画するとき(x-ofset,y)が描画場所になる
 	int wallGraph_;		// 壁の画像
+	int width_;			// 背景画像の幅
 public:
 	int map_width() {return map_width_;}
 	int map_height() {return map_height_;}

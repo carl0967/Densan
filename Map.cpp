@@ -15,6 +15,11 @@ Map::Map(int cell_width,int cell_hegiht,int** map_datas){
 
 int Map::SetBackground(std::string filename){
 	background_ = LoadGraph(filename.c_str());
+	int height = 0;
+	if(background_ != -1){
+		width_ = 1;
+		GetGraphSize(background_,&width_,&height);
+	}
 	return background_==-1 ? -1 : 0;
 }
 
@@ -51,15 +56,10 @@ void Map::Draw(int offset){
 
 	//---------------”wŒi‚Ì•`‰æ---------------
 	if(background_ !=-1){
-		int width = 0,height = 0;
-		GetGraphSize(background_,&width,&height);
-
-		for(int i=0;width*i+offset%width<MAP_WIDTH;i++){
-			DrawGraph(width*i+offset%width,0,background_,FALSE);
+		for(int i=0;width_*i+offset%width_<MAP_WIDTH;i++){
+			DrawGraph(width_*i+offset%width_,0,background_,FALSE);
 		}
 	}
-	
-	
 
 	//---------------ƒZƒ‹‚Ì•`‰æ---------------
 	for(int i=0;i<map_height_;i++){
