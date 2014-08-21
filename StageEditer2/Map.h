@@ -3,10 +3,10 @@
 #include "resource.h"
 #include <commdlg.h>
 #include <vector>
-#define GRAPHIC_NUM 6
+#define GRAPHIC_NUM 8
 
 class Map{
-	enum MapChip{EMPTY,WALL,PLAYER,KAME,COIN,G_FLAG};
+	enum MapChip{EMPTY,WALL,PLAYER,KAME,COIN,G_FLAG,FLYKAME,TAIHO};
 private:
 	int width;				// マップの幅
 	int height;				// マップの高さ

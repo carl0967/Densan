@@ -7,7 +7,7 @@
 class SaveDialog{
 private:
 	// 親のウィンドウ
-	HWND			hWnd;
+	//HWND			hWnd;
 	// ファイル名の構造体
 	OPENFILENAME	ofn;
 	// ファイルパス

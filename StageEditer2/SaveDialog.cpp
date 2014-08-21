@@ -7,7 +7,7 @@
 SaveDialog::SaveDialog(HWND hWnd)
 	:ofn(),szPath()
 {
-	this->hWnd = hWnd;
+	//this->hWnd = hWnd;
 }
 
 void SaveDialog::Save(char* filename,std::vector<int> orignal,int x,int y){
@@ -24,7 +24,8 @@ void SaveDialog::Save(char* filename,std::vector<int> orignal,int x,int y){
 		ss << "\n";
 		fwrite(ss.str().c_str(),1,x*2,fp);
 	}
-	fclose(fp);
+	if(fp)
+		fclose(fp);
 }
 
 TCHAR* SaveDialog::FileSave(HWND hWnd){

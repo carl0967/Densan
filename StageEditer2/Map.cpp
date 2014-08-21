@@ -12,10 +12,12 @@ void Map::AddMapData(int xPos,int yPos,HWND hWnd){
 	int index_x=(int)(xPos)/CELL_WIDTH;
 	int index_y=(int)(yPos)/CELL_HEIGHT;
 	index_x += offset;
-	if(orignal[index_y*width+index_x]<GRAPHIC_NUM-1){
-		orignal[index_y*width+index_x]++;
-	}else{
-		orignal[index_y*width+index_x] = 0;
+	if(index_x <= width && index_y <= height){
+		if(orignal[index_y*width+index_x]<GRAPHIC_NUM-1){
+			orignal[index_y*width+index_x]++;
+		}else{
+			orignal[index_y*width+index_x] = 0;
+		}
 	}
 	InvalidateRect(hWnd , NULL , TRUE);	// Ä•`‰æ—v‹
 }
@@ -27,7 +29,9 @@ void Map::LoadMap(HWND hWnd){
 	L".\\graph\\player.bmp",
 	L".\\graph\\kame.bmp",
 	L".\\graph\\coin.bmp",
-	L".\\graph\\flag.bmp"};
+	L".\\graph\\flag.bmp",
+	L".\\graph\\flyKame.bmp",
+	L".\\graph\\taiho.bmp"};
 
 	for(int i=0;i<GRAPHIC_NUM;i++){
 		graphicMem[i] = CreateCompatibleDC(NULL);	
@@ -47,7 +51,9 @@ VOID Map::DrawMap(HWND hWnd,PAINTSTRUCT *ps,HDC hdc){
 	for(int i=0;i<height;i++){
 		for(int j=0;j<width;j++){
 			int index = orignal[i*width+j];
-			BitBlt(hdc,(j-offset)*CELL_WIDTH,i*CELL_HEIGHT,graphics[index].bmWidth,graphics[index].bmHeight,graphicMem[index],0,0,SRCCOPY);
+			// index‚ª0ˆÈã‚Å‚©‚ÂGRAPHIC_NUM–¢–ž‚Ìê‡‚Ì‚Ý•`‰æ(ƒGƒ‰[‚ð–h‚®)
+			if(index<GRAPHIC_NUM && index >= 0)
+				BitBlt(hdc,(j-offset)*CELL_WIDTH,i*CELL_HEIGHT,graphics[index].bmWidth,graphics[index].bmHeight,graphicMem[index],0,0,SRCCOPY);
 		}
 	}
 }

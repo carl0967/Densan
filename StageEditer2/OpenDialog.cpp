@@ -17,7 +17,7 @@ std::vector<std::string> split(const std::string &str, char delim){
 	return res;
 }
 
-Map* OpenDialog::CreateMap(char *filename){
+Map* OpenDialog::CreateMap(char *filename,HWND hWnd){
 	int width=0,height=0;
 	std::vector<int> orignal;
 	char source[120];
@@ -25,7 +25,7 @@ Map* OpenDialog::CreateMap(char *filename){
 	FILE *fp;
 
 	fp = fopen(filename,"a+");
-	while(true){
+	while(fp){
 		if(fgets(source,120,fp)==NULL)
 			break;
 		height++;
@@ -36,7 +36,8 @@ Map* OpenDialog::CreateMap(char *filename){
 			orignal.push_back(atoi(item[i].c_str()));
 		}
 	}
-	fclose(fp);
+	if(fp)
+		fclose(fp);
 	Map *map = new Map(width,height,orignal);
 	map->LoadMap(hWnd);
 	return map;
@@ -45,7 +46,7 @@ Map* OpenDialog::CreateMap(char *filename){
 OpenDialog::OpenDialog(HWND hWnd)
 	:ofn(),szPath()
 {
-	this->hWnd = hWnd;
+	//this->hWnd = hWnd;
 }
 
 TCHAR* OpenDialog::FileOpen(HWND hWnd){

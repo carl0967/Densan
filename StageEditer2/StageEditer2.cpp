@@ -37,7 +37,8 @@ StageEditer2::StageEditer2(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 
 	//初期化
 	map = nullptr;
-	HPos=0;
+	szFile = nullptr;
+	HPos= 0;
 
 	//WIN API関係
 	UNREFERENCED_PARAMETER(hPrevInstance);
@@ -61,7 +62,8 @@ StageEditer2::StageEditer2(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 
 // デストラクタ
 StageEditer2::~StageEditer2(){
-	//delete[] szFile;
+	if(szFile)
+		delete[] szFile;
 }
 
 // メインメッセージループ
@@ -149,7 +151,6 @@ BOOL StageEditer2::InitInstance(HINSTANCE hInstance, int nCmdShow)
 	SetWindowLongPtr(hWnd,GWL_USERDATA,(LONG)this);
 	ShowWindow(hWnd, nCmdShow);
 	UpdateWindow(hWnd);
-
 	return TRUE;
 }
 
@@ -203,9 +204,10 @@ void StageEditer2::OnHScroll(HWND hWnd, int mes)
 			info.nPos = xpos;                           // スクロールバーに設定する
 			SetScrollInfo(hWnd, SB_HORZ, &info, TRUE);
 			HPos = xpos;                                // 表示用のコピーを変更する
-
 			// 画面をスクロールさせる
-			map->setOffset(info.nPos);
+			if(map){
+				map->setOffset(info.nPos);
+			}
 		}
 	}
 }
@@ -231,43 +233,40 @@ LRESULT CALLBACK StageEditer2::WndProcOfInstance(HWND hWnd, UINT message, WPARAM
 		switch (wmId)
 		{
 		case IDM_HELLO:
-			//LPVOID lpMsgBuf;
-			//SetLastError(NO_ERROR);		//エラー情報をクリアする
-			//ここにチェックしたい処理を書く
 			MessageBox(hWnd,L"Hello World",L"Hello World",MB_OK |MB_TOPMOST) ;
-
-			/*
-			FormatMessage(				//エラー表示文字列作成
-				FORMAT_MESSAGE_ALLOCATE_BUFFER | 
-				FORMAT_MESSAGE_FROM_SYSTEM | 
-				FORMAT_MESSAGE_IGNORE_INSERTS,
-				NULL, GetLastError(),
-				MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT), 
-				(LPTSTR) &lpMsgBuf, 0, NULL);
-			*/
-			//MessageBox(NULL, (LPCWSTR)lpMsgBuf, NULL, MB_OK);	//メッセージ表示
-			//LocalFree(lpMsgBuf);
 			break;
 		case IDM_OPEN:
+			if(szFile)delete szFile;
+			szFile = nullptr;
 			szFile = open.FileOpen(hWnd);
-			//TCHAR型をchar型に変換
-			WideCharToMultiByte(CP_ACP,0,szFile,-1,c,sizeof(c),NULL,NULL);
-			map = open.CreateMap(c);
-			// map->LoadMap(hWnd);
-			// スクロールバー
-			scr.cbSize = sizeof(SCROLLINFO);
-			scr.fMask = SIF_PAGE | SIF_RANGE;
-			scr.nMin = 0;
-			scr.nMax = map->getWidth();
-			scr.nPage = 1;
-			SetScrollInfo(hWnd , SB_HORZ , &scr , TRUE);
-			InvalidateRect(hWnd , NULL , TRUE);	// 再描画要求
+			if(szFile){
+				//TCHAR型をchar型に変換
+				WideCharToMultiByte(CP_ACP,0,szFile,-1,c,sizeof(c),NULL,NULL);
+				map = open.CreateMap(c,hWnd);
+				// map->LoadMap(hWnd);
+				// スクロールバー
+				scr.cbSize = sizeof(SCROLLINFO);
+				scr.fMask = SIF_PAGE | SIF_RANGE;
+				scr.nMin = 0;
+				scr.nMax = map->getWidth();
+				scr.nPage = 1;
+				SetScrollInfo(hWnd , SB_HORZ , &scr , TRUE);
+				InvalidateRect(hWnd , NULL , TRUE);	// 再描画要求
+			}
 			break;
 		case IDM_SAVE:
+			if(szFile)delete szFile;
+			szFile = nullptr;
 			szFile = save.FileSave(hWnd);
-			//TCHAR型をchar型に変換
-			WideCharToMultiByte(CP_ACP,0,szFile,-1,c,sizeof(c),NULL,NULL);
-			save.Save(c,map->getMapdata(),map->getWidth(),map->getHeight());
+			if(!map){
+				MessageBox(hWnd,L"保存するMapがありません",L"エラー",MB_OK |MB_TOPMOST) ;
+				break;
+			}
+			if(szFile){
+				//TCHAR型をchar型に変換
+				WideCharToMultiByte(CP_ACP,0,szFile,-1,c,sizeof(c),NULL,NULL);
+				save.Save(c,map->getMapdata(),map->getWidth(),map->getHeight());
+			}
 			break;
 		case IDM_ABOUT:
 			DialogBox(hInstance, MAKEINTRESOURCE(IDD_ABOUTBOX), hWnd, &StageEditer2::About);
@@ -280,24 +279,28 @@ LRESULT CALLBACK StageEditer2::WndProcOfInstance(HWND hWnd, UINT message, WPARAM
 		}
 		break;
 	case WM_PAINT:
-		if(map){
 			hdc = BeginPaint(hWnd, &ps);
-			map->DrawMap(hWnd,&ps,hdc);
 			// TODO: 描画コードをここに追加してください...
+			if(map){
+				map->DrawMap(hWnd,&ps,hdc);
+			}
 			EndPaint(hWnd, &ps);
-		}
 		break;
 	case WM_DESTROY:
 		PostQuitMessage(0);
 		break;
 	case WM_LBUTTONDOWN:
-		map->AddMapData(lParam & 0xFFFF,(lParam >> 16) & 0xFFFF,hWnd);
+		if(map){
+			map->AddMapData(lParam & 0xFFFF,(lParam >> 16) & 0xFFFF,hWnd);
+		}
 		break;
 	case WM_CREATE:
 		break;
 	case WM_HSCROLL:
 		OnHScroll(hWnd,LOWORD(wParam));
-		map->setOffset(HPos);
+		if(map){
+			map->setOffset(HPos);
+		}
 		InvalidateRect(hWnd , NULL , TRUE);	// 再描画要求
 		break;
 	default:

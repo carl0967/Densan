@@ -7,7 +7,7 @@ class Map;
 class OpenDialog{
 private:
 	// 親のウィンドウ
-	HWND			hWnd;
+	//HWND			hWnd;
 	// ファイル名の構造体
 	OPENFILENAME	ofn;
 	// ファイルパス
@@ -18,5 +18,5 @@ public:
 	// ファイルを開く
 	TCHAR* FileOpen(HWND hWnd);
 	// マップを生成する
-	Map* CreateMap(char *filename);
+	Map* CreateMap(char *filename,HWND hWnd);
 };
