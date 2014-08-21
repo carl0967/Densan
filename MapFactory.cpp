@@ -108,7 +108,7 @@ int WINAPI WinMain(HINSTANCE hInstance,HINSTANCE prev,LPSTR cmd,int nShowCmd){
 	// MapFactory‚ÌƒeƒXƒg
 	ClearDrawScreen();
 	MapFactory factory;
-	Map* temp = factory.CreateMap("map.txt","‰æ‘œ/background.png");
+	Map* temp = factory.CreateMap("map.txt");
 	DrawString(100,100,"OK",GetColor(255,255,255));
 	ScreenFlip();
 	WaitKey();

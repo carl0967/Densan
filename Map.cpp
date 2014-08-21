@@ -10,7 +10,7 @@ Map::Map(int cell_width,int cell_hegiht,int** map_datas){
 	this->map_datas = map_datas;
 	offset_ =0;
 	wallGraph_ = LoadGraph("‰æ‘œ/ƒŒƒ“ƒK‚P.png",FALSE);
-	background_ = 0;
+	background_ = -1;
 }
 
 int Map::SetBackground(std::string filename){
@@ -54,8 +54,8 @@ void Map::Draw(int offset){
 		int width = 0,height = 0;
 		GetGraphSize(background_,&width,&height);
 
-		for(int i=0;width*i+offset%MAP_WIDTH<MAP_WIDTH;i++){
-			DrawGraph(width*i+offset,0,background_,FALSE);
+		for(int i=0;width*i+offset%width<MAP_WIDTH;i++){
+			DrawGraph(width*i+offset%width,0,background_,FALSE);
 		}
 	}
 	
