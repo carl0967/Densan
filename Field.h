@@ -40,6 +40,7 @@ public:
 	int GetNextMapData(TwoDimension chara_pos,TwoDimension chara_speed,bool right); //キャラクターが次にいる場所のマップデータを返す
 	TwoDimension GetPlayerPos();//プレイヤーの座標を返す関数
 	int count(){return count_;}          //countのゲッター
+	Player* player(){return player_;}
 	~Field();
 
 private:
