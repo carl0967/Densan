@@ -5,6 +5,7 @@
 #include "AObject.h"
 #include "Coin.h"
 #include "GoalFlag.h"
+#include "JumpKame.h"
 
 
 Field::Field(Map* map){
@@ -97,7 +98,6 @@ void Field::Initialize(){
 				AddObject(new Kame(i*32,k*32,this),false);
 				obj_manager_->RegisterObject(i,k,KAME); //オブジェクトマネージャーに登録
 				break;
-				
 			case COIN:
 				{
 				Coin* coin=new Coin(i*32,k*32);
@@ -112,7 +112,10 @@ void Field::Initialize(){
 				obj_manager_->RegisterObject(i,k,G_FLAG);
 				break;
 				}
-
+			case JUMPKAME:
+				AddObject(new JumpKame(i*32,k*32,this),false);
+				obj_manager_->RegisterObject(i,k,JUMPKAME); //オブジェクトマネージャーに登録
+				break;
 				
 			}
 		}
