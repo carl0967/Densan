@@ -1,0 +1,163 @@
+\hypertarget{class_map}{\section{Map クラス}
+\label{class_map}\index{Map@{Map}}
+}
+
+
+{\ttfamily \#include $<$Map.\+h$>$}
+
+\subsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_map_acc81681ce21cb77b686446de8054c873}{map\+\_\+width} ()
+\item 
+int \hyperlink{class_map_ad31ca4e58bc9aee366f4472b0d2caac0}{map\+\_\+height} ()
+\item 
+\hyperlink{class_map_a0f5ad0fd4563497b4214038cbca8b582}{Map} ()
+\item 
+\hyperlink{class_map_ae29ba970735d81d37a8c09e7e1b5a97f}{Map} (int \hyperlink{class_map_a9a14e00ff8843f4eed904f0dbe4b19dd}{cell\+\_\+width}, int \hyperlink{class_map_ad4c7bd28ec6d1b2e1e996686d5634bbc}{cell\+\_\+hegiht}, int $\ast$$\ast$\hyperlink{class_map_aebd3aa405509dae6a3a63edad08eaf63}{map\+\_\+datas})
+\item 
+int \hyperlink{class_map_a49a50b1bb8e6ae4f311ca730e683eae1}{Get\+Map\+Data} (double x, double y)
+\item 
+int \hyperlink{class_map_ae1b09990bb55f9e799a8845453975e04}{Get\+Map\+Data\+From\+Cell} (int x, int y)
+\item 
+void \hyperlink{class_map_a450160bcc89fd82cd1ccc7ed44c6542f}{Draw} (int offset)
+\item 
+void \hyperlink{class_map_a09797f6a2c27a7966f07498676080ff3}{Scroll} (int)
+\item 
+\hyperlink{class_map_aa403fbe09394ccf39747588f5168e3b2}{$\sim$\+Map} ()
+\item 
+void \hyperlink{class_map_a492de80615b6aeebb98b6b3fef47b243}{Set\+Map\+Height\+And\+Width} (int height, int width)
+\end{DoxyCompactItemize}
+\subsection*{非公開変数類}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_map_aa03af329a40b2dbb4252f0a27243dcac}{background\+\_\+}
+\item 
+int \hyperlink{class_map_a9a14e00ff8843f4eed904f0dbe4b19dd}{cell\+\_\+width}
+\item 
+int \hyperlink{class_map_ad4c7bd28ec6d1b2e1e996686d5634bbc}{cell\+\_\+hegiht}
+\item 
+int \hyperlink{class_map_a1c47ff15c93974ddf3ef05f7bdee1571}{map\+\_\+width\+\_\+}
+\item 
+int \hyperlink{class_map_aaf4efb5b983ca1c0ec7e987711f57640}{map\+\_\+height\+\_\+}
+\item 
+int $\ast$$\ast$ \hyperlink{class_map_aebd3aa405509dae6a3a63edad08eaf63}{map\+\_\+datas}
+\item 
+int \hyperlink{class_map_a02557959c8b2b59592b673a356424e63}{offset\+\_\+}
+\item 
+int \hyperlink{class_map_a3d03c3930a3d2d4c9d7609ae46a730ea}{wall\+Graph\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{構築子と解体子}
+\hypertarget{class_map_a0f5ad0fd4563497b4214038cbca8b582}{\index{Map@{Map}!Map@{Map}}
+\index{Map@{Map}!Map@{Map}}
+\subsubsection[{Map}]{\setlength{\rightskip}{0pt plus 5cm}Map\+::\+Map (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_map_a0f5ad0fd4563497b4214038cbca8b582}
+\hypertarget{class_map_ae29ba970735d81d37a8c09e7e1b5a97f}{\index{Map@{Map}!Map@{Map}}
+\index{Map@{Map}!Map@{Map}}
+\subsubsection[{Map}]{\setlength{\rightskip}{0pt plus 5cm}Map\+::\+Map (
+\begin{DoxyParamCaption}
+\item[{int}]{cell\+\_\+width, }
+\item[{int}]{cell\+\_\+hegiht, }
+\item[{int $\ast$$\ast$}]{map\+\_\+datas}
+\end{DoxyParamCaption}
+)}}\label{class_map_ae29ba970735d81d37a8c09e7e1b5a97f}
+\hypertarget{class_map_aa403fbe09394ccf39747588f5168e3b2}{\index{Map@{Map}!````~Map@{$\sim$\+Map}}
+\index{````~Map@{$\sim$\+Map}!Map@{Map}}
+\subsubsection[{$\sim$\+Map}]{\setlength{\rightskip}{0pt plus 5cm}Map\+::$\sim$\+Map (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_map_aa403fbe09394ccf39747588f5168e3b2}
+
+
+\subsection{関数詳解}
+\hypertarget{class_map_a450160bcc89fd82cd1ccc7ed44c6542f}{\index{Map@{Map}!Draw@{Draw}}
+\index{Draw@{Draw}!Map@{Map}}
+\subsubsection[{Draw}]{\setlength{\rightskip}{0pt plus 5cm}void Map\+::\+Draw (
+\begin{DoxyParamCaption}
+\item[{int}]{offset}
+\end{DoxyParamCaption}
+)}}\label{class_map_a450160bcc89fd82cd1ccc7ed44c6542f}
+\hypertarget{class_map_a49a50b1bb8e6ae4f311ca730e683eae1}{\index{Map@{Map}!Get\+Map\+Data@{Get\+Map\+Data}}
+\index{Get\+Map\+Data@{Get\+Map\+Data}!Map@{Map}}
+\subsubsection[{Get\+Map\+Data}]{\setlength{\rightskip}{0pt plus 5cm}int Map\+::\+Get\+Map\+Data (
+\begin{DoxyParamCaption}
+\item[{double}]{x, }
+\item[{double}]{y}
+\end{DoxyParamCaption}
+)}}\label{class_map_a49a50b1bb8e6ae4f311ca730e683eae1}
+\hypertarget{class_map_ae1b09990bb55f9e799a8845453975e04}{\index{Map@{Map}!Get\+Map\+Data\+From\+Cell@{Get\+Map\+Data\+From\+Cell}}
+\index{Get\+Map\+Data\+From\+Cell@{Get\+Map\+Data\+From\+Cell}!Map@{Map}}
+\subsubsection[{Get\+Map\+Data\+From\+Cell}]{\setlength{\rightskip}{0pt plus 5cm}int Map\+::\+Get\+Map\+Data\+From\+Cell (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}}\label{class_map_ae1b09990bb55f9e799a8845453975e04}
+\hypertarget{class_map_ad31ca4e58bc9aee366f4472b0d2caac0}{\index{Map@{Map}!map\+\_\+height@{map\+\_\+height}}
+\index{map\+\_\+height@{map\+\_\+height}!Map@{Map}}
+\subsubsection[{map\+\_\+height}]{\setlength{\rightskip}{0pt plus 5cm}int Map\+::map\+\_\+height (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_map_ad31ca4e58bc9aee366f4472b0d2caac0}
+\hypertarget{class_map_acc81681ce21cb77b686446de8054c873}{\index{Map@{Map}!map\+\_\+width@{map\+\_\+width}}
+\index{map\+\_\+width@{map\+\_\+width}!Map@{Map}}
+\subsubsection[{map\+\_\+width}]{\setlength{\rightskip}{0pt plus 5cm}int Map\+::map\+\_\+width (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_map_acc81681ce21cb77b686446de8054c873}
+\hypertarget{class_map_a09797f6a2c27a7966f07498676080ff3}{\index{Map@{Map}!Scroll@{Scroll}}
+\index{Scroll@{Scroll}!Map@{Map}}
+\subsubsection[{Scroll}]{\setlength{\rightskip}{0pt plus 5cm}void Map\+::\+Scroll (
+\begin{DoxyParamCaption}
+\item[{int}]{move}
+\end{DoxyParamCaption}
+)}}\label{class_map_a09797f6a2c27a7966f07498676080ff3}
+\hypertarget{class_map_a492de80615b6aeebb98b6b3fef47b243}{\index{Map@{Map}!Set\+Map\+Height\+And\+Width@{Set\+Map\+Height\+And\+Width}}
+\index{Set\+Map\+Height\+And\+Width@{Set\+Map\+Height\+And\+Width}!Map@{Map}}
+\subsubsection[{Set\+Map\+Height\+And\+Width}]{\setlength{\rightskip}{0pt plus 5cm}void Map\+::\+Set\+Map\+Height\+And\+Width (
+\begin{DoxyParamCaption}
+\item[{int}]{height, }
+\item[{int}]{width}
+\end{DoxyParamCaption}
+)}}\label{class_map_a492de80615b6aeebb98b6b3fef47b243}
+
+
+\subsection{メンバ詳解}
+\hypertarget{class_map_aa03af329a40b2dbb4252f0a27243dcac}{\index{Map@{Map}!background\+\_\+@{background\+\_\+}}
+\index{background\+\_\+@{background\+\_\+}!Map@{Map}}
+\subsubsection[{background\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}int Map\+::background\+\_\+\hspace{0.3cm}{\ttfamily [private]}}}\label{class_map_aa03af329a40b2dbb4252f0a27243dcac}
+\hypertarget{class_map_ad4c7bd28ec6d1b2e1e996686d5634bbc}{\index{Map@{Map}!cell\+\_\+hegiht@{cell\+\_\+hegiht}}
+\index{cell\+\_\+hegiht@{cell\+\_\+hegiht}!Map@{Map}}
+\subsubsection[{cell\+\_\+hegiht}]{\setlength{\rightskip}{0pt plus 5cm}int Map\+::cell\+\_\+hegiht\hspace{0.3cm}{\ttfamily [private]}}}\label{class_map_ad4c7bd28ec6d1b2e1e996686d5634bbc}
+\hypertarget{class_map_a9a14e00ff8843f4eed904f0dbe4b19dd}{\index{Map@{Map}!cell\+\_\+width@{cell\+\_\+width}}
+\index{cell\+\_\+width@{cell\+\_\+width}!Map@{Map}}
+\subsubsection[{cell\+\_\+width}]{\setlength{\rightskip}{0pt plus 5cm}int Map\+::cell\+\_\+width\hspace{0.3cm}{\ttfamily [private]}}}\label{class_map_a9a14e00ff8843f4eed904f0dbe4b19dd}
+\hypertarget{class_map_aebd3aa405509dae6a3a63edad08eaf63}{\index{Map@{Map}!map\+\_\+datas@{map\+\_\+datas}}
+\index{map\+\_\+datas@{map\+\_\+datas}!Map@{Map}}
+\subsubsection[{map\+\_\+datas}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$$\ast$ Map\+::map\+\_\+datas\hspace{0.3cm}{\ttfamily [private]}}}\label{class_map_aebd3aa405509dae6a3a63edad08eaf63}
+\hypertarget{class_map_aaf4efb5b983ca1c0ec7e987711f57640}{\index{Map@{Map}!map\+\_\+height\+\_\+@{map\+\_\+height\+\_\+}}
+\index{map\+\_\+height\+\_\+@{map\+\_\+height\+\_\+}!Map@{Map}}
+\subsubsection[{map\+\_\+height\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}int Map\+::map\+\_\+height\+\_\+\hspace{0.3cm}{\ttfamily [private]}}}\label{class_map_aaf4efb5b983ca1c0ec7e987711f57640}
+\hypertarget{class_map_a1c47ff15c93974ddf3ef05f7bdee1571}{\index{Map@{Map}!map\+\_\+width\+\_\+@{map\+\_\+width\+\_\+}}
+\index{map\+\_\+width\+\_\+@{map\+\_\+width\+\_\+}!Map@{Map}}
+\subsubsection[{map\+\_\+width\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}int Map\+::map\+\_\+width\+\_\+\hspace{0.3cm}{\ttfamily [private]}}}\label{class_map_a1c47ff15c93974ddf3ef05f7bdee1571}
+\hypertarget{class_map_a02557959c8b2b59592b673a356424e63}{\index{Map@{Map}!offset\+\_\+@{offset\+\_\+}}
+\index{offset\+\_\+@{offset\+\_\+}!Map@{Map}}
+\subsubsection[{offset\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}int Map\+::offset\+\_\+\hspace{0.3cm}{\ttfamily [private]}}}\label{class_map_a02557959c8b2b59592b673a356424e63}
+\hypertarget{class_map_a3d03c3930a3d2d4c9d7609ae46a730ea}{\index{Map@{Map}!wall\+Graph\+\_\+@{wall\+Graph\+\_\+}}
+\index{wall\+Graph\+\_\+@{wall\+Graph\+\_\+}!Map@{Map}}
+\subsubsection[{wall\+Graph\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}int Map\+::wall\+Graph\+\_\+\hspace{0.3cm}{\ttfamily [private]}}}\label{class_map_a3d03c3930a3d2d4c9d7609ae46a730ea}
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_map_8h}{Map.\+h}\item 
+\hyperlink{_map_8cpp}{Map.\+cpp}\end{DoxyCompactItemize}

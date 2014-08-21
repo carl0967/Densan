@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>My Project: GameMain.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>クラス</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>列挙型</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>列挙値</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>マクロ定義</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">GameMain.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_game_main_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_field_8h.html">Field.h</a>&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_menu_8h.html">Menu.h</a>&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;math.h&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;DxLib.h&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_map_factory_8h.html">MapFactory.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="class_game_main.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_game_main.html">GameMain</a>{</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_game_main.html#a5588fbeddda88c3591ae3fb03d9cdfb4">   12</a></span>&#160;    <a class="code" href="class_field.html">Field</a>* <a class="code" href="class_game_main.html#a5588fbeddda88c3591ae3fb03d9cdfb4">field</a>;<span class="comment">//フィールド</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordtype">bool</span> Update();<span class="comment">//フレームの更新</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">void</span> Draw();<span class="comment">//fpsの表示</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordtype">void</span> Wait();<span class="comment">//待機時間</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">void</span> GameStart();<span class="comment">//ゲーム開始時</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">void</span> MainLoop();<span class="comment">//ループの処理</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="class_game_main.html">GameMain</a>();<span class="comment">//コンストラクタ</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="class_game_main.html#a7e8d331a37fb0910a8369e0f971eac72">   20</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_game_main.html#a7e8d331a37fb0910a8369e0f971eac72">mStartTime</a>;         <span class="comment">//測定開始時刻</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="class_game_main.html#a75b2b9e2818a643f4ed5ee8a02132516">   21</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_game_main.html#a75b2b9e2818a643f4ed5ee8a02132516">mCount</a>;             <span class="comment">//カウンタ</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="class_game_main.html#a796aea62906d2d46927a4f12420e9620">   22</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="class_game_main.html#a796aea62906d2d46927a4f12420e9620">mFps</a>;             <span class="comment">//fps</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="class_game_main.html#af369063b5921fa53f89d3c34ca8ab8c3">   23</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> N = 60;<span class="comment">//平均を取るサンプル数</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="class_game_main.html#a58fcd65ed83d0f30475149e084354040">   24</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> FPS = 60;  <span class="comment">//設定したFPS</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;};</div>
+<div class="ttc" id="_menu_8h_html"><div class="ttname"><a href="_menu_8h.html">Menu.h</a></div></div>
+<div class="ttc" id="class_game_main_html_a796aea62906d2d46927a4f12420e9620"><div class="ttname"><a href="class_game_main.html#a796aea62906d2d46927a4f12420e9620">GameMain::mFps</a></div><div class="ttdeci">float mFps</div><div class="ttdef"><b>Definition:</b> GameMain.h:22</div></div>
+<div class="ttc" id="class_field_html"><div class="ttname"><a href="class_field.html">Field</a></div><div class="ttdef"><b>Definition:</b> Field.h:16</div></div>
+<div class="ttc" id="class_game_main_html_a7e8d331a37fb0910a8369e0f971eac72"><div class="ttname"><a href="class_game_main.html#a7e8d331a37fb0910a8369e0f971eac72">GameMain::mStartTime</a></div><div class="ttdeci">int mStartTime</div><div class="ttdef"><b>Definition:</b> GameMain.h:20</div></div>
+<div class="ttc" id="_field_8h_html"><div class="ttname"><a href="_field_8h.html">Field.h</a></div></div>
+<div class="ttc" id="class_game_main_html_a75b2b9e2818a643f4ed5ee8a02132516"><div class="ttname"><a href="class_game_main.html#a75b2b9e2818a643f4ed5ee8a02132516">GameMain::mCount</a></div><div class="ttdeci">int mCount</div><div class="ttdef"><b>Definition:</b> GameMain.h:21</div></div>
+<div class="ttc" id="class_game_main_html_a5588fbeddda88c3591ae3fb03d9cdfb4"><div class="ttname"><a href="class_game_main.html#a5588fbeddda88c3591ae3fb03d9cdfb4">GameMain::field</a></div><div class="ttdeci">Field * field</div><div class="ttdef"><b>Definition:</b> GameMain.h:12</div></div>
+<div class="ttc" id="class_game_main_html"><div class="ttname"><a href="class_game_main.html">GameMain</a></div><div class="ttdef"><b>Definition:</b> GameMain.h:10</div></div>
+<div class="ttc" id="_map_factory_8h_html"><div class="ttname"><a href="_map_factory_8h.html">MapFactory.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+2014年08月21日(木) 17時11分51秒作成 - My Project / 構成:  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.7
+</small></address>
+</body>
+</html>

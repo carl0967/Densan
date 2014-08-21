@@ -1,0 +1,106 @@
+\hypertarget{class_object_manager}{\section{Object\+Manager クラス}
+\label{class_object_manager}\index{Object\+Manager@{Object\+Manager}}
+}
+
+
+{\ttfamily \#include $<$Object\+Manager.\+h$>$}
+
+\subsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_object_manager_a6fa9372c7c3a8da88412f4158ca3dfd9}{Object\+Manager} ()
+\item 
+\hyperlink{class_object_manager_a5e85ac955343ab559ece72451eaa57c1}{Object\+Manager} (int map\+\_\+width, int map\+\_\+height)
+\item 
+int \hyperlink{class_object_manager_afdf00874bff548b6d594d14b243241b3}{Register\+Object} (int cell\+\_\+x, int cell\+\_\+y, \hyperlink{_map_8h_ae7d76fffddf7fd7ef5d9466f971fc8e9}{Map\+Chip} map\+\_\+chip)
+\item 
+int \hyperlink{class_object_manager_a103f531d718ac57a39169f57d05a22cd}{Get\+Id} (int cell\+\_\+x, int cell\+\_\+y)
+\item 
+\hyperlink{struct_two_dimension}{Two\+Dimension} \hyperlink{class_object_manager_a89f072e56c22d2fafd15aff2c16df8dd}{Get\+Cell\+Pos\+From\+Id} (int id)
+\item 
+\hyperlink{class_object_manager_a25b057e6d1e60c9cbeb29d41923d8c2c}{$\sim$\+Object\+Manager} ()
+\end{DoxyCompactItemize}
+\subsection*{非公開変数類}
+\begin{DoxyCompactItemize}
+\item 
+int $\ast$$\ast$ \hyperlink{class_object_manager_ae96857805143e168769f972f9b16bd09}{ids}
+\item 
+int \hyperlink{class_object_manager_a164a320ca3c3de4530536827d99a6458}{id\+\_\+counter}
+\item 
+int \hyperlink{class_object_manager_ae832dadf8bc59ae778c14c38065707aa}{width}
+\item 
+int \hyperlink{class_object_manager_a83650f15c75a9f0f0415966e15b2ad4f}{height}
+\end{DoxyCompactItemize}
+
+
+\subsection{構築子と解体子}
+\hypertarget{class_object_manager_a6fa9372c7c3a8da88412f4158ca3dfd9}{\index{Object\+Manager@{Object\+Manager}!Object\+Manager@{Object\+Manager}}
+\index{Object\+Manager@{Object\+Manager}!Object\+Manager@{Object\+Manager}}
+\subsubsection[{Object\+Manager}]{\setlength{\rightskip}{0pt plus 5cm}Object\+Manager\+::\+Object\+Manager (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_object_manager_a6fa9372c7c3a8da88412f4158ca3dfd9}
+\hypertarget{class_object_manager_a5e85ac955343ab559ece72451eaa57c1}{\index{Object\+Manager@{Object\+Manager}!Object\+Manager@{Object\+Manager}}
+\index{Object\+Manager@{Object\+Manager}!Object\+Manager@{Object\+Manager}}
+\subsubsection[{Object\+Manager}]{\setlength{\rightskip}{0pt plus 5cm}Object\+Manager\+::\+Object\+Manager (
+\begin{DoxyParamCaption}
+\item[{int}]{map\+\_\+width, }
+\item[{int}]{map\+\_\+height}
+\end{DoxyParamCaption}
+)}}\label{class_object_manager_a5e85ac955343ab559ece72451eaa57c1}
+\hypertarget{class_object_manager_a25b057e6d1e60c9cbeb29d41923d8c2c}{\index{Object\+Manager@{Object\+Manager}!````~Object\+Manager@{$\sim$\+Object\+Manager}}
+\index{````~Object\+Manager@{$\sim$\+Object\+Manager}!Object\+Manager@{Object\+Manager}}
+\subsubsection[{$\sim$\+Object\+Manager}]{\setlength{\rightskip}{0pt plus 5cm}Object\+Manager\+::$\sim$\+Object\+Manager (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_object_manager_a25b057e6d1e60c9cbeb29d41923d8c2c}
+
+
+\subsection{関数詳解}
+\hypertarget{class_object_manager_a89f072e56c22d2fafd15aff2c16df8dd}{\index{Object\+Manager@{Object\+Manager}!Get\+Cell\+Pos\+From\+Id@{Get\+Cell\+Pos\+From\+Id}}
+\index{Get\+Cell\+Pos\+From\+Id@{Get\+Cell\+Pos\+From\+Id}!Object\+Manager@{Object\+Manager}}
+\subsubsection[{Get\+Cell\+Pos\+From\+Id}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Two\+Dimension} Object\+Manager\+::\+Get\+Cell\+Pos\+From\+Id (
+\begin{DoxyParamCaption}
+\item[{int}]{id}
+\end{DoxyParamCaption}
+)}}\label{class_object_manager_a89f072e56c22d2fafd15aff2c16df8dd}
+\hypertarget{class_object_manager_a103f531d718ac57a39169f57d05a22cd}{\index{Object\+Manager@{Object\+Manager}!Get\+Id@{Get\+Id}}
+\index{Get\+Id@{Get\+Id}!Object\+Manager@{Object\+Manager}}
+\subsubsection[{Get\+Id}]{\setlength{\rightskip}{0pt plus 5cm}int Object\+Manager\+::\+Get\+Id (
+\begin{DoxyParamCaption}
+\item[{int}]{cell\+\_\+x, }
+\item[{int}]{cell\+\_\+y}
+\end{DoxyParamCaption}
+)}}\label{class_object_manager_a103f531d718ac57a39169f57d05a22cd}
+\hypertarget{class_object_manager_afdf00874bff548b6d594d14b243241b3}{\index{Object\+Manager@{Object\+Manager}!Register\+Object@{Register\+Object}}
+\index{Register\+Object@{Register\+Object}!Object\+Manager@{Object\+Manager}}
+\subsubsection[{Register\+Object}]{\setlength{\rightskip}{0pt plus 5cm}int Object\+Manager\+::\+Register\+Object (
+\begin{DoxyParamCaption}
+\item[{int}]{cell\+\_\+x, }
+\item[{int}]{cell\+\_\+y, }
+\item[{{\bf Map\+Chip}}]{map\+\_\+chip}
+\end{DoxyParamCaption}
+)}}\label{class_object_manager_afdf00874bff548b6d594d14b243241b3}
+
+
+\subsection{メンバ詳解}
+\hypertarget{class_object_manager_a83650f15c75a9f0f0415966e15b2ad4f}{\index{Object\+Manager@{Object\+Manager}!height@{height}}
+\index{height@{height}!Object\+Manager@{Object\+Manager}}
+\subsubsection[{height}]{\setlength{\rightskip}{0pt plus 5cm}int Object\+Manager\+::height\hspace{0.3cm}{\ttfamily [private]}}}\label{class_object_manager_a83650f15c75a9f0f0415966e15b2ad4f}
+\hypertarget{class_object_manager_a164a320ca3c3de4530536827d99a6458}{\index{Object\+Manager@{Object\+Manager}!id\+\_\+counter@{id\+\_\+counter}}
+\index{id\+\_\+counter@{id\+\_\+counter}!Object\+Manager@{Object\+Manager}}
+\subsubsection[{id\+\_\+counter}]{\setlength{\rightskip}{0pt plus 5cm}int Object\+Manager\+::id\+\_\+counter\hspace{0.3cm}{\ttfamily [private]}}}\label{class_object_manager_a164a320ca3c3de4530536827d99a6458}
+\hypertarget{class_object_manager_ae96857805143e168769f972f9b16bd09}{\index{Object\+Manager@{Object\+Manager}!ids@{ids}}
+\index{ids@{ids}!Object\+Manager@{Object\+Manager}}
+\subsubsection[{ids}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$$\ast$ Object\+Manager\+::ids\hspace{0.3cm}{\ttfamily [private]}}}\label{class_object_manager_ae96857805143e168769f972f9b16bd09}
+\hypertarget{class_object_manager_ae832dadf8bc59ae778c14c38065707aa}{\index{Object\+Manager@{Object\+Manager}!width@{width}}
+\index{width@{width}!Object\+Manager@{Object\+Manager}}
+\subsubsection[{width}]{\setlength{\rightskip}{0pt plus 5cm}int Object\+Manager\+::width\hspace{0.3cm}{\ttfamily [private]}}}\label{class_object_manager_ae832dadf8bc59ae778c14c38065707aa}
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_object_manager_8h}{Object\+Manager.\+h}\item 
+\hyperlink{_object_manager_8cpp}{Object\+Manager.\+cpp}\end{DoxyCompactItemize}

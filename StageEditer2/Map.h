@@ -3,8 +3,10 @@
 #include "resource.h"
 #include <commdlg.h>
 #include <vector>
+#define GRAPHIC_NUM 6
 
 class Map{
+	enum MapChip{EMPTY,WALL,PLAYER,KAME,COIN,G_FLAG};
 private:
 	int width;				// マップの幅
 	int height;				// マップの高さ
@@ -13,14 +15,8 @@ private:
 	std::vector<int> orignal;		// マップデータ
 	TCHAR *szFile;					// マップファイル名
 
-	BITMAP renga;		// レンガ
-	HDC rengaMem;		//
-	BITMAP player;		// プレイヤー
-	HDC playerMem;		//
-	BITMAP kame;		// かめさん
-	HDC kameMem;		//
-	BITMAP coin;		// コイン
-	HDC coinMem;		//	
+	BITMAP graphics[GRAPHIC_NUM];	// 画像データのビットマップ
+	HDC	graphicMem[GRAPHIC_NUM];	// 画像データのメモリ
 public:
 	Map(int,int,std::vector<int>);
 	// マップを読み込む

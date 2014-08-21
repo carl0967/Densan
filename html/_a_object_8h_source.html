@@ -1,0 +1,214 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>My Project: AObject.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>クラス</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>列挙型</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>列挙値</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>マクロ定義</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">AObject.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_a_object_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;DxLib.h&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_load_graphic_8h.html">LoadGraphic.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">「物体」の抽象クラス</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">敵キャラクターや自機、アイテムなどの共通部分をまとめている。</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">//プレイヤーか敵かアイテムかを判断するよう</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="_a_object_8h.html#a842c5e2e69277690b064bf363c017980">   13</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="_a_object_8h.html#a842c5e2e69277690b064bf363c017980">ObjectType</a>{<a class="code" href="_a_object_8h.html#a842c5e2e69277690b064bf363c017980aacac6199bbab8a77e3192a8559724d8f">O_PLAYER</a>,<a class="code" href="_a_object_8h.html#a842c5e2e69277690b064bf363c017980ab985f61c895aee454d26484d6fe712a8">O_ENEMY</a>,<a class="code" href="_a_object_8h.html#a842c5e2e69277690b064bf363c017980abba9a36b65eb4d21d078a078c055d9a7">O_ITEM</a>};</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">//２次元をあらわす構造体。x軸とy軸をまとめている。</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="struct_two_dimension.html">   16</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct</span>{</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="struct_two_dimension.html#ac7506c70d1af8d3706ed1f084a1587fb">   17</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="struct_two_dimension.html#ac7506c70d1af8d3706ed1f084a1587fb">x</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="struct_two_dimension.html#aa344dbcbece346bdcb1949249b4c6cfc">   18</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="struct_two_dimension.html#aa344dbcbece346bdcb1949249b4c6cfc">y</a>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}<a class="code" href="struct_two_dimension.html">TwoDimension</a>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="class_a_object.html">   21</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_a_object.html">AObject</a>{</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="comment">//コンストラクタ</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="comment">//x座標、ｙ座標、ファイル名（画像/画像ファイル名,オブジェクトの当たり幅,オブジェクトの高さ,向き（右向きならtrue）</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="class_a_object.html#a1956c3120bdc7f0372a5aab8c0b1cbb6">AObject</a>(<span class="keywordtype">double</span> ax,<span class="keywordtype">double</span> ay,<span class="keywordtype">char</span>* fname,<span class="keywordtype">int</span> hit_size_x,<span class="keywordtype">int</span> hit_size_y,<span class="keywordtype">bool</span> <a class="code" href="class_a_object.html#a7453abe76bbddf446aa5787231428a52">right</a>);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_a_object.html#aa07f4874e508e22cc0980e5ab6eb7f54">Reset</a>(); <span class="comment">//リセット処理</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_a_object.html#a60fae4021ac710983beefcf8cdb7f3bd">Move</a>();                  <span class="comment">//自身のスピード分移動する</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_a_object.html#a0e279a93c79be5807e9bbd20875369a2">Draw</a>(<span class="keywordtype">int</span> offset);   <span class="comment">//offsetを使って自身の描画位置を算出して描画する</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_a_object.html#a61f89197cb14b1270a0a232ee88333a0">Think</a>()=0;  <span class="comment">//自身のスピードを操作して行動を決める</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_a_object.html#a95c42b1bcef8f364389d9cf131a37921">Fall</a>(<span class="keywordtype">double</span> gravity);  <span class="comment">// 引数の重力分落ちる</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_a_object.html#a6661473a035f6e0ee0e7d98182630389">Die</a>(); <span class="comment">//生存フラグをfalseにする</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="class_a_object.html#aab646016a7b8d3040e2e3675e74d0629">   32</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_a_object.html#aab646016a7b8d3040e2e3675e74d0629">Revival</a>() {<a class="code" href="class_a_object.html#a98663f6d7145a2b7fc2009f95804325a">alive</a>=<span class="keyword">true</span>;} <span class="comment">//生存フラグをtrueにする</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_a_object.html#a5266e7cb202fc1c27ac66fb8372410cb">Set_Speed</a>(<span class="keywordtype">double</span> speed_x,<span class="keywordtype">double</span> speed_y); <span class="comment">//スピードを設定する</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_a_object.html#a6547fb1f7e3b5c5aab84b0b787e2869c">TouchedBlockX</a>(<span class="keywordtype">double</span> set_x); <span class="comment">//x軸でブロックと接触した場合に呼び出す</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_a_object.html#acfe5d595ef8c3387b1bbba51cb397602">TouchedBlockY</a>(<span class="keywordtype">double</span> set_y); <span class="comment">//y軸でブロックと接触した場合に呼び出す</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_a_object.html#aa4d5ec1e9ece904effd747657f4e4530">GetObjectSize</a>();<span class="comment">//オブジェクトのサイズを画像から読み取る</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="class_a_object.html#af18a89079a95159f7b93a92a921f4b54">GetCenterPosX</a>(); <span class="comment">//オブジェクトの中心座標を返す</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="class_a_object.html#a33c32784ef245183b0207811c0f88521">GetCenterPosY</a>(); <span class="comment">//オブジェクトの中心座標を返す</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">//ゲッター</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="class_a_object.html#a71a4ba584e2a76b73ed623deeb7d1358">   45</a></span>&#160;    <a class="code" href="struct_two_dimension.html">TwoDimension</a> <a class="code" href="class_a_object.html#a71a4ba584e2a76b73ed623deeb7d1358">pos</a>() {<span class="keywordflow">return</span> <a class="code" href="class_a_object.html#aff37fc81435924247fe0e4d7fa0186cf">pos_</a>;}</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="class_a_object.html#abb924b7e558a2f9d86f2db2bc2fb18a4">   46</a></span>&#160;    <a class="code" href="struct_two_dimension.html">TwoDimension</a> <a class="code" href="class_a_object.html#abb924b7e558a2f9d86f2db2bc2fb18a4">speed</a>() {<span class="keywordflow">return</span> <a class="code" href="class_a_object.html#a640b3a323c205046b20640123222cdd3">speed_</a>; }</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="class_a_object.html#a42d73d2bad560ba5d83a1b7193347c48">   47</a></span>&#160;    <a class="code" href="struct_two_dimension.html">TwoDimension</a> <a class="code" href="class_a_object.html#a42d73d2bad560ba5d83a1b7193347c48">size</a>() {<span class="keywordflow">return</span> <a class="code" href="class_a_object.html#a50bc88cfccd518e158096b5f033c0728">size_</a>;}</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="class_a_object.html#a3505a72b54c24e488b7daa64161f9ca6">   48</a></span>&#160;    <a class="code" href="struct_two_dimension.html">TwoDimension</a> <a class="code" href="class_a_object.html#a3505a72b54c24e488b7daa64161f9ca6">hit_size</a>() {<span class="keywordflow">return</span> <a class="code" href="class_a_object.html#a893dc760682c3fbafc5c96229939a8ec">hit_size_</a>;}</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="class_a_object.html#a2ceff5dd8626fcc399e583ce2b204200">   49</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_a_object.html#a2ceff5dd8626fcc399e583ce2b204200">isAerial</a>() {<span class="keywordflow">return</span> <a class="code" href="class_a_object.html#a0396b51efa313b95783f3582f1327ad1">aerial</a>;}</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="class_a_object.html#aa02494588289ed9662abd082bdec716d">   50</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_a_object.html#aa02494588289ed9662abd082bdec716d">isRight</a>() {<span class="keywordflow">return</span> <a class="code" href="class_a_object.html#a7453abe76bbddf446aa5787231428a52">right</a>;}</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="class_a_object.html#ac26a24066236bc7d4f8cc4324a4ae01f">   51</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_a_object.html#ac26a24066236bc7d4f8cc4324a4ae01f">isAlive</a>() {<span class="keywordflow">return</span> <a class="code" href="class_a_object.html#a98663f6d7145a2b7fc2009f95804325a">alive</a>;}</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="class_a_object.html#a0bfe4dc75e67969c28cda83f301e84ec">   52</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_a_object.html#a0bfe4dc75e67969c28cda83f301e84ec">object_type</a>(){<span class="keywordflow">return</span> <a class="code" href="class_a_object.html#a47a6ff0cef7449975ce63f07aade9d5d">object_type_</a>;}</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="class_a_object.html#abf9e02eedf75207898d7059bb6815819">   55</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_a_object.html#abf9e02eedf75207898d7059bb6815819">live_count_</a>;<span class="comment">//生成されたから経過した時間</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="class_a_object.html#a1f9d082036ee3272dacb9a732fa7cdcc">   56</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_a_object.html#a1f9d082036ee3272dacb9a732fa7cdcc">graphic_handle_</a>;  <span class="comment">//どのメモリに画像が読み込まれているかを表すハンドル</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="class_a_object.html#a00038f72ce7400697c2be7f4fdd15d77">   57</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_a_object.html#a00038f72ce7400697c2be7f4fdd15d77">move_ghandle_</a>; <span class="comment">//移動アニメーション用画像</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="class_a_object.html#aff37fc81435924247fe0e4d7fa0186cf">   58</a></span>&#160;    <a class="code" href="struct_two_dimension.html">TwoDimension</a> <a class="code" href="class_a_object.html#aff37fc81435924247fe0e4d7fa0186cf">pos_</a>; <span class="comment">//x,y座標</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="class_a_object.html#a7d817eebc8b7151ff99d48c16c94b73f">   59</a></span>&#160;    <a class="code" href="struct_two_dimension.html">TwoDimension</a> <a class="code" href="class_a_object.html#a7d817eebc8b7151ff99d48c16c94b73f">first_pos_</a>; <span class="comment">//初期のx,y座標</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="class_a_object.html#a640b3a323c205046b20640123222cdd3">   60</a></span>&#160;    <a class="code" href="struct_two_dimension.html">TwoDimension</a> <a class="code" href="class_a_object.html#a640b3a323c205046b20640123222cdd3">speed_</a>; <span class="comment">//x,y軸のスピード</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="class_a_object.html#a50bc88cfccd518e158096b5f033c0728">   61</a></span>&#160;    <a class="code" href="struct_two_dimension.html">TwoDimension</a> <a class="code" href="class_a_object.html#a50bc88cfccd518e158096b5f033c0728">size_</a>; <span class="comment">//オブジェクトのｘ方向の幅と、y方向の高さ</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="class_a_object.html#a893dc760682c3fbafc5c96229939a8ec">   62</a></span>&#160;    <a class="code" href="struct_two_dimension.html">TwoDimension</a> <a class="code" href="class_a_object.html#a893dc760682c3fbafc5c96229939a8ec">hit_size_</a>;<span class="comment">//当たり判定の倍率サイズ</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="class_a_object.html#a98663f6d7145a2b7fc2009f95804325a">   63</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_a_object.html#a98663f6d7145a2b7fc2009f95804325a">alive</a>; <span class="comment">//生存していればtrue</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="class_a_object.html#a7453abe76bbddf446aa5787231428a52">   64</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_a_object.html#a7453abe76bbddf446aa5787231428a52">right</a>; <span class="comment">//向きを表す。右向きならtrue。左向きならfalse</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="class_a_object.html#aad0f6917ebc7fb2e44163302a67638a6">   65</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_a_object.html#aad0f6917ebc7fb2e44163302a67638a6">first_right</a>;<span class="comment">//初期の向き</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="class_a_object.html#a0396b51efa313b95783f3582f1327ad1">   66</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_a_object.html#a0396b51efa313b95783f3582f1327ad1">aerial</a>; <span class="comment">//空中にいるならtrue。地面に接しているならfalse</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="class_a_object.html#a47a6ff0cef7449975ce63f07aade9d5d">   67</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_a_object.html#a47a6ff0cef7449975ce63f07aade9d5d">object_type_</a>;<span class="comment">//どのオブジェクトか判断用</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="class_a_object.html#a18177a7a13f626091e935c1846b7607a">   69</a></span>&#160;    <span class="keyword">static</span> <a class="code" href="class_load_graphic.html">LoadGraphic</a> <a class="code" href="class_a_object.html#a18177a7a13f626091e935c1846b7607a">loadg</a>;  <span class="comment">//画像のメモリ管理をするためのクラス</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;};</div>
+<div class="ttc" id="struct_two_dimension_html_ac7506c70d1af8d3706ed1f084a1587fb"><div class="ttname"><a href="struct_two_dimension.html#ac7506c70d1af8d3706ed1f084a1587fb">TwoDimension::x</a></div><div class="ttdeci">double x</div><div class="ttdef"><b>Definition:</b> AObject.h:17</div></div>
+<div class="ttc" id="_a_object_8h_html_a842c5e2e69277690b064bf363c017980abba9a36b65eb4d21d078a078c055d9a7"><div class="ttname"><a href="_a_object_8h.html#a842c5e2e69277690b064bf363c017980abba9a36b65eb4d21d078a078c055d9a7">O_ITEM</a></div><div class="ttdef"><b>Definition:</b> AObject.h:13</div></div>
+<div class="ttc" id="class_a_object_html_af18a89079a95159f7b93a92a921f4b54"><div class="ttname"><a href="class_a_object.html#af18a89079a95159f7b93a92a921f4b54">AObject::GetCenterPosX</a></div><div class="ttdeci">double GetCenterPosX()</div><div class="ttdef"><b>Definition:</b> AObject.cpp:118</div></div>
+<div class="ttc" id="class_a_object_html_a60fae4021ac710983beefcf8cdb7f3bd"><div class="ttname"><a href="class_a_object.html#a60fae4021ac710983beefcf8cdb7f3bd">AObject::Move</a></div><div class="ttdeci">void Move()</div><div class="ttdef"><b>Definition:</b> AObject.cpp:39</div></div>
+<div class="ttc" id="class_a_object_html_a18177a7a13f626091e935c1846b7607a"><div class="ttname"><a href="class_a_object.html#a18177a7a13f626091e935c1846b7607a">AObject::loadg</a></div><div class="ttdeci">static LoadGraphic loadg</div><div class="ttdef"><b>Definition:</b> AObject.h:69</div></div>
+<div class="ttc" id="class_a_object_html_a42d73d2bad560ba5d83a1b7193347c48"><div class="ttname"><a href="class_a_object.html#a42d73d2bad560ba5d83a1b7193347c48">AObject::size</a></div><div class="ttdeci">TwoDimension size()</div><div class="ttdef"><b>Definition:</b> AObject.h:47</div></div>
+<div class="ttc" id="class_a_object_html_a0bfe4dc75e67969c28cda83f301e84ec"><div class="ttname"><a href="class_a_object.html#a0bfe4dc75e67969c28cda83f301e84ec">AObject::object_type</a></div><div class="ttdeci">int object_type()</div><div class="ttdef"><b>Definition:</b> AObject.h:52</div></div>
+<div class="ttc" id="class_a_object_html_acfe5d595ef8c3387b1bbba51cb397602"><div class="ttname"><a href="class_a_object.html#acfe5d595ef8c3387b1bbba51cb397602">AObject::TouchedBlockY</a></div><div class="ttdeci">void TouchedBlockY(double set_y)</div><div class="ttdef"><b>Definition:</b> AObject.cpp:77</div></div>
+<div class="ttc" id="class_a_object_html_aa07f4874e508e22cc0980e5ab6eb7f54"><div class="ttname"><a href="class_a_object.html#aa07f4874e508e22cc0980e5ab6eb7f54">AObject::Reset</a></div><div class="ttdeci">virtual void Reset()</div><div class="ttdef"><b>Definition:</b> AObject.cpp:28</div></div>
+<div class="ttc" id="_a_object_8h_html_a842c5e2e69277690b064bf363c017980"><div class="ttname"><a href="_a_object_8h.html#a842c5e2e69277690b064bf363c017980">ObjectType</a></div><div class="ttdeci">ObjectType</div><div class="ttdef"><b>Definition:</b> AObject.h:13</div></div>
+<div class="ttc" id="class_a_object_html_a6547fb1f7e3b5c5aab84b0b787e2869c"><div class="ttname"><a href="class_a_object.html#a6547fb1f7e3b5c5aab84b0b787e2869c">AObject::TouchedBlockX</a></div><div class="ttdeci">void TouchedBlockX(double set_x)</div><div class="ttdef"><b>Definition:</b> AObject.cpp:64</div></div>
+<div class="ttc" id="class_a_object_html_a50bc88cfccd518e158096b5f033c0728"><div class="ttname"><a href="class_a_object.html#a50bc88cfccd518e158096b5f033c0728">AObject::size_</a></div><div class="ttdeci">TwoDimension size_</div><div class="ttdef"><b>Definition:</b> AObject.h:61</div></div>
+<div class="ttc" id="class_load_graphic_html"><div class="ttname"><a href="class_load_graphic.html">LoadGraphic</a></div><div class="ttdef"><b>Definition:</b> LoadGraphic.h:8</div></div>
+<div class="ttc" id="class_a_object_html_a95c42b1bcef8f364389d9cf131a37921"><div class="ttname"><a href="class_a_object.html#a95c42b1bcef8f364389d9cf131a37921">AObject::Fall</a></div><div class="ttdeci">void Fall(double gravity)</div><div class="ttdef"><b>Definition:</b> AObject.cpp:92</div></div>
+<div class="ttc" id="struct_two_dimension_html"><div class="ttname"><a href="struct_two_dimension.html">TwoDimension</a></div><div class="ttdef"><b>Definition:</b> AObject.h:16</div></div>
+<div class="ttc" id="class_a_object_html_a2ceff5dd8626fcc399e583ce2b204200"><div class="ttname"><a href="class_a_object.html#a2ceff5dd8626fcc399e583ce2b204200">AObject::isAerial</a></div><div class="ttdeci">bool isAerial()</div><div class="ttdef"><b>Definition:</b> AObject.h:49</div></div>
+<div class="ttc" id="class_a_object_html_a1956c3120bdc7f0372a5aab8c0b1cbb6"><div class="ttname"><a href="class_a_object.html#a1956c3120bdc7f0372a5aab8c0b1cbb6">AObject::AObject</a></div><div class="ttdeci">AObject(double ax, double ay, char *fname, int hit_size_x, int hit_size_y, bool right)</div><div class="ttdef"><b>Definition:</b> AObject.cpp:7</div></div>
+<div class="ttc" id="class_a_object_html_a00038f72ce7400697c2be7f4fdd15d77"><div class="ttname"><a href="class_a_object.html#a00038f72ce7400697c2be7f4fdd15d77">AObject::move_ghandle_</a></div><div class="ttdeci">int move_ghandle_</div><div class="ttdef"><b>Definition:</b> AObject.h:57</div></div>
+<div class="ttc" id="class_a_object_html_a0396b51efa313b95783f3582f1327ad1"><div class="ttname"><a href="class_a_object.html#a0396b51efa313b95783f3582f1327ad1">AObject::aerial</a></div><div class="ttdeci">bool aerial</div><div class="ttdef"><b>Definition:</b> AObject.h:66</div></div>
+<div class="ttc" id="class_a_object_html_a7d817eebc8b7151ff99d48c16c94b73f"><div class="ttname"><a href="class_a_object.html#a7d817eebc8b7151ff99d48c16c94b73f">AObject::first_pos_</a></div><div class="ttdeci">TwoDimension first_pos_</div><div class="ttdef"><b>Definition:</b> AObject.h:59</div></div>
+<div class="ttc" id="class_a_object_html_aa4d5ec1e9ece904effd747657f4e4530"><div class="ttname"><a href="class_a_object.html#aa4d5ec1e9ece904effd747657f4e4530">AObject::GetObjectSize</a></div><div class="ttdeci">void GetObjectSize()</div><div class="ttdef"><b>Definition:</b> AObject.cpp:109</div></div>
+<div class="ttc" id="class_a_object_html_a640b3a323c205046b20640123222cdd3"><div class="ttname"><a href="class_a_object.html#a640b3a323c205046b20640123222cdd3">AObject::speed_</a></div><div class="ttdeci">TwoDimension speed_</div><div class="ttdef"><b>Definition:</b> AObject.h:60</div></div>
+<div class="ttc" id="class_a_object_html_a33c32784ef245183b0207811c0f88521"><div class="ttname"><a href="class_a_object.html#a33c32784ef245183b0207811c0f88521">AObject::GetCenterPosY</a></div><div class="ttdeci">double GetCenterPosY()</div><div class="ttdef"><b>Definition:</b> AObject.cpp:122</div></div>
+<div class="ttc" id="class_a_object_html_abf9e02eedf75207898d7059bb6815819"><div class="ttname"><a href="class_a_object.html#abf9e02eedf75207898d7059bb6815819">AObject::live_count_</a></div><div class="ttdeci">int live_count_</div><div class="ttdef"><b>Definition:</b> AObject.h:55</div></div>
+<div class="ttc" id="class_a_object_html_a98663f6d7145a2b7fc2009f95804325a"><div class="ttname"><a href="class_a_object.html#a98663f6d7145a2b7fc2009f95804325a">AObject::alive</a></div><div class="ttdeci">bool alive</div><div class="ttdef"><b>Definition:</b> AObject.h:63</div></div>
+<div class="ttc" id="class_a_object_html_a7453abe76bbddf446aa5787231428a52"><div class="ttname"><a href="class_a_object.html#a7453abe76bbddf446aa5787231428a52">AObject::right</a></div><div class="ttdeci">bool right</div><div class="ttdef"><b>Definition:</b> AObject.h:64</div></div>
+<div class="ttc" id="class_a_object_html_a3505a72b54c24e488b7daa64161f9ca6"><div class="ttname"><a href="class_a_object.html#a3505a72b54c24e488b7daa64161f9ca6">AObject::hit_size</a></div><div class="ttdeci">TwoDimension hit_size()</div><div class="ttdef"><b>Definition:</b> AObject.h:48</div></div>
+<div class="ttc" id="class_a_object_html_abb924b7e558a2f9d86f2db2bc2fb18a4"><div class="ttname"><a href="class_a_object.html#abb924b7e558a2f9d86f2db2bc2fb18a4">AObject::speed</a></div><div class="ttdeci">TwoDimension speed()</div><div class="ttdef"><b>Definition:</b> AObject.h:46</div></div>
+<div class="ttc" id="class_a_object_html_a0e279a93c79be5807e9bbd20875369a2"><div class="ttname"><a href="class_a_object.html#a0e279a93c79be5807e9bbd20875369a2">AObject::Draw</a></div><div class="ttdeci">virtual void Draw(int offset)</div><div class="ttdef"><b>Definition:</b> AObject.cpp:43</div></div>
+<div class="ttc" id="class_a_object_html_aff37fc81435924247fe0e4d7fa0186cf"><div class="ttname"><a href="class_a_object.html#aff37fc81435924247fe0e4d7fa0186cf">AObject::pos_</a></div><div class="ttdeci">TwoDimension pos_</div><div class="ttdef"><b>Definition:</b> AObject.h:58</div></div>
+<div class="ttc" id="class_a_object_html_a5266e7cb202fc1c27ac66fb8372410cb"><div class="ttname"><a href="class_a_object.html#a5266e7cb202fc1c27ac66fb8372410cb">AObject::Set_Speed</a></div><div class="ttdeci">void Set_Speed(double speed_x, double speed_y)</div><div class="ttdef"><b>Definition:</b> AObject.cpp:104</div></div>
+<div class="ttc" id="class_a_object_html_ac26a24066236bc7d4f8cc4324a4ae01f"><div class="ttname"><a href="class_a_object.html#ac26a24066236bc7d4f8cc4324a4ae01f">AObject::isAlive</a></div><div class="ttdeci">bool isAlive()</div><div class="ttdef"><b>Definition:</b> AObject.h:51</div></div>
+<div class="ttc" id="class_a_object_html_aa02494588289ed9662abd082bdec716d"><div class="ttname"><a href="class_a_object.html#aa02494588289ed9662abd082bdec716d">AObject::isRight</a></div><div class="ttdeci">bool isRight()</div><div class="ttdef"><b>Definition:</b> AObject.h:50</div></div>
+<div class="ttc" id="struct_two_dimension_html_aa344dbcbece346bdcb1949249b4c6cfc"><div class="ttname"><a href="struct_two_dimension.html#aa344dbcbece346bdcb1949249b4c6cfc">TwoDimension::y</a></div><div class="ttdeci">double y</div><div class="ttdef"><b>Definition:</b> AObject.h:18</div></div>
+<div class="ttc" id="class_a_object_html"><div class="ttname"><a href="class_a_object.html">AObject</a></div><div class="ttdef"><b>Definition:</b> AObject.h:21</div></div>
+<div class="ttc" id="_a_object_8h_html_a842c5e2e69277690b064bf363c017980aacac6199bbab8a77e3192a8559724d8f"><div class="ttname"><a href="_a_object_8h.html#a842c5e2e69277690b064bf363c017980aacac6199bbab8a77e3192a8559724d8f">O_PLAYER</a></div><div class="ttdef"><b>Definition:</b> AObject.h:13</div></div>
+<div class="ttc" id="class_a_object_html_a61f89197cb14b1270a0a232ee88333a0"><div class="ttname"><a href="class_a_object.html#a61f89197cb14b1270a0a232ee88333a0">AObject::Think</a></div><div class="ttdeci">virtual void Think()=0</div><div class="ttdef"><b>Definition:</b> AObject.cpp:95</div></div>
+<div class="ttc" id="_a_object_8h_html_a842c5e2e69277690b064bf363c017980ab985f61c895aee454d26484d6fe712a8"><div class="ttname"><a href="_a_object_8h.html#a842c5e2e69277690b064bf363c017980ab985f61c895aee454d26484d6fe712a8">O_ENEMY</a></div><div class="ttdef"><b>Definition:</b> AObject.h:13</div></div>
+<div class="ttc" id="class_a_object_html_a6661473a035f6e0ee0e7d98182630389"><div class="ttname"><a href="class_a_object.html#a6661473a035f6e0ee0e7d98182630389">AObject::Die</a></div><div class="ttdeci">void Die()</div><div class="ttdef"><b>Definition:</b> AObject.cpp:100</div></div>
+<div class="ttc" id="class_a_object_html_a1f9d082036ee3272dacb9a732fa7cdcc"><div class="ttname"><a href="class_a_object.html#a1f9d082036ee3272dacb9a732fa7cdcc">AObject::graphic_handle_</a></div><div class="ttdeci">int graphic_handle_</div><div class="ttdef"><b>Definition:</b> AObject.h:56</div></div>
+<div class="ttc" id="class_a_object_html_a893dc760682c3fbafc5c96229939a8ec"><div class="ttname"><a href="class_a_object.html#a893dc760682c3fbafc5c96229939a8ec">AObject::hit_size_</a></div><div class="ttdeci">TwoDimension hit_size_</div><div class="ttdef"><b>Definition:</b> AObject.h:62</div></div>
+<div class="ttc" id="_load_graphic_8h_html"><div class="ttname"><a href="_load_graphic_8h.html">LoadGraphic.h</a></div></div>
+<div class="ttc" id="class_a_object_html_a47a6ff0cef7449975ce63f07aade9d5d"><div class="ttname"><a href="class_a_object.html#a47a6ff0cef7449975ce63f07aade9d5d">AObject::object_type_</a></div><div class="ttdeci">int object_type_</div><div class="ttdef"><b>Definition:</b> AObject.h:67</div></div>
+<div class="ttc" id="class_a_object_html_a71a4ba584e2a76b73ed623deeb7d1358"><div class="ttname"><a href="class_a_object.html#a71a4ba584e2a76b73ed623deeb7d1358">AObject::pos</a></div><div class="ttdeci">TwoDimension pos()</div><div class="ttdef"><b>Definition:</b> AObject.h:45</div></div>
+<div class="ttc" id="class_a_object_html_aab646016a7b8d3040e2e3675e74d0629"><div class="ttname"><a href="class_a_object.html#aab646016a7b8d3040e2e3675e74d0629">AObject::Revival</a></div><div class="ttdeci">void Revival()</div><div class="ttdef"><b>Definition:</b> AObject.h:32</div></div>
+<div class="ttc" id="class_a_object_html_aad0f6917ebc7fb2e44163302a67638a6"><div class="ttname"><a href="class_a_object.html#aad0f6917ebc7fb2e44163302a67638a6">AObject::first_right</a></div><div class="ttdeci">bool first_right</div><div class="ttdef"><b>Definition:</b> AObject.h:65</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+2014年08月21日(木) 17時11分51秒作成 - My Project / 構成:  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.7
+</small></address>
+</body>
+</html>

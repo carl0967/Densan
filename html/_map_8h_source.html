@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>My Project: Map.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>クラス</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>列挙型</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>列挙値</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>マクロ定義</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Map.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_map_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//マップチップのデータが何を表すか列挙</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//EMPTY=0 WALL=1 ...</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="_map_8h.html#ae7d76fffddf7fd7ef5d9466f971fc8e9afca2faad41310c7e71ec303ef789c53a">    5</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="_map_8h.html#ae7d76fffddf7fd7ef5d9466f971fc8e9">MapChip</a>{<a class="code" href="_map_8h.html#ae7d76fffddf7fd7ef5d9466f971fc8e9a2f0d18fc0d0fa4a6cd92dc328501874d">EMPTY</a>,<a class="code" href="_map_8h.html#ae7d76fffddf7fd7ef5d9466f971fc8e9afca2faad41310c7e71ec303ef789c53a">WALL</a>,<a class="code" href="_map_8h.html#ae7d76fffddf7fd7ef5d9466f971fc8e9ade5dc3e0dbd007d995ed3e37bde5ce7e">PLAYER</a>,<a class="code" href="_map_8h.html#ae7d76fffddf7fd7ef5d9466f971fc8e9a7a5146fb98b8acf472601d618471ddc9">KAME</a>,<a class="code" href="_map_8h.html#ae7d76fffddf7fd7ef5d9466f971fc8e9a3db211bb0d30db282da5a13b354f69c8">COIN</a>,<a class="code" href="_map_8h.html#ae7d76fffddf7fd7ef5d9466f971fc8e9a9d062226588a5db7201b925c4d9425ef">G_FLAG</a>,<a class="code" href="_map_8h.html#ae7d76fffddf7fd7ef5d9466f971fc8e9a5e3d3bb3a2c67e36341e543771b5cd19">JUMPKAME</a>};</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="class_map.html">    7</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_map.html">Map</a>{</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="class_map.html#aa03af329a40b2dbb4252f0a27243dcac">   11</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_map.html#aa03af329a40b2dbb4252f0a27243dcac">background_</a>;    <span class="comment">// 背景画像</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_map.html#a9a14e00ff8843f4eed904f0dbe4b19dd">   12</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_map.html#a9a14e00ff8843f4eed904f0dbe4b19dd">cell_width</a>;     <span class="comment">// マップの1セルの幅</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="class_map.html#ad4c7bd28ec6d1b2e1e996686d5634bbc">   13</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_map.html#ad4c7bd28ec6d1b2e1e996686d5634bbc">cell_hegiht</a>;    <span class="comment">// マップの1セルの高さ</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_map.html#a1c47ff15c93974ddf3ef05f7bdee1571">   14</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_map.html#a1c47ff15c93974ddf3ef05f7bdee1571">map_width_</a>;     <span class="comment">// マップの全体の幅</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_map.html#aaf4efb5b983ca1c0ec7e987711f57640">   15</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_map.html#aaf4efb5b983ca1c0ec7e987711f57640">map_height_</a>;        <span class="comment">// マップの全体の高さ</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_map.html#aebd3aa405509dae6a3a63edad08eaf63">   16</a></span>&#160;    <span class="keywordtype">int</span>** <a class="code" href="class_map.html#aebd3aa405509dae6a3a63edad08eaf63">map_datas</a>;    <span class="comment">// マップチップデータ</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_map.html#a02557959c8b2b59592b673a356424e63">   17</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_map.html#a02557959c8b2b59592b673a356424e63">offset_</a>;            <span class="comment">// 表示画面領域が全体マップから見てどこかをあらわすための変数</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                        <span class="comment">// セル単位ではなくピクセル単位(右に30スクロールするなら、offset=30に</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                        <span class="comment">// して、描画するとき(x+ofset,y)が描画場所になる</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="class_map.html#a3d03c3930a3d2d4c9d7609ae46a730ea">   20</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_map.html#a3d03c3930a3d2d4c9d7609ae46a730ea">wallGraph_</a>;     <span class="comment">// 壁の画像</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="class_map.html#acc81681ce21cb77b686446de8054c873">   22</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_map.html#acc81681ce21cb77b686446de8054c873">map_width</a>() {<span class="keywordflow">return</span> <a class="code" href="class_map.html#a1c47ff15c93974ddf3ef05f7bdee1571">map_width_</a>;}</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="class_map.html#ad31ca4e58bc9aee366f4472b0d2caac0">   23</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_map.html#ad31ca4e58bc9aee366f4472b0d2caac0">map_height</a>() {<span class="keywordflow">return</span> <a class="code" href="class_map.html#aaf4efb5b983ca1c0ec7e987711f57640">map_height_</a>;}</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="class_map.html#a0f5ad0fd4563497b4214038cbca8b582">Map</a>();</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="class_map.html#a0f5ad0fd4563497b4214038cbca8b582">Map</a>(<span class="keywordtype">int</span> <a class="code" href="class_map.html#a9a14e00ff8843f4eed904f0dbe4b19dd">cell_width</a>,<span class="keywordtype">int</span> <a class="code" href="class_map.html#ad4c7bd28ec6d1b2e1e996686d5634bbc">cell_hegiht</a>,<span class="keywordtype">int</span>** <a class="code" href="class_map.html#aebd3aa405509dae6a3a63edad08eaf63">map_datas</a>);        <span class="comment">// コンストラクタ</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_map.html#a49a50b1bb8e6ae4f311ca730e683eae1">GetMapData</a>(<span class="keywordtype">double</span> x,<span class="keywordtype">double</span> y);  <span class="comment">// 描画領域のx,y座標を引数にとって、</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                                        <span class="comment">// マップデータの配列の該当する場所に何があるかを返す</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_map.html#ae1b09990bb55f9e799a8845453975e04">GetMapDataFromCell</a>(<span class="keywordtype">int</span> x,<span class="keywordtype">int</span> y); <span class="comment">//セルの値からマップデータの配列の該当する場所に何があるかを返す。引数がおかしい場合は-1を返す</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="comment">//void Draw();</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_map.html#a450160bcc89fd82cd1ccc7ed44c6542f">Draw</a>(<span class="keywordtype">int</span> offset);      <span class="comment">// 描画</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_map.html#a09797f6a2c27a7966f07498676080ff3">Scroll</a>(<span class="keywordtype">int</span>);   <span class="comment">// offsetを動かす</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="class_map.html#aa403fbe09394ccf39747588f5168e3b2">~Map</a>();             <span class="comment">// デストラクタ</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_map.html#a492de80615b6aeebb98b6b3fef47b243">SetMapHeightAndWidth</a>(<span class="keywordtype">int</span> height,<span class="keywordtype">int</span> width);        <span class="comment">// マップ全体の高さと幅を設定する</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;};</div>
+<div class="ttc" id="class_map_html_aaf4efb5b983ca1c0ec7e987711f57640"><div class="ttname"><a href="class_map.html#aaf4efb5b983ca1c0ec7e987711f57640">Map::map_height_</a></div><div class="ttdeci">int map_height_</div><div class="ttdef"><b>Definition:</b> Map.h:15</div></div>
+<div class="ttc" id="class_map_html_ad31ca4e58bc9aee366f4472b0d2caac0"><div class="ttname"><a href="class_map.html#ad31ca4e58bc9aee366f4472b0d2caac0">Map::map_height</a></div><div class="ttdeci">int map_height()</div><div class="ttdef"><b>Definition:</b> Map.h:23</div></div>
+<div class="ttc" id="_map_8h_html_ae7d76fffddf7fd7ef5d9466f971fc8e9a5e3d3bb3a2c67e36341e543771b5cd19"><div class="ttname"><a href="_map_8h.html#ae7d76fffddf7fd7ef5d9466f971fc8e9a5e3d3bb3a2c67e36341e543771b5cd19">JUMPKAME</a></div><div class="ttdef"><b>Definition:</b> Map.h:5</div></div>
+<div class="ttc" id="class_map_html_a492de80615b6aeebb98b6b3fef47b243"><div class="ttname"><a href="class_map.html#a492de80615b6aeebb98b6b3fef47b243">Map::SetMapHeightAndWidth</a></div><div class="ttdeci">void SetMapHeightAndWidth(int height, int width)</div><div class="ttdef"><b>Definition:</b> Map.cpp:62</div></div>
+<div class="ttc" id="class_map_html_ae1b09990bb55f9e799a8845453975e04"><div class="ttname"><a href="class_map.html#ae1b09990bb55f9e799a8845453975e04">Map::GetMapDataFromCell</a></div><div class="ttdeci">int GetMapDataFromCell(int x, int y)</div><div class="ttdef"><b>Definition:</b> Map.cpp:24</div></div>
+<div class="ttc" id="class_map_html_a3d03c3930a3d2d4c9d7609ae46a730ea"><div class="ttname"><a href="class_map.html#a3d03c3930a3d2d4c9d7609ae46a730ea">Map::wallGraph_</a></div><div class="ttdeci">int wallGraph_</div><div class="ttdef"><b>Definition:</b> Map.h:20</div></div>
+<div class="ttc" id="class_map_html_ad4c7bd28ec6d1b2e1e996686d5634bbc"><div class="ttname"><a href="class_map.html#ad4c7bd28ec6d1b2e1e996686d5634bbc">Map::cell_hegiht</a></div><div class="ttdeci">int cell_hegiht</div><div class="ttdef"><b>Definition:</b> Map.h:13</div></div>
+<div class="ttc" id="class_map_html_acc81681ce21cb77b686446de8054c873"><div class="ttname"><a href="class_map.html#acc81681ce21cb77b686446de8054c873">Map::map_width</a></div><div class="ttdeci">int map_width()</div><div class="ttdef"><b>Definition:</b> Map.h:22</div></div>
+<div class="ttc" id="_map_8h_html_ae7d76fffddf7fd7ef5d9466f971fc8e9a3db211bb0d30db282da5a13b354f69c8"><div class="ttname"><a href="_map_8h.html#ae7d76fffddf7fd7ef5d9466f971fc8e9a3db211bb0d30db282da5a13b354f69c8">COIN</a></div><div class="ttdef"><b>Definition:</b> Map.h:5</div></div>
+<div class="ttc" id="_map_8h_html_ae7d76fffddf7fd7ef5d9466f971fc8e9a2f0d18fc0d0fa4a6cd92dc328501874d"><div class="ttname"><a href="_map_8h.html#ae7d76fffddf7fd7ef5d9466f971fc8e9a2f0d18fc0d0fa4a6cd92dc328501874d">EMPTY</a></div><div class="ttdef"><b>Definition:</b> Map.h:5</div></div>
+<div class="ttc" id="_map_8h_html_ae7d76fffddf7fd7ef5d9466f971fc8e9"><div class="ttname"><a href="_map_8h.html#ae7d76fffddf7fd7ef5d9466f971fc8e9">MapChip</a></div><div class="ttdeci">MapChip</div><div class="ttdef"><b>Definition:</b> Map.h:5</div></div>
+<div class="ttc" id="_map_8h_html_ae7d76fffddf7fd7ef5d9466f971fc8e9afca2faad41310c7e71ec303ef789c53a"><div class="ttname"><a href="_map_8h.html#ae7d76fffddf7fd7ef5d9466f971fc8e9afca2faad41310c7e71ec303ef789c53a">WALL</a></div><div class="ttdef"><b>Definition:</b> Map.h:5</div></div>
+<div class="ttc" id="class_map_html_a9a14e00ff8843f4eed904f0dbe4b19dd"><div class="ttname"><a href="class_map.html#a9a14e00ff8843f4eed904f0dbe4b19dd">Map::cell_width</a></div><div class="ttdeci">int cell_width</div><div class="ttdef"><b>Definition:</b> Map.h:12</div></div>
+<div class="ttc" id="class_map_html_aa403fbe09394ccf39747588f5168e3b2"><div class="ttname"><a href="class_map.html#aa403fbe09394ccf39747588f5168e3b2">Map::~Map</a></div><div class="ttdeci">~Map()</div><div class="ttdef"><b>Definition:</b> Map.cpp:30</div></div>
+<div class="ttc" id="class_map_html_a450160bcc89fd82cd1ccc7ed44c6542f"><div class="ttname"><a href="class_map.html#a450160bcc89fd82cd1ccc7ed44c6542f">Map::Draw</a></div><div class="ttdeci">void Draw(int offset)</div><div class="ttdef"><b>Definition:</b> Map.cpp:42</div></div>
+<div class="ttc" id="class_map_html"><div class="ttname"><a href="class_map.html">Map</a></div><div class="ttdef"><b>Definition:</b> Map.h:7</div></div>
+<div class="ttc" id="class_map_html_a1c47ff15c93974ddf3ef05f7bdee1571"><div class="ttname"><a href="class_map.html#a1c47ff15c93974ddf3ef05f7bdee1571">Map::map_width_</a></div><div class="ttdeci">int map_width_</div><div class="ttdef"><b>Definition:</b> Map.h:14</div></div>
+<div class="ttc" id="class_map_html_a0f5ad0fd4563497b4214038cbca8b582"><div class="ttname"><a href="class_map.html#a0f5ad0fd4563497b4214038cbca8b582">Map::Map</a></div><div class="ttdeci">Map()</div></div>
+<div class="ttc" id="class_map_html_a02557959c8b2b59592b673a356424e63"><div class="ttname"><a href="class_map.html#a02557959c8b2b59592b673a356424e63">Map::offset_</a></div><div class="ttdeci">int offset_</div><div class="ttdef"><b>Definition:</b> Map.h:17</div></div>
+<div class="ttc" id="_map_8h_html_ae7d76fffddf7fd7ef5d9466f971fc8e9a7a5146fb98b8acf472601d618471ddc9"><div class="ttname"><a href="_map_8h.html#ae7d76fffddf7fd7ef5d9466f971fc8e9a7a5146fb98b8acf472601d618471ddc9">KAME</a></div><div class="ttdef"><b>Definition:</b> Map.h:5</div></div>
+<div class="ttc" id="class_map_html_aebd3aa405509dae6a3a63edad08eaf63"><div class="ttname"><a href="class_map.html#aebd3aa405509dae6a3a63edad08eaf63">Map::map_datas</a></div><div class="ttdeci">int ** map_datas</div><div class="ttdef"><b>Definition:</b> Map.h:16</div></div>
+<div class="ttc" id="class_map_html_a49a50b1bb8e6ae4f311ca730e683eae1"><div class="ttname"><a href="class_map.html#a49a50b1bb8e6ae4f311ca730e683eae1">Map::GetMapData</a></div><div class="ttdeci">int GetMapData(double x, double y)</div><div class="ttdef"><b>Definition:</b> Map.cpp:16</div></div>
+<div class="ttc" id="class_map_html_a09797f6a2c27a7966f07498676080ff3"><div class="ttname"><a href="class_map.html#a09797f6a2c27a7966f07498676080ff3">Map::Scroll</a></div><div class="ttdeci">void Scroll(int)</div><div class="ttdef"><b>Definition:</b> Map.cpp:36</div></div>
+<div class="ttc" id="_map_8h_html_ae7d76fffddf7fd7ef5d9466f971fc8e9ade5dc3e0dbd007d995ed3e37bde5ce7e"><div class="ttname"><a href="_map_8h.html#ae7d76fffddf7fd7ef5d9466f971fc8e9ade5dc3e0dbd007d995ed3e37bde5ce7e">PLAYER</a></div><div class="ttdef"><b>Definition:</b> Map.h:5</div></div>
+<div class="ttc" id="_map_8h_html_ae7d76fffddf7fd7ef5d9466f971fc8e9a9d062226588a5db7201b925c4d9425ef"><div class="ttname"><a href="_map_8h.html#ae7d76fffddf7fd7ef5d9466f971fc8e9a9d062226588a5db7201b925c4d9425ef">G_FLAG</a></div><div class="ttdef"><b>Definition:</b> Map.h:5</div></div>
+<div class="ttc" id="class_map_html_aa03af329a40b2dbb4252f0a27243dcac"><div class="ttname"><a href="class_map.html#aa03af329a40b2dbb4252f0a27243dcac">Map::background_</a></div><div class="ttdeci">int background_</div><div class="ttdef"><b>Definition:</b> Map.h:11</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+2014年08月21日(木) 17時11分51秒作成 - My Project / 構成:  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.7
+</small></address>
+</body>
+</html>

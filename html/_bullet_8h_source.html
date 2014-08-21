@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>My Project: Bullet.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>クラス</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>列挙型</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>列挙値</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>マクロ定義</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Bullet.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_bullet_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_a_object_8h.html">aobject.h</a>&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;math.h&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
+<div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="_bullet_8h.html#ada6f18c14768b77a80f667c39d4ec8bc">    5</a></span>&#160;<span class="preprocessor">#define PAI 3.14</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="class_bullet.html">    7</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_bullet.html">Bullet</a> :<span class="keyword">public</span> <a class="code" href="class_a_object.html">AObject</a></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <a class="code" href="class_bullet.html#a62798f15ff62617a274c12ad1ffb9aad">Bullet</a>(<span class="keywordtype">double</span> x,<span class="keywordtype">double</span> y,<span class="keywordtype">int</span> <a class="code" href="class_bullet.html#a6e5b78574ec8fbff411b1319cf111799">damage</a>,<span class="keywordtype">int</span> <a class="code" href="class_a_object.html#abb924b7e558a2f9d86f2db2bc2fb18a4">speed</a>, <span class="keywordtype">char</span>* fname, <span class="keywordtype">int</span> hit_size_x, <span class="keywordtype">int</span> hit_size_y);<span class="comment">//コンストラクタ</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_bullet.html#a0f3207f4dc7244fd3510b89943f939f3">Think</a>();</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_bullet.html#a67b44c96157279508e92f9dc91419f38">DieBullet</a>(); <span class="comment">//離れた弾を消滅させる</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_bullet.html#a4c20c48e68e8b14c9df456c50f61998d">Initialize</a>(<span class="keywordtype">double</span> x, <span class="keywordtype">double</span> y);<span class="comment">//初期化処理(再出現させる際に呼び出す)</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="class_bullet.html#ab3c2b9c0b12c18aeace52bd289ddfce3">~Bullet</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="comment">//ゲッター</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="class_bullet.html#a6e5b78574ec8fbff411b1319cf111799">   18</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_bullet.html#a6e5b78574ec8fbff411b1319cf111799">damage</a>(){<span class="keywordflow">return</span> <a class="code" href="class_bullet.html#aaa26f3bff8a6f418831cf7458e018b40">damage_</a>;}</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="class_bullet.html#aaa26f3bff8a6f418831cf7458e018b40">   21</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_bullet.html#aaa26f3bff8a6f418831cf7458e018b40">damage_</a>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="class_bullet.html#aff48665a8060391eaca9bb2d38b8492f">   22</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_bullet.html#aff48665a8060391eaca9bb2d38b8492f">bullet_speed_</a>; <span class="comment">//弾の速度</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="class_bullet.html#a70eee9d25fde596eb251251e3806a6cc">   23</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="class_bullet.html#a70eee9d25fde596eb251251e3806a6cc">angle_</a>; <span class="comment">//発射角度</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;};</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="ttc" id="class_bullet_html_a0f3207f4dc7244fd3510b89943f939f3"><div class="ttname"><a href="class_bullet.html#a0f3207f4dc7244fd3510b89943f939f3">Bullet::Think</a></div><div class="ttdeci">virtual void Think()</div><div class="ttdef"><b>Definition:</b> Bullet.cpp:27</div></div>
+<div class="ttc" id="class_bullet_html_aff48665a8060391eaca9bb2d38b8492f"><div class="ttname"><a href="class_bullet.html#aff48665a8060391eaca9bb2d38b8492f">Bullet::bullet_speed_</a></div><div class="ttdeci">int bullet_speed_</div><div class="ttdef"><b>Definition:</b> Bullet.h:22</div></div>
+<div class="ttc" id="class_bullet_html_a70eee9d25fde596eb251251e3806a6cc"><div class="ttname"><a href="class_bullet.html#a70eee9d25fde596eb251251e3806a6cc">Bullet::angle_</a></div><div class="ttdeci">double angle_</div><div class="ttdef"><b>Definition:</b> Bullet.h:23</div></div>
+<div class="ttc" id="class_bullet_html_a6e5b78574ec8fbff411b1319cf111799"><div class="ttname"><a href="class_bullet.html#a6e5b78574ec8fbff411b1319cf111799">Bullet::damage</a></div><div class="ttdeci">int damage()</div><div class="ttdef"><b>Definition:</b> Bullet.h:18</div></div>
+<div class="ttc" id="class_bullet_html_a67b44c96157279508e92f9dc91419f38"><div class="ttname"><a href="class_bullet.html#a67b44c96157279508e92f9dc91419f38">Bullet::DieBullet</a></div><div class="ttdeci">void DieBullet()</div><div class="ttdef"><b>Definition:</b> Bullet.cpp:32</div></div>
+<div class="ttc" id="class_bullet_html_aaa26f3bff8a6f418831cf7458e018b40"><div class="ttname"><a href="class_bullet.html#aaa26f3bff8a6f418831cf7458e018b40">Bullet::damage_</a></div><div class="ttdeci">int damage_</div><div class="ttdef"><b>Definition:</b> Bullet.h:21</div></div>
+<div class="ttc" id="class_bullet_html_ab3c2b9c0b12c18aeace52bd289ddfce3"><div class="ttname"><a href="class_bullet.html#ab3c2b9c0b12c18aeace52bd289ddfce3">Bullet::~Bullet</a></div><div class="ttdeci">~Bullet(void)</div><div class="ttdef"><b>Definition:</b> Bullet.cpp:39</div></div>
+<div class="ttc" id="class_bullet_html_a62798f15ff62617a274c12ad1ffb9aad"><div class="ttname"><a href="class_bullet.html#a62798f15ff62617a274c12ad1ffb9aad">Bullet::Bullet</a></div><div class="ttdeci">Bullet(double x, double y, int damage, int speed, char *fname, int hit_size_x, int hit_size_y)</div><div class="ttdef"><b>Definition:</b> Bullet.cpp:4</div></div>
+<div class="ttc" id="class_a_object_html_abb924b7e558a2f9d86f2db2bc2fb18a4"><div class="ttname"><a href="class_a_object.html#abb924b7e558a2f9d86f2db2bc2fb18a4">AObject::speed</a></div><div class="ttdeci">TwoDimension speed()</div><div class="ttdef"><b>Definition:</b> AObject.h:46</div></div>
+<div class="ttc" id="class_bullet_html_a4c20c48e68e8b14c9df456c50f61998d"><div class="ttname"><a href="class_bullet.html#a4c20c48e68e8b14c9df456c50f61998d">Bullet::Initialize</a></div><div class="ttdeci">virtual void Initialize(double x, double y)</div><div class="ttdef"><b>Definition:</b> Bullet.cpp:19</div></div>
+<div class="ttc" id="class_bullet_html"><div class="ttname"><a href="class_bullet.html">Bullet</a></div><div class="ttdef"><b>Definition:</b> Bullet.h:7</div></div>
+<div class="ttc" id="class_a_object_html"><div class="ttname"><a href="class_a_object.html">AObject</a></div><div class="ttdef"><b>Definition:</b> AObject.h:21</div></div>
+<div class="ttc" id="_a_object_8h_html"><div class="ttname"><a href="_a_object_8h.html">AObject.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+2014年08月21日(木) 17時11分51秒作成 - My Project / 構成:  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.7
+</small></address>
+</body>
+</html>

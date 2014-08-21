@@ -1,0 +1,360 @@
+\hypertarget{class_field}{\section{Field クラス}
+\label{class_field}\index{Field@{Field}}
+}
+
+
+{\ttfamily \#include $<$Field.\+h$>$}
+
+\subsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_field_a3e804c92273d9159f413f227b535c672}{Field} ()
+\item 
+\hyperlink{class_field_ac3b19f4f5451b19638479e4e6302a465}{Field} (\hyperlink{class_map}{Map} $\ast$map)
+\item 
+int \hyperlink{class_field_abe0201576e9a90b0c971d0531a834fe0}{Main\+Loop} ()
+\item 
+int \hyperlink{class_field_aef2ba50ec80860898b18cc14f76821bb}{Get\+Map\+Data} (double x, double y)
+\item 
+int \hyperlink{class_field_a42b76e7d36c36525c8f23da05f5ef451}{Get\+Next\+Map\+Data} (\hyperlink{struct_two_dimension}{Two\+Dimension} chara\+\_\+pos, \hyperlink{struct_two_dimension}{Two\+Dimension} chara\+\_\+speed, bool right)
+\item 
+\hyperlink{struct_two_dimension}{Two\+Dimension} \hyperlink{class_field_a701edaa0540555c8087df537402e5e22}{Get\+Player\+Pos} ()
+\item 
+int \hyperlink{class_field_a7fd8d8172b36ef5f764e9b98b178c8eb}{count} ()
+\item 
+\hyperlink{class_player}{Player} $\ast$ \hyperlink{class_field_aa135a6f54b5b6779b36e147e46c70696}{player} ()
+\item 
+\hyperlink{class_field_a45d6e6d09b8f8e46de62b40119d62c60}{$\sim$\+Field} ()
+\end{DoxyCompactItemize}
+\subsection*{非公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_field_a1eda9df5b8cb72839ed042921025fb65}{Initialize} ()
+\item 
+void \hyperlink{class_field_a433cb83e730fd4ed4c773fb3eb32919c}{Scroll} ()
+\item 
+void \hyperlink{class_field_aab548ccb15ba5e71cd81880a40fcb1c2}{Fall\+Objects} ()
+\item 
+void \hyperlink{class_field_a5b46210e4fa643128ce37b654f5eea90}{Move\+Objects} ()
+\item 
+void \hyperlink{class_field_a1addadd366450a3d89a09213b354cbde}{Draw\+Objects} ()
+\item 
+void \hyperlink{class_field_a9fdfb39458b7f28b0084ff4f0ba306ab}{Think\+Objects} ()
+\item 
+void \hyperlink{class_field_a527bab59bc982d71e31d08a8f19012a2}{Touch\+Player\+To\+Objects} ()
+\item 
+void \hyperlink{class_field_a9e2f9ec9dea92779d4ad10ef5317c9bd}{Touch\+Objects\+To\+Wall} ()
+\item 
+void \hyperlink{class_field_a68718c2c362cb7586112993c765306af}{Bullet\+Touch\+Wall} ()
+\item 
+void \hyperlink{class_field_aa0d2a42df398cb284aded394edd765ca}{Reset} ()
+\item 
+void \hyperlink{class_field_a95aed395fb1b9c1d771adb49147387a3}{Game\+Over} ()
+\item 
+void \hyperlink{class_field_aff3490dddeee21254efb211a535d9c78}{Game\+Clear} ()
+\item 
+void \hyperlink{class_field_aa099cc4ccf2b6e467484b98cf1d56cb6}{Check\+Out\+Of\+Area} ()
+\item 
+void \hyperlink{class_field_a3d208f24dd94f42d9ed7a4e63bf34a3c}{Down\+Objects\+Die} ()
+\item 
+void \hyperlink{class_field_a4a204b53b4884c14eafae7ce359155ce}{Add\+Object} (\hyperlink{class_a_object}{A\+Object} $\ast$object\+\_\+num, bool is\+Begin)
+\item 
+int \hyperlink{class_field_a36e491f48f9b23b6a165d264babdb2fd}{Pixel\+To\+Tiles} (double pixels)
+\item 
+int \hyperlink{class_field_ab2167aa053c1d17f8dcfecb47c9acdd2}{Tiles\+To\+Pixels} (int tiles)
+\item 
+bool \hyperlink{class_field_ab073fa1f34ae99052a1525fb63299b3d}{Judge\+Circle} (int x1, int y1, int r1, int x2, int y2, int r2)
+\item 
+bool \hyperlink{class_field_a6b4cbd035716adc939657108e0575186}{Judge\+Hit\+Characters} (\hyperlink{class_a_object}{A\+Object} $\ast$p, \hyperlink{class_a_object}{A\+Object} $\ast$e)
+\item 
+void \hyperlink{class_field_a60fc25acdab8f888ee7791c6f32318ab}{Find\+Object} (int from\+\_\+y, int to\+\_\+y, int from\+\_\+x, int to\+\_\+x)
+\end{DoxyCompactItemize}
+\subsection*{非公開変数類}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_map}{Map} $\ast$ \hyperlink{class_field_afa58380f2c246abfac40e368e9a157f0}{map\+\_\+}
+\item 
+\hyperlink{class_object_manager}{Object\+Manager} $\ast$ \hyperlink{class_field_af51776b9b909f421068a8bcd9701e142}{obj\+\_\+manager\+\_\+}
+\item 
+int \hyperlink{class_field_a5c4f6af48254c9dcc602879aaf86d03e}{count\+\_\+}
+\item 
+vector$<$ \hyperlink{class_a_object}{A\+Object} $\ast$ $>$ \hyperlink{class_field_a0e7ed8b2be66267ec1570648f6cdbe40}{objects\+\_\+}
+\item 
+\hyperlink{class_player}{Player} $\ast$ \hyperlink{class_field_a4376e5c7cac9ae060281c65a9bb10546}{player\+\_\+}
+\item 
+double \hyperlink{class_field_a3bbc1c73deeb5dc6b2ac78487b121353}{gravity\+\_\+}
+\item 
+int \hyperlink{class_field_ae160817fea72d1483d556eba3f97dfe6}{offset\+\_\+}
+\item 
+bool \hyperlink{class_field_a7b31ee36e5115d099c6b7beb47397621}{menu\+\_\+flag}
+\item 
+int \hyperlink{class_field_a20e399af0fc61f66c5b0a7aadcb5e10b}{wait\+\_\+count\+\_\+}
+\item 
+int \hyperlink{class_field_ac77b13cecde2f70c728d9a8d4355928e}{end\+\_\+graphic\+\_\+handle}
+\item 
+int \hyperlink{class_field_a00ee4da146cd30fce7aa9e7ce5b3a781}{clear\+\_\+graphic\+\_\+handle}
+\end{DoxyCompactItemize}
+
+
+\subsection{構築子と解体子}
+\hypertarget{class_field_a3e804c92273d9159f413f227b535c672}{\index{Field@{Field}!Field@{Field}}
+\index{Field@{Field}!Field@{Field}}
+\subsubsection[{Field}]{\setlength{\rightskip}{0pt plus 5cm}Field\+::\+Field (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_field_a3e804c92273d9159f413f227b535c672}
+\hypertarget{class_field_ac3b19f4f5451b19638479e4e6302a465}{\index{Field@{Field}!Field@{Field}}
+\index{Field@{Field}!Field@{Field}}
+\subsubsection[{Field}]{\setlength{\rightskip}{0pt plus 5cm}Field\+::\+Field (
+\begin{DoxyParamCaption}
+\item[{{\bf Map} $\ast$}]{map}
+\end{DoxyParamCaption}
+)}}\label{class_field_ac3b19f4f5451b19638479e4e6302a465}
+\hypertarget{class_field_a45d6e6d09b8f8e46de62b40119d62c60}{\index{Field@{Field}!````~Field@{$\sim$\+Field}}
+\index{````~Field@{$\sim$\+Field}!Field@{Field}}
+\subsubsection[{$\sim$\+Field}]{\setlength{\rightskip}{0pt plus 5cm}Field\+::$\sim$\+Field (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_field_a45d6e6d09b8f8e46de62b40119d62c60}
+
+
+\subsection{関数詳解}
+\hypertarget{class_field_a4a204b53b4884c14eafae7ce359155ce}{\index{Field@{Field}!Add\+Object@{Add\+Object}}
+\index{Add\+Object@{Add\+Object}!Field@{Field}}
+\subsubsection[{Add\+Object}]{\setlength{\rightskip}{0pt plus 5cm}void Field\+::\+Add\+Object (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+Object} $\ast$}]{object\+\_\+num, }
+\item[{bool}]{is\+Begin}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_field_a4a204b53b4884c14eafae7ce359155ce}
+\hypertarget{class_field_a68718c2c362cb7586112993c765306af}{\index{Field@{Field}!Bullet\+Touch\+Wall@{Bullet\+Touch\+Wall}}
+\index{Bullet\+Touch\+Wall@{Bullet\+Touch\+Wall}!Field@{Field}}
+\subsubsection[{Bullet\+Touch\+Wall}]{\setlength{\rightskip}{0pt plus 5cm}void Field\+::\+Bullet\+Touch\+Wall (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_field_a68718c2c362cb7586112993c765306af}
+\hypertarget{class_field_aa099cc4ccf2b6e467484b98cf1d56cb6}{\index{Field@{Field}!Check\+Out\+Of\+Area@{Check\+Out\+Of\+Area}}
+\index{Check\+Out\+Of\+Area@{Check\+Out\+Of\+Area}!Field@{Field}}
+\subsubsection[{Check\+Out\+Of\+Area}]{\setlength{\rightskip}{0pt plus 5cm}void Field\+::\+Check\+Out\+Of\+Area (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_field_aa099cc4ccf2b6e467484b98cf1d56cb6}
+\hypertarget{class_field_a7fd8d8172b36ef5f764e9b98b178c8eb}{\index{Field@{Field}!count@{count}}
+\index{count@{count}!Field@{Field}}
+\subsubsection[{count}]{\setlength{\rightskip}{0pt plus 5cm}int Field\+::count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_field_a7fd8d8172b36ef5f764e9b98b178c8eb}
+\hypertarget{class_field_a3d208f24dd94f42d9ed7a4e63bf34a3c}{\index{Field@{Field}!Down\+Objects\+Die@{Down\+Objects\+Die}}
+\index{Down\+Objects\+Die@{Down\+Objects\+Die}!Field@{Field}}
+\subsubsection[{Down\+Objects\+Die}]{\setlength{\rightskip}{0pt plus 5cm}void Field\+::\+Down\+Objects\+Die (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_field_a3d208f24dd94f42d9ed7a4e63bf34a3c}
+\hypertarget{class_field_a1addadd366450a3d89a09213b354cbde}{\index{Field@{Field}!Draw\+Objects@{Draw\+Objects}}
+\index{Draw\+Objects@{Draw\+Objects}!Field@{Field}}
+\subsubsection[{Draw\+Objects}]{\setlength{\rightskip}{0pt plus 5cm}void Field\+::\+Draw\+Objects (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_field_a1addadd366450a3d89a09213b354cbde}
+\hypertarget{class_field_aab548ccb15ba5e71cd81880a40fcb1c2}{\index{Field@{Field}!Fall\+Objects@{Fall\+Objects}}
+\index{Fall\+Objects@{Fall\+Objects}!Field@{Field}}
+\subsubsection[{Fall\+Objects}]{\setlength{\rightskip}{0pt plus 5cm}void Field\+::\+Fall\+Objects (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_field_aab548ccb15ba5e71cd81880a40fcb1c2}
+\hypertarget{class_field_a60fc25acdab8f888ee7791c6f32318ab}{\index{Field@{Field}!Find\+Object@{Find\+Object}}
+\index{Find\+Object@{Find\+Object}!Field@{Field}}
+\subsubsection[{Find\+Object}]{\setlength{\rightskip}{0pt plus 5cm}void Field\+::\+Find\+Object (
+\begin{DoxyParamCaption}
+\item[{int}]{from\+\_\+y, }
+\item[{int}]{to\+\_\+y, }
+\item[{int}]{from\+\_\+x, }
+\item[{int}]{to\+\_\+x}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_field_a60fc25acdab8f888ee7791c6f32318ab}
+\hypertarget{class_field_aff3490dddeee21254efb211a535d9c78}{\index{Field@{Field}!Game\+Clear@{Game\+Clear}}
+\index{Game\+Clear@{Game\+Clear}!Field@{Field}}
+\subsubsection[{Game\+Clear}]{\setlength{\rightskip}{0pt plus 5cm}void Field\+::\+Game\+Clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_field_aff3490dddeee21254efb211a535d9c78}
+\hypertarget{class_field_a95aed395fb1b9c1d771adb49147387a3}{\index{Field@{Field}!Game\+Over@{Game\+Over}}
+\index{Game\+Over@{Game\+Over}!Field@{Field}}
+\subsubsection[{Game\+Over}]{\setlength{\rightskip}{0pt plus 5cm}void Field\+::\+Game\+Over (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_field_a95aed395fb1b9c1d771adb49147387a3}
+\hypertarget{class_field_aef2ba50ec80860898b18cc14f76821bb}{\index{Field@{Field}!Get\+Map\+Data@{Get\+Map\+Data}}
+\index{Get\+Map\+Data@{Get\+Map\+Data}!Field@{Field}}
+\subsubsection[{Get\+Map\+Data}]{\setlength{\rightskip}{0pt plus 5cm}int Field\+::\+Get\+Map\+Data (
+\begin{DoxyParamCaption}
+\item[{double}]{x, }
+\item[{double}]{y}
+\end{DoxyParamCaption}
+)}}\label{class_field_aef2ba50ec80860898b18cc14f76821bb}
+\hypertarget{class_field_a42b76e7d36c36525c8f23da05f5ef451}{\index{Field@{Field}!Get\+Next\+Map\+Data@{Get\+Next\+Map\+Data}}
+\index{Get\+Next\+Map\+Data@{Get\+Next\+Map\+Data}!Field@{Field}}
+\subsubsection[{Get\+Next\+Map\+Data}]{\setlength{\rightskip}{0pt plus 5cm}int Field\+::\+Get\+Next\+Map\+Data (
+\begin{DoxyParamCaption}
+\item[{{\bf Two\+Dimension}}]{chara\+\_\+pos, }
+\item[{{\bf Two\+Dimension}}]{chara\+\_\+speed, }
+\item[{bool}]{right}
+\end{DoxyParamCaption}
+)}}\label{class_field_a42b76e7d36c36525c8f23da05f5ef451}
+\hypertarget{class_field_a701edaa0540555c8087df537402e5e22}{\index{Field@{Field}!Get\+Player\+Pos@{Get\+Player\+Pos}}
+\index{Get\+Player\+Pos@{Get\+Player\+Pos}!Field@{Field}}
+\subsubsection[{Get\+Player\+Pos}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Two\+Dimension} Field\+::\+Get\+Player\+Pos (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_field_a701edaa0540555c8087df537402e5e22}
+\hypertarget{class_field_a1eda9df5b8cb72839ed042921025fb65}{\index{Field@{Field}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!Field@{Field}}
+\subsubsection[{Initialize}]{\setlength{\rightskip}{0pt plus 5cm}void Field\+::\+Initialize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_field_a1eda9df5b8cb72839ed042921025fb65}
+\hypertarget{class_field_ab073fa1f34ae99052a1525fb63299b3d}{\index{Field@{Field}!Judge\+Circle@{Judge\+Circle}}
+\index{Judge\+Circle@{Judge\+Circle}!Field@{Field}}
+\subsubsection[{Judge\+Circle}]{\setlength{\rightskip}{0pt plus 5cm}bool Field\+::\+Judge\+Circle (
+\begin{DoxyParamCaption}
+\item[{int}]{x1, }
+\item[{int}]{y1, }
+\item[{int}]{r1, }
+\item[{int}]{x2, }
+\item[{int}]{y2, }
+\item[{int}]{r2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_field_ab073fa1f34ae99052a1525fb63299b3d}
+\hypertarget{class_field_a6b4cbd035716adc939657108e0575186}{\index{Field@{Field}!Judge\+Hit\+Characters@{Judge\+Hit\+Characters}}
+\index{Judge\+Hit\+Characters@{Judge\+Hit\+Characters}!Field@{Field}}
+\subsubsection[{Judge\+Hit\+Characters}]{\setlength{\rightskip}{0pt plus 5cm}bool Field\+::\+Judge\+Hit\+Characters (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+Object} $\ast$}]{p, }
+\item[{{\bf A\+Object} $\ast$}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_field_a6b4cbd035716adc939657108e0575186}
+\hypertarget{class_field_abe0201576e9a90b0c971d0531a834fe0}{\index{Field@{Field}!Main\+Loop@{Main\+Loop}}
+\index{Main\+Loop@{Main\+Loop}!Field@{Field}}
+\subsubsection[{Main\+Loop}]{\setlength{\rightskip}{0pt plus 5cm}int Field\+::\+Main\+Loop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_field_abe0201576e9a90b0c971d0531a834fe0}
+\hypertarget{class_field_a5b46210e4fa643128ce37b654f5eea90}{\index{Field@{Field}!Move\+Objects@{Move\+Objects}}
+\index{Move\+Objects@{Move\+Objects}!Field@{Field}}
+\subsubsection[{Move\+Objects}]{\setlength{\rightskip}{0pt plus 5cm}void Field\+::\+Move\+Objects (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_field_a5b46210e4fa643128ce37b654f5eea90}
+\hypertarget{class_field_a36e491f48f9b23b6a165d264babdb2fd}{\index{Field@{Field}!Pixel\+To\+Tiles@{Pixel\+To\+Tiles}}
+\index{Pixel\+To\+Tiles@{Pixel\+To\+Tiles}!Field@{Field}}
+\subsubsection[{Pixel\+To\+Tiles}]{\setlength{\rightskip}{0pt plus 5cm}int Field\+::\+Pixel\+To\+Tiles (
+\begin{DoxyParamCaption}
+\item[{double}]{pixels}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_field_a36e491f48f9b23b6a165d264babdb2fd}
+\hypertarget{class_field_aa135a6f54b5b6779b36e147e46c70696}{\index{Field@{Field}!player@{player}}
+\index{player@{player}!Field@{Field}}
+\subsubsection[{player}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Player}$\ast$ Field\+::player (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_field_aa135a6f54b5b6779b36e147e46c70696}
+\hypertarget{class_field_aa0d2a42df398cb284aded394edd765ca}{\index{Field@{Field}!Reset@{Reset}}
+\index{Reset@{Reset}!Field@{Field}}
+\subsubsection[{Reset}]{\setlength{\rightskip}{0pt plus 5cm}void Field\+::\+Reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_field_aa0d2a42df398cb284aded394edd765ca}
+\hypertarget{class_field_a433cb83e730fd4ed4c773fb3eb32919c}{\index{Field@{Field}!Scroll@{Scroll}}
+\index{Scroll@{Scroll}!Field@{Field}}
+\subsubsection[{Scroll}]{\setlength{\rightskip}{0pt plus 5cm}void Field\+::\+Scroll (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_field_a433cb83e730fd4ed4c773fb3eb32919c}
+\hypertarget{class_field_a9fdfb39458b7f28b0084ff4f0ba306ab}{\index{Field@{Field}!Think\+Objects@{Think\+Objects}}
+\index{Think\+Objects@{Think\+Objects}!Field@{Field}}
+\subsubsection[{Think\+Objects}]{\setlength{\rightskip}{0pt plus 5cm}void Field\+::\+Think\+Objects (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_field_a9fdfb39458b7f28b0084ff4f0ba306ab}
+\hypertarget{class_field_ab2167aa053c1d17f8dcfecb47c9acdd2}{\index{Field@{Field}!Tiles\+To\+Pixels@{Tiles\+To\+Pixels}}
+\index{Tiles\+To\+Pixels@{Tiles\+To\+Pixels}!Field@{Field}}
+\subsubsection[{Tiles\+To\+Pixels}]{\setlength{\rightskip}{0pt plus 5cm}int Field\+::\+Tiles\+To\+Pixels (
+\begin{DoxyParamCaption}
+\item[{int}]{tiles}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_field_ab2167aa053c1d17f8dcfecb47c9acdd2}
+\hypertarget{class_field_a9e2f9ec9dea92779d4ad10ef5317c9bd}{\index{Field@{Field}!Touch\+Objects\+To\+Wall@{Touch\+Objects\+To\+Wall}}
+\index{Touch\+Objects\+To\+Wall@{Touch\+Objects\+To\+Wall}!Field@{Field}}
+\subsubsection[{Touch\+Objects\+To\+Wall}]{\setlength{\rightskip}{0pt plus 5cm}void Field\+::\+Touch\+Objects\+To\+Wall (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_field_a9e2f9ec9dea92779d4ad10ef5317c9bd}
+\hypertarget{class_field_a527bab59bc982d71e31d08a8f19012a2}{\index{Field@{Field}!Touch\+Player\+To\+Objects@{Touch\+Player\+To\+Objects}}
+\index{Touch\+Player\+To\+Objects@{Touch\+Player\+To\+Objects}!Field@{Field}}
+\subsubsection[{Touch\+Player\+To\+Objects}]{\setlength{\rightskip}{0pt plus 5cm}void Field\+::\+Touch\+Player\+To\+Objects (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_field_a527bab59bc982d71e31d08a8f19012a2}
+
+
+\subsection{メンバ詳解}
+\hypertarget{class_field_a00ee4da146cd30fce7aa9e7ce5b3a781}{\index{Field@{Field}!clear\+\_\+graphic\+\_\+handle@{clear\+\_\+graphic\+\_\+handle}}
+\index{clear\+\_\+graphic\+\_\+handle@{clear\+\_\+graphic\+\_\+handle}!Field@{Field}}
+\subsubsection[{clear\+\_\+graphic\+\_\+handle}]{\setlength{\rightskip}{0pt plus 5cm}int Field\+::clear\+\_\+graphic\+\_\+handle\hspace{0.3cm}{\ttfamily [private]}}}\label{class_field_a00ee4da146cd30fce7aa9e7ce5b3a781}
+\hypertarget{class_field_a5c4f6af48254c9dcc602879aaf86d03e}{\index{Field@{Field}!count\+\_\+@{count\+\_\+}}
+\index{count\+\_\+@{count\+\_\+}!Field@{Field}}
+\subsubsection[{count\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}int Field\+::count\+\_\+\hspace{0.3cm}{\ttfamily [private]}}}\label{class_field_a5c4f6af48254c9dcc602879aaf86d03e}
+\hypertarget{class_field_ac77b13cecde2f70c728d9a8d4355928e}{\index{Field@{Field}!end\+\_\+graphic\+\_\+handle@{end\+\_\+graphic\+\_\+handle}}
+\index{end\+\_\+graphic\+\_\+handle@{end\+\_\+graphic\+\_\+handle}!Field@{Field}}
+\subsubsection[{end\+\_\+graphic\+\_\+handle}]{\setlength{\rightskip}{0pt plus 5cm}int Field\+::end\+\_\+graphic\+\_\+handle\hspace{0.3cm}{\ttfamily [private]}}}\label{class_field_ac77b13cecde2f70c728d9a8d4355928e}
+\hypertarget{class_field_a3bbc1c73deeb5dc6b2ac78487b121353}{\index{Field@{Field}!gravity\+\_\+@{gravity\+\_\+}}
+\index{gravity\+\_\+@{gravity\+\_\+}!Field@{Field}}
+\subsubsection[{gravity\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}double Field\+::gravity\+\_\+\hspace{0.3cm}{\ttfamily [private]}}}\label{class_field_a3bbc1c73deeb5dc6b2ac78487b121353}
+\hypertarget{class_field_afa58380f2c246abfac40e368e9a157f0}{\index{Field@{Field}!map\+\_\+@{map\+\_\+}}
+\index{map\+\_\+@{map\+\_\+}!Field@{Field}}
+\subsubsection[{map\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Map}$\ast$ Field\+::map\+\_\+\hspace{0.3cm}{\ttfamily [private]}}}\label{class_field_afa58380f2c246abfac40e368e9a157f0}
+\hypertarget{class_field_a7b31ee36e5115d099c6b7beb47397621}{\index{Field@{Field}!menu\+\_\+flag@{menu\+\_\+flag}}
+\index{menu\+\_\+flag@{menu\+\_\+flag}!Field@{Field}}
+\subsubsection[{menu\+\_\+flag}]{\setlength{\rightskip}{0pt plus 5cm}bool Field\+::menu\+\_\+flag\hspace{0.3cm}{\ttfamily [private]}}}\label{class_field_a7b31ee36e5115d099c6b7beb47397621}
+\hypertarget{class_field_af51776b9b909f421068a8bcd9701e142}{\index{Field@{Field}!obj\+\_\+manager\+\_\+@{obj\+\_\+manager\+\_\+}}
+\index{obj\+\_\+manager\+\_\+@{obj\+\_\+manager\+\_\+}!Field@{Field}}
+\subsubsection[{obj\+\_\+manager\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Object\+Manager}$\ast$ Field\+::obj\+\_\+manager\+\_\+\hspace{0.3cm}{\ttfamily [private]}}}\label{class_field_af51776b9b909f421068a8bcd9701e142}
+\hypertarget{class_field_a0e7ed8b2be66267ec1570648f6cdbe40}{\index{Field@{Field}!objects\+\_\+@{objects\+\_\+}}
+\index{objects\+\_\+@{objects\+\_\+}!Field@{Field}}
+\subsubsection[{objects\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf A\+Object}$\ast$$>$ Field\+::objects\+\_\+\hspace{0.3cm}{\ttfamily [private]}}}\label{class_field_a0e7ed8b2be66267ec1570648f6cdbe40}
+\hypertarget{class_field_ae160817fea72d1483d556eba3f97dfe6}{\index{Field@{Field}!offset\+\_\+@{offset\+\_\+}}
+\index{offset\+\_\+@{offset\+\_\+}!Field@{Field}}
+\subsubsection[{offset\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}int Field\+::offset\+\_\+\hspace{0.3cm}{\ttfamily [private]}}}\label{class_field_ae160817fea72d1483d556eba3f97dfe6}
+\hypertarget{class_field_a4376e5c7cac9ae060281c65a9bb10546}{\index{Field@{Field}!player\+\_\+@{player\+\_\+}}
+\index{player\+\_\+@{player\+\_\+}!Field@{Field}}
+\subsubsection[{player\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Player}$\ast$ Field\+::player\+\_\+\hspace{0.3cm}{\ttfamily [private]}}}\label{class_field_a4376e5c7cac9ae060281c65a9bb10546}
+\hypertarget{class_field_a20e399af0fc61f66c5b0a7aadcb5e10b}{\index{Field@{Field}!wait\+\_\+count\+\_\+@{wait\+\_\+count\+\_\+}}
+\index{wait\+\_\+count\+\_\+@{wait\+\_\+count\+\_\+}!Field@{Field}}
+\subsubsection[{wait\+\_\+count\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}int Field\+::wait\+\_\+count\+\_\+\hspace{0.3cm}{\ttfamily [private]}}}\label{class_field_a20e399af0fc61f66c5b0a7aadcb5e10b}
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_field_8h}{Field.\+h}\item 
+\hyperlink{_field_8cpp}{Field.\+cpp}\end{DoxyCompactItemize}
