@@ -11,8 +11,6 @@ Field::Field(Map* map){
 	map_ = map;
 	obj_manager_=new ObjectManager(map->map_width(),map->map_height());
 	gravity_ = 1.1;
-	clear_flag = false;
-	end_flag = false;
 	menu_flag = false;
 	clear_count = 0;
 	end_count = 0;
@@ -50,8 +48,7 @@ int Field::MainLoop(){
 
 //ゲームクリア処理
 void Field::GameClear(){
-	if(player_->game_status()==CLEAR) clear_flag=true;
-	if(clear_flag){
+	if(player_->game_status()==CLEAR){
 		clear_count++;
 		DrawGraph(100,100,clear_graphic_handle,true);
 		if(clear_count >= 100){
@@ -62,7 +59,7 @@ void Field::GameClear(){
 
 //ゲームオーバー処理
 void Field::GameOver(){
-	if(end_flag){
+	if(player_->game_status()==OVER){
 		end_count++;
 		DrawGraph(100,100,end_graphic_handle,true);
 		if(end_count >= 100){
@@ -153,7 +150,7 @@ void Field::MoveObjects(){
 
 //完成
 void Field::DrawObjects(){
-	if(!end_flag && !clear_flag){
+	if(player_->game_status()==NOTHING){
 		//オブジェクト描画
 		for(int i=0; i<(int)objects_.size(); i++){
 			if(objects_.at(i)->isAlive()){
@@ -232,8 +229,7 @@ void Field::TouchPlayer2Objects(){
 
 	}
 	player_->superTime();
-	if(player_->life()<0)
-		end_flag = true;
+	if(player_->life()<0) player_->SetGameStatus(OVER);
 }
 
 //完成（仮）

@@ -13,6 +13,7 @@ Player::Player(double x,double y,Field* field)
 	alive=true;
 	move_ghandle_=loadg.Load("‰æ‘œ/–‚—3.png");
 	object_type_ = O_PLAYER;
+	game_status_=NOTHING;
 }
 
 void Player::addScore(int point){

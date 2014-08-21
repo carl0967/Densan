@@ -9,7 +9,7 @@
 #include "NormalAttack.h"
 
 //ゲームがどのような状態かを表す列挙型 ,何もなし,ゲームクリアー,次のマップへ
-enum GAME_STATUS{NOTHING,CLEAR,NEXT};
+enum GAME_STATUS{NOTHING,CLEAR,OVER,NEXT};
 
 class Player: public Character{
 public:
