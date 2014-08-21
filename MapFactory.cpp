@@ -77,7 +77,7 @@ Map* MapFactory::CreateMap(std::string fileName,std::string backgroundName){
 
 
 
-#if 1
+#if 0
 #define _CRTDBG_MAP_ALLOC
 #include <stdlib.h>
 #include <crtdbg.h>
