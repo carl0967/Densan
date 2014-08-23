@@ -1,7 +1,6 @@
 #include "stdafx.h"
 #include "CreateDialog.h"
 
-
 BOOL CreateDialog:: DialogProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
     switch (msg) {
@@ -23,7 +22,7 @@ BOOL CreateDialog:: DialogProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam
     return FALSE;
 }
 
-// ŽÀ‘ÔŠm•Û
+// ŽÀ‘ÌŠm•Û
 TCHAR CreateDialog::width[64];
 TCHAR CreateDialog::height[64];
 

@@ -23,6 +23,15 @@
 #define IDM_CREATEMAP			407
 #define IDC_EDIT1				500
 #define IDC_EDIT2				501
+
+#define BID_EMPTY				601
+#define BID_WALL				602
+#define BID_PLAYER				603
+#define BID_KAME				604
+#define BID_COIN				605
+#define BID_FLAG				606
+#define BID_FLYKAME				607
+#define BID_TAIHO				608
 #endif
 // 新しいオブジェクトの次の既定値
 //

@@ -213,8 +213,9 @@ void StageEditer2::OnHScroll(HWND hWnd, int mes)
 	}
 }
 
-
 LRESULT CALLBACK StageEditer2::WndProcOfInstance(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam){
+	static HWND empty,wall,player,kame,coin,flag,flykame,taiho;
+	static int blockType = 0;
 	int wmId, wmEvent;
 	PAINTSTRUCT ps;
 	HDC hdc;
@@ -285,6 +286,30 @@ LRESULT CALLBACK StageEditer2::WndProcOfInstance(HWND hWnd, UINT message, WPARAM
 		case IDM_EXIT:
 			DestroyWindow(hWnd);
 			break;
+		case BID_EMPTY:
+			blockType = 0;
+			break;
+		case BID_WALL:
+			blockType = 1;
+			break;
+		case BID_PLAYER:
+			blockType = 2;
+			break;
+		case BID_KAME:
+			blockType = 3;
+			break;
+		case BID_COIN:
+			blockType = 4;
+			break;
+		case BID_FLAG:
+			blockType = 5;
+			break;
+		case BID_FLYKAME:
+			blockType = 6;
+			break;
+		case BID_TAIHO:
+			blockType = 7;
+			break;
 		default:
 			return DefWindowProc(hWnd, message, wParam, lParam);
 		}
@@ -302,11 +327,61 @@ LRESULT CALLBACK StageEditer2::WndProcOfInstance(HWND hWnd, UINT message, WPARAM
 		break;
 	case WM_LBUTTONDOWN:
 		if(map){
-			map->AddMapData(lParam & 0xFFFF,(lParam >> 16) & 0xFFFF,hWnd);
+			map->SetMapData(lParam & 0xFFFF,(lParam >> 16) & 0xFFFF,hWnd , blockType);
 		}
 		break;
 	case WM_CREATE:
+	{
+		empty = CreateWindow(
+			TEXT("BUTTON") , TEXT("Empty") , 
+			WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON , 
+			0 , 480 , 100 , 50 , hWnd , (HMENU)BID_EMPTY ,
+			((LPCREATESTRUCT)(lParam))->hInstance , NULL
+		);
+		wall = CreateWindow(
+			TEXT("BUTTON") , TEXT("Wall") , 
+			WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON , 
+			100 , 480 , 100 , 50 , hWnd , (HMENU)BID_WALL ,
+			((LPCREATESTRUCT)(lParam))->hInstance , NULL
+		);
+		player = CreateWindow(
+			TEXT("BUTTON") , TEXT("Player") , 
+			WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON , 
+			200 , 480 , 100 , 50 , hWnd , (HMENU)BID_PLAYER ,
+			((LPCREATESTRUCT)(lParam))->hInstance , NULL
+		);
+		kame = CreateWindow(
+			TEXT("BUTTON") , TEXT("Kame") , 
+			WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON , 
+			300 , 480 , 100 , 50 , hWnd , (HMENU)BID_KAME ,
+			((LPCREATESTRUCT)(lParam))->hInstance , NULL
+		);
+		coin = CreateWindow(
+			TEXT("BUTTON") , TEXT("Coin") , 
+			WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON , 
+			400 , 480 , 100 , 50 , hWnd , (HMENU)BID_COIN ,
+			((LPCREATESTRUCT)(lParam))->hInstance , NULL
+		);
+		flag = CreateWindow(
+			TEXT("BUTTON") , TEXT("Flag") , 
+			WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON , 
+			500 , 480 , 100 , 50 , hWnd , (HMENU)BID_FLAG ,
+			((LPCREATESTRUCT)(lParam))->hInstance , NULL
+		);
+		flag = CreateWindow(
+			TEXT("BUTTON") , TEXT("‚Æ‚Ô‚©‚ß") , 
+			WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON , 
+			600 , 480 , 100 , 50 , hWnd , (HMENU)BID_FLYKAME,
+			((LPCREATESTRUCT)(lParam))->hInstance , NULL
+		);
+		flag = CreateWindow(
+			TEXT("BUTTON") , TEXT("‚½‚¢‚Ù[") , 
+			WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON , 
+			700 , 480 , 100 , 50 , hWnd , (HMENU)BID_TAIHO ,
+			((LPCREATESTRUCT)(lParam))->hInstance , NULL
+		);
 		break;
+	}
 	case WM_HSCROLL:
 		OnHScroll(hWnd,LOWORD(wParam));
 		if(map){

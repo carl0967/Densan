@@ -21,6 +21,16 @@ void Map::AddMapData(int xPos,int yPos,HWND hWnd){
 	}
 	InvalidateRect(hWnd , NULL , TRUE);	// 再描画要求
 }
+
+void Map::SetMapData(int xPos,int yPos,HWND hWnd,int type){
+	int index_x=(int)(xPos)/CELL_WIDTH;
+	int index_y=(int)(yPos)/CELL_HEIGHT;
+	index_x += offset;
+	if(index_x <= width && index_y <= height){
+		orignal[index_y*width+index_x] = type;
+	}
+	InvalidateRect(hWnd , NULL , TRUE);	// 再描画要求
+}
 void Map::LoadMap(HWND hWnd){
 	static HBITMAP hBitmap;		// ビットマップハンドル
 	wchar_t* source[GRAPHIC_NUM] ={		// 画像のソース元
@@ -43,6 +53,10 @@ void Map::LoadMap(HWND hWnd){
 		GetObject(hBitmap,sizeof(BITMAP),&graphics[i]);
 	}
 }
+/*
+void Map::ToolDraw(){
+
+}*/
 
 
 

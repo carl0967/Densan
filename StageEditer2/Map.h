@@ -25,6 +25,8 @@ public:
 	VOID DrawMap(HWND hWnd,PAINTSTRUCT *ps,HDC hdc);
 	// マップデータを循環させる
 	void AddMapData(int xPos,int yPos,HWND hWnd);
+	// マップデータを設定する
+	void SetMapData(int xPos,int yPos,HWND hWnd,int type);
 	// セッター
 	void setOffset(int offset){this->offset=offset;}
 	// ゲッター
