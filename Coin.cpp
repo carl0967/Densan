@@ -7,7 +7,7 @@ Coin::Coin(double ax,double ay):Item(ax,ay,"‰æ‘œ/ƒRƒCƒ“1.png",1,1,false){
 }
 //ŠÖ”
 void Coin::Affect(Character* character){
-	dynamic_cast<Player*>(character)->addScore(1);
+	dynamic_cast<Player*>(character)->AddScore(1);
 
 }
 void Coin::Think(){

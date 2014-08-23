@@ -17,11 +17,11 @@ Player::Player(double x,double y,Field* field)
 	game_status_=NOTHING;
 }
 
-void Player::addScore(int point){
+void Player::AddScore(int point){
 	score_+=point;
 }
 
-void Player::superTime(){
+void Player::SuperTime(){
 	if(super_){
 		super_count_++;
 		if(super_count_>=80){

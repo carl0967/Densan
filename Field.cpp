@@ -241,7 +241,7 @@ void Field::TouchPlayerToObjects(){
 		}
 
 	}
-	player_->superTime();
+	player_->SuperTime();
 	if(player_->life()<0) player_->SetGameStatus(OVER);
 }
 
