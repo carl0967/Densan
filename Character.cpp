@@ -56,7 +56,6 @@ void Character::Reset(){
 void Character::Draw(int offset){
 	AObject::Draw(offset);
 	attack_->DrawBullets(offset);
-	DrawFormatString(200,200,GetColor(255,255,255),"%d",GetBulletsSize());
 }
 
 vector<Bullet*> Character::GetBullets(){
