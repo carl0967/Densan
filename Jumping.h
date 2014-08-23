@@ -11,6 +11,6 @@ public:
 	void Think(); //抽象クラスのThink関数をオーバーライド
 	void Jump();
 private:	
-	static const int count=0;//実行回数
-	static const int jump=0;//何回飛んだか
+	 int count_;//実行回数
+	int jump_;//何回飛んだか
 };

@@ -12,7 +12,7 @@ void GameMain::GameStart(){
 	MapFactory mf;
 	string str=menu.Select(); //選択中にウインドウが閉じられたら ""　が返ってくる
 	if(str!=""){
-		Map* map=mf.CreateMap(str);
+		Map* map=mf.CreateMap(str,"画像/back_ground.png");
 		//Fieldクラスのインスタンスを生成
 		field=new Field(map);
 

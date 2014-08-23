@@ -21,11 +21,11 @@ typedef struct{
 class AObject{
 public:
 	//コンストラクタ
-	//x座標、ｙ座標、ファイル名（画像/画像ファイル名,オブジェクトの当たり幅,オブジェクトの高さ,向き（右向きならtrue）
-	AObject(double ax,double ay,char* fname,int hit_size_x,int hit_size_y,bool right);
+	//x座標、ｙ座標、移動速度、ファイル名（画像/画像ファイル名,オブジェクトの当たり幅,オブジェクトの高さ,向き（右向きならtrue）
+	AObject(double ax,double ay,double move_power,char* fname,int hit_size_x,int hit_size_y,bool right);
 	virtual ~AObject();
 	virtual void Reset(); //リセット処理
-	void Move();                  //自身のスピード分移動する
+	virtual void Move();                  //自身のスピード分移動する
 	virtual void Draw(int offset);   //offsetを使って自身の描画位置を算出して描画する
 	virtual void Think()=0;  //自身のスピードを操作して行動を決める
 	void Fall(double gravity);  // 引数の重力分落ちる
@@ -63,7 +63,7 @@ protected:
 	TwoDimension speed_; //x,y軸のスピード
 	TwoDimension size_; //オブジェクトのｘ方向の幅と、y方向の高さ
 	TwoDimension hit_size_;//当たり判定の倍率サイズ
-	double move_power;//x軸移動のスピード
+	double move_power_;//x軸移動のスピード
 	bool alive; //生存していればtrue
 	bool right; //向きを表す。右向きならtrue。左向きならfalse
 	bool first_right;//初期の向き

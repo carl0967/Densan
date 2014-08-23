@@ -2,14 +2,14 @@
 #include "CharacterController.h"
 
 
-Character::Character(double x,double y,int hp,char* f_name,int sizex,int sizey,bool right,CharacterController* controller,Attack* attack)
-	:AObject(x,y,f_name,sizex,sizey,right){
+Character::Character(double x,double y,double move_power,double jump_power,int hp,char* f_name,int sizex,int sizey,bool right,CharacterController* controller,Attack* attack)
+	:AObject(x,y,move_power,f_name,sizex,sizey,right){
 	hp_=hp;
 	max_hp_=hp_;
 	status_=0;
 	attack_ = attack;
 	controller_=controller;
-	jump_power=5.0;
+	jump_power_=jump_power;
 }
 
 Character::~Character(){
@@ -26,16 +26,20 @@ void Character::Damaged(int damage){
 	if(hp_<=0) alive=false;
 }
 void Character::Walk(bool right){
-	if(right) speed_.x=move_power;
-	else speed_.x=-move_power;
+	if(right) speed_.x=move_power_;
+	else speed_.x=-move_power_;
 }
 void Character::Run(bool right){
-	if(right) speed_.x=move_power*2;
-	else speed_.x=-move_power*2;
+	if(right) speed_.x=move_power_*2;
+	else speed_.x=-move_power_*2;
 }
 void Character::Jump(){
-	speed_.y=-jump_power;
+	speed_.y=-jump_power_;
 	aerial=true;
+}
+void Character::Move(){
+	AObject::Move();
+	attack_->MoveBullets();
 }
 void Character::Think(){
 	controller_->Think();
@@ -46,12 +50,7 @@ void Character::NoMove(){
 	speed_.x=0;
 }
 
-//オーバーライド
-void Character::Reset(){
-	AObject::Reset();
-	hp_ = max_hp_;
-	attack_->ResetBullets();
-}
+
 
 void Character::Draw(int offset){
 	AObject::Draw(offset);
@@ -63,5 +62,12 @@ vector<Bullet*> Character::GetBullets(){
 }
 
 void Character::set_jump_power(double y){
-	jump_power=y;
+	jump_power_=y;
+}
+
+//オーバーライド
+void Character::Reset(){
+	AObject::Reset();
+	hp_ = max_hp_;
+	attack_->ResetBullets();
 }

@@ -13,23 +13,6 @@ int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,LPSTR lpCmdLine
 		return -1 ;			// エラーが起きたら直ちに終了
 	}
 
-	/*
-
-	MapFactory* mapf=new MapFactory();
-	Map* map;
-	map=mapf->CreateMap("map.txt");
-	
-
-
-
-	Field* field=new Field(map);
-
-
-
-
-	AObject* character= new Player(1,0,field);
-	*/
-
 	//ゲームメイン生成
 	GameMain fps;
 

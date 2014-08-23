@@ -1,7 +1,7 @@
 #include "Bullet.h"
 
 
-Bullet::Bullet(double x, double y,int damage,int speed, char* fname, double hit_size_x, double hit_size_y): AObject(x, y, fname,hit_size_x,hit_size_y,true)
+Bullet::Bullet(double x, double y,int damage,int speed, char* fname, double hit_size_x, double hit_size_y): AObject(x, y,speed, fname,hit_size_x,hit_size_y,true)
 {
 	//’e‚ð”­ŽË
 	Revival();

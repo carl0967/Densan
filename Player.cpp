@@ -3,7 +3,7 @@
 #include "WalkStraight.h"
 
 Player::Player(double x,double y,Field* field)
-	:Character(x,y,50000,"‰æ‘œ/witch1.png",1,1,true,new PlayerController(this,field), new NormalAttack(1,7,10,this,"‰¹Œ¹/shot_sound.wav")){
+	:Character(x,y,5.0,15.0,5,"‰æ‘œ/witch1.png",1,1,true,new PlayerController(this,field), new NormalAttack(1,7,10,this,"‰¹Œ¹/shot_sound.wav")){
 	//‰Šú‰»
 	score_=0;
 	life_=100;
