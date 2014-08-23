@@ -20,6 +20,9 @@
 #define IDM_OPEN				404
 #define IDM_HELLO				405
 #define IDM_SAVE				406
+#define IDM_CREATEMAP			407
+#define IDC_EDIT1				500
+#define IDC_EDIT2				501
 #endif
 // 新しいオブジェクトの次の既定値
 //

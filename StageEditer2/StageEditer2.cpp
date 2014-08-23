@@ -2,6 +2,7 @@
 #include "StageEditer2.h"
 #include "OpenDialog.h"
 #include "SaveDialog.h"
+#include "CreateDialog.h"
 #include <commdlg.h>
 #include <iostream>
 #include <sstream>
@@ -213,7 +214,6 @@ void StageEditer2::OnHScroll(HWND hWnd, int mes)
 }
 
 
-
 LRESULT CALLBACK StageEditer2::WndProcOfInstance(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam){
 	int wmId, wmEvent;
 	PAINTSTRUCT ps;
@@ -235,6 +235,17 @@ LRESULT CALLBACK StageEditer2::WndProcOfInstance(HWND hWnd, UINT message, WPARAM
 		case IDM_HELLO:
 			MessageBox(hWnd,L"Hello World",L"Hello World",MB_OK |MB_TOPMOST) ;
 			break;
+		case IDM_CREATEMAP:
+		{
+			if(map){
+				MessageBox(hWnd,L"現在のマップを消します",L"警告",MB_OK |MB_TOPMOST);
+				delete map;
+			}
+			DialogBox(hInstance, L"CREATE_DIALOG", NULL, &CreateDialog::DialogProc);
+			map = CreateDialog::CreateMap();
+			InvalidateRect(hWnd , NULL , TRUE);	// 再描画要求
+			break;
+		}
 		case IDM_OPEN:
 			if(szFile)delete szFile;
 			szFile = nullptr;
