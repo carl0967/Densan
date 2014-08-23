@@ -1,9 +1,9 @@
 #include "stdafx.h"
 #include "OpenDialog.h"
 #include "Map.h"
-#include <iostream>
 #include <vector>
-
+#include <fstream>
+#include <string>
 
 
 std::vector<std::string> split(const std::string &str, char delim){
@@ -20,13 +20,20 @@ std::vector<std::string> split(const std::string &str, char delim){
 Map* OpenDialog::CreateMap(char *filename,HWND hWnd){
 	int width=0,height=0;
 	std::vector<int> orignal;
-	char source[120];
 	int charSize;			// 現在行のサイズ
 	FILE *fp;
 
+	//----------1行を読み込んで、幅を算出
+	std::string temp;							// 文字列格納用変数
+	std::fstream fin(filename,std::ios::in);							// ストリーム作成
+	std::getline(fin,temp);							// 1行読む
+	int charNumber = temp.size()+3;				// 文字数取得(+3でバッファに少し余裕を持たせておく)
+	fin.close();								// ファイルを閉じる
+	char *source = new char[charNumber];
+
 	fp = fopen(filename,"a+");
 	while(fp){
-		if(fgets(source,120,fp)==NULL)
+		if(fgets(source,charNumber,fp)==NULL)
 			break;
 		height++;
 		// スプリット
@@ -39,6 +46,7 @@ Map* OpenDialog::CreateMap(char *filename,HWND hWnd){
 	if(fp)
 		fclose(fp);
 	Map *map = new Map(width,height,orignal);
+	delete source;
 	return map;
 }
 
