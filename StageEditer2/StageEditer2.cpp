@@ -375,7 +375,7 @@ LRESULT CALLBACK StageEditer2::WndProcOfInstance(HWND hWnd, UINT message, WPARAM
 		);
 		flag = CreateWindow(
 			TEXT("BUTTON") , TEXT("‚½‚¢‚Ù[") , 
-			WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON , 
+			WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON ,
 			700 , 480 , 100 , 50 , hWnd , (HMENU)BID_TAIHO ,
 			((LPCREATESTRUCT)(lParam))->hInstance , NULL
 		);
