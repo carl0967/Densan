@@ -17,26 +17,30 @@ Field::Field(Map* map){
 	wait_count_=0;
 	end_graphic_handle = LoadGraph("画像/game_over.png");
 	clear_graphic_handle = LoadGraph("画像/game_clear.png");
+	//BGM読み込み
 	BGM = LoadSoundMem("音源/BGM.mp3");
+	//BGM再生
 	PlaySoundMem(BGM, DX_PLAYTYPE_LOOP);
 	Initialize();
 }
 
 //メインループ
 int Field::MainLoop(){
-	FallObjects();
-	
-	ThinkObjects();
-	
-	TouchObjectsToWall();
-	MoveObjects();
-	Scroll();
-	CheckOutOfArea();
-	DownObjectsDie();
-	TouchPlayerToObjects();
-	BulletTouchWall();
-
-	Reset();
+	if(player_->game_status() == NOTHING){
+		FallObjects();
+		
+		ThinkObjects();
+		
+		TouchObjectsToWall();
+		MoveObjects();
+		Scroll();
+		CheckOutOfArea();
+		DownObjectsDie();
+		TouchPlayerToObjects();
+		BulletTouchWall();
+		
+		Reset();
+	}
 	if(player_->game_status()==OVER) GameOver();
 	if(player_->game_status()==CLEAR) GameClear();
 
@@ -231,7 +235,7 @@ void Field::TouchPlayerToObjects(){
 				//敵の弾とプレイヤーとのあたり判定)
 				for(int k=0; k < dynamic_cast<Character*>(objects_.at(i))->GetBulletsSize(); k++){
 					if(dynamic_cast<Character*>(objects_.at(i))->GetBullets().at(k)->isAlive()){
-						if(player_->super()){
+						if(!player_->super()){
 							if(this->JudgeHitCharacters(dynamic_cast<Character*>(objects_.at(i))->GetBullets().at(k), player_)){
 								player_->Damaged(dynamic_cast<Character*>(objects_.at(i))->GetBullets().at(k)->damage());
 								dynamic_cast<Character*>(objects_.at(i))->GetBullets().at(k)->Die();
@@ -433,4 +437,5 @@ Field::~Field(){
 		delete objects_.at(i);
 	}
 	delete obj_manager_;
+	StopSoundMem(BGM);
 }
