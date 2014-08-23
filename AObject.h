@@ -31,7 +31,7 @@ public:
 	void Fall(double gravity);  // 引数の重力分落ちる
 	void Die(); //生存フラグをfalseにする
 	void Revival() {alive=true;} //生存フラグをtrueにする
-
+	void change_speed(double,double);//考えているスピード(x:走る影響 y:ジャンプする影響　など)
 	void Set_Speed(double speed_x,double speed_y); //スピードを設定する
 
 	void TouchedBlockX(double set_x); //x軸でブロックと接触した場合に呼び出す
@@ -52,6 +52,8 @@ public:
 	bool isAlive() {return alive;}
 	int object_type(){return object_type_;}
 
+	void Set_move_power(double x);
+
 protected:
 	int live_count_;//生成されたから経過した時間
 	int graphic_handle_;  //どのメモリに画像が読み込まれているかを表すハンドル
@@ -61,6 +63,7 @@ protected:
 	TwoDimension speed_; //x,y軸のスピード
 	TwoDimension size_; //オブジェクトのｘ方向の幅と、y方向の高さ
 	TwoDimension hit_size_;//当たり判定の倍率サイズ
+	double move_power;//x軸移動のスピード
 	bool alive; //生存していればtrue
 	bool right; //向きを表す。右向きならtrue。左向きならfalse
 	bool first_right;//初期の向き
