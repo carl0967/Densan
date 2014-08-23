@@ -39,7 +39,6 @@ Map* OpenDialog::CreateMap(char *filename,HWND hWnd){
 	if(fp)
 		fclose(fp);
 	Map *map = new Map(width,height,orignal);
-	map->LoadMap(hWnd);
 	return map;
 }
 

@@ -3,6 +3,10 @@
 #define CELL_WIDTH 32
 #define CELL_HEIGHT 32
 
+// 実体確保
+BITMAP Map::graphics[GRAPHIC_NUM];	// 画像データのビットマップ
+HDC	Map::graphicMem[GRAPHIC_NUM];	// 画像データのメモリ
+
 Map::Map(int width,int height,std::vector<int> orignal)
 	:width(width),height(height),orignal(orignal),offset()
 {
@@ -53,10 +57,6 @@ void Map::LoadMap(HWND hWnd){
 		GetObject(hBitmap,sizeof(BITMAP),&graphics[i]);
 	}
 }
-/*
-void Map::ToolDraw(){
-
-}*/
 
 
 

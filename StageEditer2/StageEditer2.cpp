@@ -255,7 +255,6 @@ LRESULT CALLBACK StageEditer2::WndProcOfInstance(HWND hWnd, UINT message, WPARAM
 				//TCHAR型をchar型に変換
 				WideCharToMultiByte(CP_ACP,0,szFile,-1,c,sizeof(c),NULL,NULL);
 				map = open.CreateMap(c,hWnd);
-				// map->LoadMap(hWnd);
 				// スクロールバー
 				scr.cbSize = sizeof(SCROLLINFO);
 				scr.fMask = SIF_PAGE | SIF_RANGE;
@@ -380,6 +379,8 @@ LRESULT CALLBACK StageEditer2::WndProcOfInstance(HWND hWnd, UINT message, WPARAM
 			700 , 480 , 100 , 50 , hWnd , (HMENU)BID_TAIHO ,
 			((LPCREATESTRUCT)(lParam))->hInstance , NULL
 		);
+		// mapの画像データ読み込み
+		Map::LoadMap(hWnd);
 		break;
 	}
 	case WM_HSCROLL:
