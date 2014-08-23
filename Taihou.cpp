@@ -5,7 +5,6 @@ Taihou::Taihou(double x,double y,Field* field):Enemy(x,y,1000,"‰æ‘œ/taihou.png",
 {
 }
 
-
 Taihou::~Taihou(void)
 {
 }
