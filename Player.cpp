@@ -51,6 +51,5 @@ void Player::Draw(int offset){
 	if(superCount()%2==0)
 		AObject::Draw(offset);
 	attack_->DrawBullets(offset);
-	DrawFormatString(100,100,GetColor(255,255,255),"%d",GetBulletsSize());
 
 }
