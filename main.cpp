@@ -5,13 +5,10 @@
 
 // プログラムは WinMain から始まります
 int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,LPSTR lpCmdLine, int nCmdShow ){
-	 ChangeWindowMode( TRUE ),DxLib_Init(), SetDrawScreen( DX_SCREEN_BACK ); // ウィンドウモードに設定etc
 
-	ChangeWindowMode(true);
-	if( DxLib_Init() == -1 )		// ＤＸライブラリ初期化処理
-	{
-		return -1 ;			// エラーが起きたら直ちに終了
-	}
+	ChangeWindowMode(true); //ウインドウモードの設定
+	if( DxLib_Init() == -1 ) return -1;		// ＤＸライブラリ初期化処理 エラーが起きたら終了
+	 SetDrawScreen( DX_SCREEN_BACK ); 
 
 	//ゲームメイン生成
 	GameMain fps;
@@ -21,6 +18,8 @@ int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,LPSTR lpCmdLine
 	
 
 	DxLib_End();
+
+	return 0;
 
 
 

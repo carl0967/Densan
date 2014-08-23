@@ -7,7 +7,7 @@
 class Bullet :public AObject
 {
 public:
-	Bullet(double x,double y,int damage,int speed, char* fname, double hit_size_x, double hit_size_y);//コンストラクタ
+	Bullet(double x,double y,int damage,double move_power, char* fname, double hit_size_x, double hit_size_y);//コンストラクタ
 	~Bullet();
 	virtual void Think();
 	void Move();
@@ -20,7 +20,6 @@ public:
 
 protected:
 	int damage_;
-	int bullet_speed_; //弾の速度
 	double angle_; //発射角度
 };
 

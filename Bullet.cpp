@@ -1,7 +1,7 @@
 #include "Bullet.h"
 
 
-Bullet::Bullet(double x, double y,int damage,int speed, char* fname, double hit_size_x, double hit_size_y): AObject(x, y,speed, fname,hit_size_x,hit_size_y,true)
+Bullet::Bullet(double x, double y,int damage,double move_power, char* fname, double hit_size_x, double hit_size_y): AObject(x, y,move_power, fname,hit_size_x,hit_size_y,true)
 {
 	//弾を発射
 	Revival();
@@ -9,7 +9,6 @@ Bullet::Bullet(double x, double y,int damage,int speed, char* fname, double hit_
 	pos_.x-=size_.x/2;
 	pos_.y-=size_.y/2;
 	//スピード設定
-	bullet_speed_ = speed;
 	//ダメージ設定
 	damage_ = damage;
 	//方向設定
@@ -31,8 +30,8 @@ void Bullet::Think(){
 }
 
 void Bullet::Move(){
-	pos_.x += bullet_speed_*cos(angle_);
-	pos_.y += bullet_speed_*sin(angle_);
+	pos_.x += move_power_*cos(angle_);
+	pos_.y += move_power_*sin(angle_);
 }
 
 void Bullet::DieBullet(){
