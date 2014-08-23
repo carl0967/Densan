@@ -15,12 +15,12 @@ private:
 	std::vector<int> orignal;		// マップデータ
 	TCHAR *szFile;					// マップファイル名
 
-	BITMAP graphics[GRAPHIC_NUM];	// 画像データのビットマップ
-	HDC	graphicMem[GRAPHIC_NUM];	// 画像データのメモリ
+	static BITMAP graphics[GRAPHIC_NUM];	// 画像データのビットマップ
+	static HDC	graphicMem[GRAPHIC_NUM];	// 画像データのメモリ
 public:
 	Map(int,int,std::vector<int>);
 	// マップを読み込む
-	VOID LoadMap(HWND hWnd);
+	static VOID LoadMap(HWND hWnd);
 	// 描画する
 	VOID DrawMap(HWND hWnd,PAINTSTRUCT *ps,HDC hdc);
 	// マップデータを循環させる

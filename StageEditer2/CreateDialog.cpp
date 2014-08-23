@@ -39,8 +39,6 @@ Map* CreateDialog::CreateMap(){
 		}
 	}
 	map = new Map(GetWidth(),GetHeight(),orignal);
-	if(map)
-		map->LoadMap(NULL);
 	return map;
 }
 
