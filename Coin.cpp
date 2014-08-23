@@ -2,7 +2,7 @@
 #include "Player.h"
 
 //コンストラクタ
-Coin::Coin(double ax,double ay):Item(ax,ay,"画像/コイン1.png", "音源/coin_sound.wav",1,1,false){
+Coin::Coin(double ax,double ay):Item(ax,ay,"画像/coin.png", "音源/coin_sound.wav",1,1,false){
 	move_ghandle_=loadg.Load("画像/コイン2.png");
 }
 //関数
