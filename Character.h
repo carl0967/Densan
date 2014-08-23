@@ -37,10 +37,13 @@ public:
 	void Reset();
 	virtual void Draw(int offset); //プレイヤーで書き換える必要があるので仮想関数に
 
+	void set_jump_power(double y);
+
 protected:
 	int hp_;  //体力
 	int max_hp_; //体力の最大値
 	int status_; //キャラクターの状態を表す
+	double jump_power;//ジャンプのスピード
 	CharacterController *controller_; //キャラクターを動かすためのコントローラ
 	Attack* attack_; 
 

@@ -34,7 +34,9 @@ public:
 	~StageEditer2();
 	// メインメッセージループ
 	int MainLoop();
-
+	
+	// 新規作成
+	void CreateNewMap();
 
 	// 水平スクロールバーの処理
 	void OnHScroll(HWND hWnd, int mes);

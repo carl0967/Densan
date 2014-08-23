@@ -22,6 +22,7 @@ AObject::AObject(double x,double y,char* f_name,int hit_size_x,int hit_size_y,bo
 	hit_size_.y=hit_size_y;
 	this->right=right;
 	first_right=right;
+	move_power=5.0;
 }
 
 AObject::~AObject(){
@@ -98,7 +99,6 @@ void AObject::Think(){
 	speed_.x=2;
 }
 
-
 void AObject::Die(){
 	alive=false;
 }
@@ -125,54 +125,6 @@ double AObject::GetCenterPosY(){
 	return pos_.y+size_.y/2;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+void AObject::Set_move_power(double x){
+	move_power=x;
+}
