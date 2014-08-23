@@ -3,14 +3,14 @@
 #include "WalkStraight.h"
 
 Player::Player(double x,double y,Field* field)
-	:Character(x,y,50000,"‰æ‘œ/–‚—2.png",1,1,true,new PlayerController(this,field), new NormalAttack(1,7,10,this,"‰¹Œ¹/shot_sound.wav")){
+	:Character(x,y,50000,"‰æ‘œ/witch1.png",1,1,true,new PlayerController(this,field), new NormalAttack(1,7,10,this,"‰¹Œ¹/shot_sound.wav")){
 	//‰Šú‰»
 	score_=0;
-	life_=1;
+	life_=100;
 	super_=false;
 	super_count_=0;
 	alive=true;
-	move_ghandle_=loadg.Load("‰æ‘œ/–‚—3.png");
+	move_ghandle_=loadg.Load("‰æ‘œ/witch2.png");
 	object_type_ = O_PLAYER;
 	game_status_=NOTHING;
 	jump_sound_ = LoadSoundMem("‰¹Œ¹/jump_sound.wav");
