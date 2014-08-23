@@ -8,6 +8,7 @@
 #include "JumpKame.h"
 #include "Taihou.h"
 
+
 Field::Field(Map* map){
 	map_ = map;
 	obj_manager_=new ObjectManager(map->map_width(),map->map_height());
@@ -25,10 +26,10 @@ int Field::MainLoop(){
 	FallObjects();
 	
 	ThinkObjects();
-	Scroll();
 	
 	TouchObjectsToWall();
 	MoveObjects();
+	Scroll();
 	CheckOutOfArea();
 	DownObjectsDie();
 	TouchPlayerToObjects();
@@ -69,8 +70,8 @@ void Field::Scroll(){
 	int width = 640;  //画面の横幅
 	int old_offset=offset_;
 	offset_ = width/2-(int)objects_.at(0)->pos().x;
-	offset_ = min(offset_,0);
-	offset_ = max(offset_,width-map_->map_width()*32);
+	offset_ = min(offset_,0-32);
+	offset_ = max(offset_,width-map_->map_width()*32+32);
 
 	//新しく現れたマップを読み込む
 	if(PixelToTiles(old_offset)!=PixelToTiles(offset_)){
@@ -98,7 +99,6 @@ void Field::Initialize(){
 				AddObject(new Kame(i*32,k*32,this),false);
 				obj_manager_->RegisterObject(i,k,KAME); //オブジェクトマネージャーに登録
 				break;
-				
 			case COIN:
 				{
 				Coin* coin=new Coin(i*32,k*32);
@@ -113,10 +113,10 @@ void Field::Initialize(){
 				obj_manager_->RegisterObject(i,k,G_FLAG);
 				break;
 				}
-							case JUMPKAME:
+			case JUMPKAME:
 				{
 				AddObject(new JumpKame(i*32,k*32,this),false);
-				obj_manager_->RegisterObject(i,k,JUMPKAME);
+				obj_manager_->RegisterObject(i,k,JUMPKAME); //オブジェクトマネージャーに登録
 				break;
 				}
 			case TAIHOU:
@@ -125,7 +125,6 @@ void Field::Initialize(){
 					obj_manager_->RegisterObject(i,k,TAIHOU);
 					break;
 				}
-				
 			}
 		}
 	}
@@ -134,6 +133,7 @@ void Field::Initialize(){
 	FindObject(0,map_->map_height(),0,20);
 
 }
+
 void Field::FindObject(int from_y,int to_y,int from_x,int to_x){
 	for(int i=from_y;i<to_y;i++){
 		for(int j=from_x;j<to_x;j++){
@@ -162,12 +162,6 @@ void Field::DrawObjects(){
 	if(player_->game_status()==NOTHING){
 		//マップ描画
 		map_->Draw(offset_);
-		//オブジェクト描画
-		for(int i=0; i<(int)objects_.size(); i++){
-			if(objects_.at(i)->isAlive()){
-				objects_.at(i)->Draw(offset_);
-			}
-		}
 		//HPバー描画
 		int percentHp = (player_->hp()*100)/player_->maxHp();
 		DrawString(30,10,"HP",GetColor(255,255,255),true);
@@ -180,13 +174,21 @@ void Field::DrawObjects(){
 		//残機描画
 		DrawString(550,0,"残機",GetColor(255,255,255),true);
 		DrawFormatString(600,0,GetColor(255,255,255),"%s %d","X",player_->life());
+
+		//オブジェクト描画
+		for(int i=(int)objects_.size()-1; i>=0; i--){
+			if(objects_.at(i)->isAlive()){
+				objects_.at(i)->Draw(offset_);
+			}
+		}
 	}
 }
 
 ////完成
 void Field::ThinkObjects(){
 	for(int i=0; i<(int)objects_.size(); i++){
-		objects_.at(i)->Think();
+		if(objects_.at(i)->isAlive())
+			objects_.at(i)->Think();
 	}
 }
 
@@ -214,7 +216,7 @@ void Field::TouchPlayerToObjects(){
 	if(player_->isAlive()){
 		for(int i=0 ; i<(int)objects_.size(); i++){
 			if(objects_.at(i)->object_type()==O_ENEMY && objects_.at(i)->isAlive()){
-			//プレイヤーの弾と敵とのあたり判定
+				//プレイヤーの弾と敵とのあたり判定
 				for(int k=0; k<player_->GetBulletsSize(); k++){
 					if(player_->GetBullets().at(k)->isAlive()){
 						if(this->JudgeHitCharacters (player_->GetBullets().at(k), objects_.at(i)) ){
@@ -227,9 +229,11 @@ void Field::TouchPlayerToObjects(){
 				//敵の弾とプレイヤーとのあたり判定)
 				for(int k=0; k < dynamic_cast<Character*>(objects_.at(i))->GetBulletsSize(); k++){
 					if(dynamic_cast<Character*>(objects_.at(i))->GetBullets().at(k)->isAlive()){
-						if(this->JudgeHitCharacters(dynamic_cast<Character*>(objects_.at(i))->GetBullets().at(k), player_)){
-							player_->Damaged(dynamic_cast<Character*>(objects_.at(i))->GetBullets().at(k)->damage());
-							dynamic_cast<Character*>(objects_.at(i))->GetBullets().at(k)->Die();
+						if(player_->super()){
+							if(this->JudgeHitCharacters(dynamic_cast<Character*>(objects_.at(i))->GetBullets().at(k), player_)){
+								player_->Damaged(dynamic_cast<Character*>(objects_.at(i))->GetBullets().at(k)->damage());
+								dynamic_cast<Character*>(objects_.at(i))->GetBullets().at(k)->Die();
+							}
 						}
 					}
 				}
@@ -287,6 +291,7 @@ void Field::TouchObjectsToWall(){
 			}
 		}
 	}
+
 }
 
 void Field::BulletTouchWall(){
@@ -404,20 +409,15 @@ bool Field::JudgeHitCharacters(AObject* p, AObject* e){
 	}
 	return false;
 }
-/*
+
 int Field::GetMapData(double x, double y){
 	return map_->GetMapData(x,y);
 }
-*/
-bool Field::IsNextMapDataAWall(TwoDimension pos,TwoDimension speed,bool right){
+int Field::GetNextMapData(TwoDimension pos,TwoDimension speed,bool right){
 	if(right){
-		if( map_->GetMapData(pos.x+speed.x+32,pos.y)==WALL) return  true;
-		else return false;
+		return map_->GetMapData(pos.x+speed.x+32,pos.y);
 	}
-	else{
-		if(map_->GetMapData(pos.x+speed.x,pos.y)==WALL) return true;
-		else return false;
-	}
+	else return map_->GetMapData(pos.x+speed.x,pos.y);
 }
 
 //プレイヤーの座標を返す関数
@@ -426,7 +426,6 @@ TwoDimension Field::GetPlayerPos(){
 }
 
 Field::~Field(){
-	
 	for(int i=objects_.size()-1;i>=0;i--){
 		delete objects_.at(i);
 	}
