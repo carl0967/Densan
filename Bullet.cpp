@@ -10,7 +10,7 @@ Bullet::Bullet(double x, double y,int damage,double move_power, char* fname, dou
 	pos_.y-=size_.y/2;
 	//スピード設定
 	//ダメージ設定
-	damage_ = damage;
+	damage_=damage;
 	//方向設定
 	this->right = false;
 }

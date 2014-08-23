@@ -85,6 +85,13 @@ void Field::Scroll(){
 			int x=PixelToTiles(-offset_+width); //offset+width‚Å“Ç‚Ýž‚ÞxÀ•W‚É‚È‚éBoffset‚Í-‚Ì‚½‚ß”½“]
 			FindObject(0,map_->map_height(),x,x+1);
 		}
+		//¶’[‚ð“Ç‚Ýž‚Þê‡
+		else {
+			/*
+			int x=PixelToTiles(-offset_);
+			FindObject(0,map_->map_height(),x,x+1);
+			*/
+		}
 	}
 }
 

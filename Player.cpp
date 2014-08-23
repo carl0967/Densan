@@ -23,7 +23,7 @@ void Player::AddScore(int point){
 void Player::SuperTime(){
 	if(super_){
 		super_count_++;
-		if(super_count_>=80){
+		if(super_count_>=50){
 			super_count_=0;
 			super_=false;
 		}
@@ -45,6 +45,7 @@ void Player::Reset(){
 	super_ = false;
 	super_count_ = 0;
 	life_--;
+	score_=0;
 }
 
 void Player::Draw(int offset){

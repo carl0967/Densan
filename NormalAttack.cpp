@@ -1,17 +1,19 @@
 #include "NormalAttack.h"
 
 
-NormalAttack::NormalAttack(int damage, int speed, int interval, Character* chara):Attack(damage, speed, interval ,chara)
+NormalAttack::NormalAttack(int damage, double speed, int interval, Character* chara)
+	:Attack(damage, speed, interval ,chara)
 {
 }
 
 
-NormalAttack::NormalAttack(int damage, int speed, int interval, Character* chara, char* sound_name):Attack(damage, speed, interval, chara, sound_name)
+NormalAttack::NormalAttack(int damage,double speed, int interval, Character* chara, char* sound_name)
+	:Attack(damage, speed, interval, chara, sound_name)
 {
 }
 
 void NormalAttack::DoAttack(){
-	Attack::DoAttack(new NormalBullet(chara_->GetCenterPosX(), chara_->GetCenterPosY(), damage_, speed_, 1,1,chara_->isRight()));
+	Attack::DoAttack(new NormalBullet(chara_->GetCenterPosX(), chara_->GetCenterPosY(),bullet_damage_, bullet_speed_, 1,1,chara_->isRight()));
 }
 
 void NormalAttack::InitializeBullet(int num){

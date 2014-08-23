@@ -4,7 +4,7 @@
 //int AObject::graphic_handle;
 LoadGraphic AObject::loadg=LoadGraphic();
 
-AObject::AObject(double x,double y,double move_power,char* f_name,int hit_size_x,int hit_size_y,bool right){
+AObject::AObject(double x,double y,double move_power,char* f_name,double hit_size_x,double hit_size_y,bool right){
 	//èâä˙âªèàóù
 	graphic_handle_=loadg.Load(f_name);
 	GetObjectSize();
@@ -103,10 +103,6 @@ void AObject::Die(){
 	alive=false;
 }
 
-void AObject::Set_Speed(double speed_x,double speed_y){
-	speed_.x=speed_x;
-	speed_.y=speed_y;
-}
 
 void AObject::GetObjectSize(){
 	int sizeX=0,sizeY=0;

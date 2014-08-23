@@ -13,8 +13,9 @@ class Attack;
 
 class Character: public AObject{
 public:
+	//初期のx座標,y座標,移動速度,ジャンプ力,HP,画像のファイル名,当たり判定の倍率のX方向,Y方向,向き(右がtrue),CharacterController,Attack
 	Character(double x,double y,double move_power,double jump_power,int hp ,char* f_name,int size_x,int size_y,bool right,CharacterController* controller,Attack* attack); //コンストラクタ
-	virtual ~Character();
+	virtual ~Character(); //デストラクタ
 
 	void Jump();   //ジャンプする
 	void Walk(bool right); //right=true　なら右に、falseなら左に移動する

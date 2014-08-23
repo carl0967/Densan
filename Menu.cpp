@@ -30,7 +30,7 @@ string Menu::Select(){
 
 	//画像を描画する
     MenuElement_t MenuElement[MAX_SELECTION]={
-            {  80,100, "画像/stage1.png", "マップ/map1.txt"}, //x座標、y座標、画像名、ファイル名の順番で格納される。
+            {  80,100, "画像/stage1.png", "マップ/map7.txt"}, //x座標、y座標、画像名、ファイル名の順番で格納される。
 			{  50,150, "画像/stage2.png", "マップ/map2.txt"},
 			{  50,200, "画像/stage3.png", "マップ/map3.txt"}
     };

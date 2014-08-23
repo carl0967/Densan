@@ -21,18 +21,17 @@ typedef struct{
 class AObject{
 public:
 	//コンストラクタ
-	//x座標、ｙ座標、移動速度、ファイル名（画像/画像ファイル名,オブジェクトの当たり幅,オブジェクトの高さ,向き（右向きならtrue）
-	AObject(double ax,double ay,double move_power,char* fname,int hit_size_x,int hit_size_y,bool right);
-	virtual ~AObject();
+	//x座標、ｙ座標、移動速度、ファイル名（画像/画像ファイル名),オブジェクトの当たり幅・高さの倍率(1.0が画像そのまま),向き（右向きならtrue）
+	AObject(double ax,double ay,double move_power,char* fname,double hit_size_x,double hit_size_y,bool right);
+	virtual ~AObject(); //デストラクタ
+
 	virtual void Reset(); //リセット処理
 	virtual void Move();                  //自身のスピード分移動する
 	virtual void Draw(int offset);   //offsetを使って自身の描画位置を算出して描画する
-	virtual void Think()=0;  //自身のスピードを操作して行動を決める
+	virtual void Think()=0;  //スピードを操作して行動を決める
 	void Fall(double gravity);  // 引数の重力分落ちる
 	void Die(); //生存フラグをfalseにする
 	void Revival() {alive=true;} //生存フラグをtrueにする
-	void change_speed(double,double);//考えているスピード(x:走る影響 y:ジャンプする影響　など)
-	void Set_Speed(double speed_x,double speed_y); //スピードを設定する
 
 	void TouchedBlockX(double set_x); //x軸でブロックと接触した場合に呼び出す
 	void TouchedBlockY(double set_y); //y軸でブロックと接触した場合に呼び出す

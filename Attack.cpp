@@ -2,20 +2,20 @@
 #include "Character.h"
 
 
-Attack::Attack(int damage, int speed, int interval, Character* chara)
+Attack::Attack(int bullet_damage, double bullet_speed, int interval, Character* chara)
 {
-	damage_ = damage;
-	speed_ = speed;
+	bullet_damage_ = bullet_damage;
+	bullet_speed_ = bullet_speed;
 	interval_ = interval;
 	interval_count_ = interval;
 	chara_ = chara;
 	attack_sound_ = 0;
 }
 
-Attack::Attack(int damage, int speed, int interval, Character* chara, char* sound_name)
+Attack::Attack(int bullet_damage, double bullet_speed, int interval, Character* chara, char* sound_name)
 {
-	damage_ = damage;
-	speed_ = speed;
+	bullet_damage_ = bullet_damage;
+	bullet_speed_ = bullet_speed;
 	interval_ = interval;
 	interval_count_ = interval;
 	chara_ = chara;

@@ -5,8 +5,8 @@
 class NormalAttack: public Attack
 {
 public:
-	NormalAttack(int damage, int speed, int interval, Character* chara);
-	NormalAttack(int damage, int speed, int interval, Character* chara, char* sound_name);
+	NormalAttack(int damage, double move_power, int interval, Character* chara);
+	NormalAttack(int damage, double move_power, int interval, Character* chara, char* sound_name);
 	void DoAttack();
 	void InitializeBullet(int num);
 	~NormalAttack(void);
