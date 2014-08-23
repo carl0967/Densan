@@ -410,14 +410,15 @@ bool Field::JudgeHitCharacters(AObject* p, AObject* e){
 	return false;
 }
 
-int Field::GetMapData(double x, double y){
-	return map_->GetMapData(x,y);
-}
-int Field::GetNextMapData(TwoDimension pos,TwoDimension speed,bool right){
+bool Field::IsNextMapDataAWall(TwoDimension pos, TwoDimension speed, bool right){
 	if(right){
-		return map_->GetMapData(pos.x+speed.x+32,pos.y);
+		if(map_->GetMapData(pos.x+speed.x+32,pos.y)==WALL) return true;
+		else return false;
 	}
-	else return map_->GetMapData(pos.x+speed.x,pos.y);
+	else{
+		if(map_->GetMapData(pos.x+speed.x,pos.y)==WALL) return true;
+		else return false;
+	}
 }
 
 //プレイヤーの座標を返す関数

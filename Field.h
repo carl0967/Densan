@@ -34,9 +34,8 @@ private:
 public:
 	Field(); //仮コンストラクタ
 	Field(Map* map);   //コンストラクタ
-	int MainLoop();  //メインループ
-	int GetMapData(double x, double y); //描画エリア内の座標を引数にとって、そこのマップデータを返す	
-	int GetNextMapData(TwoDimension chara_pos,TwoDimension chara_speed,bool right); //キャラクターが次にいる場所のマップデータを返す
+	int MainLoop();  //メインループ	
+	bool IsNextMapDataAWall(TwoDimension chara_pos, TwoDimension chara_speed, bool right);
 	TwoDimension GetPlayerPos();//プレイヤーの座標を返す関数
 	int count(){return count_;}          //countのゲッター
 	Player* player(){return player_;} //プレイヤーを返す
