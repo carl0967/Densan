@@ -17,7 +17,8 @@ Field::Field(Map* map){
 	wait_count_=0;
 	end_graphic_handle = LoadGraph("‰æ‘œ/game_over.png");
 	clear_graphic_handle = LoadGraph("‰æ‘œ/game_clear.png");
-
+	BGM = LoadSoundMem("‰¹Œ¹/BGM.mp3");
+	PlaySoundMem(BGM, DX_PLAYTYPE_LOOP);
 	Initialize();
 }
 

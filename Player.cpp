@@ -1,20 +1,19 @@
 # include "Player.h"
 #include "PlayerController.h"
 #include "WalkStraight.h"
-#include "AimAttack.h"
 
 Player::Player(double x,double y,Field* field)
-	:Character(x,y,5,"‰æ‘œ/–‚—2.png",1,1,true,new PlayerController(this,field), new NormalAttack(1,7,10,this)){
+	:Character(x,y,50000,"‰æ‘œ/–‚—2.png",1,1,true,new PlayerController(this,field), new NormalAttack(1,7,10,this,"‰¹Œ¹/shot_sound.wav")){
 	//‰Šú‰»
 	score_=0;
 	life_=1;
 	super_=false;
 	super_count_=0;
-	clear=false;
 	alive=true;
 	move_ghandle_=loadg.Load("‰æ‘œ/–‚—3.png");
 	object_type_ = O_PLAYER;
 	game_status_=NOTHING;
+	jump_sound_ = LoadSoundMem("‰¹Œ¹/jump_sound.wav");
 }
 
 void Player::AddScore(int point){
@@ -35,6 +34,7 @@ void Player::SuperTime(){
 void Player::Jump(){
 	speed_.y=-15;
 	aerial=true;
+	PlaySoundMem(jump_sound_,DX_PLAYTYPE_BACK);
 }
 void Player::Damaged(int damage){
 	Character::Damaged(damage);
@@ -51,5 +51,6 @@ void Player::Draw(int offset){
 	if(superCount()%2==0)
 		AObject::Draw(offset);
 	attack_->DrawBullets(offset);
+	DrawFormatString(100,100,GetColor(255,255,255),"%d",GetBulletsSize());
 
 }

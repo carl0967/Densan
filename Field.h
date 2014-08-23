@@ -30,6 +30,8 @@ private:
 
 	int end_graphic_handle;      //ゲームオーバー画像
 	int clear_graphic_handle;    //ゲームクリア画像
+
+	int BGM;                     //BGM用
 	
 public:
 	Field(); //仮コンストラクタ

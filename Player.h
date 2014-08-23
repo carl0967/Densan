@@ -8,12 +8,12 @@
 #include "Character.h"
 #include "NormalAttack.h"
 
-//ゲームがどのような状態かを表す列挙型 ,何もなし,ゲームクリアー,ゲームオーバー
+//ゲームがどのような状態かを表す列挙型 ,何もなし,ゲームクリアー,次のマップへ
 enum GAME_STATUS{NOTHING,CLEAR,OVER,NEXT};
 
 class Player: public Character{
 public:
-	Player(double x,double y,Field* field);//コンストラクタ 順に初期位置のx座標、y座標,Fieldのポインタ
+	Player(double x,double y,Field* field);//コンストラクタ
 	void AddScore(int point); //得点加算
 	void SetGameStatus(GAME_STATUS game_status) {game_status_=game_status;}
 	void SuperTime(); //無敵時間管理
@@ -37,4 +37,5 @@ private:
 	bool super_;//ダメージを食らった際の無敵時間判定用
 	int super_count_; //無敵時間カウント用
 	GAME_STATUS game_status_;// ゲームのステータス
+	int jump_sound_;
 };
