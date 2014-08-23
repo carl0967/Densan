@@ -28,6 +28,9 @@ void Bullet::Initialize(double x, double y){
 }
 
 void Bullet::Think(){
+}
+
+void Bullet::Move(){
 	pos_.x += bullet_speed_*cos(angle_);
 	pos_.y += bullet_speed_*sin(angle_);
 }

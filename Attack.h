@@ -15,6 +15,7 @@ public:
 	void DoAttack(Bullet* bullet); //’e‚ğˆêŒÂ”­Ë(”­Ë‚Å‚«‚È‚¢ê‡‚Ífalse‚ğ•Ô‚·)
 	virtual void InitializeBullet(int num) = 0; //ˆø”‚Åw’è‚µ‚½’e‚ğ‰Šú‰»
 	void ThinkBullets(); //¶‚«‚Ä‚¢‚é‘S‚Ä‚Ì’e‚ÉThink
+	void MoveBullets();
 	void DrawBullets(int offset);//’e‚ğ•`‰æ
 	void ResetBullets();//‘S‚Ä‚Ì’e‚ğÁ‚·
 	void PlaySound(); //”­Ë‰¹‚ğo‚·

@@ -10,6 +10,7 @@ public:
 	Bullet(double x,double y,int damage,int speed, char* fname, double hit_size_x, double hit_size_y);//コンストラクタ
 	~Bullet();
 	virtual void Think();
+	void Move();
 	void DieBullet(); //離れた弾を消滅させる
 	virtual void Initialize(double x, double y);//初期化処理(再出現させる際に呼び出す)
 

@@ -60,11 +60,17 @@ void Attack::DoAttack(Bullet* bullet){
 
 
 void Attack::ThinkBullets(){
-	for(int i=0; i<bullets_.size(); i++){
+	for(int i=0; i<(int)bullets_.size(); i++){
 		bullets_.at(i)->Think();
 		bullets_.at(i)->DieBullet();
 	}
 	interval_count_++;
+}
+
+void Attack::MoveBullets(){
+	for(int i=0; i<(int)bullets_.size(); i++){
+		bullets_.at(i)->Move();
+	}
 }
 
 void Attack::DrawBullets(int offset){
