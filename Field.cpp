@@ -185,8 +185,8 @@ void Field::DrawObjects(){
 		DrawString(350,0,"スコア",GetColor(255,255,255),GetColor(0,0,0));
 		DrawFormatString(410,0,GetColor(255,255,255),"%d",player_->score(),GetColor(0,0,0));
 		//残機描画
-		DrawString(550,0,"残機",GetColor(255,255,255),true);
-		DrawFormatString(600,0,GetColor(255,255,255),"%s %d","X",player_->life());
+		DrawString(500,0,"残機",GetColor(255,255,255),true);
+		DrawFormatString(550,0,GetColor(255,255,255),"%s %d","X",player_->life());
 		ChangeFontType(DX_FONTTYPE_NORMAL);
 		//オブジェクト描画
 		for(int i=(int)objects_.size()-1; i>=0; i--){
