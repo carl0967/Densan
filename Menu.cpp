@@ -26,12 +26,13 @@ void Menu::Start(){
 
 string Menu::Select(){
 	// メニュー項目要素を作る
+	
 
 	//画像を描画する
     MenuElement_t MenuElement[MAX_SELECTION]={
-            {  80,100, "画像/stage1.png", "map.txt"}, //x座標、y座標、画像名、ファイル名の順番で格納される。
-			{  50,150, "画像/stage2.png", "map2.txt"},
-			{  50,200, "画像/stage3.png", "map3.txt"}
+            {  80,100, "画像/stage1.png", "マップ/map1.txt"}, //x座標、y座標、画像名、ファイル名の順番で格納される。
+			{  50,150, "画像/stage2.png", "マップ/map2.txt"},
+			{  50,200, "画像/stage3.png", "マップ/map3.txt"}
     };
 
     int SelectNum = 0; // 現在の選択番号
@@ -77,9 +78,11 @@ string Menu::Select(){
 
 		for( int i=0; i<MAX_SELECTION; i++ ){ // メニュー項目を描画
 			LoadGraphScreen(MenuElement[i].x,MenuElement[i].y,MenuElement[i].picName,TRUE);
-			if(i==SelectNum){//選択中の選択項目なら
+			//選択中の選択項目なら
+			if(i==SelectNum){
+				//選択ボタンの画像を表示
 				LoadGraphScreen(MenuElement[i].x-30,MenuElement[i].y+10,"画像/selection_key.png",TRUE);
-				//選択肢の画像を表示
+				
 			}
 		}
 	}
