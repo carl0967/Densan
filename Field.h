@@ -41,6 +41,8 @@ public:
 	TwoDimension GetPlayerPos();//プレイヤーの座標を返す関数
 	int count(){return count_;}          //countのゲッター
 	Player* player(){return player_;} //プレイヤーを返す
+	char* NextMap();
+	void ChangeMap(Map* map);
 	~Field(); //デストラクタ
 
 private:
@@ -54,7 +56,7 @@ private:
 	void TouchObjectsToWall();            //オブジェクトと壁の当たり判定
 	void BulletTouchWall();                //壁と弾の当たり判定
 	void Reset();                        //プレイヤー死亡時のリセット関数
-	//void DeleteObjects();                //生存falgがfalseのオブジェクトを削除
+	void DeleteObjects();                //全てのオブジェクトを消す
 	void GameOver();                     //ゲームオーバー処理
 	void GameClear();                    //ゲームクリア処理                      
 	void CheckOutOfArea();               //画面外の敵を殺す

@@ -5,23 +5,23 @@ Menuクラスでプレイヤーにステージ選択を行ってもらい、
 MapFactoryで選択したステージのマップを生成する。
 その後Fieldクラスのインスタンスを生成。*/
 void GameMain::GameStart(){
+	Map* map;
 	while( ProcessMessage()==0){
-	Menu menu;
-	menu.Start();
-
-	MapFactory mf;
-	string str=menu.Select(); //選択中にウインドウが閉じられたら ""　が返ってくる
-	if(str!=""){
-		Map* map=mf.CreateMap(str,"画像/back_ground.png");
-		//Fieldクラスのインスタンスを生成
-		field=new Field(map);
-
-		MainLoop();
-		delete field;
-		delete map;
-		}
+			menu->Start();
+			string str=menu->Select(); //選択中にウインドウが閉じられたら ""　が返ってくる
+				if(str!=""){
+					MapFactory mf;
+				Map* map=mf.CreateMap(str,"image/back_ground.png"); //背景画像を指定してマップ生成
+				//Fieldクラスのインスタンスを生成
+				field=new Field(map);
+					
+				MainLoop();
+				delete field;
+				delete map;
+				}
 	}
 }
+
 
 /*
 ▪ ループの処理はここでする。FPSは60になるように調整。
@@ -32,7 +32,14 @@ void GameMain::MainLoop () {
 		Update();
 		Draw();	
 		int flg=field->MainLoop();
+		//マップ変更処理
+		if(field->NextMap() != NULL){
+			MapFactory mf;
+			field->ChangeMap(mf.CreateMap(field->NextMap(),"image/back_ground.png"));
+		}
+		//メニュー画面に戻る処理
 		if(flg != 0){
+			next_map_ = NULL;
 			break;
 		}
 		Wait();
@@ -41,9 +48,11 @@ void GameMain::MainLoop () {
 }
 
 GameMain::GameMain(){
+	menu = new Menu();
 	mStartTime = 0;
 		mCount = 0;
 		mFps = 0;
+		next_map_ = NULL;
 }
 
 bool GameMain::Update(){

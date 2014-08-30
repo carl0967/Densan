@@ -9,6 +9,9 @@ using namespace std;
 
 class GameMain{
 private:
+	char* next_map_;
+private:
+	Menu* menu;
 	Field* field;//フィールド
 	bool Update();//フレームの更新
 	void Draw();//fpsの表示

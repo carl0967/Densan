@@ -7,18 +7,20 @@
 #include "GoalFlag.h"
 #include "JumpKame.h"
 #include "Taihou.h"
+#include "Warp.h"
 
 
 Field::Field(Map* map){
+	player_=NULL; //マップ読み込みが最初かどうかを判断するため
 	map_ = map;
 	obj_manager_=new ObjectManager(map->map_width(),map->map_height());
 	gravity_ = 1.1;
 	menu_flag = false;
 	wait_count_=0;
-	end_graphic_handle = LoadGraph("画像/game_over.png");
-	clear_graphic_handle = LoadGraph("画像/game_clear.png");
+	end_graphic_handle = LoadGraph("Image/game_over.png");
+	clear_graphic_handle = LoadGraph("Image/game_clear.png");
 	//BGM読み込み
-	BGM = LoadSoundMem("音源/BGM.mp3");
+	BGM = LoadSoundMem("Sound/BGM.mp3");
 	//BGM再生
 	PlaySoundMem(BGM, DX_PLAYTYPE_LOOP);
 	Initialize();
@@ -103,8 +105,13 @@ void Field::Initialize(){
 			int map_chip=map_->GetMapDataFromCell(i,k);
 			switch(map_chip){
 			case PLAYER:
-				player_  = new Player(i*32,k*32,this);
-				AddObject(player_,true);
+				if(player_ ==NULL){
+					player_  = new Player(i*32,k*32,this);
+					AddObject(player_,true);
+				}
+				else{
+					player_->NextMapReset(i*32,k*32);
+				}
 				obj_manager_->RegisterObject(i,k,PLAYER); //オブジェクトマネージャーに登録
 				break;
 			case KAME:
@@ -135,6 +142,12 @@ void Field::Initialize(){
 				{
 					AddObject(new Taihou(i*32,k*32,this),false);
 					obj_manager_->RegisterObject(i,k,TAIHOU);
+					break;
+				}
+			case WARP:
+				{
+					AddObject(new Warp(i*32,k*32),false);
+					obj_manager_->RegisterObject(i,k,WARP);
 					break;
 				}
 			}
@@ -333,20 +346,19 @@ void Field::Reset(){
 }
 
 //完成（仮）
-/*
+
 void Field::DeleteObjects(){
-	for(int i=0; i<(int)objects_.size(); i++){
-		if(!objects_.at(i)->isAlive()){
+	for(int i=(int)objects_.size()-1; i>0; i--){
 			//オブジェクト削除
 			delete objects_.at(i);
 			//オブジェクトの参照削除
 			vector<AObject*>::iterator start;
 			start = objects_.begin()+i;
 			objects_.erase(start);
-		}
 	}
+		delete obj_manager_;
 }
-*/
+
 
 //完成（仮）
 void Field::CheckOutOfArea(){
@@ -437,6 +449,22 @@ bool Field::IsNextMapDataAWall(TwoDimension pos, TwoDimension speed, bool right)
 //プレイヤーの座標を返す関数
 TwoDimension Field::GetPlayerPos(){
 	return objects_.at(0)->pos();
+}
+
+char* Field::NextMap(){
+	if(player_->next_map_flag() && player_->next_map() != NULL){
+		return player_->next_map();
+	}
+	return NULL;
+}
+
+void Field::ChangeMap(Map* map){
+	this->DeleteObjects();
+	map_=map;
+	obj_manager_=new ObjectManager(map->map_width(),map->map_height());
+	menu_flag = false;
+	wait_count_=0;
+	Initialize();
 }
 
 Field::~Field(){
