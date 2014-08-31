@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{99D667B9-A217-44B3-8706-468382D2B8E9}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>DensanActionGame2</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="AimAttack.cpp" />
+    <ClCompile Include="AimBullet.cpp" />
+    <ClCompile Include="AObject.cpp" />
+    <ClCompile Include="Attack.cpp" />
+    <ClCompile Include="AttackBullet.cpp" />
+    <ClCompile Include="Bullet.cpp" />
+    <ClCompile Include="Character.cpp" />
+    <ClCompile Include="CharacterController.cpp" />
+    <ClCompile Include="Coin.cpp" />
+    <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="Field.cpp" />
+    <ClCompile Include="GameMain.cpp" />
+    <ClCompile Include="GoalFlag.cpp" />
+    <ClCompile Include="Item.cpp" />
+    <ClCompile Include="Jumping.cpp" />
+    <ClCompile Include="JumpKame.cpp" />
+    <ClCompile Include="Kame.cpp" />
+    <ClCompile Include="LoadGraphic.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Map.cpp" />
+    <ClCompile Include="MapFactory.cpp" />
+    <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="NoAttack.cpp" />
+    <ClCompile Include="NormalAttack.cpp" />
+    <ClCompile Include="NormalBullet.cpp" />
+    <ClCompile Include="ObjectManager.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="PlayerController.cpp" />
+    <ClCompile Include="Taihou.cpp" />
+    <ClCompile Include="WalkStraight.cpp" />
+    <ClCompile Include="Warp.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AimAttack.h" />
+    <ClInclude Include="AimBullet.h" />
+    <ClInclude Include="AObject.h" />
+    <ClInclude Include="Attack.h" />
+    <ClInclude Include="AttackBullet.h" />
+    <ClInclude Include="Bullet.h" />
+    <ClInclude Include="Character.h" />
+    <ClInclude Include="CharacterController.h" />
+    <ClInclude Include="Coin.h" />
+    <ClInclude Include="Enemy.h" />
+    <ClInclude Include="Field.h" />
+    <ClInclude Include="GameMain.h" />
+    <ClInclude Include="GoalFlag.h" />
+    <ClInclude Include="Item.h" />
+    <ClInclude Include="Jumping.h" />
+    <ClInclude Include="JumpKame.h" />
+    <ClInclude Include="Kame.h" />
+    <ClInclude Include="LoadGraphic.h" />
+    <ClInclude Include="Map.h" />
+    <ClInclude Include="MapFactory.h" />
+    <ClInclude Include="Menu.h" />
+    <ClInclude Include="NoAttack.h" />
+    <ClInclude Include="NormalAttack.h" />
+    <ClInclude Include="NormalBullet.h" />
+    <ClInclude Include="ObjectManager.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="PlayerController.h" />
+    <ClInclude Include="Taihou.h" />
+    <ClInclude Include="WalkStraight.h" />
+    <ClInclude Include="Warp.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Map\map1.txt" />
+    <None Include="Map\map2.txt" />
+    <None Include="Map\map3.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

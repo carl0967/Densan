@@ -1,0 +1,3 @@
+ñÇâ§ç∞ http://maoudamashii.jokersounds.com/
+
+BGM,coin_sound,jump_sound,select_sound,shot_sound
