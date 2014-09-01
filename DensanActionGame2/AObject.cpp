@@ -4,7 +4,7 @@
 //int AObject::graphic_handle;
 LoadGraphic AObject::loadg=LoadGraphic();
 
-AObject::AObject(double x,double y,double move_power,char* f_name,double hit_size_x,double hit_size_y,bool right){
+AObject::AObject(double x,double y,double move_power,char* f_name,bool right){
 	//‰Šú‰»ˆ—
 	graphic_handle_=loadg.Load(f_name);
 	GetObjectSize();
@@ -18,8 +18,8 @@ AObject::AObject(double x,double y,double move_power,char* f_name,double hit_siz
 	speed_.x=0;
 	speed_.y=0;
 	live_count_=0;
-	hit_size_.x=hit_size_x;
-	hit_size_.y=hit_size_y;
+	hit_size_.x=1.0; //“–‚½‚è”»’è‚Ì‰¡‚Ì”{—¦
+	hit_size_.y=1.0;//“–‚½‚è”»’è‚Ìc‚Ì”{—¦
 	this->right=right;
 	first_right=right;
 	move_power_=move_power;

@@ -1,3 +1,7 @@
+
+/*
+取得したらゲームクリアするフラッグ
+*/
 #include "Item.h"
 
 class GoalFlag : public Item{

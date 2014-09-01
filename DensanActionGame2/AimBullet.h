@@ -4,7 +4,7 @@ class AimBullet :
 	public Bullet
 {
 public:
-	AimBullet(double x, double y,int damage, double move_power, double hit_size_x, double hit_size_y,double aim_x, double aim_y);
+	AimBullet(double x, double y,int damage, double move_power,double aim_x, double aim_y);
 	void Initialize(double x, double y, double aim_x, double aim_y);
 	~AimBullet(void);
 };

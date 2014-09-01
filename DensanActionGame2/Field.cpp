@@ -474,3 +474,6 @@ Field::~Field(){
 	delete obj_manager_;
 	StopSoundMem(BGM);
 }
+string Field::GetMapName(){
+	return map_->map_name();
+}

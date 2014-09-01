@@ -2,7 +2,7 @@
 #include "Player.h"
 
 //コンストラクタ
-Coin::Coin(double ax,double ay):Item(ax,ay,"Image/coin.png", "Sound/coin_sound.wav",1,1,false){
+Coin::Coin(double ax,double ay):Item(ax,ay,"Image/coin.png", "Sound/coin_sound.wav",false){
 }
 //関数
 void Coin::Affect(Character* character){

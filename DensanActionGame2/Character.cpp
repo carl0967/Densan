@@ -2,8 +2,8 @@
 #include "CharacterController.h"
 
 
-Character::Character(double x,double y,double move_power,double jump_power,int hp,char* f_name,double sizex,double sizey,bool right,CharacterController* controller,Attack* attack)
-	:AObject(x,y,move_power,f_name,sizex,sizey,right){
+Character::Character(double x,double y,double move_power,double jump_power,int hp,char* f_name,bool right,CharacterController* controller,Attack* attack)
+	:AObject(x,y,move_power,f_name,right){
 	hp_=hp;
 	max_hp_=hp_;
 	status_=0;

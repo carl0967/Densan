@@ -3,9 +3,10 @@
 #include "WalkStraight.h"
 #include <iostream>
 #include <sstream>
+#include <string>
 
 Player::Player(double x,double y,Field* field)
-	:Character(x,y,5.0,15.0,5,"Image/witch1.png",1,1,true,new PlayerController(this,field), new NormalAttack(1,7,10,this,"Sound/shot_sound.wav")){
+	:Character(x,y,5.0,15.0,5,"Image/witch1.png",true,new PlayerController(this,field), new NormalAttack(1,7,10,this,"Sound/shot_sound.wav")){
 	//‰Šú‰»
 	score_=0;
 	life_=3;
@@ -19,6 +20,7 @@ Player::Player(double x,double y,Field* field)
 	next_map_flag_ = false;
 	next_map_ = NULL;
 	next_map_count_=1;
+	map_name_=field->GetMapName();
 }
 
 void Player::AddScore(int point){
@@ -71,31 +73,26 @@ void Player::Draw(int offset){
 }
 
 void Player::NextMap(){
+	//Ÿ‚Ìƒ}ƒbƒv–¼‚ğstring‚Åì¬
+	string str=map_name_;
+	str.insert(8,"-");
+	str.insert(9,(IntToString(next_map_count_)));
+
+	//charŒ^‚É•ÏŠ·
+	 int len = str.length();
+	char* c = new char[len+1];
+	memcpy(c, str.c_str(), len+1);
+	next_map_=c;
+
+
 	next_map_flag_ = true;
 	next_map_count_++;
-	switch(next_map_count_){
-	case 1:
-		next_map_ = "Map/map1.txt";
-		break;
-	case 2:
-		next_map_ = "Map/map2.txt";
-		break;
-	case 3:
-		next_map_ = "Map/map3.txt";
-		break;
-	case 4:
-		next_map_ = "Map/map4.txt";
-		break;
-	case 5:
-		next_map_ = "Map/map5.txt";
-		break;
-	case 6:
-		next_map_ = "Map/map6.txt";
-		break;
-	case 7:
-		next_map_ = "Map/map7.txt";
-		break;
-
-	}
 	
+}
+
+string Player::IntToString(int number)
+{
+  stringstream ss;
+  ss << number;
+  return ss.str();
 }

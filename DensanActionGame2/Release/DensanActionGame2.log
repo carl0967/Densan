@@ -1,0 +1,76 @@
+﻿2014/09/01 11:24:03 にビルドを開始しました。
+     1>ノード 2 上のプロジェクト "C:\Users\info\Desktop\作業\とりあえずいったん公開したい\DensanActionGame2\DensanActionGame2.vcxproj" (build ターゲット)。
+     1>InitializeBuildStatus:
+         "Release\DensanActionGame2.unsuccessfulbuild" のタッチ タスクを実行しています。
+       ClCompile:
+         c:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I"C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用" /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _WINDOWS /D _MBCS /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt AttackBullet.cpp Character.cpp CharacterController.cpp Field.cpp GameMain.cpp Jumping.cpp JumpKame.cpp Kame.cpp main.cpp Map.cpp MapFactory.cpp ObjectManager.cpp Player.cpp PlayerController.cpp Taihou.cpp WalkStraight.cpp
+         AttackBullet.cpp
+         Character.cpp
+         CharacterController.cpp
+         Field.cpp
+         GameMain.cpp
+     1>GameMain.cpp(8): warning C4101: 'map' : ローカル変数は 1 度も使われていません。
+         Jumping.cpp
+         JumpKame.cpp
+     1>JumpKame.cpp(5): warning C4355: 'this' : ベース メンバー初期化子リストで使用されました。
+     1>JumpKame.cpp(5): warning C4355: 'this' : ベース メンバー初期化子リストで使用されました。
+         Kame.cpp
+     1>Kame.cpp(5): warning C4355: 'this' : ベース メンバー初期化子リストで使用されました。
+     1>Kame.cpp(5): warning C4355: 'this' : ベース メンバー初期化子リストで使用されました。
+         main.cpp
+         Map.cpp
+         MapFactory.cpp
+         ObjectManager.cpp
+         Player.cpp
+     1>Player.cpp(8): warning C4355: 'this' : ベース メンバー初期化子リストで使用されました。
+     1>Player.cpp(8): warning C4355: 'this' : ベース メンバー初期化子リストで使用されました。
+         PlayerController.cpp
+         Taihou.cpp
+     1>Taihou.cpp(4): warning C4355: 'this' : ベース メンバー初期化子リストで使用されました。
+     1>Taihou.cpp(4): warning C4355: 'this' : ベース メンバー初期化子リストで使用されました。
+         WalkStraight.cpp
+       Link:
+         c:\Program Files\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\info\Desktop\作業\とりあえずいったん公開したい\DensanActionGame2\Release\DensanActionGame2.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Release\DensanActionGame2.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\info\Desktop\作業\とりあえずいったん公開したい\DensanActionGame2\Release\DensanActionGame2.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\info\Desktop\作業\とりあえずいったん公開したい\DensanActionGame2\Release\DensanActionGame2.lib" /MACHINE:X86 Release\AimAttack.obj
+         Release\AimBullet.obj
+         Release\AObject.obj
+         Release\Attack.obj
+         Release\AttackBullet.obj
+         Release\Bullet.obj
+         Release\Character.obj
+         Release\CharacterController.obj
+         Release\Coin.obj
+         Release\Enemy.obj
+         Release\Field.obj
+         Release\GameMain.obj
+         Release\GoalFlag.obj
+         Release\Item.obj
+         Release\Jumping.obj
+         Release\JumpKame.obj
+         Release\Kame.obj
+         Release\LoadGraphic.obj
+         Release\main.obj
+         Release\Map.obj
+         Release\MapFactory.obj
+         Release\Menu.obj
+         Release\NoAttack.obj
+         Release\NormalAttack.obj
+         Release\NormalBullet.obj
+         Release\ObjectManager.obj
+         Release\Player.obj
+         Release\PlayerController.obj
+         Release\Taihou.obj
+         Release\WalkStraight.obj
+         Release\Warp.obj
+         コード生成しています。
+         コード生成が終了しました。
+         DensanActionGame2.vcxproj -> C:\Users\info\Desktop\作業\とりあえずいったん公開したい\DensanActionGame2\Release\DensanActionGame2.exe
+       Manifest:
+         C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\Users\info\Desktop\作業\とりあえずいったん公開したい\DensanActionGame2\Release\DensanActionGame2.exe;#1" /manifest Release\DensanActionGame2.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         ファイル "Release\DensanActionGame2.unsuccessfulbuild" を削除しています。
+         "Release\DensanActionGame2.lastbuildstate" のタッチ タスクを実行しています。
+     1>プロジェクト "C:\Users\info\Desktop\作業\とりあえずいったん公開したい\DensanActionGame2\DensanActionGame2.vcxproj" (build ターゲット) のビルドが完了しました。
+
+ビルドに成功しました。
+
+経過時間 00:00:16.88

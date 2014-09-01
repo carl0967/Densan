@@ -45,4 +45,7 @@ private:
 	bool next_map_flag_;  //次のマップに行くかどうか判断用
 	char* next_map_;      //次に行くマップのデータ格納
 	int next_map_count_;   //次々にマップを進めるためのカウンタ
+	string map_name_;//現在のステージ名 (map3 や　map2 などが入る)
+
+	string IntToString(int number);
 };

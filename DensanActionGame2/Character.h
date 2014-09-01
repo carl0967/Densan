@@ -14,7 +14,7 @@ class Attack;
 class Character: public AObject{
 public:
 	//初期のx座標,y座標,移動速度,ジャンプ力,HP,画像のファイル名,当たり判定の倍率のX方向,Y方向,向き(右がtrue),CharacterController,Attack
-	Character(double x,double y,double move_power,double jump_power,int hp ,char* f_name,double size_x,double size_y,bool right,CharacterController* controller,Attack* attack); //コンストラクタ
+	Character(double x,double y,double move_power,double jump_power,int hp ,char* f_name,bool right,CharacterController* controller,Attack* attack); //コンストラクタ
 	virtual ~Character(); //デストラクタ
 
 	void Jump();   //ジャンプする
@@ -25,7 +25,7 @@ public:
 	void NoMove(); //とまる（左右の移動を０にする）
 
 	void Move();
-	void DoAttack(); //攻撃をする。未実装
+	void DoAttack(); //攻撃をする
 	void Damaged(int damage);  //ダメージを受けるときに呼ばれる。HPが０になるとaliveがfalseに
 	void Think(); //次にどのような行動をするかを決める。CharacterControllerに委譲。
 	vector<Bullet*> GetBullets(); //弾を返す関数

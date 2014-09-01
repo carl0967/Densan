@@ -12,9 +12,9 @@ class Item :public  AObject{
 public:
 	//コンストラクタ
 	//x座標、ｙ座標、ファイル名（画像/画像ファイル名,オブジェクトの幅,オブジェクトの高さ,向き（右向きならtrue）
-	Item(double ax,double ay,char* fname,int size_x,int size_y,bool right);
+	Item(double ax,double ay,char* fname,bool right);
 	//x座標、ｙ座標、ファイル名（画像/画像ファイル名,オブジェクトの幅,オブジェクトの高さ,向き（右向きならtrue,Soundファイルのパス
-	Item(double ax,double ay,char* fname, char* sound_name,int size_x,int size_y,bool right);
+	Item(double ax,double ay,char* fname, char* sound_name,bool right);
 
 	//関数
 	/*

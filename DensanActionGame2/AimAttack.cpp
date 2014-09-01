@@ -11,7 +11,7 @@ AimAttack::AimAttack(int damage, int speed, int interval, Character* chara, Char
 }
 
 void AimAttack::DoAttack(){
-	Attack::DoAttack( new AimBullet(chara_->GetCenterPosX(), chara_->GetCenterPosY(),bullet_damage_, bullet_speed_, 1, 1,aim_chara_->GetCenterPosX(), aim_chara_->GetCenterPosY()));
+	Attack::DoAttack( new AimBullet(chara_->GetCenterPosX(), chara_->GetCenterPosY(),bullet_damage_, bullet_speed_,aim_chara_->GetCenterPosX(), aim_chara_->GetCenterPosY()));
 }
 
 void AimAttack::InitializeBullet(int num){

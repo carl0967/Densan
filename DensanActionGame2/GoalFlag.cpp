@@ -3,7 +3,7 @@
 #include "Player.h"
 
 //コンストラクタ
-GoalFlag::GoalFlag(double ax,double ay):Item(ax,ay,"Image/flag1.png",1,1,false){
+GoalFlag::GoalFlag(double ax,double ay):Item(ax,ay,"Image/flag1.png",false){
 }
 //関数
 void GoalFlag::Affect(Character* character){

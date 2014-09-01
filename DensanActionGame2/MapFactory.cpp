@@ -63,6 +63,7 @@ Map* MapFactory::CreateMap(std::string fileName){
 	 
 	Map *map = new Map(CELL_WIDTH,CELL_HEIGHT,mapdata);
 	map->SetMapHeightAndWidth(y,x);
+	map->set_map_name(fileName);
 	delete source;
 	return map;
 }

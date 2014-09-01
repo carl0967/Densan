@@ -22,7 +22,7 @@ class AObject{
 public:
 	//コンストラクタ
 	//x座標、ｙ座標、移動速度、ファイル名（画像/画像ファイル名),オブジェクトの当たり幅・高さの倍率(1.0が画像そのまま),向き（右向きならtrue）
-	AObject(double ax,double ay,double move_power,char* fname,double hit_size_x,double hit_size_y,bool right);
+	AObject(double ax,double ay,double move_power,char* fname,bool right);
 	virtual ~AObject(); //デストラクタ
 
 	virtual void Reset(); //リセット処理

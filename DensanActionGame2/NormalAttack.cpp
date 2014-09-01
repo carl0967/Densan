@@ -13,7 +13,7 @@ NormalAttack::NormalAttack(int damage,double speed, int interval, Character* cha
 }
 
 void NormalAttack::DoAttack(){
-	Attack::DoAttack(new NormalBullet(chara_->GetCenterPosX(), chara_->GetCenterPosY(),bullet_damage_, bullet_speed_, 1,1,chara_->isRight()));
+	Attack::DoAttack(new NormalBullet(chara_->GetCenterPosX(), chara_->GetCenterPosY(),bullet_damage_, bullet_speed_,chara_->isRight()));
 }
 
 void NormalAttack::InitializeBullet(int num){

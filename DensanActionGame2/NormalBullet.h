@@ -5,7 +5,7 @@ class NormalBullet :
 	public Bullet
 {
 public:
-	NormalBullet(double x, double y,int damage, double move_power, double hit_size_x, double hit_size_y, bool right);
+	NormalBullet(double x, double y,int damage, double move_power, bool right);
 	void Initialize(double x, double y, bool right);
 	~NormalBullet(void);
 };

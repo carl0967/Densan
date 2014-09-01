@@ -13,195 +13,219 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="ソース ファイル\NewFilter1">
+    <Filter Include="ソース ファイル\AObject">
       <UniqueIdentifier>{bfc9c231-6f14-45ad-a202-f282c29224c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\AObject\Character">
+      <UniqueIdentifier>{2a775bfc-2d54-4040-bbc8-4f1908ff582b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\AObject\Item">
+      <UniqueIdentifier>{6f73ddc2-3b3e-46d4-86cb-564231456fac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\AObject\Bullet">
+      <UniqueIdentifier>{9e5a17ca-b763-4e9a-8cfc-4a71f6fe95ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Attack">
+      <UniqueIdentifier>{19f13b52-0cb9-4612-b60c-aa7928d5f1bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Controller">
+      <UniqueIdentifier>{6828bddc-1dfe-4358-87e2-843f9b4d93ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Other">
+      <UniqueIdentifier>{1821f9d2-8e58-4656-9e9a-2774418ab386}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Map/MapFactory">
+      <UniqueIdentifier>{bc50bd9d-ba22-4015-beb8-807261b5e81f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Menu/GameMain">
+      <UniqueIdentifier>{db6cb4e0-5eda-4f01-963e-5f9d647026d1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="AimAttack.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="AimBullet.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="AObject.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Attack.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="AttackBullet.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Bullet.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Character.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="CharacterController.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Coin.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Enemy.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="Field.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="GameMain.cpp">
-      <Filter>ソース ファイル</Filter>
+    <ClCompile Include="AObject.cpp">
+      <Filter>ソース ファイル\AObject</Filter>
     </ClCompile>
-    <ClCompile Include="GoalFlag.cpp">
-      <Filter>ソース ファイル</Filter>
+    <ClCompile Include="Character.cpp">
+      <Filter>ソース ファイル\AObject\Character</Filter>
     </ClCompile>
-    <ClCompile Include="Item.cpp">
-      <Filter>ソース ファイル</Filter>
+    <ClCompile Include="Coin.cpp">
+      <Filter>ソース ファイル\AObject\Item</Filter>
     </ClCompile>
-    <ClCompile Include="Jumping.cpp">
-      <Filter>ソース ファイル</Filter>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>ソース ファイル\AObject\Bullet</Filter>
     </ClCompile>
-    <ClCompile Include="JumpKame.cpp">
-      <Filter>ソース ファイル</Filter>
+    <ClCompile Include="AimBullet.cpp">
+      <Filter>ソース ファイル\AObject\Bullet</Filter>
     </ClCompile>
-    <ClCompile Include="Kame.cpp">
-      <Filter>ソース ファイル</Filter>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>ソース ファイル\AObject\Character</Filter>
     </ClCompile>
-    <ClCompile Include="LoadGraphic.cpp">
-      <Filter>ソース ファイル</Filter>
+    <ClCompile Include="AimAttack.cpp">
+      <Filter>ソース ファイル\Attack</Filter>
     </ClCompile>
-    <ClCompile Include="Map.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="MapFactory.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Menu.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="NoAttack.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="NormalAttack.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="NormalBullet.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjectManager.cpp">
-      <Filter>ソース ファイル</Filter>
+    <ClCompile Include="Attack.cpp">
+      <Filter>ソース ファイル\Attack</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">
-      <Filter>ソース ファイル</Filter>
+      <Filter>ソース ファイル\AObject\Character</Filter>
     </ClCompile>
-    <ClCompile Include="PlayerController.cpp">
-      <Filter>ソース ファイル</Filter>
+    <ClCompile Include="NormalAttack.cpp">
+      <Filter>ソース ファイル\Attack</Filter>
     </ClCompile>
-    <ClCompile Include="Taihou.cpp">
-      <Filter>ソース ファイル</Filter>
+    <ClCompile Include="CharacterController.cpp">
+      <Filter>ソース ファイル\Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="GoalFlag.cpp">
+      <Filter>ソース ファイル\AObject\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="Item.cpp">
+      <Filter>ソース ファイル\AObject\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="Jumping.cpp">
+      <Filter>ソース ファイル\Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="Kame.cpp">
+      <Filter>ソース ファイル\AObject\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="NoAttack.cpp">
+      <Filter>ソース ファイル\Attack</Filter>
     </ClCompile>
     <ClCompile Include="WalkStraight.cpp">
-      <Filter>ソース ファイル</Filter>
+      <Filter>ソース ファイル\Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadGraphic.cpp">
+      <Filter>ソース ファイル\Other</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectManager.cpp">
+      <Filter>ソース ファイル\Other</Filter>
+    </ClCompile>
+    <ClCompile Include="JumpKame.cpp">
+      <Filter>ソース ファイル\AObject\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="Map.cpp">
+      <Filter>ソース ファイル\Map/MapFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="MapFactory.cpp">
+      <Filter>ソース ファイル\Map/MapFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="Menu.cpp">
+      <Filter>ソース ファイル\Menu/GameMain</Filter>
+    </ClCompile>
+    <ClCompile Include="GameMain.cpp">
+      <Filter>ソース ファイル\Menu/GameMain</Filter>
     </ClCompile>
     <ClCompile Include="Warp.cpp">
-      <Filter>ソース ファイル</Filter>
+      <Filter>ソース ファイル\AObject\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerController.cpp">
+      <Filter>ソース ファイル\Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="Taihou.cpp">
+      <Filter>ソース ファイル\AObject\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="NormalBullet.cpp">
+      <Filter>ソース ファイル\AObject\Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="AttackBullet.cpp">
+      <Filter>ソース ファイル\Controller</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AimAttack.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="AimBullet.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="AObject.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Attack.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="AttackBullet.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Bullet.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Character.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="CharacterController.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Coin.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Enemy.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="Field.h">
       <Filter>ソース ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="GameMain.h">
-      <Filter>ソース ファイル</Filter>
+    <ClInclude Include="AObject.h">
+      <Filter>ソース ファイル\AObject</Filter>
     </ClInclude>
-    <ClInclude Include="GoalFlag.h">
-      <Filter>ソース ファイル</Filter>
+    <ClInclude Include="Character.h">
+      <Filter>ソース ファイル\AObject\Character</Filter>
     </ClInclude>
-    <ClInclude Include="Item.h">
-      <Filter>ソース ファイル</Filter>
+    <ClInclude Include="Coin.h">
+      <Filter>ソース ファイル\AObject\Item</Filter>
     </ClInclude>
-    <ClInclude Include="Jumping.h">
-      <Filter>ソース ファイル</Filter>
+    <ClInclude Include="Bullet.h">
+      <Filter>ソース ファイル\AObject\Bullet</Filter>
     </ClInclude>
-    <ClInclude Include="JumpKame.h">
-      <Filter>ソース ファイル</Filter>
+    <ClInclude Include="Enemy.h">
+      <Filter>ソース ファイル\AObject\Character</Filter>
     </ClInclude>
-    <ClInclude Include="Kame.h">
-      <Filter>ソース ファイル</Filter>
+    <ClInclude Include="AimAttack.h">
+      <Filter>ソース ファイル\Attack</Filter>
     </ClInclude>
-    <ClInclude Include="LoadGraphic.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Map.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="MapFactory.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Menu.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="NoAttack.h">
-      <Filter>ソース ファイル</Filter>
+    <ClInclude Include="Attack.h">
+      <Filter>ソース ファイル\Attack</Filter>
     </ClInclude>
     <ClInclude Include="NormalAttack.h">
-      <Filter>ソース ファイル</Filter>
+      <Filter>ソース ファイル\Attack</Filter>
     </ClInclude>
-    <ClInclude Include="NormalBullet.h">
-      <Filter>ソース ファイル</Filter>
+    <ClInclude Include="AttackBullet.h">
+      <Filter>ソース ファイル\Controller</Filter>
     </ClInclude>
-    <ClInclude Include="ObjectManager.h">
-      <Filter>ソース ファイル</Filter>
+    <ClInclude Include="CharacterController.h">
+      <Filter>ソース ファイル\Controller</Filter>
     </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>ソース ファイル</Filter>
+    <ClInclude Include="GoalFlag.h">
+      <Filter>ソース ファイル\AObject\Item</Filter>
     </ClInclude>
-    <ClInclude Include="PlayerController.h">
-      <Filter>ソース ファイル</Filter>
+    <ClInclude Include="Item.h">
+      <Filter>ソース ファイル\AObject\Item</Filter>
     </ClInclude>
-    <ClInclude Include="Taihou.h">
-      <Filter>ソース ファイル</Filter>
+    <ClInclude Include="NoAttack.h">
+      <Filter>ソース ファイル\Attack</Filter>
+    </ClInclude>
+    <ClInclude Include="Kame.h">
+      <Filter>ソース ファイル\AObject\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="Jumping.h">
+      <Filter>ソース ファイル\Controller</Filter>
     </ClInclude>
     <ClInclude Include="WalkStraight.h">
-      <Filter>ソース ファイル</Filter>
+      <Filter>ソース ファイル\Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadGraphic.h">
+      <Filter>ソース ファイル\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectManager.h">
+      <Filter>ソース ファイル\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="JumpKame.h">
+      <Filter>ソース ファイル\AObject\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="Map.h">
+      <Filter>ソース ファイル\Map/MapFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="MapFactory.h">
+      <Filter>ソース ファイル\Map/MapFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu.h">
+      <Filter>ソース ファイル\Menu/GameMain</Filter>
+    </ClInclude>
+    <ClInclude Include="GameMain.h">
+      <Filter>ソース ファイル\Menu/GameMain</Filter>
     </ClInclude>
     <ClInclude Include="Warp.h">
-      <Filter>ヘッダー ファイル</Filter>
+      <Filter>ソース ファイル\AObject\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerController.h">
+      <Filter>ソース ファイル\Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="Taihou.h">
+      <Filter>ソース ファイル\AObject\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="NormalBullet.h">
+      <Filter>ソース ファイル\AObject\Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="AimBullet.h">
+      <Filter>ソース ファイル\AObject\Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>ソース ファイル\AObject\Character</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -1,12 +1,12 @@
 ﻿#pragma once
 #include <string>
+using namespace std;
 
 //マップチップのデータが何を表すか列挙
 //EMPTY=0 WALL=1 ...
 enum MapChip{EMPTY,WALL,PLAYER,KAME,COIN,G_FLAG,JUMPKAME,TAIHOU,WARP};
 
 class Map{
-public:
 
 private:
 	int background_;	// 背景画像
@@ -20,10 +20,13 @@ private:
 						// して、描画するとき(x-ofset,y)が描画場所になる
 	int wallGraph_;		// 壁の画像
 	int width_;			// 背景画像の幅
+	string map_name_;//マップのtxtファイル名
 public:
 	int map_width() {return map_width_;}
 	int map_height() {return map_height_;}
+string map_name(){return map_name_;}
 
+	void set_map_name(string map_name){map_name_=map_name;}
 	Map();
 
 	Map(int cell_width,int cell_hegiht,int** map_datas);		// コンストラクタ

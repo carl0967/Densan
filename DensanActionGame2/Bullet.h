@@ -8,7 +8,7 @@ class Bullet :public AObject
 {
 public:
 	//初期のx座標,y座標,移動速度,画像名,当たり判定の倍率
-	Bullet(double x,double y,int damage,double move_power, char* fname, double hit_size_x, double hit_size_y);//コンストラクタ
+	Bullet(double x,double y,int damage,double move_power, char* fname);//コンストラクタ
 	~Bullet();//デストラクタ
 	virtual void Think();
 	void Move();

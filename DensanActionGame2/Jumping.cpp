@@ -15,7 +15,7 @@ void Jumping::Think(){
 	if(count_%5==0&& character_->isAerial()==false){
 		WalkStraight::Think();
 		if(jump_%3){
-			character_->set_jump_power(14.0);
+			character_->set_jump_power(22.0);
 		}
 		else{
 			character_->set_jump_power(7.0);

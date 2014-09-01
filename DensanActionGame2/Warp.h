@@ -1,3 +1,6 @@
+/*
+次のマップに移動させるフラッグ
+*/
 #pragma once
 #include "item.h"
 class Warp :

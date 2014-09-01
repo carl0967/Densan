@@ -11,7 +11,7 @@ public:
 	ObjectManager();
 	ObjectManager(int map_width,int map_height); //コンストラクタ。引数はセルの座標
 	int RegisterObject(int cell_x,int cell_y,MapChip map_chip); //オブジェクトを登録する。 (登録したときのIDを返すけど別に使わないかも)
-	int GetId(int cell_x,int cell_y); //テスト用関数
+	int GetId(int cell_x,int cell_y); //指定された座標が初期値のオブジェクトのIDを返す
 	TwoDimension GetCellPosFromId(int id); //idを引数にとって、セルの座標を返す
 	~ObjectManager(); //デストラクタ
 private:

@@ -15,7 +15,19 @@ using namespace std;
 
 class Field
 {
-//フィールド
+public:
+	Field(); //仮コンストラクタ
+	Field(Map* map);   //コンストラクタ
+	int MainLoop();  //メインループ	
+	bool IsNextMapDataAWall(TwoDimension chara_pos, TwoDimension chara_speed, bool right);
+	TwoDimension GetPlayerPos();//プレイヤーの座標を返す関数
+	int count(){return count_;}          //countのゲッター
+	Player* player(){return player_;} //プレイヤーを返す
+	char* NextMap();
+	void ChangeMap(Map* map);
+	string GetMapName();
+	~Field(); //デストラクタ
+
 private:
 	Map* map_;                    //マップ
 	ObjectManager* obj_manager_; 
@@ -33,19 +45,8 @@ private:
 
 	int BGM;                     //BGM用
 	
-public:
-	Field(); //仮コンストラクタ
-	Field(Map* map);   //コンストラクタ
-	int MainLoop();  //メインループ	
-	bool IsNextMapDataAWall(TwoDimension chara_pos, TwoDimension chara_speed, bool right);
-	TwoDimension GetPlayerPos();//プレイヤーの座標を返す関数
-	int count(){return count_;}          //countのゲッター
-	Player* player(){return player_;} //プレイヤーを返す
-	char* NextMap();
-	void ChangeMap(Map* map);
-	~Field(); //デストラクタ
+	//private関数(内部での処理をまとめたもの)
 
-private:
 	void Initialize();                   //初期化処理
 	void Scroll();                       //スクロール処理
 	void FallObjects();                  //各オブジェクトに対して、空中にいる場合Fallを呼び出す

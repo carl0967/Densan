@@ -2,7 +2,7 @@
 #include "Player.h"
 
 
-Warp::Warp(double ax,double ay):Item(ax,ay,"Image/warp.png", "Sound/coin_sound.wav",1,1,false)
+Warp::Warp(double ax,double ay):Item(ax,ay,"Image/warp.png", "Sound/coin_sound.wav",false)
 {
 }
 
